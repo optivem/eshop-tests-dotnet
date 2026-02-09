@@ -37,47 +37,7 @@ namespace Dsl.Gherkin.Then
             return new ThenFailureBuilder<TSuccessResponse, TSuccessVerification>(this, result.Result);
         }
 
-        public async Task<ThenOrderBuilder<TSuccessResponse, TSuccessVerification>> Order(string orderNumber)
-        {
-            // Ensure the When clause (e.g., PlaceOrder) has executed before verification
-            await GetExecutionResult();
-            await ShouldSucceed();
-            return new ThenOrderBuilder<TSuccessResponse, TSuccessVerification>(this, _app, orderNumber);
-        }
-
-        public async Task<ThenOrderBuilder<TSuccessResponse, TSuccessVerification>> Order()
-        {
-            var result = await GetExecutionResult();
-            var orderNumber = result.OrderNumber;
-
-            if (orderNumber == null)
-            {
-                throw new InvalidOperationException("Cannot verify order: no order number available from the executed operation");
-            }
-
-            return await Order(orderNumber);
-        }
-
-        public async Task<ThenCouponBuilder<TSuccessResponse, TSuccessVerification>> Coupon(string couponCode)
-        {
-            // Ensure the When clause (e.g., PublishCoupon) has executed before verification
-            await GetExecutionResult();
-            await ShouldSucceed();
-            return new ThenCouponBuilder<TSuccessResponse, TSuccessVerification>(this, _app, couponCode);
-        }
-
-        public async Task<ThenCouponBuilder<TSuccessResponse, TSuccessVerification>> Coupon()
-        {
-            var result = await GetExecutionResult();
-            var couponCode = result.CouponCode;
-
-            if (couponCode == null)
-            {
-                throw new InvalidOperationException("Cannot verify coupon: no coupon code available from the executed operation");
-            }
-
-            return await Coupon(couponCode);
-        }
+        internal SystemDsl App => _app;
 
         internal async Task<ExecutionResult<TSuccessResponse, TSuccessVerification>> GetExecutionResult()
         {
