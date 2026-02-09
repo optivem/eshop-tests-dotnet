@@ -20,15 +20,9 @@ namespace Dsl.Gherkin.Then
             _lazyExecute = lazyExecute;
         }
 
-        public async Task<ThenSuccessBuilder<TSuccessResponse, TSuccessVerification>> ShouldSucceed()
+        public ThenSuccessAssertion<TSuccessResponse, TSuccessVerification> ShouldSucceed()
         {
-            var result = await GetExecutionResult();
-            if (result == null)
-            {
-                throw new InvalidOperationException("Cannot verify success: no operation was executed");
-            }
-            var successVerification = result.Result.ShouldSucceed();
-            return new ThenSuccessBuilder<TSuccessResponse, TSuccessVerification>(this, successVerification);
+            return new ThenSuccessAssertion<TSuccessResponse, TSuccessVerification>(this);
         }
 
         public ThenFailureAssertion<TSuccessResponse, TSuccessVerification> ShouldFail()

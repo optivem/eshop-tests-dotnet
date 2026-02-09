@@ -23,25 +23,23 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task OrderStatusShouldBePlacedAfterPlacingOrder(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder()
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasStatus(OrderStatus.Placed);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasStatus(OrderStatus.Placed);
     }
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldCalculateBasePriceAsProductOfUnitPriceAndQuantity(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Product().WithUnitPrice(20.00m)
             .When().PlaceOrder().WithQuantity(5)
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasBasePrice(100.00m);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasBasePrice(100.00m);
     }
 
     [Theory]
@@ -52,89 +50,81 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
     [ChannelInlineData("99.99", 1, "99.99")]
     public async Task ShouldPlaceOrderWithCorrectBasePriceParameterized(Channel channel, string unitPrice, int quantity, string basePrice)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Product().WithUnitPrice(unitPrice)
             .When().PlaceOrder().WithQuantity(quantity)
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasBasePrice(basePrice);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasBasePrice(basePrice);
     }
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task OrderPrefixShouldBeORD(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder()
-            .Then().ShouldSucceed();
-
-        successBuilder.HasOrderNumberPrefix("ORD-");
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasOrderNumberPrefix("ORD-");
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasOrderNumberPrefix("ORD-");
     }
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task DiscountRateShouldBeAppliedForCoupon(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Coupon().WithCouponCode("SUMMER2025").WithDiscountRate(0.15m)
             .When().PlaceOrder().WithCouponCode("SUMMER2025")
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasAppliedCoupon("SUMMER2025");
-        await orderBuilder.HasDiscountRate(0.15m);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasAppliedCoupon("SUMMER2025")
+            .HasDiscountRate(0.15m);
     }
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task DiscountRateShouldBeNotAppliedWhenThereIsNoCoupon(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithCouponCode(null)
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasStatus(OrderStatus.Placed);
-        await orderBuilder.HasAppliedCoupon(null!);
-        await orderBuilder.HasDiscountRate(0.00m);
-        await orderBuilder.HasDiscountAmount(0.00m);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasStatus(OrderStatus.Placed)
+            .HasAppliedCoupon(null!)
+            .HasDiscountRate(0.00m)
+            .HasDiscountAmount(0.00m);
     }
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task SubtotalPriceShouldBeCalculatedAsTheBasePriceMinusDiscountAmountWhenWeHaveCoupon(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Coupon().WithDiscountRate(0.15m)
             .And().Product().WithUnitPrice(20.00m)
             .When().PlaceOrder().WithCouponCode().WithQuantity(5)
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasAppliedCoupon();
-        await orderBuilder.HasDiscountRate(0.15m);
-        await orderBuilder.HasBasePrice(100.00m);
-        await orderBuilder.HasDiscountAmount(15.00m);
-        await orderBuilder.HasSubtotalPrice(85.00m);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasAppliedCoupon()
+            .HasDiscountRate(0.15m)
+            .HasBasePrice(100.00m)
+            .HasDiscountAmount(15.00m)
+            .HasSubtotalPrice(85.00m);
     }
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task SubtotalPriceShouldBeSameAsBasePriceWhenNoCoupon(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Product().WithUnitPrice(20.00m)
             .When().PlaceOrder().WithQuantity(5)
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasBasePrice(100.00m);
-        await orderBuilder.HasDiscountAmount(0.00m);
-        await orderBuilder.HasSubtotalPrice(100.00m);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasBasePrice(100.00m)
+            .HasDiscountAmount(0.00m)
+            .HasSubtotalPrice(100.00m);
     }
 
     [Theory]
@@ -143,13 +133,12 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
     [ChannelInlineData("US", 0.20)]
     public async Task CorrectTaxRateShouldBeUsedBasedOnCountry(Channel channel, string country, double taxRate)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Country().WithCode(country).WithTaxRate((decimal)taxRate)
             .When().PlaceOrder().WithCountry(country)
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasTaxRate((decimal)taxRate);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasTaxRate((decimal)taxRate);
     }
 
     [Theory]
@@ -158,17 +147,16 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
     [ChannelInlineData("US", 0.20, "100.00", "20.00", "120.00")]
     public async Task TotalPriceShouldBeSubtotalPricePlusTaxAmount(Channel channel, string country, double taxRate, string subtotalPrice, string expectedTaxAmount, string expectedTotalPrice)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Country().WithCode(country).WithTaxRate((decimal)taxRate)
             .And().Product().WithUnitPrice(subtotalPrice)
             .When().PlaceOrder().WithCountry(country).WithQuantity(1)
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasTaxRate((decimal)taxRate);
-        await orderBuilder.HasSubtotalPrice(subtotalPrice);
-        await orderBuilder.HasTaxAmount(expectedTaxAmount);
-        await orderBuilder.HasTotalPrice(expectedTotalPrice);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasTaxRate((decimal)taxRate)
+            .HasSubtotalPrice(subtotalPrice)
+            .HasTaxAmount(expectedTaxAmount)
+            .HasTotalPrice(expectedTotalPrice);
     }
 
     [Theory]
@@ -180,13 +168,11 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .When().PlaceOrder().WithCouponCode("SUMMER2025")
             .Then().ShouldSucceed();
 
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .When().BrowseCoupons()
-            .Then().ShouldSucceed();
-
-        var couponBuilder = successBuilder.And().Coupon("SUMMER2025");
-
-        await couponBuilder.HasUsedCount(1);
+            .Then().ShouldSucceed()
+            .And().Coupon("SUMMER2025")
+            .HasUsedCount(1);
     }
 
     [Theory]

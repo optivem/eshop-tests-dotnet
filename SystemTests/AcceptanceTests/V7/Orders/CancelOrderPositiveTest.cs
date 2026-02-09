@@ -27,12 +27,11 @@ public class CancelOrderPositiveTest : BaseAcceptanceTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldHaveCancelledStatusWhenCancelled(Channel channel)
     {
-        var successBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Order()
             .When().CancelOrder()
-            .Then().ShouldSucceed();
-
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasStatus(OrderStatus.Cancelled);
+            .Then().ShouldSucceed()
+            .And().Order()
+            .HasStatus(OrderStatus.Cancelled);
     }
 }
