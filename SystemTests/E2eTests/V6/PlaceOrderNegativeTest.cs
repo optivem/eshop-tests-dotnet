@@ -12,12 +12,10 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithInvalidQuantity(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .Given().Product()
             .When().PlaceOrder().WithQuantity("invalid-quantity")
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("quantity", "Quantity must be an integer");
     }
@@ -26,11 +24,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithNonExistentSku(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithSku("NON-EXISTENT-SKU-12345")
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("sku", "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
     }
@@ -39,11 +35,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithNegativeQuantity(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithQuantity(-10)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("quantity", "Quantity must be positive");
     }
@@ -52,11 +46,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithZeroQuantity(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithQuantity(0)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("quantity", "Quantity must be positive");
     }
@@ -66,11 +58,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptySku(Channel channel, string sku)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithSku(sku)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("sku", "SKU must not be empty");
     }
@@ -80,11 +70,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptyQuantity(Channel channel, string emptyQuantity)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithQuantity(emptyQuantity)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("quantity", "Quantity must not be empty");
     }
@@ -95,11 +83,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelInlineData("lala")]
     public async Task ShouldRejectOrderWithNonIntegerQuantity(Channel channel, string nonIntegerQuantity)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithQuantity(nonIntegerQuantity)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("quantity", "Quantity must be an integer");
     }
@@ -109,11 +95,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptyCountry(Channel channel, string emptyCountry)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithCountry(emptyCountry)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("country", "Country must not be empty");
     }
@@ -122,12 +106,10 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithInvalidCountry(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .Given().Product()
             .When().PlaceOrder().WithCountry("XX")
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("country", "Country does not exist: XX");
     }
@@ -136,11 +118,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.API)]
     public async Task ShouldRejectOrderWithNullQuantity(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithQuantity(null)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("quantity", "Quantity must not be empty");
     }
@@ -149,11 +129,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.API)]
     public async Task ShouldRejectOrderWithNullSku(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithSku(null)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("sku", "SKU must not be empty");
     }
@@ -162,11 +140,9 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.API)]
     public async Task ShouldRejectOrderWithNullCountry(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithCountry(null)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("The request contains one or more validation errors")
             .FieldErrorMessage("country", "Country must not be empty");
     }

@@ -31,10 +31,9 @@ namespace Dsl.Gherkin.Then
             return new ThenSuccessBuilder<TSuccessResponse, TSuccessVerification>(this, successVerification);
         }
 
-        public async Task<ThenFailureBuilder<TSuccessResponse, TSuccessVerification>> ShouldFail()
+        public ThenFailureAssertion<TSuccessResponse, TSuccessVerification> ShouldFail()
         {
-            var result = await GetExecutionResult();
-            return new ThenFailureBuilder<TSuccessResponse, TSuccessVerification>(this, result.Result);
+            return new ThenFailureAssertion<TSuccessResponse, TSuccessVerification>(this);
         }
 
         internal SystemDsl App => _app;

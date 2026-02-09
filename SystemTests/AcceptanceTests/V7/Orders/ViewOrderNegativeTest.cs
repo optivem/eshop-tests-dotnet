@@ -18,11 +18,9 @@ public class ViewOrderNegativeTest : BaseAcceptanceTest
     [ChannelMemberData(nameof(NonExistentOrderValues))]
     public async Task ShouldNotBeAbleToViewNonExistentOrder(Channel channel, string orderNumber, string expectedErrorMessage)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().ViewOrder().WithOrderNumber(orderNumber)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage(expectedErrorMessage);
     }
 }

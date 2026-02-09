@@ -193,12 +193,11 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task CannotPlaceOrderWithNonExistentCoupon(Channel channel)
     {
-        var failureBuilder = await Scenario(channel)
+        await Scenario(channel)
             .When().PlaceOrder().WithCouponCode("INVALIDCOUPON")
-            .Then().ShouldFail();
-
-        failureBuilder.ErrorMessage("The request contains one or more validation errors");
-        failureBuilder.FieldErrorMessage("couponCode", "Coupon code INVALIDCOUPON does not exist");
+            .Then().ShouldFail()
+            .ErrorMessage("The request contains one or more validation errors")
+            .FieldErrorMessage("couponCode", "Coupon code INVALIDCOUPON does not exist");
     }
 
     [Theory]
@@ -206,28 +205,26 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task CannotPlaceOrderWithExpiredCoupon(Channel channel)
     {
-        var failureBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Clock().WithTime("2023-09-01T12:00:00Z")
             .And().Coupon().WithCouponCode("SUMMER2023").WithValidFrom("2023-06-01T00:00:00Z").WithValidTo("2023-08-31T23:59:59Z")
             .When().PlaceOrder().WithCouponCode("SUMMER2023")
-            .Then().ShouldFail();
-
-        failureBuilder.ErrorMessage("The request contains one or more validation errors");
-        failureBuilder.FieldErrorMessage("couponCode", "Coupon code SUMMER2023 has expired");
+            .Then().ShouldFail()
+            .ErrorMessage("The request contains one or more validation errors")
+            .FieldErrorMessage("couponCode", "Coupon code SUMMER2023 has expired");
     }
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task CannotPlaceOrderWithCouponThatHasExceededUsageLimit(Channel channel)
     {
-        var failureBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Coupon().WithCouponCode("LIMITED2024").WithUsageLimit(2)
             .And().Order().WithOrderNumber("ORD-1").WithCouponCode("LIMITED2024")
             .And().Order().WithOrderNumber("ORD-2").WithCouponCode("LIMITED2024")
             .When().PlaceOrder().WithOrderNumber("ORD-3").WithCouponCode("LIMITED2024")
-            .Then().ShouldFail();
-
-        failureBuilder.ErrorMessage("The request contains one or more validation errors");
-        failureBuilder.FieldErrorMessage("couponCode", "Coupon code LIMITED2024 has exceeded its usage limit");
+            .Then().ShouldFail()
+            .ErrorMessage("The request contains one or more validation errors")
+            .FieldErrorMessage("couponCode", "Coupon code LIMITED2024 has exceeded its usage limit");
     }
 }

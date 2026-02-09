@@ -14,11 +14,9 @@ public class CancelOrderNegativeTest : BaseAcceptanceTest
     [ChannelInlineData("NON-EXISTENT-ORDER-77777", "Order NON-EXISTENT-ORDER-77777 does not exist.")]
     public async Task ShouldNotCancelNonExistentOrder(Channel channel, string orderNumber, string expectedErrorMessage)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().CancelOrder().WithOrderNumber(orderNumber)
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage(expectedErrorMessage);
     }
 
@@ -26,12 +24,10 @@ public class CancelOrderNegativeTest : BaseAcceptanceTest
     [ChannelData(ChannelType.API)]
     public async Task ShouldNotCancelAlreadyCancelledOrder(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .Given().Order().WithStatus(OrderStatus.Cancelled)
             .When().CancelOrder()
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("Order has already been cancelled");
     }
 
@@ -39,11 +35,9 @@ public class CancelOrderNegativeTest : BaseAcceptanceTest
     [ChannelData(ChannelType.API)]
     public async Task CannotCancelNonExistentOrder(Channel channel)
     {
-        var then = Scenario(channel)
+        await Scenario(channel)
             .When().CancelOrder().WithOrderNumber("non-existent-order-12345")
-            .Then();
-
-        (await then.ShouldFail())
+            .Then().ShouldFail()
             .ErrorMessage("Order non-existent-order-12345 does not exist.");
     }
 
@@ -61,11 +55,11 @@ public class CancelOrderNegativeTest : BaseAcceptanceTest
             .Given().Clock().WithTime(timeIso)
             .And().Order().WithStatus(OrderStatus.Placed)
             .When().CancelOrder()
-            .Then().ShouldFail();
+            .Then().ShouldFail()
+            .ErrorMessage("Order cancellation is not allowed on December 31st between 22:00 and 23:00")
+            .And();
 
-        failBuilder.ErrorMessage("Order cancellation is not allowed on December 31st between 22:00 and 23:00");
-
-        var orderBuilder = await failBuilder.And().Order();
+        var orderBuilder = await failBuilder.Order();
         await orderBuilder.HasStatus(OrderStatus.Placed);
     }
 }
