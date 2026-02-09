@@ -16,7 +16,7 @@ public class ThenSuccessAssertionAnd<TSuccessResponse, TSuccessVerification>
     {
         return new ThenSuccessAssertionOrder<TSuccessResponse, TSuccessVerification>(
             _thenClause,
-            () => Task.FromResult(new ThenOrderBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, _thenClause.App, orderNumber)));
+            () => Task.FromResult(orderNumber));
     }
 
     public ThenSuccessAssertionOrder<TSuccessResponse, TSuccessVerification> Order()
@@ -26,8 +26,7 @@ public class ThenSuccessAssertionAnd<TSuccessResponse, TSuccessVerification>
             async () =>
             {
                 var result = await _thenClause.GetExecutionResult();
-                var orderNumber = result.OrderNumber ?? throw new InvalidOperationException("Cannot verify order: no order number available from the executed operation");
-                return new ThenOrderBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, _thenClause.App, orderNumber);
+                return result.OrderNumber ?? throw new InvalidOperationException("Cannot verify order: no order number available from the executed operation");
             });
     }
 
@@ -35,7 +34,7 @@ public class ThenSuccessAssertionAnd<TSuccessResponse, TSuccessVerification>
     {
         return new ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification>(
             _thenClause,
-            new ThenCouponBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, _thenClause.App, couponCode));
+            () => Task.FromResult(couponCode));
     }
 
     /// <summary>
@@ -49,8 +48,7 @@ public class ThenSuccessAssertionAnd<TSuccessResponse, TSuccessVerification>
             async () =>
             {
                 var result = await _thenClause.GetExecutionResult();
-                var couponCode = result.CouponCode ?? throw new InvalidOperationException("Cannot verify coupon: no coupon code available from the executed operation");
-                return new ThenCouponBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, _thenClause.App, couponCode);
+                return result.CouponCode ?? throw new InvalidOperationException("Cannot verify coupon: no coupon code available from the executed operation");
             });
     }
 }

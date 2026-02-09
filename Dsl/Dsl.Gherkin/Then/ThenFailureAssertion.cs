@@ -1,18 +1,18 @@
 using System.Runtime.CompilerServices;
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.Commands.Base;
+using Optivem.EShop.SystemTest.Core.Common.Dsl;
 
 namespace Dsl.Gherkin.Then;
 
 /// <summary>
-/// Deferred failure assertion builder - allows chaining ErrorMessage/FieldErrorMessage before awaiting.
+/// Deferred failure assertion - allows chaining ErrorMessage/FieldErrorMessage before awaiting.
 /// Enables fluent syntax: await Scenario(...).Then().ShouldFail().ErrorMessage("...").FieldErrorMessage("...");
 /// </summary>
 public class ThenFailureAssertion<TSuccessResponse, TSuccessVerification>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
-    private readonly List<Action<ThenFailureBuilder<TSuccessResponse, TSuccessVerification>>> _assertions = [];
+    private readonly List<Action<SystemErrorFailureVerification>> _assertions = [];
 
     internal ThenFailureAssertion(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
     {
@@ -21,13 +21,13 @@ public class ThenFailureAssertion<TSuccessResponse, TSuccessVerification>
 
     public ThenFailureAssertion<TSuccessResponse, TSuccessVerification> ErrorMessage(string expectedMessage)
     {
-        _assertions.Add(b => b.ErrorMessage(expectedMessage));
+        _assertions.Add(v => v.ErrorMessage(expectedMessage));
         return this;
     }
 
     public ThenFailureAssertion<TSuccessResponse, TSuccessVerification> FieldErrorMessage(string expectedField, string expectedMessage)
     {
-        _assertions.Add(b => b.FieldErrorMessage(expectedField, expectedMessage));
+        _assertions.Add(v => v.FieldErrorMessage(expectedField, expectedMessage));
         return this;
     }
 
@@ -45,10 +45,12 @@ public class ThenFailureAssertion<TSuccessResponse, TSuccessVerification>
     private async Task ExecuteAssertions()
     {
         var result = await _thenClause.GetExecutionResult();
-        var builder = new ThenFailureBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, result.Result);
+        if (result.Result == null)
+            throw new InvalidOperationException("Cannot verify failure: no operation was executed");
+        var failureVerification = result.Result.ShouldFail();
         foreach (var assertion in _assertions)
         {
-            assertion(builder);
+            assertion(failureVerification);
         }
     }
 }
