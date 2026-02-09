@@ -18,6 +18,7 @@ namespace Dsl.Gherkin
             Result = result;
             OrderNumber = orderNumber;
             CouponCode = couponCode;
+            Context = new ExecutionResultContext(orderNumber, couponCode);
         }
 
         public ShopUseCaseResult<TSuccessResponse, TSuccessVerification> Result { get; }
@@ -25,5 +26,11 @@ namespace Dsl.Gherkin
         public string? OrderNumber { get; }
 
         public string? CouponCode { get; }
+
+        /// <summary>
+        /// Context with order number and coupon code from the executed operation.
+        /// Aligns with Java ExecutionResult.getContext().
+        /// </summary>
+        public ExecutionResultContext Context { get; }
     }
 }

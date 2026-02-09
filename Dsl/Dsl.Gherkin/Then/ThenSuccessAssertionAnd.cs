@@ -1,5 +1,4 @@
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Gherkin.Then;
 
 namespace Dsl.Gherkin.Then;
 
@@ -37,5 +36,21 @@ public class ThenSuccessAssertionAnd<TSuccessResponse, TSuccessVerification>
         return new ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification>(
             _thenClause,
             new ThenCouponBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, _thenClause.App, couponCode));
+    }
+
+    /// <summary>
+    /// Verifies coupon from execution result (coupon code from the executed operation).
+    /// Aligns with Java BaseThenBuilder.coupon().
+    /// </summary>
+    public ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification> Coupon()
+    {
+        return new ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification>(
+            _thenClause,
+            async () =>
+            {
+                var result = await _thenClause.GetExecutionResult();
+                var couponCode = result.CouponCode ?? throw new InvalidOperationException("Cannot verify coupon: no coupon code available from the executed operation");
+                return new ThenCouponBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, _thenClause.App, couponCode);
+            });
     }
 }

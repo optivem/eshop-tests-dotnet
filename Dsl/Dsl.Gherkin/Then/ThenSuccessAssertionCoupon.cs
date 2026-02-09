@@ -1,6 +1,5 @@
 using System.Runtime.CompilerServices;
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Gherkin.Then;
 
 namespace Dsl.Gherkin.Then;
 
@@ -8,7 +7,8 @@ public class ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
-    private readonly ThenCouponBuilder<TSuccessResponse, TSuccessVerification> _builder;
+    private readonly ThenCouponBuilder<TSuccessResponse, TSuccessVerification>? _builder;
+    private readonly Func<Task<ThenCouponBuilder<TSuccessResponse, TSuccessVerification>>>? _builderFactory;
     private readonly List<Func<ThenCouponBuilder<TSuccessResponse, TSuccessVerification>, Task>> _verifications = [];
 
     internal ThenSuccessAssertionCoupon(
@@ -17,6 +17,16 @@ public class ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification>
     {
         _thenClause = thenClause;
         _builder = builder;
+        _builderFactory = null;
+    }
+
+    internal ThenSuccessAssertionCoupon(
+        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        Func<Task<ThenCouponBuilder<TSuccessResponse, TSuccessVerification>>> builderFactory)
+    {
+        _thenClause = thenClause;
+        _builder = null;
+        _builderFactory = builderFactory;
     }
 
     public ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification> HasDiscountRate(decimal discountRate)
@@ -56,9 +66,10 @@ public class ThenSuccessAssertionCoupon<TSuccessResponse, TSuccessVerification>
         var result = await _thenClause.GetExecutionResult();
         _ = result.Result.ShouldSucceed();
 
+        var builder = _builder ?? await _builderFactory!();
         foreach (var verification in _verifications)
         {
-            await verification(_builder);
+            await verification(builder);
         }
     }
 }

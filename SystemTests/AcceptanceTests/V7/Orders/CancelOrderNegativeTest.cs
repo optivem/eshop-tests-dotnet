@@ -51,15 +51,13 @@ public class CancelOrderNegativeTest : BaseAcceptanceTest
     [ChannelInlineData("2021-12-31T22:30:00Z")]   // End of blackout period
     public async Task CannotCancelAnOrderOn31stDecBetween2200And2230(Channel channel, string timeIso)
     {
-        var failBuilder = await Scenario(channel)
+        await Scenario(channel)
             .Given().Clock().WithTime(timeIso)
             .And().Order().WithStatus(OrderStatus.Placed)
             .When().CancelOrder()
             .Then().ShouldFail()
             .ErrorMessage("Order cancellation is not allowed on December 31st between 22:00 and 23:00")
-            .And();
-
-        var orderBuilder = await failBuilder.Order();
-        await orderBuilder.HasStatus(OrderStatus.Placed);
+            .And().Order()
+            .HasStatus(OrderStatus.Placed);
     }
 }

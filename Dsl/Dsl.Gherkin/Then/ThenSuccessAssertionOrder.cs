@@ -1,6 +1,5 @@
 using System.Runtime.CompilerServices;
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Gherkin.Then;
 using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
 
 namespace Dsl.Gherkin.Then;

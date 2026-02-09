@@ -6,7 +6,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.Verifications;
 namespace Dsl.Gherkin.Then
 {
     public class ThenCouponBuilder<TSuccessResponse, TSuccessVerification>
-        : BaseThenBuilder<TSuccessResponse, TSuccessVerification>
+        : BaseThenStateBuilder<TSuccessResponse, TSuccessVerification>
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
         private readonly SystemDsl _app;

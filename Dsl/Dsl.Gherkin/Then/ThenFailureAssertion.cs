@@ -32,21 +32,17 @@ public class ThenFailureAssertion<TSuccessResponse, TSuccessVerification>
     }
 
     /// <summary>
-    /// Returns the failure builder for further chaining (e.g. .And().Order()).
-    /// Runs all enqueued assertions before returning.
+    /// Returns the failure assertion and for further chaining (e.g. .And().Order().HasStatus(...)).
+    /// Enables fluent syntax: await Scenario(...).Then().ShouldFail().ErrorMessage("...").And().Order().HasStatus(...);
     /// </summary>
-    public Task<ThenFailureBuilder<TSuccessResponse, TSuccessVerification>> And()
-        => ExecuteAssertionsAndReturnBuilder();
+    public ThenFailureAssertionAnd<TSuccessResponse, TSuccessVerification> And()
+    {
+        return new ThenFailureAssertionAnd<TSuccessResponse, TSuccessVerification>(_thenClause, _assertions);
+    }
 
     public TaskAwaiter GetAwaiter() => ExecuteAssertions().GetAwaiter();
 
     private async Task ExecuteAssertions()
-    {
-        var builder = await ExecuteAssertionsAndReturnBuilder();
-        _ = builder; // Assertions already run
-    }
-
-    private async Task<ThenFailureBuilder<TSuccessResponse, TSuccessVerification>> ExecuteAssertionsAndReturnBuilder()
     {
         var result = await _thenClause.GetExecutionResult();
         var builder = new ThenFailureBuilder<TSuccessResponse, TSuccessVerification>(_thenClause, result.Result);
@@ -54,6 +50,5 @@ public class ThenFailureAssertion<TSuccessResponse, TSuccessVerification>
         {
             assertion(builder);
         }
-        return builder;
     }
 }
