@@ -23,7 +23,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     }
 
     [Theory]
-    [ChannelData(ChannelType.API, ChannelType.API)]
+    [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithNonExistentSku(Channel channel)
     {
         var then = Scenario(channel)
@@ -120,7 +120,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    public async Task ShouldRejectOrderWithUnsupportedCountry(Channel channel)
+    public async Task ShouldRejectOrderWithInvalidCountry(Channel channel)
     {
         var then = Scenario(channel)
             .Given().Product()

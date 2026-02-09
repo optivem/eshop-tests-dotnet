@@ -10,20 +10,6 @@ public class PlaceOrderPositiveTest : BaseE2eTest
 {
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    public async Task ShouldCalculateSubtotalPrice(Channel channel)
-    {
-        var then = Scenario(channel)
-            .Given().Product().WithUnitPrice("20.00")
-            .When().PlaceOrder().WithQuantity(5)
-            .Then();
-
-        var successBuilder = await then.ShouldSucceed();
-        var orderBuilder = await successBuilder.And().Order();
-        await orderBuilder.HasSubtotalPrice("100.00");
-    }
-
-    [Theory]
-    [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldPlaceOrderWithCorrectSubtotalPrice(Channel channel)
     {
         var then = Scenario(channel)
