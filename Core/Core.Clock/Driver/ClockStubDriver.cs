@@ -30,7 +30,7 @@ public class ClockStubDriver : IClockDriver
     {
         var extResponse = new ExtGetTimeResponse
         {
-            Time = DateTimeOffset.Parse(request.Time!)
+            Time = DateTimeOffset.Parse(request.Time!, System.Globalization.CultureInfo.InvariantCulture)
         };
         await _client.ConfigureGetTime(extResponse);
         return Result.Success<ClockErrorResponse>();

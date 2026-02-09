@@ -47,7 +47,7 @@ public class OrderDetailsPage : BasePage
     public async Task<DateTimeOffset> GetOrderTimestampAsync()
     {
         var textContent = await PageClient.ReadTextContentAsync(OrderTimestampOutputSelector);
-        return DateTimeOffset.Parse(textContent);
+        return DateTimeOffset.Parse(textContent, System.Globalization.CultureInfo.InvariantCulture);
     }
 
     public async Task<string> GetSkuAsync()

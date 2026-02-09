@@ -162,18 +162,18 @@ public class CouponManagementPage : BasePage
         return dateOnly + TimeEndOfDay;
     }
 
-    private decimal ParseDiscountRate(string? text)
+    private static decimal ParseDiscountRate(string? text)
     {
         var value = Converter.ToDecimal(text);
         return value == null ? 0.0m : value.Value / 100.0m; // Convert percentage to decimal
     }
 
-    private DateTime? ParseDateTime(string text)
+    private static DateTime? ParseDateTime(string text)
     {
         return Converter.ParseDateTime(text, TextImmediate, TextNever);
     }
 
-    private int? ParseUsageLimit(string? text)
+    private static int? ParseUsageLimit(string? text)
     {
         return Converter.ToInteger(text, TextUnlimited);
     }

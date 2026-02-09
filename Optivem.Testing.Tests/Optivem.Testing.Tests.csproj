@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <!-- S125: Intentional commented documentation of negative test cases in ChannelDataNegativeTests -->
+    <NoWarn>$(NoWarn);S125</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

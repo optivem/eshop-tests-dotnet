@@ -63,29 +63,4 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
             throw new InvalidOperationException($"Unknown channel: {channelType}");
         }
     }
-
-
-    /*
-
-    protected SystemDsl _app { get; private set; } = null!;
-    private readonly ScenarioDslFactory _scenarioFactory;
-
-    protected BaseSystemTest()
-    {
-        var configuration = LoadConfiguration();
-        _app = new SystemDsl(configuration);
-        _scenarioFactory = new ScenarioDslFactory(_app);
-    }
-
-    protected ScenarioDsl Scenario(Channel channel) => _scenarioFactory.Create(channel);
-
-    public async ValueTask DisposeAsync()
-    {
-        if (_app != null)
-            await _app.DisposeAsync();
-    }
-
-
-    */
-
 }

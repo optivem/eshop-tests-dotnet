@@ -367,7 +367,7 @@ public class ChannelDataAttributeTests
 /// <summary>
 /// External data provider for testing ChannelMemberData with external types.
 /// </summary>
-public class ExternalDataProvider
+public static class ExternalDataProvider
 {
     public static IEnumerable<object[]> GetExternalData()
     {
@@ -377,37 +377,12 @@ public class ExternalDataProvider
 }
 
 /// <summary>
-/// Negative test cases that should fail at test discovery time.
-/// These are commented out because they would cause test discovery to fail,
-/// but they document the expected validation behavior.
-/// 
-/// Uncommenting any of these should result in a helpful exception message.
+/// Documents negative test cases that would fail at test discovery time.
+/// See ChannelDataNegativeTests for the actual commented examples.
+/// Uncommenting those tests should result in helpful exception messages.
 /// </summary>
-public class NegativeTestExamples
+public static class NegativeTestExamples
 {
-    /*
-    // This should throw: "Cannot use [InlineData] with [ChannelData]. Use [ChannelInlineData] instead."
-    [Theory]
-    [ChannelData("UI", "API")]
-    [InlineData("value1")]
-    public void ShouldFail_WhenUsingInlineDataWithChannelData(Channel channel, string value)
-    {
-    }
-
-    // This should throw: "Cannot use [ClassData] with [ChannelData]. Use [ChannelClassData] instead."
-    [Theory]
-    [ChannelData("UI", "API")]
-    [ClassData(typeof(TestDataProvider))]
-    public void ShouldFail_WhenUsingClassDataWithChannelData(Channel channel, string value, string message)
-    {
-    }
-
-    // This should throw: "Cannot use [MemberData] with [ChannelData]. Use [ChannelMemberData] instead."
-    [Theory]
-    [ChannelData("UI", "API")]
-    [MemberData(nameof(ChannelDataAttributeTests.GetMemberTestData))]
-    public void ShouldFail_WhenUsingMemberDataWithChannelData(Channel channel, string value, string message)
-    {
-    }
-    */
+    /// <summary>Documentation reference for negative validation scenarios.</summary>
+    public const string Documentation = "See ChannelDataNegativeTests for InlineData/ClassData/MemberData validation examples.";
 }
