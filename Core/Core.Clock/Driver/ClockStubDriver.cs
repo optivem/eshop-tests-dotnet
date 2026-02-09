@@ -9,6 +9,7 @@ namespace Optivem.EShop.SystemTest.Core.Clock.Driver;
 public class ClockStubDriver : IClockDriver
 {
     private readonly ClockStubClient _client;
+    private bool _disposed;
 
     public ClockStubDriver(string baseUrl)
     {
@@ -17,7 +18,16 @@ public class ClockStubDriver : IClockDriver
 
     public void Dispose()
     {
-        _client?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+            _client?.Dispose();
+        _disposed = true;
     }
 
     public Task<Result<VoidValue, ClockErrorResponse>> GoToClock()

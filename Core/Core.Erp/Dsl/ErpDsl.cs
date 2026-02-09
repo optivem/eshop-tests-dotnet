@@ -8,6 +8,7 @@ public class ErpDsl : IDisposable
 {
     private readonly IErpDriver _driver;
     private readonly UseCaseContext _context;
+    private bool _disposed;
 
     private ErpDsl(IErpDriver driver, UseCaseContext context)
     {
@@ -32,7 +33,16 @@ public class ErpDsl : IDisposable
 
     public void Dispose()
     {
-        _driver?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+            _driver?.Dispose();
+        _disposed = true;
     }
 
     public GoToErp GoToErp() => new(_driver, _context);

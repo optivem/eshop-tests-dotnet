@@ -8,6 +8,7 @@ public class TaxDsl : IDisposable
 {
     private readonly ITaxDriver _driver;
     private readonly UseCaseContext _context;
+    private bool _disposed;
 
     private TaxDsl(ITaxDriver driver, UseCaseContext context)
     {
@@ -32,7 +33,16 @@ public class TaxDsl : IDisposable
 
     public void Dispose()
     {
-        _driver?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+            _driver?.Dispose();
+        _disposed = true;
     }
 
     public GoToTax GoToTax() => new(_driver, _context);

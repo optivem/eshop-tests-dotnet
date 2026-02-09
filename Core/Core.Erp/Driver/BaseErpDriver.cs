@@ -9,15 +9,25 @@ public abstract class BaseErpDriver<TClient> : IErpDriver
     where TClient : BaseErpClient
 {
     protected readonly TClient _client;
+    private bool _disposed;
 
     protected BaseErpDriver(TClient client)
     {
         _client = client;
     }
 
-    public virtual void Dispose()
+    public void Dispose()
     {
-        _client?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+            _client?.Dispose();
+        _disposed = true;
     }
 
     public virtual Task<Result<VoidValue, ErpErrorResponse>> GoToErp()

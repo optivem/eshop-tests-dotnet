@@ -11,6 +11,7 @@ public abstract class BaseErpClient : IDisposable
     private const string ProductsEndpoint = "/api/products";
 
     protected readonly JsonHttpClient<ExtErpErrorResponse> HttpClient;
+    private bool _disposed;
 
     protected BaseErpClient(string baseUrl)
     {
@@ -19,7 +20,16 @@ public abstract class BaseErpClient : IDisposable
 
     public void Dispose()
     {
-        HttpClient?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+            HttpClient?.Dispose();
+        _disposed = true;
     }
 
     public Task<Result<VoidValue, ExtErpErrorResponse>> CheckHealth()

@@ -10,6 +10,7 @@ public class ShopApiClient : IDisposable
     private readonly HealthController _healthController;
     private readonly OrderController _orderController;
     private readonly CouponController _couponController;
+    private bool _disposed;
 
     public ShopApiClient(string baseUrl)
     {
@@ -21,7 +22,16 @@ public class ShopApiClient : IDisposable
 
     public void Dispose()
     {
-        _httpClient?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+            _httpClient?.Dispose();
+        _disposed = true;
     }
 
     public HealthController Health() => _healthController;

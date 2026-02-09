@@ -8,6 +8,7 @@ namespace Optivem.EShop.SystemTest.Core.Tax.Driver;
 public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTaxClient
 {
     protected readonly TClient _client;
+    private bool _disposed;
 
     protected BaseTaxDriver(TClient client)
     {
@@ -16,7 +17,16 @@ public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTa
 
     public void Dispose()
     {
-        _client?.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+            _client?.Dispose();
+        _disposed = true;
     }
 
     public virtual Task<Result<VoidValue, TaxErrorResponse>> GoToTax()

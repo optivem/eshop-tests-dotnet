@@ -5,9 +5,22 @@ namespace Optivem.EShop.SystemTest.Core.Clock.Driver;
 
 public class ClockRealDriver : IClockDriver
 {
+    private bool _disposed;
+
     public void Dispose()
     {
-        // No resources to dispose
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+        {
+            // No resources to dispose
+        }
+        _disposed = true;
     }
 
     public Task<Result<VoidValue, ClockErrorResponse>> GoToClock()

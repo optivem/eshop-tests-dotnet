@@ -14,6 +14,7 @@ public class ClockStubClient : IDisposable
 
     private readonly JsonHttpClient<ExtClockErrorResponse> _httpClient;
     private readonly JsonWireMockClient _wireMockClient;
+    private bool _disposed;
 
     public ClockStubClient(string baseUrl)
     {
@@ -23,8 +24,19 @@ public class ClockStubClient : IDisposable
 
     public void Dispose()
     {
-        _httpClient.Dispose();
-        _wireMockClient.Dispose();
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (_disposed) return;
+        if (disposing)
+        {
+            _httpClient.Dispose();
+            _wireMockClient.Dispose();
+        }
+        _disposed = true;
     }
 
     public Task<Result<VoidValue, ExtClockErrorResponse>> CheckHealth()
