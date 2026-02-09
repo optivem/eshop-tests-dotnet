@@ -15,7 +15,7 @@ public class ShopSmokeTest : BaseChannelDriverTest
     public async Task ShouldBeAbleToGoToShop(Channel channel)
     {
         // TODO: VJ: This should be made common
-        ChannelContext.Set(channel.Type);   
+        ChannelContext.Set(channel.Type);
         await base.InitializeAsync();
 
         var result = await _shopDriver!.GoToShop();

@@ -23,14 +23,14 @@ public class ShopUiCouponDriver : ICouponDriver
     public async Task<Result<VoidValue, SystemError>> PublishCoupon(PublishCouponRequest request)
     {
         await EnsureOnCouponManagementPageAsync();
-        
+
         await _couponManagementPage!.InputCouponCodeAsync(request.Code);
         await _couponManagementPage.InputDiscountRateAsync(request.DiscountRate);
         await _couponManagementPage.InputValidFromAsync(request.ValidFrom);
         await _couponManagementPage.InputValidToAsync(request.ValidTo);
         await _couponManagementPage.InputUsageLimitAsync(request.UsageLimit);
         await _couponManagementPage.ClickPublishCouponAsync();
-        
+
         var result = await _couponManagementPage.GetResultAsync();
         return result.MapVoid();
     }
@@ -39,14 +39,14 @@ public class ShopUiCouponDriver : ICouponDriver
     {
         // Always navigate fresh to ensure we get the latest coupon data (e.g., updated used counts)
         await NavigateToCouponManagementPageAsync();
-        
+
         var coupons = await _couponManagementPage!.ReadCouponsAsync();
-        
+
         var response = new BrowseCouponsResponse
         {
             Coupons = coupons
         };
-        
+
         return Success(response);
     }
 

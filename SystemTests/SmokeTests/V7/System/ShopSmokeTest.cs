@@ -14,7 +14,7 @@ public class ShopSmokeTest : BaseSystemDslTest
     public async Task ShouldBeAbleToGoToShop(Channel channel)
     {
         var shop = await _app.Shop(channel);
-        
+
         (await shop.GoToShop()
             .Execute())
             .ShouldSucceed();

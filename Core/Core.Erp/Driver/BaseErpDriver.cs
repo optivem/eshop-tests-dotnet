@@ -32,6 +32,6 @@ public abstract class BaseErpDriver<TClient> : IErpDriver
                 Price = productDetails.Price
             })
             .MapErrorAsync(ErpErrorResponse.From);
-    
+
     public abstract Task<Result<VoidValue, ErpErrorResponse>> ReturnsProduct(ReturnsProductRequest request);
 }

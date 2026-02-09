@@ -26,7 +26,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
         var successBuilder = await Scenario(channel)
             .When().PlaceOrder()
             .Then().ShouldSucceed();
-        
+
         var orderBuilder = await successBuilder.And().Order();
         await orderBuilder.HasStatus(OrderStatus.Placed);
     }
@@ -39,7 +39,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .Given().Product().WithUnitPrice(20.00m)
             .When().PlaceOrder().WithQuantity(5)
             .Then().Order();
-        
+
         await orderBuilder.HasBasePrice(100.00m);
     }
 
@@ -55,7 +55,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .Given().Product().WithUnitPrice(unitPrice)
             .When().PlaceOrder().WithQuantity(quantity)
             .Then().Order();
-        
+
         await orderBuilder.HasBasePrice(basePrice);
     }
 
@@ -66,9 +66,9 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
         var successBuilder = await Scenario(channel)
             .When().PlaceOrder()
             .Then().ShouldSucceed();
-        
+
         successBuilder.HasOrderNumberPrefix("ORD-");
-        
+
         var orderBuilder = await successBuilder.And().Order();
         await orderBuilder.HasOrderNumberPrefix("ORD-");
     }
@@ -81,7 +81,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .Given().Coupon().WithCouponCode("SUMMER2025").WithDiscountRate(0.15m)
             .When().PlaceOrder().WithCouponCode("SUMMER2025")
             .Then().Order();
-        
+
         await orderBuilder.HasAppliedCoupon("SUMMER2025");
         await orderBuilder.HasDiscountRate(0.15m);
     }
@@ -93,7 +93,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
         var orderBuilder = await Scenario(channel)
             .When().PlaceOrder().WithCouponCode(null)
             .Then().Order();
-        
+
         await orderBuilder.HasStatus(OrderStatus.Placed);
         await orderBuilder.HasAppliedCoupon(null!);
         await orderBuilder.HasDiscountRate(0.00m);
@@ -109,7 +109,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .And().Product().WithUnitPrice(20.00m)
             .When().PlaceOrder().WithCouponCode().WithQuantity(5)
             .Then().Order();
-        
+
         await orderBuilder.HasAppliedCoupon();
         await orderBuilder.HasDiscountRate(0.15m);
         await orderBuilder.HasBasePrice(100.00m);
@@ -125,7 +125,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .Given().Product().WithUnitPrice(20.00m)
             .When().PlaceOrder().WithQuantity(5)
             .Then().Order();
-        
+
         await orderBuilder.HasBasePrice(100.00m);
         await orderBuilder.HasDiscountAmount(0.00m);
         await orderBuilder.HasSubtotalPrice(100.00m);
@@ -141,7 +141,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .Given().Country().WithCode(country).WithTaxRate((decimal)taxRate)
             .When().PlaceOrder().WithCountry(country)
             .Then().Order();
-        
+
         await orderBuilder.HasTaxRate((decimal)taxRate);
     }
 
@@ -156,7 +156,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .And().Product().WithUnitPrice(subtotalPrice)
             .When().PlaceOrder().WithCountry(country).WithQuantity(1)
             .Then().ShouldSucceed();
-        
+
         var orderBuilder = await successBuilder.And().Order();
         await orderBuilder.HasTaxRate((decimal)taxRate);
         await orderBuilder.HasSubtotalPrice(subtotalPrice);
@@ -176,7 +176,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
         var couponBuilder = await Scenario(channel)
             .When().BrowseCoupons()
             .Then().Coupon("SUMMER2025");
-        
+
         await couponBuilder.HasUsedCount(1);
     }
 
@@ -187,11 +187,11 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
         var failureBuilder = await Scenario(channel)
             .When().PlaceOrder().WithCouponCode("INVALIDCOUPON")
             .Then().ShouldFail();
-        
+
         failureBuilder.ErrorMessage("The request contains one or more validation errors");
         failureBuilder.FieldErrorMessage("couponCode", "Coupon code INVALIDCOUPON does not exist");
     }
-    
+
     [Theory]
     [Time]
     [ChannelData(ChannelType.UI, ChannelType.API)]
@@ -202,7 +202,7 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .And().Coupon().WithCouponCode("SUMMER2023").WithValidFrom("2023-06-01T00:00:00Z").WithValidTo("2023-08-31T23:59:59Z")
             .When().PlaceOrder().WithCouponCode("SUMMER2023")
             .Then().ShouldFail();
-        
+
         failureBuilder.ErrorMessage("The request contains one or more validation errors");
         failureBuilder.FieldErrorMessage("couponCode", "Coupon code SUMMER2023 has expired");
     }

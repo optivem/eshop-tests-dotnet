@@ -40,7 +40,7 @@ public class ShopUiClient : IAsyncDisposable
     {
         var playwright = await Playwright.CreateAsync();
         var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = IsHeadless });
-        
+
         // Create isolated browser context with specific configuration
         var contextOptions = new BrowserNewContextOptions
         {
@@ -48,12 +48,12 @@ public class ShopUiClient : IAsyncDisposable
             StorageStatePath = null // Ensure complete isolation between parallel tests
         };
         var context = await browser.NewContextAsync(contextOptions);
-        
+
         // Each test gets its own page
         var page = await context.NewPageAsync();
         var pageClient = new PlaywrightGateway(page, baseUrl);
         var homePage = new HomePage(pageClient);
-        
+
         return new ShopUiClient(baseUrl, playwright, browser, context, page, homePage);
     }
 
@@ -82,8 +82,8 @@ public class ShopUiClient : IAsyncDisposable
         }
 
         var pageContent = await _page.ContentAsync();
-        return pageContent != null && 
-               pageContent.Contains(HtmlOpeningTag) && 
+        return pageContent != null &&
+               pageContent.Contains(HtmlOpeningTag) &&
                pageContent.Contains(HtmlClosingTag);
     }
 

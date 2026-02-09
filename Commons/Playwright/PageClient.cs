@@ -17,7 +17,7 @@ public class PageClient
         _timeoutMilliseconds = timeoutMilliseconds;
     }
 
-    public PageClient(IPage page, string baseUrl) 
+    public PageClient(IPage page, string baseUrl)
         : this(page, DefaultTimeoutMilliseconds)
     {
     }
@@ -88,7 +88,7 @@ public class PageClient
         await locator.WaitForAsync(waitForOptions);
 
         var count = await locator.CountAsync();
-        
+
         if (count == 0)
         {
             throw new Exception($"No elements found for selector: {selector}");
@@ -105,10 +105,10 @@ public class PageClient
 
     private LocatorWaitForOptions GetDefaultWaitForOptions()
     {
-        return new LocatorWaitForOptions 
-        { 
+        return new LocatorWaitForOptions
+        {
             State = WaitForSelectorState.Visible,
-            Timeout = _timeoutMilliseconds 
+            Timeout = _timeoutMilliseconds
         };
     }
 }

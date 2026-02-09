@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace Dsl.Gherkin.Then
 {
-    public class ThenOrderBuilder<TSuccessResponse, TSuccessVerification> 
+    public class ThenOrderBuilder<TSuccessResponse, TSuccessVerification>
         : BaseThenBuilder<TSuccessResponse, TSuccessVerification>
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
@@ -17,9 +17,9 @@ namespace Dsl.Gherkin.Then
         private ViewOrderVerification? _orderVerification;
 
         public ThenOrderBuilder(
-            ThenClause<TSuccessResponse, TSuccessVerification> thenClause, 
-            SystemDsl app, 
-            string orderNumber) 
+            ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+            SystemDsl app,
+            string orderNumber)
             : base(thenClause)
         {
             _app = app;

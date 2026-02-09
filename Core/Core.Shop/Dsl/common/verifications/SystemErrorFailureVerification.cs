@@ -6,7 +6,7 @@ namespace Optivem.EShop.SystemTest.Core.Common.Dsl;
 
 public class SystemErrorFailureVerification : ResponseVerification<SystemError>
 {
-    public SystemErrorFailureVerification(SystemError error, UseCaseContext context) 
+    public SystemErrorFailureVerification(SystemError error, UseCaseContext context)
         : base(error, context)
     {
     }
@@ -16,10 +16,10 @@ public class SystemErrorFailureVerification : ResponseVerification<SystemError>
         var expandedExpectedMessage = Context.ExpandAliases(expectedMessage);
         var error = Response;
         var errorMessage = error.Message;
-        
-        errorMessage.ShouldBe(expandedExpectedMessage, 
+
+        errorMessage.ShouldBe(expandedExpectedMessage,
             $"Expected error message: '{expandedExpectedMessage}', but got: '{errorMessage}'");
-        
+
         return this;
     }
 

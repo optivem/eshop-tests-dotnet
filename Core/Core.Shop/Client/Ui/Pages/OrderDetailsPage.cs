@@ -6,7 +6,7 @@ namespace Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
 public class OrderDetailsPage : BasePage
 {
     private const string OrderNumberOutputSelector = "[aria-label='Display Order Number']";
-    private const string OrderTimestampOutputSelector = "[aria-label='Display Order Timestamp']"; 
+    private const string OrderTimestampOutputSelector = "[aria-label='Display Order Timestamp']";
     private const string SkuOutputSelector = "[aria-label='Display SKU']";
     private const string CountryOutputSelector = "[aria-label='Display Country']";
     private const string QuantityOutputSelector = "[aria-label='Display Quantity']";
@@ -26,7 +26,7 @@ public class OrderDetailsPage : BasePage
     private const string TextNone = "None";
     private const string DollarSymbol = "$";
     private const string PercentSymbol = "%";
-    
+
     // Enum parsing constants
     private const bool IgnoreCase = true;
 

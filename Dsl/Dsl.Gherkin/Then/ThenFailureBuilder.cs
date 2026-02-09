@@ -6,7 +6,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.Commands.Base;
 
 namespace Dsl.Gherkin.Then
 {
-    public class ThenFailureBuilder<TSuccessResponse, TSuccessVerification> 
+    public class ThenFailureBuilder<TSuccessResponse, TSuccessVerification>
         : BaseThenBuilder<TSuccessResponse, TSuccessVerification>
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
@@ -18,7 +18,7 @@ namespace Dsl.Gherkin.Then
             {
                 throw new InvalidOperationException("Cannot verify failure: no operation was executed");
             }
-            
+
             _failureVerification = result.ShouldFail();
         }
 

@@ -32,6 +32,6 @@ public class ShopApiDriver : IShopDriver
             .MapErrorAsync(SystemError.From);
 
     public IOrderDriver Orders() => _orderDriver;
-    
+
     public ICouponDriver Coupons() => _couponDriver;
 }

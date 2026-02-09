@@ -8,7 +8,7 @@ namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.Commands;
 
 public class GoToClock : BaseClockCommand<VoidValue, VoidVerification>
 {
-    public GoToClock(IClockDriver driver, UseCaseContext context) 
+    public GoToClock(IClockDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }

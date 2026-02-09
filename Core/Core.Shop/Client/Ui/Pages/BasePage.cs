@@ -95,7 +95,7 @@ public abstract class BasePage
         {
             var parts = text.Split(':', 2);
 
-            if(parts.Length != 2)
+            if (parts.Length != 2)
             {
                 throw new InvalidOperationException($"Invalid field error format: {text}");
             }

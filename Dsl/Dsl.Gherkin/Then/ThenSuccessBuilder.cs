@@ -7,7 +7,7 @@ using Commons.Util;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.Then;
 
-public class ThenSuccessBuilder<TSuccessResponse, TSuccessVerification> : BaseThenBuilder<TSuccessResponse, TSuccessVerification> 
+public class ThenSuccessBuilder<TSuccessResponse, TSuccessVerification> : BaseThenBuilder<TSuccessResponse, TSuccessVerification>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly TSuccessVerification _successVerification;

@@ -44,7 +44,7 @@ public class GivenOrderBuilder : BaseGivenBuilder
 
     public GivenOrderBuilder WithQuantity(int? quantity)
     {
-        return WithQuantity(Converter.FromInteger(quantity));    
+        return WithQuantity(Converter.FromInteger(quantity));
     }
 
     public GivenOrderBuilder WithCountry(string? country)
@@ -68,7 +68,7 @@ public class GivenOrderBuilder : BaseGivenBuilder
     internal override async Task Execute(SystemDsl app)
     {
         var shop = await app.Shop(Channel);
-        
+
         (await shop.PlaceOrder()
             .OrderNumber(_orderNumber)
             .Sku(_sku)

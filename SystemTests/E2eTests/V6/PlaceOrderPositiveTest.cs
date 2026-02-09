@@ -51,7 +51,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
 
         var successBuilder = await then.ShouldSucceed();
         successBuilder.HasOrderNumberPrefix("ORD-");
-        
+
         var orderBuilder = await successBuilder.And().Order();
         orderBuilder = await orderBuilder.HasQuantity(5);
         orderBuilder = await orderBuilder.HasUnitPrice(20.00m);

@@ -14,7 +14,7 @@ public class ClockStubDriver : IClockDriver
     {
         _client = new ClockStubClient(baseUrl);
     }
-    
+
     public void Dispose()
     {
         _client?.Dispose();

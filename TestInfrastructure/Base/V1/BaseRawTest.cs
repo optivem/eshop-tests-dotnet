@@ -9,19 +9,19 @@ namespace Optivem.EShop.SystemTest.Base.V1;
 public abstract class BaseRawTest : BaseConfigurableTest, IAsyncLifetime
 {
     protected readonly SystemConfiguration _configuration;
-    
+
     protected IPlaywright? shopUiPlaywright;
     protected IBrowser? shopUiBrowser;
     protected IBrowserContext? shopUiBrowserContext;
     protected IPage? shopUiPage;
     protected HttpClient? _shopApiHttpClient;
-    
+
     protected HttpClient? _erpHttpClient;
     protected HttpClient? _taxHttpClient;
 
     protected JsonSerializerOptions? _httpObjectMapper;
 
-    protected BaseRawTest() 
+    protected BaseRawTest()
     {
         _configuration = LoadConfiguration();
     }

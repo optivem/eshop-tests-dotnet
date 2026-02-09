@@ -11,7 +11,7 @@ public class CancelOrder : BaseShopCommand<VoidValue, VoidVerification>
 {
     private string? _orderNumberResultAlias;
 
-    public CancelOrder(IShopDriver driver, UseCaseContext context) 
+    public CancelOrder(IShopDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -26,10 +26,10 @@ public class CancelOrder : BaseShopCommand<VoidValue, VoidVerification>
     {
         var orderNumber = _context.GetResultValue(_orderNumberResultAlias);
         var result = await _driver.Orders().CancelOrder(orderNumber);
-            
+
         return new ShopUseCaseResult<VoidValue, VoidVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }

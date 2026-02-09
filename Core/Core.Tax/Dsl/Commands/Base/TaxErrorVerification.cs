@@ -6,7 +6,7 @@ namespace Optivem.EShop.SystemTest.Core.Tax.Dsl.Commands.Base;
 
 public class TaxErrorVerification : ResponseVerification<TaxErrorResponse>
 {
-    public TaxErrorVerification(TaxErrorResponse error, UseCaseContext context) 
+    public TaxErrorVerification(TaxErrorResponse error, UseCaseContext context)
         : base(error, context)
     {
     }
@@ -16,10 +16,10 @@ public class TaxErrorVerification : ResponseVerification<TaxErrorResponse>
         var expandedExpectedMessage = Context.ExpandAliases(expectedMessage);
         var error = Response;
         var errorMessage = error.Message;
-        
-        errorMessage.ShouldBe(expandedExpectedMessage, 
+
+        errorMessage.ShouldBe(expandedExpectedMessage,
             $"Expected error message: '{expandedExpectedMessage}', but got: '{errorMessage}'");
-        
+
         return this;
     }
 }

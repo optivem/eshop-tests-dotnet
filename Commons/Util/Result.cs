@@ -71,9 +71,9 @@ public class Result<T, E>
 
 public static class Result
 {
-    public static Result<VoidValue, E> Success<E>() 
+    public static Result<VoidValue, E> Success<E>()
         => Result<VoidValue, E>.Success(VoidValue.Empty);
 
-    public static Result<VoidValue, E> Failure<E>(E error) 
+    public static Result<VoidValue, E> Failure<E>(E error)
         => Result<VoidValue, E>.Failure(error);
 }

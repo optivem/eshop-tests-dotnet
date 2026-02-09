@@ -8,7 +8,7 @@ public abstract class BaseGivenBuilder
 {
     private readonly GivenClause _givenClause;
 
-    protected BaseGivenBuilder(GivenClause givenClause) 
+    protected BaseGivenBuilder(GivenClause givenClause)
     {
         _givenClause = givenClause;
     }

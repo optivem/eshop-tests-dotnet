@@ -7,7 +7,7 @@ namespace Optivem.EShop.SystemTest.Core.Tax.Dsl.Verifications;
 
 public class GetTaxVerification : ResponseVerification<GetTaxResponse>
 {
-    public GetTaxVerification(GetTaxResponse response, UseCaseContext context) 
+    public GetTaxVerification(GetTaxResponse response, UseCaseContext context)
         : base(response, context)
     {
     }
@@ -19,7 +19,7 @@ public class GetTaxVerification : ResponseVerification<GetTaxResponse>
         actualCountry.ShouldBe(expectedCountry, $"Expected country to be '{expectedCountry}', but was '{actualCountry}'");
         return this;
     }
-    
+
     public GetTaxVerification TaxRate(decimal expectedTaxRate)
     {
         var actualTaxRate = Response.TaxRate;

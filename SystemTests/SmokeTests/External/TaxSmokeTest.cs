@@ -1,10 +1,11 @@
-using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Base;
-using Commons.Dsl;
+using Commons.Util;
+using Optivem.EShop.SystemTest.Base.V5;
+using Shouldly;
+using Xunit;
 
 namespace SmokeTests.External;
 
-public class TaxSmokeTest : BaseSystemTest
+public class TaxSmokeTest : BaseSystemDslTest
 {
     [Fact]
     public async Task ShouldBeAbleToGoToTax()

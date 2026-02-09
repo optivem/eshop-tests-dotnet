@@ -2,9 +2,9 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Commons.Dsl;
 
-[SuppressMessage("Major Code Smell", "S2436:Reduce the number of generic parameters", 
+[SuppressMessage("Major Code Smell", "S2436:Reduce the number of generic parameters",
     Justification = "Multiple generic parameters are required for DSL pattern to provide type safety across driver, response, and verification layers")]
-public abstract class BaseUseCase<TDriver, TSuccessResponse, TFailureResponse, TSuccessVerification, TFailureVerification> 
+public abstract class BaseUseCase<TDriver, TSuccessResponse, TFailureResponse, TSuccessVerification, TFailureVerification>
     : IUseCase<Task<UseCaseResult<TSuccessResponse, TFailureResponse, TSuccessVerification, TFailureVerification>>>
 {
     protected readonly TDriver _driver;

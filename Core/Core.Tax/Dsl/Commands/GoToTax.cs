@@ -8,7 +8,7 @@ namespace Optivem.EShop.SystemTest.Core.Tax.Dsl.Commands;
 
 public class GoToTax : BaseTaxCommand<VoidValue, VoidVerification>
 {
-    public GoToTax(ITaxDriver driver, UseCaseContext context) 
+    public GoToTax(ITaxDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -16,10 +16,10 @@ public class GoToTax : BaseTaxCommand<VoidValue, VoidVerification>
     public override async Task<TaxUseCaseResult<VoidValue, VoidVerification>> Execute()
     {
         var result = await _driver.GoToTax();
-        
+
         return new TaxUseCaseResult<VoidValue, VoidVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }

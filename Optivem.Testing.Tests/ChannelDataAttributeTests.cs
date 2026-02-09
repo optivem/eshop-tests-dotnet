@@ -87,8 +87,8 @@ public class ChannelDataAttributeTests
     [ChannelInlineData("value1", "message1")]
     [ChannelInlineData("value2", "message2")]
     public void ChannelData_WithChannelInlineData_ShouldGenerateCartesianProduct(
-        Channel channel, 
-        string value, 
+        Channel channel,
+        string value,
         string message)
     {
         // Arrange & Act
@@ -98,7 +98,7 @@ public class ChannelDataAttributeTests
         channelType.ShouldBeOneOf("UI", "API");
         value.ShouldBeOneOf("value1", "value2");
         message.ShouldBeOneOf("message1", "message2");
-        
+
         // Verify the pairing
         if (value == "value1")
         {
@@ -115,7 +115,7 @@ public class ChannelDataAttributeTests
     [ChannelInlineData("")]
     [ChannelInlineData("   ")]
     public void ChannelData_WithChannelInlineData_EmptyValues_ShouldWork(
-        Channel channel, 
+        Channel channel,
         string emptyValue)
     {
         // Arrange & Act
@@ -132,7 +132,7 @@ public class ChannelDataAttributeTests
     [ChannelInlineData(2)]
     [ChannelInlineData(3)]
     public void ChannelData_WithChannelInlineData_Numbers_ShouldWork(
-        Channel channel, 
+        Channel channel,
         int number)
     {
         // Arrange & Act
@@ -151,8 +151,8 @@ public class ChannelDataAttributeTests
     [ChannelData("UI", "API")]
     [ChannelClassData(typeof(TestDataProvider))]
     public void ChannelData_WithChannelClassData_ShouldGenerateCartesianProduct(
-        Channel channel, 
-        string value, 
+        Channel channel,
+        string value,
         string message)
     {
         // Arrange & Act
@@ -162,7 +162,7 @@ public class ChannelDataAttributeTests
         channelType.ShouldBeOneOf("UI", "API");
         value.ShouldBeOneOf("value1", "value2");
         message.ShouldBeOneOf("message1", "message2");
-        
+
         // Verify the pairing
         if (value == "value1")
         {
@@ -182,8 +182,8 @@ public class ChannelDataAttributeTests
     [ChannelData("UI", "API")]
     [ChannelMemberData(nameof(GetMemberTestData))]
     public void ChannelData_WithChannelMemberData_Method_ShouldGenerateCartesianProduct(
-        Channel channel, 
-        string value, 
+        Channel channel,
+        string value,
         string message)
     {
         // Arrange & Act
@@ -193,7 +193,7 @@ public class ChannelDataAttributeTests
         channelType.ShouldBeOneOf("UI", "API");
         value.ShouldBeOneOf("memberValue1", "memberValue2");
         message.ShouldBeOneOf("memberMessage1", "memberMessage2");
-        
+
         // Verify the pairing
         if (value == "memberValue1")
         {
@@ -213,8 +213,8 @@ public class ChannelDataAttributeTests
     [ChannelData("UI", "API")]
     [ChannelMemberData(nameof(MemberTestDataProperty))]
     public void ChannelData_WithChannelMemberData_Property_ShouldGenerateCartesianProduct(
-        Channel channel, 
-        string value, 
+        Channel channel,
+        string value,
         string message)
     {
         // Arrange & Act
@@ -224,7 +224,7 @@ public class ChannelDataAttributeTests
         channelType.ShouldBeOneOf("UI", "API");
         value.ShouldBeOneOf("propertyValue1", "propertyValue2");
         message.ShouldBeOneOf("propertyMessage1", "propertyMessage2");
-        
+
         // Verify the pairing
         if (value == "propertyValue1")
         {
@@ -244,8 +244,8 @@ public class ChannelDataAttributeTests
     [ChannelData("UI", "API")]
     [ChannelMemberData(nameof(ExternalDataProvider.GetExternalData), typeof(ExternalDataProvider))]
     public void ChannelData_WithChannelMemberData_ExternalType_ShouldGenerateCartesianProduct(
-        Channel channel, 
-        string value, 
+        Channel channel,
+        string value,
         string message)
     {
         // Arrange & Act
@@ -255,7 +255,7 @@ public class ChannelDataAttributeTests
         channelType.ShouldBeOneOf("UI", "API");
         value.ShouldBeOneOf("externalValue1", "externalValue2");
         message.ShouldBeOneOf("externalMessage1", "externalMessage2");
-        
+
         // Verify the pairing
         if (value == "externalValue1")
         {

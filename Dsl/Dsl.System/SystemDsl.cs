@@ -49,11 +49,11 @@ public class SystemDsl : IAsyncDisposable
     {
         if (_shop != null)
             await _shop.DisposeAsync();
-        
+
         _erp?.Dispose();
         _tax?.Dispose();
         _clock?.Dispose();
-        
+
         ChannelContext.Clear();
     }
 

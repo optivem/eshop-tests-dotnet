@@ -21,7 +21,7 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
     public virtual async Task InitializeAsync()
     {
         var configuration = LoadConfiguration();
-        
+
         // Only create shop driver if channel context is set (for channel-parameterized tests)
         // For non-channel tests (like Erp/Tax), skip shop driver creation
         try
@@ -32,7 +32,7 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
         {
             _shopDriver = null;
         }
-        
+
         _erpDriver = new ErpRealDriver(configuration.ErpBaseUrl);
         _taxDriver = new TaxRealDriver(configuration.TaxBaseUrl);
     }
@@ -41,7 +41,7 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
     {
         if (_shopDriver != null)
             await _shopDriver.DisposeAsync();
-        
+
         _erpDriver?.Dispose();
         _taxDriver?.Dispose();
     }
@@ -49,7 +49,7 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
     private async Task<IShopDriver?> CreateShopDriverAsync(SystemConfiguration configuration)
     {
         var channelType = ChannelContext.Get();
-        
+
         if (channelType == ChannelType.UI)
         {
             return await ShopUiDriver.CreateAsync(configuration.ShopUiBaseUrl);

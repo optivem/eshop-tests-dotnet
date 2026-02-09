@@ -5,7 +5,7 @@ public class TaxStubContractTest : BaseTaxContractTest
     protected override Configuration.Environment? GetFixedEnvironment() => Configuration.Environment.Local;
 
     protected override ExternalSystemMode? FixedExternalSystemMode => ExternalSystemMode.Stub;
-    
+
     [Fact]
     public async Task ShouldBeAbleToGetConfiguredTaxRate()
     {

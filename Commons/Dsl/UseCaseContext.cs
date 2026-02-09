@@ -69,9 +69,9 @@ public class UseCaseContext
 
     public string? GetResultValue(string? alias)
     {
-        if(string.IsNullOrWhiteSpace(alias))
+        if (string.IsNullOrWhiteSpace(alias))
         {
-            return alias; 
+            return alias;
         }
 
         if (_resultMap.TryGetValue(alias, out var value))

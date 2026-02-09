@@ -10,7 +10,7 @@ namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.Commands;
 
 public class BrowseCoupons : BaseShopCommand<BrowseCouponsResponse, BrowseCouponsVerification>
 {
-    public BrowseCoupons(IShopDriver driver, UseCaseContext context) 
+    public BrowseCoupons(IShopDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -22,8 +22,8 @@ public class BrowseCoupons : BaseShopCommand<BrowseCouponsResponse, BrowseCoupon
         var result = await _driver.Coupons().BrowseCoupons(request);
 
         return new ShopUseCaseResult<BrowseCouponsResponse, BrowseCouponsVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new BrowseCouponsVerification(response, ctx));
     }
 }

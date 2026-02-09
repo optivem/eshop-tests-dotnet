@@ -10,7 +10,7 @@ public class ReturnsTime : BaseClockCommand<VoidValue, VoidVerification>
 {
     private string? _time;
 
-    public ReturnsTime(IClockDriver driver, UseCaseContext context) 
+    public ReturnsTime(IClockDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -29,9 +29,9 @@ public class ReturnsTime : BaseClockCommand<VoidValue, VoidVerification>
         };
 
         var result = await _driver.ReturnsTime(request);
-        
+
         return new ClockUseCaseResult<VoidValue, VoidVerification>(
-            result, 
+            result,
             _context,
             (response, ctx) => new VoidVerification(response, ctx));
     }

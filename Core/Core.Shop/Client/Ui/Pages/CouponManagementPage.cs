@@ -12,14 +12,14 @@ public class CouponManagementPage : BasePage
     private const string ValidToInputSelector = "[aria-label=\"Valid To\"]";
     private const string UsageLimitInputSelector = "[aria-label=\"Usage Limit\"]";
     private const string PublishCouponButtonSelector = "[aria-label=\"Create Coupon\"]";
-    
+
     // Selectors for browsing coupons
     private const string CouponsTableSelector = "[aria-label=\"Coupons Table\"]";
-    
+
     // Time format constants
     private const string TimeMidnight = "T00:00";
     private const string TimeEndOfDay = "T23:59";
-    
+
     // Table selectors
     private const string TableCellCodeSelector = "table.table tbody tr td:nth-child(1)";
     private const string TableCellDiscountSelector = "table.table tbody tr td:nth-child(2)";
@@ -27,7 +27,7 @@ public class CouponManagementPage : BasePage
     private const string TableCellValidToSelector = "table.table tbody tr td:nth-child(4)";
     private const string TableCellUsageLimitSelector = "table.table tbody tr td:nth-child(5)";
     private const string TableCellUsedCountSelector = "table.table tbody tr td:nth-child(6)";
-    
+
     // Display text constants
     private const string PercentSymbol = "%";
     private const string TextImmediate = "Immediate";
@@ -81,19 +81,19 @@ public class CouponManagementPage : BasePage
         {
             return new List<CouponDto>();
         }
-        
+
         var coupons = new List<CouponDto>();
 
         // Use readAllTextContents to avoid strict mode violations
         // These selectors intentionally match multiple elements (one per table row)
         var codes = await PageClient.ReadAllTextContentsAsync(TableCellCodeSelector);
-        
+
         // If no codes found, table is empty
         if (!codes.Any())
         {
             return new List<CouponDto>();
         }
-        
+
         var discountRates = await PageClient.ReadAllTextContentsAsync(TableCellDiscountSelector);
         var validFroms = await PageClient.ReadAllTextContentsAsync(TableCellValidFromSelector);
         var validTos = await PageClient.ReadAllTextContentsAsync(TableCellValidToSelector);
@@ -101,16 +101,18 @@ public class CouponManagementPage : BasePage
         var usedCounts = await PageClient.ReadAllTextContentsAsync(TableCellUsedCountSelector);
 
         var rowCount = codes.Count;
-        
+
         // Double-check we have data before trying to access it
         // Also verify all columns have the same row count (handles empty tables or malformed data)
-        if (rowCount == 0 || discountRates.Count != rowCount || validFroms.Count != rowCount 
-                || validTos.Count != rowCount || usageLimits.Count != rowCount || usedCounts.Count != rowCount) {
+        if (rowCount == 0 || discountRates.Count != rowCount || validFroms.Count != rowCount
+                || validTos.Count != rowCount || usageLimits.Count != rowCount || usedCounts.Count != rowCount)
+        {
             return new List<CouponDto>();
         }
 
         // Build coupon objects from the collected data
-        for (int i = 0; i < rowCount; i++) {
+        for (int i = 0; i < rowCount; i++)
+        {
             var code = codes[i].Trim();
             var discountRateText = discountRates[i].Trim().Replace(PercentSymbol, "");
             var validFromText = validFroms[i].Trim();

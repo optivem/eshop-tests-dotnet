@@ -11,7 +11,7 @@ public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerificat
 {
     private string? _skuParamAlias;
 
-    public GetProduct(IErpDriver driver, UseCaseContext context) 
+    public GetProduct(IErpDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -34,8 +34,8 @@ public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerificat
         var result = await _driver.GetProduct(request);
 
         return new ErpUseCaseResult<GetProductResponse, GetProductVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new GetProductVerification(response, ctx));
     }
 }

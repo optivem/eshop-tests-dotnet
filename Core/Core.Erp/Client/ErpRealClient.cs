@@ -11,7 +11,7 @@ public class ErpRealClient : BaseErpClient
     public ErpRealClient(string baseUrl) : base(baseUrl)
     {
     }
-    
+
 
     public Task<Result<VoidValue, ExtErpErrorResponse>> CreateProduct(ExtCreateProductRequest request)
         => HttpClient.Post(ProductsEndpoint, request);

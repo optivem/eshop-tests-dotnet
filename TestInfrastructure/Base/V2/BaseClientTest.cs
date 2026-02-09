@@ -11,14 +11,14 @@ namespace Optivem.EShop.SystemTest.Base.V2;
 public abstract class BaseClientTest : BaseConfigurableTest, IAsyncLifetime
 {
     protected readonly SystemConfiguration _configuration;
-    
+
     protected ShopUiClient? _shopUiClient;
     protected ShopApiClient? _shopApiClient;
 
     protected ErpRealClient? _erpClient;
     protected TaxRealClient? _taxClient;
 
-    protected BaseClientTest() 
+    protected BaseClientTest()
     {
         _configuration = LoadConfiguration();
     }
@@ -45,7 +45,7 @@ public abstract class BaseClientTest : BaseConfigurableTest, IAsyncLifetime
     {
         if (_shopUiClient != null)
             await _shopUiClient.DisposeAsync();
-        _shopApiClient?.Dispose();    
+        _shopApiClient?.Dispose();
         _erpClient?.Dispose();
         _taxClient?.Dispose();
     }

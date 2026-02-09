@@ -7,21 +7,21 @@ namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.Verifications;
 
 public class GetTimeVerification : ResponseVerification<GetTimeResponse>
 {
-    public GetTimeVerification(GetTimeResponse response, UseCaseContext context) 
+    public GetTimeVerification(GetTimeResponse response, UseCaseContext context)
         : base(response, context)
     {
     }
 
     public GetTimeVerification TimeIsNotNull()
     {
-        Response.Time.ShouldNotBe(default, 
+        Response.Time.ShouldNotBe(default,
             "Time should not be null or default");
         return this;
     }
 
     public GetTimeVerification Time(DateTimeOffset expectedTime)
     {
-        Response.Time.ShouldBe(expectedTime, 
+        Response.Time.ShouldBe(expectedTime,
             $"Expected time: {expectedTime:O}, but got: {Response.Time:O}");
         return this;
     }
@@ -34,7 +34,7 @@ public class GetTimeVerification : ResponseVerification<GetTimeResponse>
 
     public GetTimeVerification TimeIsAfter(DateTimeOffset time)
     {
-        Response.Time.ShouldBeGreaterThan(time, 
+        Response.Time.ShouldBeGreaterThan(time,
             $"Expected time to be after {time:O}, but was {Response.Time:O}");
         return this;
     }
@@ -47,7 +47,7 @@ public class GetTimeVerification : ResponseVerification<GetTimeResponse>
 
     public GetTimeVerification TimeIsBefore(DateTimeOffset time)
     {
-        Response.Time.ShouldBeLessThan(time, 
+        Response.Time.ShouldBeLessThan(time,
             $"Expected time to be before {time:O}, but was {Response.Time:O}");
         return this;
     }
@@ -60,9 +60,9 @@ public class GetTimeVerification : ResponseVerification<GetTimeResponse>
 
     public GetTimeVerification TimeIsBetween(DateTimeOffset start, DateTimeOffset end)
     {
-        Response.Time.ShouldBeGreaterThanOrEqualTo(start, 
+        Response.Time.ShouldBeGreaterThanOrEqualTo(start,
             $"Expected time to be at or after {start:O}, but was {Response.Time:O}");
-        Response.Time.ShouldBeLessThanOrEqualTo(end, 
+        Response.Time.ShouldBeLessThanOrEqualTo(end,
             $"Expected time to be at or before {end:O}, but was {Response.Time:O}");
         return this;
     }

@@ -14,7 +14,7 @@ public class ShopUiDriver : IShopDriver
     private readonly PageNavigator _pageNavigator;
     private readonly IOrderDriver _orderDriver;
     private readonly ICouponDriver _couponDriver;
-    
+
     private HomePage? _homePage;
 
     private ShopUiDriver(ShopUiClient client, PageNavigator pageNavigator)
@@ -41,19 +41,19 @@ public class ShopUiDriver : IShopDriver
     public async Task<Result<VoidValue, SystemError>> GoToShop()
     {
         _homePage = await _client.OpenHomePageAsync();
-        
+
         if (!_client.IsStatusOk() || !await _client.IsPageLoadedAsync())
         {
             return Failure("Failed to load home page");
         }
-        
+
         _pageNavigator.SetCurrentPage(PageNavigator.Page.HOME);
-        
+
         return Success();
     }
 
     public IOrderDriver Orders() => _orderDriver;
-    
+
     public ICouponDriver Coupons() => _couponDriver;
 
     private async Task<HomePage> GetHomePageAsync()

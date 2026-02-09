@@ -36,6 +36,6 @@ public class TaxDsl : IDisposable
     }
 
     public GoToTax GoToTax() => new(_driver, _context);
-    public ReturnsTaxRate ReturnsTaxRate() => new(_driver, _context); 
+    public ReturnsTaxRate ReturnsTaxRate() => new(_driver, _context);
     public GetTaxRate GetTaxRate() => new(_driver, _context);
 }

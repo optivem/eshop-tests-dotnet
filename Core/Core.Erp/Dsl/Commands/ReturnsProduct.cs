@@ -12,7 +12,7 @@ public class ReturnsProduct : BaseErpCommand<VoidValue, VoidVerification>
     private string? _skuParamAlias;
     private string? _unitPrice;
 
-    public ReturnsProduct(IErpDriver driver, UseCaseContext context) 
+    public ReturnsProduct(IErpDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -47,8 +47,8 @@ public class ReturnsProduct : BaseErpCommand<VoidValue, VoidVerification>
         var result = await _driver.ReturnsProduct(request);
 
         return new ErpUseCaseResult<VoidValue, VoidVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }

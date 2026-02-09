@@ -11,7 +11,7 @@ public class GetTaxRate : BaseTaxCommand<GetTaxResponse, GetTaxVerification>
 {
     private string? country;
 
-    public GetTaxRate(ITaxDriver driver, UseCaseContext context) 
+    public GetTaxRate(ITaxDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -25,12 +25,12 @@ public class GetTaxRate : BaseTaxCommand<GetTaxResponse, GetTaxVerification>
     public override async Task<TaxUseCaseResult<GetTaxResponse, GetTaxVerification>> Execute()
     {
         var countryValue = _context.GetParamValueOrLiteral(country);
-        
+
         var result = await _driver.GetTaxRate(countryValue);
-        
+
         return new TaxUseCaseResult<GetTaxResponse, GetTaxVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new GetTaxVerification(response, ctx));
     }
 }

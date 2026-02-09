@@ -6,7 +6,7 @@ namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.Verifications;
 
 public class PlaceOrderVerification : ResponseVerification<PlaceOrderResponse>
 {
-    public PlaceOrderVerification(PlaceOrderResponse response, UseCaseContext context) 
+    public PlaceOrderVerification(PlaceOrderResponse response, UseCaseContext context)
         : base(response, context)
     {
     }
@@ -15,9 +15,9 @@ public class PlaceOrderVerification : ResponseVerification<PlaceOrderResponse>
     {
         var expectedOrderNumber = Context.GetResultValue(orderNumberResultAlias);
         var actualOrderNumber = Response.OrderNumber;
-        
+
         actualOrderNumber.ShouldBe(expectedOrderNumber, $"Expected order number to be '{expectedOrderNumber}', but was '{actualOrderNumber}'");
-        
+
         return this;
     }
 

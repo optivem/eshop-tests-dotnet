@@ -36,8 +36,8 @@ public class ClockDsl : IDisposable
     }
 
     public GoToClock GoToClock() => new(_driver, _context);
-    
+
     public ReturnsTime ReturnsTime() => new(_driver, _context);
-    
+
     public GetTime GetTime() => new(_driver, _context);
 }

@@ -4,7 +4,7 @@ using Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.Commands.Base;
 
-public abstract class BaseClockCommand<TResponse, TVerification> 
+public abstract class BaseClockCommand<TResponse, TVerification>
     where TVerification : ResponseVerification<TResponse>
 {
     protected readonly IClockDriver _driver;

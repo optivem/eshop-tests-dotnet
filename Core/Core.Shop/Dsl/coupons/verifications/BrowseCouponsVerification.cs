@@ -47,7 +47,7 @@ public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsRespo
     public BrowseCouponsVerification CouponHasUsageLimit(string couponCodeAlias, int expectedUsageLimit)
     {
         var coupon = FindCouponByCode(couponCodeAlias);
-        
+
         coupon.UsageLimit.ShouldBe(expectedUsageLimit, $"Expected coupon '{couponCodeAlias}' to have usage limit {expectedUsageLimit}");
         return this;
     }
@@ -68,9 +68,9 @@ public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsRespo
         var couponCode = Context.GetParamValue(couponCodeAlias);
 
         var coupon = Response.Coupons.FirstOrDefault(c => string.Equals(couponCode, c.Code));
-        
+
         coupon.ShouldNotBeNull($"Coupon with code '{couponCode}' not found. Available coupons: [{string.Join(", ", Response.Coupons.Select(c => c.Code))}]");
-        
+
         return coupon;
     }
 }

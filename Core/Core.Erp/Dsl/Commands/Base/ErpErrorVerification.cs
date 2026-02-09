@@ -6,7 +6,7 @@ namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.Commands.Base;
 
 public class ErpErrorVerification : ResponseVerification<ErpErrorResponse>
 {
-    public ErpErrorVerification(ErpErrorResponse error, UseCaseContext context) 
+    public ErpErrorVerification(ErpErrorResponse error, UseCaseContext context)
         : base(error, context)
     {
     }
@@ -16,10 +16,10 @@ public class ErpErrorVerification : ResponseVerification<ErpErrorResponse>
         var expandedExpectedMessage = Context.ExpandAliases(expectedMessage);
         var error = Response;
         var errorMessage = error.Message;
-        
-        errorMessage.ShouldBe(expandedExpectedMessage, 
+
+        errorMessage.ShouldBe(expandedExpectedMessage,
             $"Expected error message: '{expandedExpectedMessage}', but got: '{errorMessage}'");
-        
+
         return this;
     }
 }

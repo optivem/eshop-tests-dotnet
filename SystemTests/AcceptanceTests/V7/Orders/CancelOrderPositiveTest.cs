@@ -31,7 +31,7 @@ public class CancelOrderPositiveTest : BaseAcceptanceTest
             .Given().Order()
             .When().CancelOrder()
             .Then().ShouldSucceed();
-        
+
         var orderBuilder = await successBuilder.And().Order();
         await orderBuilder.HasStatus(OrderStatus.Cancelled);
     }

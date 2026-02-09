@@ -4,10 +4,10 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.Commands.Base;
 
 namespace Dsl.Gherkin
 {
-    public class ExecutionResult<TSuccessResponse, TSuccessVerification> 
+    public class ExecutionResult<TSuccessResponse, TSuccessVerification>
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
-        internal ExecutionResult(ShopUseCaseResult<TSuccessResponse, TSuccessVerification> result, 
+        internal ExecutionResult(ShopUseCaseResult<TSuccessResponse, TSuccessVerification> result,
             string? orderNumber, string? couponCode)
         {
             if (result == null)

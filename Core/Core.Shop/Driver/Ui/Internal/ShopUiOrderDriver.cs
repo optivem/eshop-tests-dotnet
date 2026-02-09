@@ -11,7 +11,7 @@ public class ShopUiOrderDriver : IOrderDriver
 {
     private readonly Func<Task<HomePage>> _homePageSupplier;
     private readonly PageNavigator _pageNavigator;
-    
+
     private NewOrderPage? _newOrderPage;
     private OrderHistoryPage? _orderHistoryPage;
     private OrderDetailsPage? _orderDetailsPage;
@@ -163,19 +163,19 @@ public class ShopUiOrderDriver : IOrderDriver
     private async Task<Result<VoidValue, SystemError>> EnsureOnOrderDetailsPageAsync(string? orderNumber)
     {
         await EnsureOnOrderHistoryPageAsync();
-        
+
         await _orderHistoryPage!.InputOrderNumberAsync(orderNumber);
         await _orderHistoryPage.ClickSearchAsync();
-        
+
         var isOrderListed = await _orderHistoryPage.IsOrderListedAsync(orderNumber);
         if (!isOrderListed)
         {
             return Failure("Order " + orderNumber + " does not exist.");
         }
-        
+
         _orderDetailsPage = await _orderHistoryPage.ClickViewOrderDetailsAsync(orderNumber);
         _pageNavigator.SetCurrentPage(PageNavigator.Page.ORDER_DETAILS);
-        
+
         return Success();
     }
 }

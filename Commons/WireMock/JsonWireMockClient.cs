@@ -111,7 +111,7 @@ public class JsonWireMockClient : IDisposable
             var content = new StringContent(requestJson, System.Text.Encoding.UTF8, ApplicationJson);
 
             var apiResponse = await _httpClient.PostAsync($"{_wireMockBaseUrl}/__admin/mappings", content);
-            
+
             if (apiResponse.IsSuccessStatusCode)
             {
                 return Result<VoidValue, string>.Success(VoidValue.Empty);

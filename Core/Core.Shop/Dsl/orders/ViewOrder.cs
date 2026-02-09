@@ -12,7 +12,7 @@ public class ViewOrder : BaseShopCommand<ViewOrderResponse, ViewOrderVerificatio
 {
     private string? _orderNumberResultAlias;
 
-    public ViewOrder(IShopDriver driver, UseCaseContext context) 
+    public ViewOrder(IShopDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -28,10 +28,10 @@ public class ViewOrder : BaseShopCommand<ViewOrderResponse, ViewOrderVerificatio
         var orderNumber = _context.GetResultValue(_orderNumberResultAlias);
 
         var result = await _driver.Orders().ViewOrder(orderNumber);
-        
+
         return new ShopUseCaseResult<ViewOrderResponse, ViewOrderVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new ViewOrderVerification(response, ctx));
     }
 }

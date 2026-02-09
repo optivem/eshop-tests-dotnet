@@ -11,7 +11,7 @@ public class UseCaseResult<TSuccessResponse, TFailureResponse, TSuccessVerificat
 
     public UseCaseResult(
         Result<TSuccessResponse, TFailureResponse> result,
-        UseCaseContext context, 
+        UseCaseContext context,
         Func<TSuccessResponse, UseCaseContext, TSuccessVerification> successVerificationFactory,
         Func<TFailureResponse, UseCaseContext, TFailureVerification> failureVerificationFactory)
     {

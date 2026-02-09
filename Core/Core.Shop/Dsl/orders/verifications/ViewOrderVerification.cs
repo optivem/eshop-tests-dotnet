@@ -9,7 +9,7 @@ namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.Verifications;
 
 public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 {
-    public ViewOrderVerification(ViewOrderResponse response, UseCaseContext context) 
+    public ViewOrderVerification(ViewOrderResponse response, UseCaseContext context)
         : base(response, context)
     {
     }
@@ -17,7 +17,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     public ViewOrderVerification OrderNumber(string orderNumberResultAlias)
     {
         var expectedOrderNumber = Context.GetResultValue(orderNumberResultAlias);
-        Response.OrderNumber.ShouldBe(expectedOrderNumber, 
+        Response.OrderNumber.ShouldBe(expectedOrderNumber,
             $"Expected order number to be '{expectedOrderNumber}', but was '{Response.OrderNumber}'");
         return this;
     }
@@ -25,14 +25,14 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     public ViewOrderVerification Sku(string skuParamAlias)
     {
         var expectedSku = Context.GetParamValue(skuParamAlias);
-        Response.Sku.ShouldBe(expectedSku, 
+        Response.Sku.ShouldBe(expectedSku,
             $"Expected SKU to be '{expectedSku}', but was '{Response.Sku}'");
         return this;
     }
 
     public ViewOrderVerification Quantity(int expectedQuantity)
     {
-        Response.Quantity.ShouldBe(expectedQuantity, 
+        Response.Quantity.ShouldBe(expectedQuantity,
             $"Expected quantity: {expectedQuantity}, but got: {Response.Quantity}");
         return this;
     }
@@ -44,7 +44,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 
     public ViewOrderVerification Status(OrderStatus expectedStatus)
     {
-        Response.Status.ShouldBe(expectedStatus, 
+        Response.Status.ShouldBe(expectedStatus,
             $"Expected status: {expectedStatus}, but got: {Response.Status}");
         return this;
     }
@@ -56,7 +56,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 
     public ViewOrderVerification Country(string expectedCountry)
     {
-        Response.Country.ShouldBe(expectedCountry, 
+        Response.Country.ShouldBe(expectedCountry,
             $"Expected country: '{expectedCountry}', but got: '{Response.Country}'");
         return this;
     }
@@ -75,7 +75,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 
     public ViewOrderVerification UnitPriceGreaterThanZero()
     {
-        Response.UnitPrice.ShouldBeGreaterThan(0m, 
+        Response.UnitPrice.ShouldBeGreaterThan(0m,
             $"Unit price should be positive, but was: {Response.UnitPrice}");
         return this;
     }
@@ -94,42 +94,42 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 
     public ViewOrderVerification SubtotalPriceGreaterThanZero()
     {
-        Response.SubtotalPrice.ShouldBeGreaterThan(0m, 
+        Response.SubtotalPrice.ShouldBeGreaterThan(0m,
             $"Subtotal price should be positive, but was: {Response.SubtotalPrice}");
         return this;
     }
 
     public ViewOrderVerification DiscountRateGreaterThanOrEqualToZero()
     {
-        Response.DiscountRate.ShouldBeGreaterThanOrEqualTo(0m, 
+        Response.DiscountRate.ShouldBeGreaterThanOrEqualTo(0m,
             $"Discount rate should be non-negative, but was: {Response.DiscountRate}");
         return this;
     }
 
     public ViewOrderVerification DiscountAmountGreaterThanOrEqualToZero()
     {
-        Response.DiscountAmount.ShouldBeGreaterThanOrEqualTo(0m, 
+        Response.DiscountAmount.ShouldBeGreaterThanOrEqualTo(0m,
             $"Discount amount should be non-negative, but was: {Response.DiscountAmount}");
         return this;
     }
 
     public ViewOrderVerification TaxRateGreaterThanOrEqualToZero()
     {
-        Response.TaxRate.ShouldBeGreaterThanOrEqualTo(0m, 
+        Response.TaxRate.ShouldBeGreaterThanOrEqualTo(0m,
             $"Tax rate should be non-negative, but was: {Response.TaxRate}");
         return this;
     }
 
     public ViewOrderVerification TaxAmountGreaterThanOrEqualToZero()
     {
-        Response.TaxAmount.ShouldBeGreaterThanOrEqualTo(0m, 
+        Response.TaxAmount.ShouldBeGreaterThanOrEqualTo(0m,
             $"Tax amount should be non-negative, but was: {Response.TaxAmount}");
         return this;
     }
 
     public ViewOrderVerification TotalPriceGreaterThanZero()
     {
-        Response.TotalPrice.ShouldBeGreaterThan(0m, 
+        Response.TotalPrice.ShouldBeGreaterThan(0m,
             $"Total price should be positive, but was: {Response.TotalPrice}");
         return this;
     }
@@ -137,7 +137,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     // Base Price Methods
     public ViewOrderVerification BasePrice(decimal expectedBasePrice)
     {
-        Response.BasePrice.ShouldBe(expectedBasePrice, 
+        Response.BasePrice.ShouldBe(expectedBasePrice,
             $"Expected base price to be {expectedBasePrice}, but was {Response.BasePrice}");
         return this;
     }
@@ -149,7 +149,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 
     public ViewOrderVerification BasePriceGreaterThanZero()
     {
-        Response.BasePrice.ShouldBeGreaterThan(0m, 
+        Response.BasePrice.ShouldBeGreaterThan(0m,
             $"Base price should be positive, but was: {Response.BasePrice}");
         return this;
     }
@@ -157,7 +157,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     // Discount Rate Methods
     public ViewOrderVerification DiscountRate(decimal expectedDiscountRate)
     {
-        Response.DiscountRate.ShouldBe(expectedDiscountRate, 
+        Response.DiscountRate.ShouldBe(expectedDiscountRate,
             $"Expected discount rate to be {expectedDiscountRate}, but was {Response.DiscountRate}");
         return this;
     }
@@ -170,7 +170,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     // Discount Amount Methods  
     public ViewOrderVerification DiscountAmount(decimal expectedDiscountAmount)
     {
-        Response.DiscountAmount.ShouldBe(expectedDiscountAmount, 
+        Response.DiscountAmount.ShouldBe(expectedDiscountAmount,
             $"Expected discount amount to be {expectedDiscountAmount}, but was {Response.DiscountAmount}");
         return this;
     }
@@ -183,7 +183,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     // Tax Rate Methods
     public ViewOrderVerification TaxRate(decimal expectedTaxRate)
     {
-        Response.TaxRate.ShouldBe(expectedTaxRate, 
+        Response.TaxRate.ShouldBe(expectedTaxRate,
             $"Expected tax rate to be {expectedTaxRate}, but was {Response.TaxRate}");
         return this;
     }
@@ -196,7 +196,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     // Tax Amount Methods
     public ViewOrderVerification TaxAmount(decimal expectedTaxAmount)
     {
-        Response.TaxAmount.ShouldBe(expectedTaxAmount, 
+        Response.TaxAmount.ShouldBe(expectedTaxAmount,
             $"Expected tax amount to be {expectedTaxAmount}, but was {Response.TaxAmount}");
         return this;
     }
@@ -209,7 +209,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     // Total Price Methods
     public ViewOrderVerification TotalPrice(decimal expectedTotalPrice)
     {
-        Response.TotalPrice.ShouldBe(expectedTotalPrice, 
+        Response.TotalPrice.ShouldBe(expectedTotalPrice,
             $"Expected total price to be {expectedTotalPrice}, but was {Response.TotalPrice}");
         return this;
     }
@@ -223,7 +223,7 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
     public ViewOrderVerification AppliedCouponCode(string expectedCouponCodeAlias)
     {
         var expectedCouponCode = Context.GetParamValue(expectedCouponCodeAlias);
-        Response.AppliedCouponCode.ShouldBe(expectedCouponCode, 
+        Response.AppliedCouponCode.ShouldBe(expectedCouponCode,
             $"Expected applied coupon code to be '{expectedCouponCode}', but was '{Response.AppliedCouponCode}'");
         return this;
     }

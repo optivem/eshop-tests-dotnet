@@ -12,7 +12,7 @@ public class ReturnsTaxRate : BaseTaxCommand<VoidValue, VoidVerification>
     private string? countryAlias;
     private string? taxRate;
 
-    public ReturnsTaxRate(ITaxDriver driver, UseCaseContext context) 
+    public ReturnsTaxRate(ITaxDriver driver, UseCaseContext context)
         : base(driver, context)
     {
     }
@@ -45,10 +45,10 @@ public class ReturnsTaxRate : BaseTaxCommand<VoidValue, VoidVerification>
         };
 
         var result = await _driver.ReturnsTaxRate(request);
-        
+
         return new TaxUseCaseResult<VoidValue, VoidVerification>(
-            result, 
-            _context, 
+            result,
+            _context,
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }

@@ -62,9 +62,9 @@ public class CancelOrderNegativeTest : BaseAcceptanceTest
             .And().Order().WithStatus(OrderStatus.Placed)
             .When().CancelOrder()
             .Then().ShouldFail();
-        
+
         failBuilder.ErrorMessage("Order cancellation is not allowed on December 31st between 22:00 and 23:00");
-        
+
         var orderBuilder = await failBuilder.And().Order();
         await orderBuilder.HasStatus(OrderStatus.Placed);
     }

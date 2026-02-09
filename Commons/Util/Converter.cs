@@ -65,7 +65,7 @@ public static class Converter
         }
 
         // Try ISO format first
-        if (DateTime.TryParse(text, System.Globalization.CultureInfo.InvariantCulture, 
+        if (DateTime.TryParse(text, System.Globalization.CultureInfo.InvariantCulture,
             System.Globalization.DateTimeStyles.RoundtripKind, out var isoResult))
         {
             return isoResult;
