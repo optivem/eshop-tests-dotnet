@@ -6,15 +6,15 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.Verifications;
 
 namespace Dsl.Gherkin.Then;
 
-public abstract class BaseThenAssertionCoupon<TSuccessResponse, TSuccessVerification, TDerived>
+public abstract class BaseThenCouponVerifier<TSuccessResponse, TSuccessVerification, TDerived>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
-    where TDerived : BaseThenAssertionCoupon<TSuccessResponse, TSuccessVerification, TDerived>
+    where TDerived : BaseThenCouponVerifier<TSuccessResponse, TSuccessVerification, TDerived>
 {
     protected readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
     protected readonly Func<Task<string>> _couponCodeFactory;
     protected readonly List<Action<BrowseCouponsVerification, string>> _verifications = [];
 
-    protected BaseThenAssertionCoupon(
+    protected BaseThenCouponVerifier(
         ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
         Func<Task<string>> couponCodeFactory)
     {

@@ -7,19 +7,19 @@ namespace Dsl.Gherkin.Then;
 /// Deferred success assertion builder - allows chaining .And().Order().HasStatus(...) before awaiting.
 /// Enables fluent syntax: await Scenario(...).Then().ShouldSucceed().And().Order().HasStatus(...);
 /// </summary>
-public class ThenSuccessAssertion<TSuccessResponse, TSuccessVerification>
+public class ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
 
-    internal ThenSuccessAssertion(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    internal ThenSuccessVerifier(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }
 
-    public ThenSuccessAssertionAnd<TSuccessResponse, TSuccessVerification> And()
+    public ThenSuccessAndVerifier<TSuccessResponse, TSuccessVerification> And()
     {
-        return new ThenSuccessAssertionAnd<TSuccessResponse, TSuccessVerification>(_thenClause);
+        return new ThenSuccessAndVerifier<TSuccessResponse, TSuccessVerification>(_thenClause);
     }
 
     /// <summary>

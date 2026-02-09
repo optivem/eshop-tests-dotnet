@@ -3,11 +3,11 @@ using Dsl.Gherkin;
 
 namespace Dsl.Gherkin.Then;
 
-public class ThenSuccessAssertionOrder<TSuccessResponse, TSuccessVerification>
-    : BaseThenAssertionOrder<TSuccessResponse, TSuccessVerification, ThenSuccessAssertionOrder<TSuccessResponse, TSuccessVerification>>
+public class ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>
+    : BaseThenOrderVerifier<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
-    internal ThenSuccessAssertionOrder(
+    internal ThenSuccessOrderVerifier(
         ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
         Func<Task<string>> orderNumberFactory)
         : base(thenClause, orderNumberFactory)

@@ -8,24 +8,24 @@ namespace Dsl.Gherkin.Then;
 /// Deferred failure assertion - allows chaining ErrorMessage/FieldErrorMessage before awaiting.
 /// Enables fluent syntax: await Scenario(...).Then().ShouldFail().ErrorMessage("...").FieldErrorMessage("...");
 /// </summary>
-public class ThenFailureAssertion<TSuccessResponse, TSuccessVerification>
+public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
     private readonly List<Action<SystemErrorFailureVerification>> _assertions = [];
 
-    internal ThenFailureAssertion(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    internal ThenFailureVerifier(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }
 
-    public ThenFailureAssertion<TSuccessResponse, TSuccessVerification> ErrorMessage(string expectedMessage)
+    public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> ErrorMessage(string expectedMessage)
     {
         _assertions.Add(v => v.ErrorMessage(expectedMessage));
         return this;
     }
 
-    public ThenFailureAssertion<TSuccessResponse, TSuccessVerification> FieldErrorMessage(string expectedField, string expectedMessage)
+    public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> FieldErrorMessage(string expectedField, string expectedMessage)
     {
         _assertions.Add(v => v.FieldErrorMessage(expectedField, expectedMessage));
         return this;
@@ -35,9 +35,9 @@ public class ThenFailureAssertion<TSuccessResponse, TSuccessVerification>
     /// Returns the failure assertion and for further chaining (e.g. .And().Order().HasStatus(...)).
     /// Enables fluent syntax: await Scenario(...).Then().ShouldFail().ErrorMessage("...").And().Order().HasStatus(...);
     /// </summary>
-    public ThenFailureAssertionAnd<TSuccessResponse, TSuccessVerification> And()
+    public ThenFailureAndVerifier<TSuccessResponse, TSuccessVerification> And()
     {
-        return new ThenFailureAssertionAnd<TSuccessResponse, TSuccessVerification>(_thenClause, _assertions);
+        return new ThenFailureAndVerifier<TSuccessResponse, TSuccessVerification>(_thenClause, _assertions);
     }
 
     public TaskAwaiter GetAwaiter() => ExecuteAssertions().GetAwaiter();

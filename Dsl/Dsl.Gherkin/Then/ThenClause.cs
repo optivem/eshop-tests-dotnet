@@ -19,14 +19,14 @@ namespace Dsl.Gherkin.Then
             _lazyExecute = lazyExecute;
         }
 
-        public ThenSuccessAssertion<TSuccessResponse, TSuccessVerification> ShouldSucceed()
+        public ThenSuccessVerifier<TSuccessResponse, TSuccessVerification> ShouldSucceed()
         {
-            return new ThenSuccessAssertion<TSuccessResponse, TSuccessVerification>(this);
+            return new ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>(this);
         }
 
-        public ThenFailureAssertion<TSuccessResponse, TSuccessVerification> ShouldFail()
+        public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> ShouldFail()
         {
-            return new ThenFailureAssertion<TSuccessResponse, TSuccessVerification>(this);
+            return new ThenFailureVerifier<TSuccessResponse, TSuccessVerification>(this);
         }
 
         internal SystemDsl App => _app;

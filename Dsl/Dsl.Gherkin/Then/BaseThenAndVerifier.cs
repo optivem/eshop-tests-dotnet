@@ -2,13 +2,13 @@ using Commons.Dsl;
 
 namespace Dsl.Gherkin.Then;
 
-public abstract class BaseThenAssertionAnd<TSuccessResponse, TSuccessVerification, TOrderAssertion>
+public abstract class BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, TOrderAssertion>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
-    where TOrderAssertion : BaseThenAssertionOrder<TSuccessResponse, TSuccessVerification, TOrderAssertion>
+    where TOrderAssertion : BaseThenOrderVerifier<TSuccessResponse, TSuccessVerification, TOrderAssertion>
 {
     protected readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
 
-    protected BaseThenAssertionAnd(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    protected BaseThenAndVerifier(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }
