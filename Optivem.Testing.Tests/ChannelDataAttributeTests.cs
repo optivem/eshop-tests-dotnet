@@ -91,23 +91,18 @@ public class ChannelDataAttributeTests
         string value,
         string message)
     {
-        // Arrange & Act
-        var channelType = channel.Type;
+        AssertCartesianProduct(channel, value, message);
+    }
 
-        // Assert
-        channelType.ShouldBeOneOf("UI", "API");
+    private static void AssertCartesianProduct(Channel channel, string value, string message)
+    {
+        channel.Type.ShouldBeOneOf("UI", "API");
         value.ShouldBeOneOf("value1", "value2");
         message.ShouldBeOneOf("message1", "message2");
-
-        // Verify the pairing
         if (value == "value1")
-        {
             message.ShouldBe("message1");
-        }
         else if (value == "value2")
-        {
             message.ShouldBe("message2");
-        }
     }
 
     [Theory]
@@ -155,23 +150,7 @@ public class ChannelDataAttributeTests
         string value,
         string message)
     {
-        // Arrange & Act
-        var channelType = channel.Type;
-
-        // Assert
-        channelType.ShouldBeOneOf("UI", "API");
-        value.ShouldBeOneOf("value1", "value2");
-        message.ShouldBeOneOf("message1", "message2");
-
-        // Verify the pairing
-        if (value == "value1")
-        {
-            message.ShouldBe("message1");
-        }
-        else if (value == "value2")
-        {
-            message.ShouldBe("message2");
-        }
+        AssertCartesianProduct(channel, value, message);
     }
 
     #endregion
