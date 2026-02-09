@@ -17,9 +17,7 @@ public class BrowseCoupons : BaseShopCommand<BrowseCouponsResponse, BrowseCoupon
 
     public override async Task<ShopUseCaseResult<BrowseCouponsResponse, BrowseCouponsVerification>> Execute()
     {
-        var request = new BrowseCouponsRequest();
-
-        var result = await _driver.Coupons().BrowseCoupons(request);
+        var result = await _driver.Coupons().BrowseCoupons();
 
         return new ShopUseCaseResult<BrowseCouponsResponse, BrowseCouponsVerification>(
             result,

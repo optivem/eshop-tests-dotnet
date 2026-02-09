@@ -20,7 +20,7 @@ public class ShopApiCouponDriver : ICouponDriver
         => _apiClient.Coupons().PublishCoupon(request)
             .MapErrorAsync(SystemError.From);
 
-    public Task<Result<BrowseCouponsResponse, SystemError>> BrowseCoupons(BrowseCouponsRequest request)
-        => _apiClient.Coupons().BrowseCoupons(request)
+    public Task<Result<BrowseCouponsResponse, SystemError>> BrowseCoupons()
+        => _apiClient.Coupons().BrowseCoupons()
             .MapErrorAsync(SystemError.From);
 }

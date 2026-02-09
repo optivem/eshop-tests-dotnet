@@ -19,6 +19,6 @@ public class CouponController
     public Task<Result<VoidValue, ProblemDetailResponse>> PublishCoupon(PublishCouponRequest request)
         => _httpClient.Post(Endpoint, request);
 
-    public Task<Result<BrowseCouponsResponse, ProblemDetailResponse>> BrowseCoupons(BrowseCouponsRequest request)
+    public Task<Result<BrowseCouponsResponse, ProblemDetailResponse>> BrowseCoupons()
         => _httpClient.Get<BrowseCouponsResponse>(Endpoint);
 }
