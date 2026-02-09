@@ -8,7 +8,7 @@ namespace Optivem.EShop.SystemTest.E2eTests.Commons.Providers;
 /// Provides test arguments for empty quantity validation tests.
 /// </summary>
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
-public class EmptyArgumentsProvider : DataAttribute
+public class EmptyArgumentsProviderAttribute : DataAttribute
 {
     public override IEnumerable<object[]> GetData(System.Reflection.MethodInfo testMethod)
     {

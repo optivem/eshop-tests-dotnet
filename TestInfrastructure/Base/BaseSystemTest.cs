@@ -11,7 +11,7 @@ namespace Optivem.EShop.SystemTest.Base;
 [Obsolete("Use BaseScenarioTest or BaseSystemDslTest instead")]
 public abstract class BaseSystemTest : BaseConfigurableTest, IAsyncDisposable
 {
-    protected SystemDsl _app { get; private set; } = null!;
+    protected SystemDsl _app { get; private set; }
     private readonly ScenarioDslFactory _scenarioFactory;
 
     protected BaseSystemTest()

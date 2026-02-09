@@ -100,6 +100,13 @@ namespace Dsl.Gherkin.Then
             return this;
         }
 
+        public async Task<ThenOrderBuilder<TSuccessResponse, TSuccessVerification>> HasTotalPrice(string expectedTotalPrice)
+        {
+            var verification = await GetOrderVerification();
+            verification.TotalPrice(expectedTotalPrice);
+            return this;
+        }
+
         public async Task<ThenOrderBuilder<TSuccessResponse, TSuccessVerification>> HasStatus(OrderStatus expectedStatus)
         {
             var verification = await GetOrderVerification();
@@ -193,13 +200,6 @@ namespace Dsl.Gherkin.Then
         {
             var verification = await GetOrderVerification();
             verification.TaxAmountGreaterThanOrEqualToZero();
-            return this;
-        }
-
-        public async Task<ThenOrderBuilder<TSuccessResponse, TSuccessVerification>> HasTotalPrice(string expectedTotalPrice)
-        {
-            var verification = await GetOrderVerification();
-            verification.TotalPrice(expectedTotalPrice);
             return this;
         }
 
