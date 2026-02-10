@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Optivem.Testing" Version="1.0.4" />
+    <ProjectReference Include="..\..\..\optivem-testing-dotnet\Optivem.Testing\Optivem.Testing.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
   </ItemGroup>
 
