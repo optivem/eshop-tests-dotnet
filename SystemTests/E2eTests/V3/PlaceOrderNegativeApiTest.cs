@@ -1,0 +1,45 @@
+using Commons.Util;
+using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
+using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
+using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
+using Optivem.EShop.SystemTest.Base.V3;
+using Shouldly;
+using Xunit;
+
+namespace Optivem.EShop.SystemTest.E2eTests.V3;
+
+public class PlaceOrderNegativeApiTest : PlaceOrderNegativeBaseTest
+{
+    protected override Task SetShopDriverAsync()
+    {
+        SetUpShopApiDriver();
+        return Task.CompletedTask;
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithNullQuantity()
+    {
+        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Country = Defaults.COUNTRY, Quantity = null };
+        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        result.ShouldBeFailure();
+        result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithNullSku()
+    {
+        var request = new PlaceOrderRequest { Sku = null, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
+        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        result.ShouldBeFailure();
+        result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithNullCountry()
+    {
+        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = null };
+        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        result.ShouldBeFailure();
+        result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
+    }
+}
