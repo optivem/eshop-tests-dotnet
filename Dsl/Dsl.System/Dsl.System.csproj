@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Optivem.Testing" Version="1.0.5" />
     <PackageReference Include="Shouldly" Version="4.3.0" />
   </ItemGroup>
 
@@ -16,7 +17,6 @@
     <ProjectReference Include="..\..\Core\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="..\..\Core\Core.Shop\Core.Shop.csproj" />
     <ProjectReference Include="..\..\Core\Core.Tax\Core.Tax.csproj" />
-    <ProjectReference Include="..\..\..\optivem-testing-dotnet\Optivem.Testing\Optivem.Testing.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
   </ItemGroup>
 

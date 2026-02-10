@@ -23,10 +23,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Optivem.Testing" Version="1.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\optivem-testing-dotnet\Optivem.Testing\Optivem.Testing.csproj" />
     <ProjectReference Include="..\..\TestInfrastructure\TestInfrastructure.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
   </ItemGroup>
