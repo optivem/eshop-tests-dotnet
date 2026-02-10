@@ -17,8 +17,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithInvalidQuantity(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "invalid-quantity", Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -31,8 +30,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithNonExistentSku(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = "NON-EXISTENT-SKU-12345", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -45,8 +43,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithNegativeQuantity(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "-10", Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -59,8 +56,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithZeroQuantity(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = "ANOTHER-SKU-67890", Quantity = "0", Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -74,8 +70,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelMemberData(nameof(EmptyValues))]
     public async Task ShouldRejectOrderWithEmptySku(Channel channel, string sku)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = sku, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -89,8 +84,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelMemberData(nameof(EmptyValues))]
     public async Task ShouldRejectOrderWithEmptyQuantity(Channel channel, string emptyQuantity)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = emptyQuantity, Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -105,8 +99,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelInlineData("lala")]
     public async Task ShouldRejectOrderWithNonIntegerQuantity(Channel channel, string nonIntegerQuantity)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = nonIntegerQuantity, Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -120,8 +113,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelMemberData(nameof(EmptyValues))]
     public async Task ShouldRejectOrderWithEmptyCountry(Channel channel, string emptyCountry)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = emptyCountry };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -136,8 +128,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelInlineData("InvalidCountry")]
     public async Task ShouldRejectOrderWithInvalidCountry(Channel channel, string invalidCountry)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
         (await _erpDriver!.ReturnsProduct(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
@@ -153,8 +144,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.API)]
     public async Task ShouldRejectOrderWithNullQuantity(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Country = Defaults.COUNTRY, Quantity = null };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -167,8 +157,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.API)]
     public async Task ShouldRejectOrderWithNullSku(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = null, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrder(request);
@@ -181,8 +170,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     [ChannelData(ChannelType.API)]
     public async Task ShouldRejectOrderWithNullCountry(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = null };
         var result = await _shopDriver!.Orders().PlaceOrder(request);

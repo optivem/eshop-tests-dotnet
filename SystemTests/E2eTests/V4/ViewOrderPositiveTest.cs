@@ -16,8 +16,7 @@ public class ViewOrderPositiveTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldViewPlacedOrder(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
         (await _erpDriver!.ReturnsProduct(new ReturnsProductRequest { Sku = sku, Price = "25.00" })).ShouldBeSuccess();

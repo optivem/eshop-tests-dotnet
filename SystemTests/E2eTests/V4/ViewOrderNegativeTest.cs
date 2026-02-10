@@ -21,8 +21,7 @@ public class ViewOrderNegativeTest : BaseE2eTest
     [ChannelMemberData(nameof(NonExistentOrderValues))]
     public async Task ShouldNotBeAbleToViewNonExistentOrder(Channel channel, string orderNumber, string expectedErrorMessage)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var result = await _shopDriver!.Orders().ViewOrder(orderNumber);
 

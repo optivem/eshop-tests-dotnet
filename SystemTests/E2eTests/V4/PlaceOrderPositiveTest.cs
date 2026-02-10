@@ -16,8 +16,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldPlaceOrderWithCorrectSubtotalPrice(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
         (await _erpDriver!.ReturnsProduct(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
@@ -41,8 +40,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     [ChannelInlineData("99.99", "1", "99.99")]
     public async Task ShouldPlaceOrderWithCorrectSubtotalPriceParameterized(Channel channel, string unitPrice, string quantity, string expectedSubtotalPrice)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
         (await _erpDriver!.ReturnsProduct(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = unitPrice }))
@@ -62,8 +60,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldPlaceOrder(Channel channel)
     {
-        ChannelContext.Set(channel.Type);
-        await InitializeAsync();
+        await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
         (await _erpDriver!.ReturnsProduct(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
