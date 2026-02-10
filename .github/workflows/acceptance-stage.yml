@@ -11,10 +11,6 @@ on:
         default: false
         type: boolean
 
-concurrency:
-  group: acceptance-stage
-  cancel-in-progress: true
-
 jobs:
 
   find-latest-images:
