@@ -158,6 +158,12 @@ jobs:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: real
 
+      - name: Run E2E Tests - No Channel (v1, v2, v3)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~E2eTests.V1|FullyQualifiedName~E2eTests.V2|FullyQualifiedName~E2eTests.V3"
+        working-directory: ./SystemTests/E2eTests
+        env:
+          ENVIRONMENT: acceptance
+
       - name: Run E2E Tests - API Channel
         run: dotnet test --no-build --configuration Release --verbosity normal
         working-directory: ./SystemTests/E2eTests
