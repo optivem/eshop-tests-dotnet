@@ -38,7 +38,7 @@ public class ViewOrderPositiveApiTest : BaseE2eTest
         order.GetProperty("quantity").GetInt32().ShouldBe(5);
         order.GetProperty("unitPrice").GetDecimal().ShouldBe(20.00m);
         order.GetProperty("subtotalPrice").GetDecimal().ShouldBe(100.00m);
-        order.GetProperty("status").GetString().ShouldBe("Placed");
+        order.GetProperty("status").GetString().ShouldBe("PLACED");
         order.GetProperty("discountRate").GetDecimal().ShouldBeGreaterThanOrEqualTo(0);
         order.GetProperty("discountAmount").GetDecimal().ShouldBeGreaterThanOrEqualTo(0);
         order.GetProperty("taxRate").GetDecimal().ShouldBeGreaterThanOrEqualTo(0);
