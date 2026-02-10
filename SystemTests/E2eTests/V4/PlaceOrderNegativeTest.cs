@@ -6,6 +6,7 @@ using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V4.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
 using Optivem.Testing;
+using E2eTests.Providers;
 using Shouldly;
 using Xunit;
 
@@ -67,7 +68,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    [ChannelMemberData(nameof(EmptyValues))]
+    [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptySku(Channel channel, string sku)
     {
         await SetChannelAsync(channel);
@@ -81,7 +82,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    [ChannelMemberData(nameof(EmptyValues))]
+    [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptyQuantity(Channel channel, string emptyQuantity)
     {
         await SetChannelAsync(channel);
@@ -110,7 +111,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    [ChannelMemberData(nameof(EmptyValues))]
+    [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptyCountry(Channel channel, string emptyCountry)
     {
         await SetChannelAsync(channel);
@@ -177,11 +178,5 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
-    }
-
-    public static IEnumerable<object[]> EmptyValues()
-    {
-        yield return new object[] { "" };
-        yield return new object[] { "   " };
     }
 }

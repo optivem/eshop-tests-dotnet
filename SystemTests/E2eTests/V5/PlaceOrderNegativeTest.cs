@@ -3,6 +3,7 @@ using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V5.Base;
 using Optivem.Testing;
+using E2eTests.Providers;
 using Shouldly;
 using Xunit;
 
@@ -10,12 +11,6 @@ namespace Optivem.EShop.SystemTest.E2eTests.V5;
 
 public class PlaceOrderNegativeTest : BaseE2eTest
 {
-    public static IEnumerable<object[]> EmptyValues()
-    {
-        yield return new object[] { "" };        // Empty string
-        yield return new object[] { "   " };     // Whitespace string
-    }
-
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldRejectOrderWithInvalidQuantity(Channel channel)
@@ -62,7 +57,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    [ChannelMemberData(nameof(EmptyValues))]
+    [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptySku(Channel channel, string sku)
     {
         var shop = await _app.Shop(channel);
@@ -74,7 +69,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    [ChannelMemberData(nameof(EmptyValues))]
+    [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptyQuantity(Channel channel, string emptyQuantity)
     {
         var shop = await _app.Shop(channel);
@@ -99,7 +94,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    [ChannelMemberData(nameof(EmptyValues))]
+    [ChannelClassData(typeof(EmptyArgumentsProvider))]
     public async Task ShouldRejectOrderWithEmptyCountry(Channel channel, string emptyCountry)
     {
         var shop = await _app.Shop(channel);
