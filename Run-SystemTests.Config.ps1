@@ -68,7 +68,7 @@ $Config = @{
         # E2E Tests
         @{  Id = "e2e-no-channel";
             Name = "E2E Tests - No Channel (v1, v2, v3)";
-            Command = "dotnet test -e ENVIRONMENT=local -e EXTERNAL_SYSTEM_MODE=real --filter \"FullyQualifiedName~E2eTests.V1|FullyQualifiedName~E2eTests.V2|FullyQualifiedName~E2eTests.V3\" --logger 'trx;LogFileName=testResults-noChannel.trx' --logger 'html;LogFileName=testResults-noChannel.html' --logger 'console;verbosity=detailed'";
+            Command = 'dotnet test -e ENVIRONMENT=local -e EXTERNAL_SYSTEM_MODE=real --filter "FullyQualifiedName~E2eTests.V1|FullyQualifiedName~E2eTests.V2|FullyQualifiedName~E2eTests.V3" --logger ''trx;LogFileName=testResults-noChannel.trx'' --logger ''html;LogFileName=testResults-noChannel.html'' --logger ''console;verbosity=detailed''';
             Path = "SystemTests/E2eTests";
             TestReportPath = "SystemTests\E2eTests\TestResults\testResults-noChannel.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
