@@ -102,7 +102,7 @@ public class PlaceOrderNegativeTest : BaseAcceptanceTest
 
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    public async Task ShouldRejectOrderWithUnsupportedCountry(Channel channel)
+    public async Task ShouldRejectOrderWithInvalidCountry(Channel channel)
     {
         await Scenario(channel)
             .When().PlaceOrder().WithCountry("XX")
