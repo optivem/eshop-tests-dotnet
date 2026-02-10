@@ -1,0 +1,109 @@
+using System.Text;
+using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
+using Optivem.EShop.SystemTest.E2eTests.V1.Base;
+using Shouldly;
+using Xunit;
+
+namespace Optivem.EShop.SystemTest.E2eTests.V1;
+
+public class PlaceOrderNegativeUiTest : BaseE2eTest
+{
+    protected override async Task SetShopRawAsync()
+    {
+        await SetUpShopBrowserAsync();
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithInvalidQuantity()
+    {
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), "invalid-quantity", Defaults.COUNTRY);
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithNonExistentSku()
+    {
+        await NavigateToNewOrderAndSubmitAsync("NON-EXISTENT-SKU-12345", Defaults.QUANTITY, Defaults.COUNTRY);
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "sku", "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithNegativeQuantity()
+    {
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), "-10", Defaults.COUNTRY);
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must be positive");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithZeroQuantity()
+    {
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), "0", Defaults.COUNTRY);
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must be positive");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithEmptySku()
+    {
+        await NavigateToNewOrderAndSubmitAsync("", Defaults.QUANTITY, Defaults.COUNTRY);
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "sku", "SKU must not be empty");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithEmptyQuantity()
+    {
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), "", Defaults.COUNTRY);
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithNonIntegerQuantity()
+    {
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), "3.5", Defaults.COUNTRY);
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithEmptyCountry()
+    {
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), Defaults.QUANTITY, "");
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "country", "Country must not be empty");
+    }
+
+    [Fact]
+    public async Task ShouldRejectOrderWithInvalidCountry()
+    {
+        var sku = CreateUniqueSku(Defaults.SKU);
+        await CreateProductViaErpAsync(sku, "20.00");
+        await NavigateToNewOrderAndSubmitAsync(sku, Defaults.QUANTITY, "XX");
+        await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "country", "Country does not exist: XX");
+    }
+
+    private async Task NavigateToNewOrderAndSubmitAsync(string sku, string quantity, string country)
+    {
+        await shopUiPage!.GotoAsync(_configuration.ShopUiBaseUrl);
+        await shopUiPage.Locator("a[href='/shop']").ClickAsync();
+        await shopUiPage.Locator("[aria-label=\"SKU\"]").FillAsync(sku);
+        await shopUiPage.Locator("[aria-label=\"Quantity\"]").FillAsync(quantity);
+        await shopUiPage.Locator("[aria-label=\"Country\"]").FillAsync(country);
+        await shopUiPage.Locator("[aria-label=\"Place Order\"]").ClickAsync();
+    }
+
+    private async Task AssertErrorAlertContainsAsync(params string[] expected)
+    {
+        var errorAlert = shopUiPage!.Locator("[role='alert']");
+        await errorAlert.WaitForAsync(new() { State = Microsoft.Playwright.WaitForSelectorState.Visible });
+        (await errorAlert.IsVisibleAsync()).ShouldBeTrue();
+        var errorText = await errorAlert.TextContentAsync();
+        foreach (var text in expected)
+            (errorText ?? "").ShouldContain(text);
+    }
+
+    private async Task CreateProductViaErpAsync(string sku, string price)
+    {
+        var json = $$"""{"id":"{{sku}}","title":"Test Product","description":"Test Description","category":"Test Category","brand":"Test Brand","price":"{{price}}"}""";
+        var uri = new Uri(_configuration.ErpBaseUrl + "/api/products");
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await _erpHttpClient!.PostAsync(uri, content);
+        ((int)response.StatusCode).ShouldBe(201);
+    }
+}
