@@ -1,0 +1,26 @@
+using Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
+using Optivem.EShop.SystemTest.E2eTests.V2.Base;
+using Optivem.EShop.SystemTest.Base.V2;
+using Shouldly;
+using Xunit;
+
+namespace Optivem.EShop.SystemTest.E2eTests.V2;
+
+public class ViewOrderNegativeUiTest : BaseE2eTest
+{
+    protected override Task SetShopClientAsync()
+    {
+        return SetUpShopUiClientAsync();
+    }
+
+    [Fact]
+    public async Task ShouldNotBeAbleToViewNonExistentOrder()
+    {
+        var orderNumber = "NON-EXISTENT-ORDER-99999";
+        var homePage = await _shopUiClient!.OpenHomePageAsync();
+        var orderHistoryPage = await homePage.ClickOrderHistoryAsync();
+        await orderHistoryPage.InputOrderNumberAsync(orderNumber);
+        await orderHistoryPage.ClickSearchAsync();
+        (await orderHistoryPage.IsOrderListedAsync(orderNumber)).ShouldBeFalse();
+    }
+}
