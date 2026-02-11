@@ -7,7 +7,7 @@ public abstract class BaseErpContractTest : BaseExternalSystemContractTest
     {
         (await App.Erp().ReturnsProduct()
             .Sku("SKU-123")
-            .UnitPrice("12.0")
+            .UnitPrice(12.0m)
             .Execute())
             .ShouldSucceed();
 
@@ -16,6 +16,6 @@ public abstract class BaseErpContractTest : BaseExternalSystemContractTest
             .Execute())
             .ShouldSucceed()
             .Sku("SKU-123")
-            .Price("12.0");
+            .Price(12.0m);
     }
 }
