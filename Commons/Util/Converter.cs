@@ -32,11 +32,6 @@ public static class Converter
         return From(value, v => v.ToString());
     }
 
-    public static DateTime? ToDateTime(string? value)
-    {
-        return To(value, DateTime.Parse);
-    }
-
     public static DateTimeOffset? ToDateTimeOffset(string? value)
     {
         return To(value, DateTimeOffset.Parse);
