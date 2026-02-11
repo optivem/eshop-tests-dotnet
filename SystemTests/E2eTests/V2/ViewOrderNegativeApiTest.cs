@@ -19,7 +19,7 @@ public class ViewOrderNegativeApiTest : BaseE2eTest
     public async Task ShouldNotBeAbleToViewNonExistentOrder()
     {
         var orderNumber = "NON-EXISTENT-ORDER-99999";
-        var result = await _shopApiClient!.Orders().ViewOrder(orderNumber);
+        var result = await _shopApiClient!.Orders().ViewOrderAsync(orderNumber);
         result.ShouldBeFailure();
         SystemError.From(result.Error).Message.ShouldBe("Order NON-EXISTENT-ORDER-99999 does not exist.");
     }

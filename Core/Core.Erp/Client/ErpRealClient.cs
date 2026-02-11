@@ -13,6 +13,6 @@ public class ErpRealClient : BaseErpClient
     }
 
 
-    public Task<Result<VoidValue, ExtErpErrorResponse>> CreateProduct(ExtCreateProductRequest request)
-        => HttpClient.Post(ProductsEndpoint, request);
+    public Task<Result<VoidValue, ExtErpErrorResponse>> CreateProductAsync(ExtCreateProductRequest request)
+        => HttpClient.PostAsync(ProductsEndpoint, request);
 }

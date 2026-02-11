@@ -44,7 +44,7 @@ public class ReturnsTaxRate : BaseTaxCommand<VoidValue, VoidVerification>
             TaxRate = taxRate
         };
 
-        var result = await _driver.ReturnsTaxRate(request);
+        var result = await _driver.ReturnsTaxRateAsync(request);
 
         return new TaxUseCaseResult<VoidValue, VoidVerification>(
             result,

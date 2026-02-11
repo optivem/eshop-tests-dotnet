@@ -21,15 +21,15 @@ public class ViewOrderPositiveApiTest : BaseE2eTest
     public async Task ShouldViewPlacedOrder()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test", Description = "Test", Category = "Test", Brand = "Test", Price = "25.00" })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test", Description = "Test", Category = "Test", Brand = "Test", Price = "25.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "4", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value!.OrderNumber;
 
-        var viewOrderResult = await _shopApiClient.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopApiClient.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
 
         var order = viewOrderResult.Value!;

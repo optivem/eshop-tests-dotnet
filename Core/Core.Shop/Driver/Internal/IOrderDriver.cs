@@ -6,7 +6,7 @@ namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Internal;
 
 public interface IOrderDriver
 {
-    Task<Result<PlaceOrderResponse, SystemError>> PlaceOrder(PlaceOrderRequest request);
-    Task<Result<VoidValue, SystemError>> CancelOrder(string? orderNumber);
-    Task<Result<ViewOrderResponse, SystemError>> ViewOrder(string? orderNumber);
+    Task<Result<PlaceOrderResponse, SystemError>> PlaceOrderAsync(PlaceOrderRequest request);
+    Task<Result<VoidValue, SystemError>> CancelOrderAsync(string? orderNumber);
+    Task<Result<ViewOrderResponse, SystemError>> ViewOrderAsync(string? orderNumber);
 }

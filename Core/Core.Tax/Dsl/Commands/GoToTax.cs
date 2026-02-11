@@ -15,7 +15,7 @@ public class GoToTax : BaseTaxCommand<VoidValue, VoidVerification>
 
     public override async Task<TaxUseCaseResult<VoidValue, VoidVerification>> Execute()
     {
-        var result = await _driver.GoToTax();
+        var result = await _driver.GoToTaxAsync();
 
         return new TaxUseCaseResult<VoidValue, VoidVerification>(
             result,

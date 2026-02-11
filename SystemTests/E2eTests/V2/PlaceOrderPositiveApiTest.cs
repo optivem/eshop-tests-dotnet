@@ -21,14 +21,14 @@ public class PlaceOrderPositiveApiTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPrice()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value!.OrderNumber;
-        var viewOrderResult = await _shopApiClient.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopApiClient.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(100.00m);
     }
@@ -41,14 +41,14 @@ public class PlaceOrderPositiveApiTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPriceParameterized(string unitPrice, string quantity, string expectedSubtotalPrice)
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = unitPrice })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = unitPrice })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = quantity, Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value!.OrderNumber;
-        var viewOrderResult = await _shopApiClient.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopApiClient.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(decimal.Parse(expectedSubtotalPrice));
     }
@@ -57,16 +57,16 @@ public class PlaceOrderPositiveApiTest : BaseE2eTest
     public async Task ShouldPlaceOrder()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopApiClient!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value!.OrderNumber;
         orderNumber.ShouldStartWith("ORD-");
 
-        var viewOrderResult = await _shopApiClient.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopApiClient.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
 
         var order = viewOrderResult.Value!;

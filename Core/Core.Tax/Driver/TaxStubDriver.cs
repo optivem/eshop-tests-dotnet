@@ -12,7 +12,7 @@ public class TaxStubDriver : BaseTaxDriver<TaxStubClient>
     {
     }
 
-    public override Task<Result<VoidValue, TaxErrorResponse>> ReturnsTaxRate(ReturnsTaxRateRequest request)
+    public override Task<Result<VoidValue, TaxErrorResponse>> ReturnsTaxRateAsync(ReturnsTaxRateRequest request)
     {
         var country = request.Country!;
         var taxRate = Converter.ToDecimal(request.TaxRate)!.Value;
@@ -24,7 +24,7 @@ public class TaxStubDriver : BaseTaxDriver<TaxStubClient>
             CountryName = country
         };
 
-        return _client.ConfigureGetCountry(response)
+        return _client.ConfigureGetCountryAsync(response)
             .MapErrorAsync(TaxErrorResponse.From);
     }
 }

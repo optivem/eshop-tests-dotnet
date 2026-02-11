@@ -46,34 +46,34 @@ public class JsonHttpClient<E> : IDisposable
         }
     }
 
-    public async Task<Result<T, E>> Get<T>(string path)
-        => await GetResultOrFailure<T>(await DoGet(path));
+    public async Task<Result<T, E>> GetAsync<T>(string path)
+        => await GetResultOrFailureAsync<T>(await DoGetAsync(path));
 
-    public async Task<Result<VoidValue, E>> Get(string path)
-        => await GetResultOrFailure<VoidValue>(await DoGet(path));
+    public async Task<Result<VoidValue, E>> GetAsync(string path)
+        => await GetResultOrFailureAsync<VoidValue>(await DoGetAsync(path));
 
-    public async Task<Result<T, E>> Post<T>(string path, object request)
-        => await GetResultOrFailure<T>(await DoPost(path, request));
+    public async Task<Result<T, E>> PostAsync<T>(string path, object request)
+        => await GetResultOrFailureAsync<T>(await DoPostAsync(path, request));
 
-    public async Task<Result<VoidValue, E>> Post(string path, object request)
-        => await GetResultOrFailure<VoidValue>(await DoPost(path, request));
+    public async Task<Result<VoidValue, E>> PostAsync(string path, object request)
+        => await GetResultOrFailureAsync<VoidValue>(await DoPostAsync(path, request));
 
-    public async Task<Result<VoidValue, E>> Post(string path)
-        => await GetResultOrFailure<VoidValue>(await DoPost(path));
+    public async Task<Result<VoidValue, E>> PostAsync(string path)
+        => await GetResultOrFailureAsync<VoidValue>(await DoPostAsync(path));
 
-    public async Task<Result<T, E>> Put<T>(string path, object request)
-        => await GetResultOrFailure<T>(await DoPut(path, request));
+    public async Task<Result<T, E>> PutAsync<T>(string path, object request)
+        => await GetResultOrFailureAsync<T>(await DoPutAsync(path, request));
 
-    public async Task<Result<VoidValue, E>> Put(string path, object request)
-        => await GetResultOrFailure<VoidValue>(await DoPut(path, request));
+    public async Task<Result<VoidValue, E>> PutAsync(string path, object request)
+        => await GetResultOrFailureAsync<VoidValue>(await DoPutAsync(path, request));
 
-    public async Task<Result<T, E>> Delete<T>(string path)
-        => await GetResultOrFailure<T>(await DoDelete(path));
+    public async Task<Result<T, E>> DeleteAsync<T>(string path)
+        => await GetResultOrFailureAsync<T>(await DoDeleteAsync(path));
 
-    public async Task<Result<VoidValue, E>> Delete(string path)
-        => await GetResultOrFailure<VoidValue>(await DoDelete(path));
+    public async Task<Result<VoidValue, E>> DeleteAsync(string path)
+        => await GetResultOrFailureAsync<VoidValue>(await DoDeleteAsync(path));
 
-    private async Task<HttpResponseMessage> DoGet(string path)
+    private async Task<HttpResponseMessage> DoGetAsync(string path)
     {
         var uri = GetUri(path);
         var httpRequest = new HttpRequestMessage(HttpMethod.Get, uri);
@@ -87,7 +87,7 @@ public class JsonHttpClient<E> : IDisposable
         return new Uri(_baseUrl + path);
     }
 
-    private async Task<HttpResponseMessage> DoPost(string path, object request)
+    private async Task<HttpResponseMessage> DoPostAsync(string path, object request)
     {
         var uri = GetUri(path);
         var jsonBody = SerializeRequest(request);
@@ -98,7 +98,7 @@ public class JsonHttpClient<E> : IDisposable
         return await SendRequest(httpRequest);
     }
 
-    private async Task<HttpResponseMessage> DoPost(string path)
+    private async Task<HttpResponseMessage> DoPostAsync(string path)
     {
         var uri = GetUri(path);
         var httpRequest = new HttpRequestMessage(HttpMethod.Post, uri)
@@ -108,7 +108,7 @@ public class JsonHttpClient<E> : IDisposable
         return await SendRequest(httpRequest);
     }
 
-    private async Task<HttpResponseMessage> DoPut(string path, object request)
+    private async Task<HttpResponseMessage> DoPutAsync(string path, object request)
     {
         var uri = GetUri(path);
         var jsonBody = SerializeRequest(request);
@@ -119,7 +119,7 @@ public class JsonHttpClient<E> : IDisposable
         return await SendRequest(httpRequest);
     }
 
-    private async Task<HttpResponseMessage> DoDelete(string path)
+    private async Task<HttpResponseMessage> DoDeleteAsync(string path)
     {
         var uri = GetUri(path);
         var httpRequest = new HttpRequestMessage(HttpMethod.Delete, uri);
@@ -134,17 +134,17 @@ public class JsonHttpClient<E> : IDisposable
         return JsonSerializer.Serialize(request, _jsonOptions);
     }
 
-    private static async Task<T> ReadResponse<T>(HttpResponseMessage httpResponse, JsonSerializerOptions jsonOptions)
+    private static async Task<T> ReadResponseAsync<T>(HttpResponseMessage httpResponse, JsonSerializerOptions jsonOptions)
     {
         var responseBody = await httpResponse.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<T>(responseBody, jsonOptions)!;
     }
 
-    private async Task<Result<T, E>> GetResultOrFailure<T>(HttpResponseMessage httpResponse)
+    private async Task<Result<T, E>> GetResultOrFailureAsync<T>(HttpResponseMessage httpResponse)
     {
         if (!httpResponse.IsSuccessStatusCode)
         {
-            var error = await ReadResponse<E>(httpResponse, _jsonOptions);
+            var error = await ReadResponseAsync<E>(httpResponse, _jsonOptions);
             return Result<T, E>.Failure(error);
         }
 
@@ -153,7 +153,7 @@ public class JsonHttpClient<E> : IDisposable
             return Result<T, E>.Success(default!);
         }
 
-        var response = await ReadResponse<T>(httpResponse, _jsonOptions);
+        var response = await ReadResponseAsync<T>(httpResponse, _jsonOptions);
         return Result<T, E>.Success(response);
     }
 

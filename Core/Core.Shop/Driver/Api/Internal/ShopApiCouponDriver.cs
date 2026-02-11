@@ -16,11 +16,11 @@ public class ShopApiCouponDriver : ICouponDriver
         _apiClient = apiClient;
     }
 
-    public Task<Result<VoidValue, SystemError>> PublishCoupon(PublishCouponRequest request)
-        => _apiClient.Coupons().PublishCoupon(request)
+    public Task<Result<VoidValue, SystemError>> PublishCouponAsync(PublishCouponRequest request)
+        => _apiClient.Coupons().PublishCouponAsync(request)
             .MapErrorAsync(SystemError.From);
 
-    public Task<Result<BrowseCouponsResponse, SystemError>> BrowseCoupons()
-        => _apiClient.Coupons().BrowseCoupons()
+    public Task<Result<BrowseCouponsResponse, SystemError>> BrowseCouponsAsync()
+        => _apiClient.Coupons().BrowseCouponsAsync()
             .MapErrorAsync(SystemError.From);
 }

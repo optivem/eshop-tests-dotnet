@@ -16,7 +16,7 @@ public class GoToShop : BaseShopCommand<VoidValue, VoidVerification>
 
     public override async Task<ShopUseCaseResult<VoidValue, VoidVerification>> Execute()
     {
-        var result = await _driver.GoToShop();
+        var result = await _driver.GoToShopAsync();
 
         return new ShopUseCaseResult<VoidValue, VoidVerification>(
             result,

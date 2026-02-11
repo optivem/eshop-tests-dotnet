@@ -31,7 +31,7 @@ public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerificat
             Sku = sku
         };
 
-        var result = await _driver.GetProduct(request);
+        var result = await _driver.GetProductAsync(request);
 
         return new ErpUseCaseResult<GetProductResponse, GetProductVerification>(
             result,

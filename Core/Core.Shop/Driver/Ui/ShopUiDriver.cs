@@ -38,7 +38,7 @@ public class ShopUiDriver : IShopDriver
         return new ShopUiDriver(client, pageNavigator);
     }
 
-    public async Task<Result<VoidValue, SystemError>> GoToShop()
+    public async Task<Result<VoidValue, SystemError>> GoToShopAsync()
     {
         _homePage = await _client.OpenHomePageAsync();
 

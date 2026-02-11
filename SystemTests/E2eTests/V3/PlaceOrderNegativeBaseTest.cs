@@ -15,7 +15,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithInvalidQuantity()
     {
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "invalid-quantity", Country = Defaults.COUNTRY };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
     }
@@ -24,7 +24,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNonExistentSku()
     {
         var request = new PlaceOrderRequest { Sku = "NON-EXISTENT-SKU-12345", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
     }
@@ -33,7 +33,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNegativeQuantity()
     {
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "-10", Country = Defaults.COUNTRY };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
     }
@@ -42,7 +42,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithZeroQuantity()
     {
         var request = new PlaceOrderRequest { Sku = "ANOTHER-SKU-67890", Quantity = "0", Country = Defaults.COUNTRY };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
     }
@@ -51,7 +51,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithEmptySku()
     {
         var request = new PlaceOrderRequest { Sku = "", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
     }
@@ -60,7 +60,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithEmptyQuantity()
     {
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "", Country = Defaults.COUNTRY };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
     }
@@ -69,7 +69,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNonIntegerQuantity()
     {
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "3.5", Country = Defaults.COUNTRY };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
     }
@@ -78,7 +78,7 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithEmptyCountry()
     {
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = "" };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
     }
@@ -87,9 +87,9 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldRejectOrderWithInvalidCountry()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProduct(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
         var request = new PlaceOrderRequest { Sku = sku, Quantity = Defaults.QUANTITY, Country = "XX" };
-        var result = await _shopDriver!.Orders().PlaceOrder(request);
+        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country does not exist: XX");
     }

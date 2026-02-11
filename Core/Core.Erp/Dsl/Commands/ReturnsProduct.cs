@@ -44,7 +44,7 @@ public class ReturnsProduct : BaseErpCommand<VoidValue, VoidVerification>
             Price = _unitPrice
         };
 
-        var result = await _driver.ReturnsProduct(request);
+        var result = await _driver.ReturnsProductAsync(request);
 
         return new ErpUseCaseResult<VoidValue, VoidVerification>(
             result,

@@ -25,7 +25,7 @@ public class CancelOrder : BaseShopCommand<VoidValue, VoidVerification>
     public override async Task<ShopUseCaseResult<VoidValue, VoidVerification>> Execute()
     {
         var orderNumber = _context.GetResultValue(_orderNumberResultAlias);
-        var result = await _driver.Orders().CancelOrder(orderNumber);
+        var result = await _driver.Orders().CancelOrderAsync(orderNumber);
 
         return new ShopUseCaseResult<VoidValue, VoidVerification>(
             result,

@@ -15,7 +15,7 @@ public class GoToErp : BaseErpCommand<VoidValue, VoidVerification>
 
     public override async Task<ErpUseCaseResult<VoidValue, VoidVerification>> Execute()
     {
-        var result = await _driver.GoToErp();
+        var result = await _driver.GoToErpAsync();
 
         return new ErpUseCaseResult<VoidValue, VoidVerification>(
             result,

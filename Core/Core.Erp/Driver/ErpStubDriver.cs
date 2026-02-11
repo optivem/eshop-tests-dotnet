@@ -16,7 +16,7 @@ public class ErpStubDriver : BaseErpDriver<ErpStubClient>
     {
     }
 
-    public override Task<Result<VoidValue, ErpErrorResponse>> ReturnsProduct(ReturnsProductRequest request)
+    public override Task<Result<VoidValue, ErpErrorResponse>> ReturnsProductAsync(ReturnsProductRequest request)
     {
         var extProductDetailsResponse = new ExtProductDetailsResponse
         {
@@ -28,7 +28,7 @@ public class ErpStubDriver : BaseErpDriver<ErpStubClient>
             Brand = string.Empty
         };
 
-        return _client.ConfigureGetProduct(extProductDetailsResponse)
+        return _client.ConfigureGetProductAsync(extProductDetailsResponse)
             .MapErrorAsync(ErpErrorResponse.From);
     }
 }

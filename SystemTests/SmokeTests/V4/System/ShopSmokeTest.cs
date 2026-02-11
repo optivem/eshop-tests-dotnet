@@ -15,7 +15,7 @@ public class ShopSmokeTest : BaseChannelDriverTest
     {
         await SetChannelAsync(channel);
 
-        var result = await _shopDriver!.GoToShop();
+        var result = await _shopDriver!.GoToShopAsync();
         result.ShouldBeSuccess();
     }
 }
