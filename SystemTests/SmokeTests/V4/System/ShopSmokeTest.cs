@@ -1,7 +1,6 @@
 using Commons.Util;
 using Optivem.EShop.SystemTest.Base.V4;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.Testing;
 using Shouldly;
 using Xunit;
@@ -14,9 +13,7 @@ public class ShopSmokeTest : BaseChannelDriverTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldBeAbleToGoToShop(Channel channel)
     {
-        // TODO: VJ: This should be made common
-        ChannelContext.Set(channel.Type);
-        await base.InitializeAsync();
+        await SetChannelAsync(channel);
 
         var result = await _shopDriver!.GoToShop();
         result.ShouldBeSuccess();

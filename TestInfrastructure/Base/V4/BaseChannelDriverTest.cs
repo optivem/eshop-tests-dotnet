@@ -46,6 +46,12 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
         _taxDriver?.Dispose();
     }
 
+    protected async Task SetChannelAsync(Channel channel)
+    {
+        ChannelContext.Set(channel.Type);
+        await InitializeAsync();
+    }
+
     private static async Task<IShopDriver?> CreateShopDriverAsync(SystemConfiguration configuration)
     {
         var channelType = ChannelContext.Get();
