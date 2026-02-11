@@ -62,16 +62,6 @@ Uses pre-built Docker images from registry:
 .\Run-SystemTests.ps1 pipeline
 ```
 
-### Quick Test Re-run
-
-Skip build/start phases and just run tests (assumes services are already running):
-
-```powershell
-.\Run-SystemTests.ps1 -TestOnly
-```
-
-**Note:** The `-TestOnly` flag skips the build, stop, start, and wait phases. Use it when services are already running and you just want to re-run the tests quickly.
-
 ### Other Options
 
 - `-Rebuild` - Force rebuild before running
