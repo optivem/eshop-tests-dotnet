@@ -38,8 +38,7 @@ public class PublishCouponNegativeTest : BaseAcceptanceTest
     }
 
     [Theory]
-    // [ChannelData(ChannelType.UI, ChannelType.API)]
-    [ChannelData(ChannelType.API)]
+    [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task CannotPublishCouponWithDuplicateCouponCode(Channel channel)
     {
         await Scenario(channel)

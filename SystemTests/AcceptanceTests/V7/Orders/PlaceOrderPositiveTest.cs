@@ -165,10 +165,6 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
         await Scenario(channel)
             .Given().Coupon().WithCouponCode("SUMMER2025")
             .When().PlaceOrder().WithCouponCode("SUMMER2025")
-            .Then().ShouldSucceed();
-
-        await Scenario(channel)
-            .When().BrowseCoupons()
             .Then().ShouldSucceed()
             .And().Coupon("SUMMER2025")
             .HasUsedCount(1);
