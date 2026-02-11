@@ -23,9 +23,6 @@ public class ThenSuccessAndVerifier<TSuccessResponse, TSuccessVerification>
             () => Task.FromResult(couponCode));
     }
 
-    /// <summary>
-    /// Verifies coupon from execution result (coupon code from the executed operation).
-    /// </summary>
     public ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification> Coupon()
     {
         return new ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification>(
