@@ -174,28 +174,4 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .HasUsedCount(1);
     }
 
-    [Theory]
-    [ChannelData(ChannelType.UI, ChannelType.API)]
-    public async Task CannotPlaceOrderWithNonExistentCoupon(Channel channel)
-    {
-        await Scenario(channel)
-            .When().PlaceOrder().WithCouponCode("INVALIDCOUPON")
-            .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("couponCode", "Coupon code INVALIDCOUPON does not exist");
-    }
-
-    [Theory]
-    [ChannelData(ChannelType.UI, ChannelType.API)]
-    public async Task CannotPlaceOrderWithCouponThatHasExceededUsageLimit(Channel channel)
-    {
-        await Scenario(channel)
-            .Given().Coupon().WithCouponCode("LIMITED2024").WithUsageLimit(2)
-            .And().Order().WithOrderNumber("ORD-1").WithCouponCode("LIMITED2024")
-            .And().Order().WithOrderNumber("ORD-2").WithCouponCode("LIMITED2024")
-            .When().PlaceOrder().WithOrderNumber("ORD-3").WithCouponCode("LIMITED2024")
-            .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("couponCode", "Coupon code LIMITED2024 has exceeded its usage limit");
-    }
 }
