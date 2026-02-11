@@ -29,7 +29,6 @@ namespace Dsl.Gherkin
 
         /// <summary>
         /// Context with order number and coupon code from the executed operation.
-        /// Aligns with Java ExecutionResult.getContext().
         /// </summary>
         public ExecutionResultContext Context { get; }
     }

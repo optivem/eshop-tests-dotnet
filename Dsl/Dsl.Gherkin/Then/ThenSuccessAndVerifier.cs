@@ -25,7 +25,6 @@ public class ThenSuccessAndVerifier<TSuccessResponse, TSuccessVerification>
 
     /// <summary>
     /// Verifies coupon from execution result (coupon code from the executed operation).
-    /// Aligns with Java BaseThenBuilder.coupon().
     /// </summary>
     public ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification> Coupon()
     {

@@ -7,7 +7,7 @@ public class PageClient
     private readonly IPage _page;
     private readonly float _timeoutMilliseconds;
 
-    // Increase timeout to match Java's 30 seconds for better stability
+    // 30 second timeout for better stability
     private const int DefaultTimeoutSeconds = 30;
     private const int DefaultTimeoutMilliseconds = DefaultTimeoutSeconds * 1000;
 
