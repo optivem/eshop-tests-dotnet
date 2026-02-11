@@ -1,7 +1,7 @@
 using Optivem.EShop.SystemTest.Base.V1;
 using Xunit;
 
-namespace SystemTests.SmokeTests.V1.System;
+namespace Optivem.EShop.SystemTest.SmokeTests.V1.System;
 
 public class ShopUiSmokeTest : BaseRawTest
 {

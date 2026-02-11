@@ -2,7 +2,7 @@ using Commons.Util;
 using Optivem.EShop.SystemTest.Base.V2;
 using Xunit;
 
-namespace SystemTests.SmokeTests.V2.System;
+namespace Optivem.EShop.SystemTest.SmokeTests.V2.System;
 
 public class ShopApiSmokeTest : BaseClientTest
 {

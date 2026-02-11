@@ -2,7 +2,7 @@ using Optivem.EShop.SystemTest.Base.V2;
 using Shouldly;
 using Xunit;
 
-namespace SystemTests.SmokeTests.V2.System;
+namespace Optivem.EShop.SystemTest.SmokeTests.V2.System;
 
 public class ShopUiSmokeTest : BaseClientTest
 {

@@ -2,7 +2,7 @@ using Commons.Util;
 using Optivem.EShop.SystemTest.Base.V2;
 using Xunit;
 
-namespace SystemTests.SmokeTests.V2.External;
+namespace Optivem.EShop.SystemTest.SmokeTests.V2.External;
 
 public class TaxSmokeTest : BaseClientTest
 {

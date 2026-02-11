@@ -1,7 +1,7 @@
 using Optivem.EShop.SystemTest.Base.V1;
 using Xunit;
 
-namespace SystemTests.SmokeTests.V1.External;
+namespace Optivem.EShop.SystemTest.SmokeTests.V1.External;
 
 public class TaxSmokeTest : BaseRawTest
 {
