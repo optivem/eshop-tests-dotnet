@@ -45,6 +45,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
             .When().PlaceOrder().WithQuantity(5)
             .Then().ShouldSucceed()
             .And().Order()
+            .HasOrderNumberPrefix("ORD-")
             .HasQuantity(5)
             .HasUnitPrice(20.00m)
             .HasSubtotalPrice("100.00")
