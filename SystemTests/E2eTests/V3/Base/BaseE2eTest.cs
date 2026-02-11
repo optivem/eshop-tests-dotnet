@@ -7,11 +7,6 @@ namespace Optivem.EShop.SystemTest.E2eTests.V3.Base;
 
 public abstract class BaseE2eTest : BaseDriverTest
 {
-    protected override ConfigEnvironment? GetFixedEnvironment()
-    {
-        return ConfigEnvironment.Local;
-    }
-
     protected override ExternalSystemMode? GetFixedExternalSystemMode()
     {
         return ExternalSystemMode.Real;

@@ -7,11 +7,6 @@ namespace Optivem.EShop.SystemTest.E2eTests.V2.Base;
 
 public abstract class BaseE2eTest : BaseClientTest
 {
-    protected override ConfigEnvironment? GetFixedEnvironment()
-    {
-        return ConfigEnvironment.Local;
-    }
-
     protected override ExternalSystemMode? GetFixedExternalSystemMode()
     {
         return ExternalSystemMode.Real;

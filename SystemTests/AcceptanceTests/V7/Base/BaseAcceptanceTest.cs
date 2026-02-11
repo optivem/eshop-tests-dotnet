@@ -9,9 +9,4 @@ public abstract class BaseAcceptanceTest : BaseScenarioDslTest
     {
         return ExternalSystemMode.Stub;
     }
-
-    protected override Configuration.Environment? GetFixedEnvironment()
-    {
-        return Configuration.Environment.Local;
-    }
 }
