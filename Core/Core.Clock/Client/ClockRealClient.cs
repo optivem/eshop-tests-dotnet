@@ -8,11 +8,13 @@ public class ClockRealClient
 {
     public Task<Result<VoidValue, ExtClockErrorResponse>> CheckHealthAsync()
     {
-        var _ = DateTimeOffset.UtcNow;
+        var _ = Now;
         return Task.FromResult(Result.Success<ExtClockErrorResponse>());
     }
 
     public Task<Result<ExtGetTimeResponse, ExtClockErrorResponse>> GetTimeAsync()
         => Task.FromResult(Result<ExtGetTimeResponse, ExtClockErrorResponse>.Success(
-            new ExtGetTimeResponse { Time = DateTimeOffset.UtcNow }));
+            new ExtGetTimeResponse { Time = Now }));
+
+    private static DateTimeOffset Now => DateTimeOffset.UtcNow;
 }
