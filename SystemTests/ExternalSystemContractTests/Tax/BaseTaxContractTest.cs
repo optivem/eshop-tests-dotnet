@@ -7,7 +7,7 @@ public abstract class BaseTaxContractTest : BaseExternalSystemContractTest
     {
         (await App.Tax().ReturnsTaxRate()
             .Country("US")
-            .TaxRate("0.09")
+            .TaxRate(0.09m)
             .Execute())
             .ShouldSucceed();
 

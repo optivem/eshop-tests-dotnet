@@ -11,7 +11,7 @@ public class TaxStubContractTest : BaseTaxContractTest
     {
         (await App.Tax().ReturnsTaxRate()
             .Country("LALA")
-            .TaxRate("0.23")
+            .TaxRate(0.23m)
             .Execute())
             .ShouldSucceed();
 
@@ -20,6 +20,6 @@ public class TaxStubContractTest : BaseTaxContractTest
             .Execute())
             .ShouldSucceed()
             .Country("LALA")
-            .TaxRate("0.23");
+            .TaxRate(0.23m);
     }
 }
