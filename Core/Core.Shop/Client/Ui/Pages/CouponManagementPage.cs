@@ -124,8 +124,8 @@ public class CouponManagementPage : BasePage
             {
                 Code = code,
                 DiscountRate = ParseDiscountRate(discountRateText),
-                ValidFrom = ParseDateTime(validFromText),
-                ValidTo = ParseDateTime(validToText),
+                ValidFrom = ToDateTime(validFromText),
+                ValidTo = ToDateTime(validToText),
                 UsageLimit = ParseUsageLimit(usageLimitText),
                 UsedCount = Converter.ToInteger(usedCountText) ?? 0
             };
@@ -168,9 +168,9 @@ public class CouponManagementPage : BasePage
         return value == null ? 0.0m : value.Value / 100.0m; // Convert percentage to decimal
     }
 
-    private static DateTime? ParseDateTime(string text)
+    private static DateTime? ToDateTime(string text)
     {
-        return Converter.ParseDateTime(text, TextImmediate, TextNever);
+        return Converter.ToDateTime(text, TextImmediate, TextNever);
     }
 
     private static int? ParseUsageLimit(string? text)

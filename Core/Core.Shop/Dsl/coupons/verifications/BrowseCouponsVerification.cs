@@ -30,7 +30,7 @@ public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsRespo
     {
         var coupon = FindCouponByCode(couponCodeAlias);
 
-        DateTime? expectedValidFromDateTime = Converter.ParseDateTime(expectedValidFrom);
+        DateTime? expectedValidFromDateTime = Converter.ToDateTime(expectedValidFrom);
         coupon.ValidFrom.ShouldBe(expectedValidFromDateTime, $"Expected coupon '{couponCodeAlias}' to have validFrom '{expectedValidFrom}'");
         return this;
     }
@@ -39,7 +39,7 @@ public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsRespo
     {
         var coupon = FindCouponByCode(couponCodeAlias);
 
-        DateTime? expectedValidToDateTime = Converter.ParseDateTime(expectedValidTo);
+        DateTime? expectedValidToDateTime = Converter.ToDateTime(expectedValidTo);
         coupon.ValidTo.ShouldBe(expectedValidToDateTime, $"Expected coupon '{couponCodeAlias}' to have validTo '{expectedValidTo}'");
         return this;
     }
