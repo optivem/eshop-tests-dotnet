@@ -6,7 +6,7 @@ using Xunit;
 namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Orders;
 
 [Collection("Isolated")]
-public class PlaceOrderIsolatedTest : BaseAcceptanceTest
+public class PlaceOrderNegativeIsolatedTest : BaseAcceptanceTest
 {
     [Theory]
     [Time]

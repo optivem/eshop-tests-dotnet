@@ -7,7 +7,7 @@ using Xunit;
 namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Orders;
 
 [Collection("Isolated")]
-public class CancelOrderIsolatedNegativeTest : BaseAcceptanceTest
+public class CancelOrderNegativeIsolatedTest : BaseAcceptanceTest
 {
     [Theory]
     [Time]
