@@ -8,74 +8,89 @@
 - Docker Desktop
 - PowerShell 7+
 
-Ensure you have .NET 8 SDK installed
+Ensure you have .NET 8 SDK installed:
 
-```shell
+```powershell
 dotnet --version
 ```
 
-Check that you have PowerShell 7
+Check that you have PowerShell 7+:
 
-```shell
+```powershell
 $PSVersionTable.PSVersion
 ```
 
 ## Run Everything
 
 ```powershell
-.\run.ps1 all
+.\Run-SystemTests.ps1
 ```
 
 This will:
-1. Build the Monolith (compile code and create Docker image)
-2. Start Docker containers (Monolith, PostgreSQL, & Simulated External Systems)
-3. Wait for services to be healthy
-4. Run all System Tests (xUnit + Playwright)
+
+1. Clone or pull the [monolith repository](https://github.com/optivem/modern-acceptance-testing-in-legacy-code) (Frontend, Backend, Docker setup)
+2. Build the Backend and Frontend
+3. Start Docker containers (Frontend, Backend, PostgreSQL, & Simulated External APIs)
+4. Wait for all services to be healthy
+5. Run all System Tests (Smoke, Acceptance, Contract, E2E with xUnit + Playwright)
 
 You can open these URLs in your browser:
-- Monolith Application: [http://localhost:8081](http://localhost:8081)
-- ERP API (JSON Server): [http://localhost:3100](http://localhost:3100)
-- Tax API (JSON Server): [http://localhost:3101](http://localhost:3101)
-- PostgreSQL: localhost:5433 (username: `eshop_user`, password: `eshop_password`)
+
+- **Frontend UI**: [http://localhost:3001](http://localhost:3001)
+- **Backend API**: [http://localhost:8081/api](http://localhost:8081/api)
+- **ERP API**: [http://localhost:9001/erp/health](http://localhost:9001/erp/health)
+- **Tax API**: [http://localhost:9001/tax/health](http://localhost:9001/tax/health)
+- **PostgreSQL**: localhost:5401 (database: `eshop`, user: `eshop_user`, password: `eshop_password`)
 
 ## Separate Commands
 
-### Build
-Compiles the code and creates the Docker image (local mode only):
+### Run with Local Build (Default)
+
+Builds locally and runs all system tests:
+
 ```powershell
-.\run.ps1 build
+.\Run-SystemTests.ps1
+# or explicitly:
+.\Run-SystemTests.ps1 local
 ```
 
-### Start Services
-Starts the Docker containers:
-```powershell
-# Local mode (builds from source)
-.\run.ps1 start
+### Run with Pipeline Images
 
-# Pipeline mode (uses pre-built image)
-.\run.ps1 start pipeline
+Uses pre-built Docker images from registry:
+
+```powershell
+.\Run-SystemTests.ps1 pipeline
 ```
 
-You can open these URLs in your browser:
-- Monolith Application: [http://localhost:8081](http://localhost:8081)
-- ERP API (JSON Server): [http://localhost:3100](http://localhost:3100)
-- Tax API (JSON Server): [http://localhost:3101](http://localhost:3101)
-- PostgreSQL: localhost:5433 (username: `eshop_user`, password: `eshop_password`)
+### Quick Test Re-run
 
-### Run Tests
+Skip build/start phases and just run tests (assumes services are already running):
+
 ```powershell
-.\run.ps1 test
+.\Run-SystemTests.ps1 -TestOnly
 ```
 
-### View Logs
+**Note:** The `-TestOnly` flag skips the build, stop, start, and wait phases. Use it when services are already running and you just want to re-run the tests quickly.
+
+### Other Options
+
+- `-Rebuild` - Force rebuild before running
+- `-Restart` - Restart Docker containers
+- `-TestId <id>` - Run a specific test suite (e.g. `smoke-stub`, `acceptance-api`, `e2e-ui`)
+
+## Pre-commit Checks
+
+Before each commit, you can run format, lint, and compilation checks.
+
+**One-time setup:**
+
 ```powershell
-.\run.ps1 logs
+.\Install-PreCommitHook.ps1
 ```
 
-### Stop Services
-```powershell
-.\run.ps1 stop
-```
+**Bypass** (when needed): `git commit --no-verify`
+
+**Run checks manually:** `.\Run-PreCommitCheck.ps1`
 
 ## License
 
