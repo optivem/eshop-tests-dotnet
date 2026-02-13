@@ -14,14 +14,14 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPrice()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProduct(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value.OrderNumber;
-        var viewOrderResult = await _shopDriver.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(100.00m);
     }
@@ -34,14 +34,14 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPriceParameterized(string unitPrice, string quantity, string expectedSubtotalPrice)
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProduct(new ReturnsProductRequest { Sku = sku, Price = unitPrice })).ShouldBeSuccess();
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = unitPrice })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = quantity, Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value.OrderNumber;
-        var viewOrderResult = await _shopDriver.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(decimal.Parse(expectedSubtotalPrice));
     }
@@ -50,16 +50,16 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
     public async Task ShouldPlaceOrder()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProduct(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value.OrderNumber;
         orderNumber.ShouldStartWith("ORD-");
 
-        var viewOrderResult = await _shopDriver.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
 
         var order = viewOrderResult.Value!;

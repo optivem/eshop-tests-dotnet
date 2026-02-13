@@ -15,7 +15,7 @@ public class ErpSmokeTest : BaseClientTest
     [Fact]
     public async Task ShouldBeAbleToGoToErp()
     {
-        var result = await _erpClient!.CheckHealth();
+        var result = await _erpClient!.CheckHealthAsync();
         result.ShouldBeSuccess();
     }
 }

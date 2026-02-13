@@ -27,8 +27,8 @@ public class ShopApiDriver : IShopDriver
         return ValueTask.CompletedTask;
     }
 
-    public Task<Result<VoidValue, SystemError>> GoToShop()
-        => _apiClient.Health().CheckHealth()
+    public Task<Result<VoidValue, SystemError>> GoToShopAsync()
+        => _apiClient.Health().CheckHealthAsync()
             .MapErrorAsync(SystemError.From);
 
     public IOrderDriver Orders() => _orderDriver;

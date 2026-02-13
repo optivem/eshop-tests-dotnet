@@ -20,7 +20,7 @@ public class ShopUiCouponDriver : ICouponDriver
         _pageNavigator = pageNavigator;
     }
 
-    public async Task<Result<VoidValue, SystemError>> PublishCoupon(PublishCouponRequest request)
+    public async Task<Result<VoidValue, SystemError>> PublishCouponAsync(PublishCouponRequest request)
     {
         await EnsureOnCouponManagementPageAsync();
 
@@ -35,7 +35,7 @@ public class ShopUiCouponDriver : ICouponDriver
         return result.MapVoid();
     }
 
-    public async Task<Result<BrowseCouponsResponse, SystemError>> BrowseCoupons()
+    public async Task<Result<BrowseCouponsResponse, SystemError>> BrowseCouponsAsync()
     {
         // Always navigate fresh to ensure we get the latest coupon data (e.g., updated used counts)
         await NavigateToCouponManagementPageAsync();

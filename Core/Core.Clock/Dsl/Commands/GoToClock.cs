@@ -15,7 +15,7 @@ public class GoToClock : BaseClockCommand<VoidValue, VoidVerification>
 
     public override async Task<ClockUseCaseResult<VoidValue, VoidVerification>> Execute()
     {
-        var result = await _driver.GoToClock();
+        var result = await _driver.GoToClockAsync();
 
         return new ClockUseCaseResult<VoidValue, VoidVerification>(
             result,

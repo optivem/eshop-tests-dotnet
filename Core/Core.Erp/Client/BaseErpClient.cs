@@ -32,9 +32,9 @@ public abstract class BaseErpClient : IDisposable
         _disposed = true;
     }
 
-    public Task<Result<VoidValue, ExtErpErrorResponse>> CheckHealth()
-        => HttpClient.Get(HealthEndpoint);
+    public Task<Result<VoidValue, ExtErpErrorResponse>> CheckHealthAsync()
+        => HttpClient.GetAsync(HealthEndpoint);
 
-    public Task<Result<ExtProductDetailsResponse, ExtErpErrorResponse>> GetProduct(string? sku)
-        => HttpClient.Get<ExtProductDetailsResponse>($"{ProductsEndpoint}/{sku}");
+    public Task<Result<ExtProductDetailsResponse, ExtErpErrorResponse>> GetProductAsync(string? sku)
+        => HttpClient.GetAsync<ExtProductDetailsResponse>($"{ProductsEndpoint}/{sku}");
 }

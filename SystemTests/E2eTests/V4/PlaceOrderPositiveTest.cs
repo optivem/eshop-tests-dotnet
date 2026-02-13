@@ -19,15 +19,15 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProduct(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
+        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
             .ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value!.OrderNumber;
-        var viewOrderResult = await _shopDriver.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(100.00m);
     }
@@ -43,15 +43,15 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProduct(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = unitPrice }))
+        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = unitPrice }))
             .ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = quantity, Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value!.OrderNumber;
-        var viewOrderResult = await _shopDriver.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(decimal.Parse(expectedSubtotalPrice));
     }
@@ -63,17 +63,17 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProduct(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
+        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
             .ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrder(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value!.OrderNumber;
         orderNumber.ShouldStartWith("ORD-");
 
-        var viewOrderResult = await _shopDriver.Orders().ViewOrder(orderNumber);
+        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
 
         var order = viewOrderResult.Value!;

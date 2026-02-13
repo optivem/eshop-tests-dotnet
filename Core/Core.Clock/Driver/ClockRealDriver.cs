@@ -1,11 +1,19 @@
 using Optivem.EShop.SystemTest.Core.Clock.Driver.Dtos;
+using Optivem.EShop.SystemTest.Core.Clock.Client;
 using Commons.Util;
+using Optivem.EShop.SystemTest.Core.Clock.Client.Dtos;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Driver;
 
 public class ClockRealDriver : IClockDriver
 {
+    private readonly ClockRealClient _client;
     private bool _disposed;
+
+    public ClockRealDriver()
+    {
+        _client = new ClockRealClient();
+    }
 
     public void Dispose()
     {
@@ -16,32 +24,16 @@ public class ClockRealDriver : IClockDriver
     protected virtual void Dispose(bool disposing)
     {
         if (_disposed) return;
-        if (disposing)
-        {
-            // No resources to dispose
-        }
         _disposed = true;
     }
 
-    public Task<Result<VoidValue, ClockErrorResponse>> GoToClock()
-    {
-        var _ = DateTimeOffset.UtcNow;
-        return Task.FromResult(Result.Success<ClockErrorResponse>());
-    }
+    public Task<Result<VoidValue, ClockErrorResponse>> GoToClockAsync()
+        => _client.CheckHealthAsync().MapErrorAsync(ClockErrorResponse.From);
 
-    public Task<Result<GetTimeResponse, ClockErrorResponse>> GetTime()
-    {
-        var currentTime = DateTimeOffset.UtcNow;
+    public Task<Result<GetTimeResponse, ClockErrorResponse>> GetTimeAsync()
+        => _client.GetTimeAsync().MapAsync(GetTimeResponse.From).MapErrorAsync(ClockErrorResponse.From);
 
-        var response = new GetTimeResponse
-        {
-            Time = currentTime
-        };
-
-        return Task.FromResult(Result<GetTimeResponse, ClockErrorResponse>.Success(response));
-    }
-
-    public Task<Result<VoidValue, ClockErrorResponse>> ReturnsTime(ReturnsTimeRequest request)
+    public Task<Result<VoidValue, ClockErrorResponse>> ReturnsTimeAsync(ReturnsTimeRequest request)
     {
         // No-op for real driver - cannot configure system clock
         return Task.FromResult(Result.Success<ClockErrorResponse>());

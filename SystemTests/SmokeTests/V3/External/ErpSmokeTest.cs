@@ -16,7 +16,7 @@ public class ErpSmokeTest : BaseDriverTest
     [Fact]
     public async Task ShouldBeAbleToGoToErp()
     {
-        var result = await _erpDriver!.GoToErp();
+        var result = await _erpDriver!.GoToErpAsync();
         result.ShouldBeSuccess();
     }
 }

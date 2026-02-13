@@ -15,7 +15,7 @@ public class ShopApiSmokeTest : BaseClientTest
     [Fact]
     public async Task ShouldBeAbleToGoToShop()
     {
-        var result = await _shopApiClient!.Health().CheckHealth();
+        var result = await _shopApiClient!.Health().CheckHealthAsync();
         result.ShouldBeSuccess();
     }
 }

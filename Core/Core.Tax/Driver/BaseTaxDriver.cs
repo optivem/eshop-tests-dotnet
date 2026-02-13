@@ -29,12 +29,12 @@ public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTa
         _disposed = true;
     }
 
-    public virtual Task<Result<VoidValue, TaxErrorResponse>> GoToTax()
-        => _client.CheckHealth()
+    public virtual Task<Result<VoidValue, TaxErrorResponse>> GoToTaxAsync()
+        => _client.CheckHealthAsync()
             .MapErrorAsync(TaxErrorResponse.From);
 
-    public virtual Task<Result<GetTaxResponse, TaxErrorResponse>> GetTaxRate(string? country)
-        => _client.GetCountry(country)
+    public virtual Task<Result<GetTaxResponse, TaxErrorResponse>> GetTaxRateAsync(string? country)
+        => _client.GetCountryAsync(country)
             .MapAsync(taxRateResponse => new GetTaxResponse
             {
                 Country = taxRateResponse.Id,
@@ -42,5 +42,5 @@ public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTa
             })
             .MapErrorAsync(TaxErrorResponse.From);
 
-    public abstract Task<Result<VoidValue, TaxErrorResponse>> ReturnsTaxRate(ReturnsTaxRateRequest request);
+    public abstract Task<Result<VoidValue, TaxErrorResponse>> ReturnsTaxRateAsync(ReturnsTaxRateRequest request);
 }

@@ -21,7 +21,7 @@ public class PlaceOrderPositiveUiTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPrice()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
 
         var homePage = await _shopUiClient!.OpenHomePageAsync();
         var newOrderPage = await homePage.ClickNewOrderAsync();
@@ -52,7 +52,7 @@ public class PlaceOrderPositiveUiTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPriceParameterized(string unitPrice, string quantity, string expectedSubtotalPrice)
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = unitPrice })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = unitPrice })).ShouldBeSuccess();
 
         var homePage = await _shopUiClient!.OpenHomePageAsync();
         var newOrderPage = await homePage.ClickNewOrderAsync();
@@ -79,7 +79,7 @@ public class PlaceOrderPositiveUiTest : BaseE2eTest
     public async Task ShouldPlaceOrder()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test Product", Description = "Test Description", Category = "Test Category", Brand = "Test Brand", Price = "20.00" })).ShouldBeSuccess();
 
         var homePage = await _shopUiClient!.OpenHomePageAsync();
         var newOrderPage = await homePage.ClickNewOrderAsync();

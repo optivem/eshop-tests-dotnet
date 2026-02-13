@@ -17,7 +17,7 @@ public abstract class ShopBaseSmokeTest : BaseDriverTest
     [Fact]
     public async Task ShouldBeAbleToGoToShop()
     {
-        var result = await _shopDriver!.GoToShop();
+        var result = await _shopDriver!.GoToShopAsync();
         result.ShouldBeSuccess();
     }
 }

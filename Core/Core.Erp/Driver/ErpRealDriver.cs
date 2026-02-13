@@ -17,7 +17,7 @@ public class ErpRealDriver : BaseErpDriver<ErpRealClient>
     {
     }
 
-    public override Task<Result<VoidValue, ErpErrorResponse>> ReturnsProduct(ReturnsProductRequest request)
+    public override Task<Result<VoidValue, ErpErrorResponse>> ReturnsProductAsync(ReturnsProductRequest request)
     {
         var createProductRequest = new ExtCreateProductRequest
         {
@@ -29,7 +29,7 @@ public class ErpRealDriver : BaseErpDriver<ErpRealClient>
             Price = request.Price
         };
 
-        return _client.CreateProduct(createProductRequest)
+        return _client.CreateProductAsync(createProductRequest)
             .MapErrorAsync(ErpErrorResponse.From);
     }
 }

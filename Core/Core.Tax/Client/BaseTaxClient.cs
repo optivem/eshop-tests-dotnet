@@ -32,9 +32,9 @@ public abstract class BaseTaxClient : IDisposable
         _disposed = true;
     }
 
-    public Task<Result<VoidValue, ExtTaxErrorResponse>> CheckHealth()
-        => _httpClient.Get(HealthEndpoint);
+    public Task<Result<VoidValue, ExtTaxErrorResponse>> CheckHealthAsync()
+        => _httpClient.GetAsync(HealthEndpoint);
 
-    public Task<Result<ExtCountryDetailsResponse, ExtTaxErrorResponse>> GetCountry(string? country)
-        => _httpClient.Get<ExtCountryDetailsResponse>($"{CountriesEndpoint}/{country}");
+    public Task<Result<ExtCountryDetailsResponse, ExtTaxErrorResponse>> GetCountryAsync(string? country)
+        => _httpClient.GetAsync<ExtCountryDetailsResponse>($"{CountriesEndpoint}/{country}");
 }

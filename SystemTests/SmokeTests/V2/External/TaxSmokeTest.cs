@@ -15,7 +15,7 @@ public class TaxSmokeTest : BaseClientTest
     [Fact]
     public async Task ShouldBeAbleToGoToTax()
     {
-        var result = await _taxClient!.CheckHealth();
+        var result = await _taxClient!.CheckHealthAsync();
         result.ShouldBeSuccess();
     }
 }

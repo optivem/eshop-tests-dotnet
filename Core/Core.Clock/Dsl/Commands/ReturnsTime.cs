@@ -28,7 +28,7 @@ public class ReturnsTime : BaseClockCommand<VoidValue, VoidVerification>
             Time = _time
         };
 
-        var result = await _driver.ReturnsTime(request);
+        var result = await _driver.ReturnsTimeAsync(request);
 
         return new ClockUseCaseResult<VoidValue, VoidVerification>(
             result,

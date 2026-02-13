@@ -70,7 +70,7 @@ public class PublishCoupon : BaseShopCommand<VoidValue, VoidVerification>
             UsageLimit = _usageLimit
         };
 
-        var result = await _driver.Coupons().PublishCoupon(request);
+        var result = await _driver.Coupons().PublishCouponAsync(request);
 
         return new ShopUseCaseResult<VoidValue, VoidVerification>(
             result,

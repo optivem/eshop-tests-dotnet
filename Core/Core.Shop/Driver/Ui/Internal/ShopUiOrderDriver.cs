@@ -22,7 +22,7 @@ public class ShopUiOrderDriver : IOrderDriver
         _pageNavigator = pageNavigator;
     }
 
-    public async Task<Result<PlaceOrderResponse, SystemError>> PlaceOrder(PlaceOrderRequest request)
+    public async Task<Result<PlaceOrderResponse, SystemError>> PlaceOrderAsync(PlaceOrderRequest request)
     {
         var sku = request.Sku;
         var quantity = request.Quantity;
@@ -52,7 +52,7 @@ public class ShopUiOrderDriver : IOrderDriver
         return Success(response);
     }
 
-    public async Task<Result<ViewOrderResponse, SystemError>> ViewOrder(string? orderNumber)
+    public async Task<Result<ViewOrderResponse, SystemError>> ViewOrderAsync(string? orderNumber)
     {
         var result = await EnsureOnOrderDetailsPageAsync(orderNumber);
         if (result.IsFailure)
@@ -104,9 +104,9 @@ public class ShopUiOrderDriver : IOrderDriver
         return Success(response);
     }
 
-    public async Task<Result<VoidValue, SystemError>> CancelOrder(string? orderNumber)
+    public async Task<Result<VoidValue, SystemError>> CancelOrderAsync(string? orderNumber)
     {
-        var viewResult = await ViewOrder(orderNumber);
+        var viewResult = await ViewOrderAsync(orderNumber);
         if (viewResult.IsFailure)
         {
             return viewResult.MapVoid();

@@ -30,19 +30,19 @@ public class ClockStubDriver : IClockDriver
         _disposed = true;
     }
 
-    public Task<Result<VoidValue, ClockErrorResponse>> GoToClock()
-        => _client.CheckHealth().MapErrorAsync(ClockErrorResponse.From);
+    public Task<Result<VoidValue, ClockErrorResponse>> GoToClockAsync()
+        => _client.CheckHealthAsync().MapErrorAsync(ClockErrorResponse.From);
 
-    public Task<Result<GetTimeResponse, ClockErrorResponse>> GetTime()
-        => _client.GetTime().MapAsync(GetTimeResponse.From).MapErrorAsync(ClockErrorResponse.From);
+    public Task<Result<GetTimeResponse, ClockErrorResponse>> GetTimeAsync()
+        => _client.GetTimeAsync().MapAsync(GetTimeResponse.From).MapErrorAsync(ClockErrorResponse.From);
 
-    public async Task<Result<VoidValue, ClockErrorResponse>> ReturnsTime(ReturnsTimeRequest request)
+    public async Task<Result<VoidValue, ClockErrorResponse>> ReturnsTimeAsync(ReturnsTimeRequest request)
     {
         var extResponse = new ExtGetTimeResponse
         {
             Time = DateTimeOffset.Parse(request.Time!, System.Globalization.CultureInfo.InvariantCulture)
         };
-        await _client.ConfigureGetTime(extResponse);
+        await _client.ConfigureGetTimeAsync(extResponse);
         return Result.Success<ClockErrorResponse>();
     }
 

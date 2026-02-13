@@ -39,13 +39,13 @@ public class ClockStubClient : IDisposable
         _disposed = true;
     }
 
-    public Task<Result<VoidValue, ExtClockErrorResponse>> CheckHealth()
-        => _httpClient.Get(HealthEndpoint);
+    public Task<Result<VoidValue, ExtClockErrorResponse>> CheckHealthAsync()
+        => _httpClient.GetAsync(HealthEndpoint);
 
-    public Task<Result<ExtGetTimeResponse, ExtClockErrorResponse>> GetTime()
-        => _httpClient.Get<ExtGetTimeResponse>(TimeEndpoint);
+    public Task<Result<ExtGetTimeResponse, ExtClockErrorResponse>> GetTimeAsync()
+        => _httpClient.GetAsync<ExtGetTimeResponse>(TimeEndpoint);
 
-    public Task<Result<VoidValue, ExtClockErrorResponse>> ConfigureGetTime(ExtGetTimeResponse response)
+    public Task<Result<VoidValue, ExtClockErrorResponse>> ConfigureGetTimeAsync(ExtGetTimeResponse response)
         => _wireMockClient.StubGetAsync(ClockTimeEndpoint, HttpStatus.Ok, response)
             .MapErrorAsync(ExtClockErrorResponse.From);
 }

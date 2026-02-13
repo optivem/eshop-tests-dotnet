@@ -27,7 +27,7 @@ public class ViewOrder : BaseShopCommand<ViewOrderResponse, ViewOrderVerificatio
     {
         var orderNumber = _context.GetResultValue(_orderNumberResultAlias);
 
-        var result = await _driver.Orders().ViewOrder(orderNumber);
+        var result = await _driver.Orders().ViewOrderAsync(orderNumber);
 
         return new ShopUseCaseResult<ViewOrderResponse, ViewOrderVerification>(
             result,

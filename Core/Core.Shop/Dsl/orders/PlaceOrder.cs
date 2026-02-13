@@ -70,7 +70,7 @@ public class PlaceOrder : BaseShopCommand<PlaceOrderResponse, PlaceOrderVerifica
             CouponCode = couponCode
         };
 
-        var result = await _driver.Orders().PlaceOrder(request);
+        var result = await _driver.Orders().PlaceOrderAsync(request);
 
         if (_orderNumberResultAlias != null)
         {

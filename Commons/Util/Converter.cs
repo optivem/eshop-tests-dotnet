@@ -32,16 +32,6 @@ public static class Converter
         return From(value, v => v.ToString());
     }
 
-    public static DateTime? ToInstant(string? value)
-    {
-        return To(value, DateTime.Parse);
-    }
-
-    public static string? FromInstant(DateTime? value)
-    {
-        return From(value, v => v.ToString("O")); // ISO 8601 format
-    }
-
     public static DateTimeOffset? ToDateTimeOffset(string? value)
     {
         return To(value, DateTimeOffset.Parse);
@@ -52,7 +42,7 @@ public static class Converter
         return From(value, v => v.ToString("O")); // ISO 8601 format
     }
 
-    public static DateTime? ParseDateTime(string? text, params string[] nullValues)
+    public static DateTime? ToDateTime(string? text, params string[] nullValues)
     {
         if (string.IsNullOrEmpty(text))
         {

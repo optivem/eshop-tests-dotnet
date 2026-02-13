@@ -23,7 +23,7 @@ public class ErpStubClient : BaseErpClient
         _wireMockClient?.Dispose();
     }
 
-    public Task<Result<VoidValue, ExtErpErrorResponse>> ConfigureGetProduct(ExtProductDetailsResponse response)
+    public Task<Result<VoidValue, ExtErpErrorResponse>> ConfigureGetProductAsync(ExtProductDetailsResponse response)
         => _wireMockClient.StubGetAsync($"{ErpProductsEndpoint}/{response.Id}", HttpStatus.Ok, response)
             .MapErrorAsync(ExtErpErrorResponse.From);
 

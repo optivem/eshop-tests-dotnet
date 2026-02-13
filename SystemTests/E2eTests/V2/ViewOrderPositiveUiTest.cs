@@ -21,7 +21,7 @@ public class ViewOrderPositiveUiTest : BaseE2eTest
     public async Task ShouldViewPlacedOrder()
     {
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpClient!.CreateProduct(new ExtCreateProductRequest { Id = sku, Title = "Test", Description = "Test", Category = "Test", Brand = "Test", Price = "20.00" })).ShouldBeSuccess();
+        (await _erpClient!.CreateProductAsync(new ExtCreateProductRequest { Id = sku, Title = "Test", Description = "Test", Category = "Test", Brand = "Test", Price = "20.00" })).ShouldBeSuccess();
 
         var homePage = await _shopUiClient!.OpenHomePageAsync();
         var newOrderPage = await homePage.ClickNewOrderAsync();

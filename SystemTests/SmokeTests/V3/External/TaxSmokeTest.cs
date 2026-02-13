@@ -16,7 +16,7 @@ public class TaxSmokeTest : BaseDriverTest
     [Fact]
     public async Task ShouldBeAbleToGoToTax()
     {
-        var result = await _taxDriver!.GoToTax();
+        var result = await _taxDriver!.GoToTaxAsync();
         result.ShouldBeSuccess();
     }
 }

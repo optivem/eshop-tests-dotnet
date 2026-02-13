@@ -26,7 +26,7 @@ public class GetTaxRate : BaseTaxCommand<GetTaxResponse, GetTaxVerification>
     {
         var countryValue = _context.GetParamValueOrLiteral(country);
 
-        var result = await _driver.GetTaxRate(countryValue);
+        var result = await _driver.GetTaxRateAsync(countryValue);
 
         return new TaxUseCaseResult<GetTaxResponse, GetTaxVerification>(
             result,
