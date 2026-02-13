@@ -21,6 +21,6 @@ public class ViewOrderNegativeUiTest : BaseE2eTest
         var orderHistoryPage = await homePage.ClickOrderHistoryAsync();
         await orderHistoryPage.InputOrderNumberAsync(orderNumber);
         await orderHistoryPage.ClickSearchAsync();
-        (await orderHistoryPage.IsOrderListedAsync(orderNumber)).ShouldBeFalse();
+        (await orderHistoryPage.WaitForOrderRowAsync(orderNumber, 3000)).ShouldBeFalse();
     }
 }

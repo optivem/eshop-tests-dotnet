@@ -62,6 +62,15 @@ public class PageClient
         return contents.ToList();
     }
 
+    public async Task WaitForVisibleAsync(string selector, float? timeoutMilliseconds = null)
+    {
+        var locator = _page.Locator(selector);
+        var options = timeoutMilliseconds.HasValue
+            ? new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = timeoutMilliseconds.Value }
+            : GetDefaultWaitForOptions();
+        await locator.WaitForAsync(options);
+    }
+
     public async Task<bool> IsVisibleAsync(string selector)
     {
         try

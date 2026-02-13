@@ -167,7 +167,7 @@ public class ShopUiOrderDriver : IOrderDriver
         await _orderHistoryPage!.InputOrderNumberAsync(orderNumber);
         await _orderHistoryPage.ClickSearchAsync();
 
-        var isOrderListed = await _orderHistoryPage.IsOrderListedAsync(orderNumber);
+        var isOrderListed = await _orderHistoryPage.WaitForOrderRowAsync(orderNumber);
         if (!isOrderListed)
         {
             return Failure("Order " + orderNumber + " does not exist.");

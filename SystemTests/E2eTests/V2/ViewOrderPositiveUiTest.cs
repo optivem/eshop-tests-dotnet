@@ -38,7 +38,7 @@ public class ViewOrderPositiveUiTest : BaseE2eTest
         var orderHistoryPage = await (await _shopUiClient.OpenHomePageAsync()).ClickOrderHistoryAsync();
         await orderHistoryPage.InputOrderNumberAsync(orderNumber);
         await orderHistoryPage.ClickSearchAsync();
-        (await orderHistoryPage.IsOrderListedAsync(orderNumber)).ShouldBeTrue();
+        (await orderHistoryPage.WaitForOrderRowAsync(orderNumber)).ShouldBeTrue();
 
         var orderDetailsPage = await orderHistoryPage.ClickViewOrderDetailsAsync(orderNumber);
         (await orderDetailsPage.GetOrderNumberAsync()).ShouldBe(orderNumber);

@@ -26,6 +26,20 @@ public class OrderHistoryPage : BasePage
         await PageClient.ClickAsync(SearchButtonSelector);
     }
 
+    public async Task<bool> WaitForOrderRowAsync(string? orderNumber, int timeoutMilliseconds = 10000)
+    {
+        try
+        {
+            var rowSelector = GetRowSelector(orderNumber);
+            await PageClient.WaitForVisibleAsync(rowSelector, timeoutMilliseconds);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     public async Task<bool> IsOrderListedAsync(string? orderNumber)
     {
         var rowSelector = GetRowSelector(orderNumber);
