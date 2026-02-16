@@ -85,6 +85,12 @@ public class PageClient
         }
     }
 
+    public async Task<string?> ReadAttributeAsync(string selector, string attributeName)
+    {
+        var locator = _page.Locator(selector);
+        return await locator.GetAttributeAsync(attributeName);
+    }
+
     public async Task<bool> IsHiddenAsync(string selector)
     {
         var locator = _page.Locator(selector);
