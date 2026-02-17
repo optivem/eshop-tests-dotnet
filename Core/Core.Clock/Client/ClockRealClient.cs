@@ -6,7 +6,7 @@ namespace Optivem.EShop.SystemTest.Core.Clock.Client;
 
 public class ClockRealClient
 {
-    public Task<Result<VoidValue, ExtClockErrorResponse>> CheckHealthAsync()
+    public static Task<Result<VoidValue, ExtClockErrorResponse>> CheckHealthAsync()
     {
         var _ = Now;
         return Task.FromResult(Result.Success<ExtClockErrorResponse>());

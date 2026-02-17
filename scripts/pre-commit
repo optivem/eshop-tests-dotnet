@@ -5,6 +5,9 @@
 
 cd "$(git rev-parse --show-toplevel)" || exit 1
 
-echo "Running pre-commit checks..."
-dotnet build
+if [ -f ./Run-PreCommitCheck.ps1 ]; then
+  pwsh ./Run-PreCommitCheck.ps1
+else
+  powershell ./Run-PreCommitCheck.ps1
+fi
 exit $?

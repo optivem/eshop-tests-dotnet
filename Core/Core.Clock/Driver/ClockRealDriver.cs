@@ -28,7 +28,7 @@ public class ClockRealDriver : IClockDriver
     }
 
     public Task<Result<VoidValue, ClockErrorResponse>> GoToClockAsync()
-        => _client.CheckHealthAsync().MapErrorAsync(ClockErrorResponse.From);
+        => ClockRealClient.CheckHealthAsync().MapErrorAsync(ClockErrorResponse.From);
 
     public Task<Result<GetTimeResponse, ClockErrorResponse>> GetTimeAsync()
         => _client.GetTimeAsync().MapAsync(GetTimeResponse.From).MapErrorAsync(ClockErrorResponse.From);
