@@ -1,7 +1,6 @@
 using Commons.Dsl;
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Common.Dsl;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.Commands.Base;
+using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
 using System;
 using System.Collections.Generic;

@@ -3,8 +3,7 @@ using Dsl.Gherkin.When;
 using Commons.Dsl;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.Commands.Base;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.Verifications;
+using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;
 using Optivem.Testing;
 using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 

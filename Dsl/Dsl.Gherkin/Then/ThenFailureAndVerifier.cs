@@ -1,5 +1,5 @@
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Common.Dsl;
+using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
 namespace Dsl.Gherkin.Then;
 
