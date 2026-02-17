@@ -61,6 +61,11 @@ namespace Dsl.Gherkin.When
             }
         }
 
+        public GoToShopBuilder GoToShop()
+        {
+            return new GoToShopBuilder(_app, _scenario, () => EnsureGiven());
+        }
+
         public PlaceOrderBuilder PlaceOrder()
         {
             return new PlaceOrderBuilder(_app, _scenario, () => EnsureGiven());
