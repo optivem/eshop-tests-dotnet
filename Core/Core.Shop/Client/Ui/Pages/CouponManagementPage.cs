@@ -70,20 +70,12 @@ public class CouponManagementPage : BasePage
         await PageClient.ClickAsync(PublishCouponButtonSelector);
     }
 
-    public async Task<bool> HasCouponsTableAsync()
-    {
-        return await PageClient.IsVisibleAsync(CouponsTableSelector);
-    }
-
     public async Task<List<CouponDto>> ReadCouponsAsync()
     {
-        if (!await HasCouponsTableAsync())
-        {
-            return new List<CouponDto>();
-        }
+        // Wait for table to appear/refresh after operations like PublishCoupon
+        await PageClient.WaitForVisibleAsync(CouponsTableSelector);
 
         var coupons = new List<CouponDto>();
-
         // Use readAllTextContents to avoid strict mode violations
         // These selectors intentionally match multiple elements (one per table row)
         var codes = await PageClient.ReadAllTextContentsAsync(TableCellCodeSelector);
