@@ -10,6 +10,9 @@ namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Ui.Internal;
 
 public class ShopUiCouponDriver : ICouponDriver
 {
+    private const int MaxBrowseRetries = 10;
+    private static readonly TimeSpan BrowseRetryDelay = TimeSpan.FromSeconds(1);
+
     private readonly Func<Task<HomePage>> _homePageSupplier;
     private readonly PageNavigator _pageNavigator;
     private CouponManagementPage? _couponManagementPage;
@@ -37,17 +40,27 @@ public class ShopUiCouponDriver : ICouponDriver
 
     public async Task<Result<BrowseCouponsResponse, SystemError>> BrowseCouponsAsync()
     {
-        // Always navigate fresh to ensure we get the latest coupon data (e.g., updated used counts)
-        await NavigateToCouponManagementPageAsync();
-
-        var coupons = await _couponManagementPage!.ReadCouponsAsync();
-
-        var response = new BrowseCouponsResponse
+        // Retry with fresh page navigations to handle UI eventual consistency —
+        // after publishing a coupon or placing an order, the coupon table
+        // may not yet reflect the latest state on first load.
+        for (int attempt = 0; attempt < MaxBrowseRetries; attempt++)
         {
-            Coupons = coupons
-        };
+            await NavigateToCouponManagementPageAsync();
+            var coupons = await _couponManagementPage!.ReadCouponsAsync();
 
-        return Success(response);
+            if (coupons.Count > 0)
+            {
+                return Success(new BrowseCouponsResponse { Coupons = coupons });
+            }
+
+            await Task.Delay(BrowseRetryDelay);
+        }
+
+        // Final attempt — return whatever we get (even if empty)
+        await NavigateToCouponManagementPageAsync();
+        var finalCoupons = await _couponManagementPage!.ReadCouponsAsync();
+
+        return Success(new BrowseCouponsResponse { Coupons = finalCoupons });
     }
 
     private async Task EnsureOnCouponManagementPageAsync()
