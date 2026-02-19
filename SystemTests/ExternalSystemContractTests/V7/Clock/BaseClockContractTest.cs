@@ -1,4 +1,6 @@
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.Clock;
+using Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Base;
+
+namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Clock;
 
 public abstract class BaseClockContractTest : BaseExternalSystemContractTest
 {

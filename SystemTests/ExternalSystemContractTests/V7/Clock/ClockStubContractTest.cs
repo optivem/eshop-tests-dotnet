@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.Clock;
+namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Clock;
 
 public class ClockStubContractTest : BaseClockContractTest
 {

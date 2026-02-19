@@ -1,4 +1,6 @@
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.Tax;
+using Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Base;
+
+namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Tax;
 
 public abstract class BaseTaxContractTest : BaseExternalSystemContractTest
 {

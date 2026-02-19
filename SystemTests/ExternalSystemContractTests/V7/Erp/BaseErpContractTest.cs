@@ -1,4 +1,6 @@
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.Erp;
+using Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Base;
+
+namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Erp;
 
 public abstract class BaseErpContractTest : BaseExternalSystemContractTest
 {
