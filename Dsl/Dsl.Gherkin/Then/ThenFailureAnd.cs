@@ -3,13 +3,13 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
 namespace Dsl.Gherkin.Then;
 
-public class ThenFailureAndVerifier<TSuccessResponse, TSuccessVerification>
-    : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenFailureOrderVerifier<TSuccessResponse, TSuccessVerification>>
+public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
+    : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;
 
-    internal ThenFailureAndVerifier(
+    internal ThenFailureAnd(
         ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
         List<Action<SystemErrorFailureVerification>> failureAssertions)
         : base(thenClause)
@@ -17,14 +17,14 @@ public class ThenFailureAndVerifier<TSuccessResponse, TSuccessVerification>
         _failureAssertions = failureAssertions;
     }
 
-    protected override ThenFailureOrderVerifier<TSuccessResponse, TSuccessVerification> CreateOrderAssertion(Func<Task<string>> orderNumberFactory)
+    protected override ThenFailureOrder<TSuccessResponse, TSuccessVerification> CreateOrderAssertion(Func<Task<string>> orderNumberFactory)
     {
-        return new ThenFailureOrderVerifier<TSuccessResponse, TSuccessVerification>(_thenClause, _failureAssertions, orderNumberFactory);
+        return new ThenFailureOrder<TSuccessResponse, TSuccessVerification>(_thenClause, _failureAssertions, orderNumberFactory);
     }
 
-    public ThenFailureCouponVerifier<TSuccessResponse, TSuccessVerification> Coupon(string couponCode)
+    public ThenFailureCoupon<TSuccessResponse, TSuccessVerification> Coupon(string couponCode)
     {
-        return new ThenFailureCouponVerifier<TSuccessResponse, TSuccessVerification>(
+        return new ThenFailureCoupon<TSuccessResponse, TSuccessVerification>(
             _thenClause,
             _failureAssertions,
             () => Task.FromResult(couponCode));
@@ -33,9 +33,9 @@ public class ThenFailureAndVerifier<TSuccessResponse, TSuccessVerification>
     /// <summary>
     /// Verifies coupon from execution result (coupon code from the executed operation).
     /// </summary>
-    public ThenFailureCouponVerifier<TSuccessResponse, TSuccessVerification> Coupon()
+    public ThenFailureCoupon<TSuccessResponse, TSuccessVerification> Coupon()
     {
-        return new ThenFailureCouponVerifier<TSuccessResponse, TSuccessVerification>(
+        return new ThenFailureCoupon<TSuccessResponse, TSuccessVerification>(
             _thenClause,
             _failureAssertions,
             async () =>

@@ -17,9 +17,9 @@ public class ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>
         _thenClause = thenClause;
     }
 
-    public ThenSuccessAndVerifier<TSuccessResponse, TSuccessVerification> And()
+    public ThenSuccessAnd<TSuccessResponse, TSuccessVerification> And()
     {
-        return new ThenSuccessAndVerifier<TSuccessResponse, TSuccessVerification>(_thenClause);
+        return new ThenSuccessAnd<TSuccessResponse, TSuccessVerification>(_thenClause);
     }
 
     /// <summary>

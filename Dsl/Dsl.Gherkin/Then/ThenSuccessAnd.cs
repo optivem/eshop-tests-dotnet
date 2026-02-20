@@ -2,11 +2,11 @@ using Commons.Dsl;
 
 namespace Dsl.Gherkin.Then;
 
-public class ThenSuccessAndVerifier<TSuccessResponse, TSuccessVerification>
+public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
     : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
-    internal ThenSuccessAndVerifier(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    internal ThenSuccessAnd(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
         : base(thenClause)
     {
     }

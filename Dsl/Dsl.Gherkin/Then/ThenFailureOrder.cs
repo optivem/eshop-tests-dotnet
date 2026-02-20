@@ -5,19 +5,19 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 namespace Dsl.Gherkin.Then;
 
 /// <summary>
-/// Coupon verification in failure path - no success check, runs failure assertions first then coupon verifications.
+/// Order verification in failure path - no success check, runs failure assertions first then order verifications.
 /// </summary>
-public class ThenFailureCouponVerifier<TSuccessResponse, TSuccessVerification>
-    : BaseThenCouponVerifier<TSuccessResponse, TSuccessVerification, ThenFailureCouponVerifier<TSuccessResponse, TSuccessVerification>>
+public class ThenFailureOrder<TSuccessResponse, TSuccessVerification>
+    : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;
 
-    internal ThenFailureCouponVerifier(
+    internal ThenFailureOrder(
         ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
         List<Action<SystemErrorFailureVerification>> failureAssertions,
-        Func<Task<string>> couponCodeFactory)
-        : base(thenClause, couponCodeFactory)
+        Func<Task<string>> orderNumberFactory)
+        : base(thenClause, orderNumberFactory)
     {
         _failureAssertions = failureAssertions;
     }

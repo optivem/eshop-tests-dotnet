@@ -35,9 +35,9 @@ public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
     /// Returns the failure assertion and for further chaining (e.g. .And().Order().HasStatus(...)).
     /// Enables fluent syntax: await Scenario(...).Then().ShouldFail().ErrorMessage("...").And().Order().HasStatus(...);
     /// </summary>
-    public ThenFailureAndVerifier<TSuccessResponse, TSuccessVerification> And()
+    public ThenFailureAnd<TSuccessResponse, TSuccessVerification> And()
     {
-        return new ThenFailureAndVerifier<TSuccessResponse, TSuccessVerification>(_thenClause, _assertions);
+        return new ThenFailureAnd<TSuccessResponse, TSuccessVerification>(_thenClause, _assertions);
     }
 
     public TaskAwaiter GetAwaiter() => ExecuteAssertions().GetAwaiter();

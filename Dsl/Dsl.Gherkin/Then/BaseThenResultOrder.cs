@@ -8,15 +8,15 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Orders;
 
 namespace Dsl.Gherkin.Then;
 
-public abstract class BaseThenOrderVerifier<TSuccessResponse, TSuccessVerification, TDerived>
+public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TDerived>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
-    where TDerived : BaseThenOrderVerifier<TSuccessResponse, TSuccessVerification, TDerived>
+    where TDerived : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TDerived>
 {
     protected readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
     protected readonly Func<Task<string>> _orderNumberFactory;
     protected readonly List<Action<ViewOrderVerification>> _verifications = [];
 
-    protected BaseThenOrderVerifier(
+    protected BaseThenResultOrder(
         ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
         Func<Task<string>> orderNumberFactory)
     {

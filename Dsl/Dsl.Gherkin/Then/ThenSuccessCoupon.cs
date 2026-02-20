@@ -3,14 +3,14 @@ using Dsl.Gherkin;
 
 namespace Dsl.Gherkin.Then;
 
-public class ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>
-    : BaseThenOrderVerifier<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>
+public class ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification>
+    : BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification>>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
-    internal ThenSuccessOrderVerifier(
+    internal ThenSuccessCouponVerifier(
         ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
-        Func<Task<string>> orderNumberFactory)
-        : base(thenClause, orderNumberFactory)
+        Func<Task<string>> couponCodeFactory)
+        : base(thenClause, couponCodeFactory)
     {
     }
 
