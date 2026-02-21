@@ -21,7 +21,9 @@ public class ViewOrderNegativeTest : BaseE2eTest
     {
         var shop = await _app.Shop(channel);
 
-        (await shop.ViewOrder().OrderNumber(orderNumber).Execute())
+        (await shop.ViewOrder()
+            .OrderNumber(orderNumber)
+            .Execute())
             .ShouldFail()
             .ErrorMessage(expectedErrorMessage);
     }

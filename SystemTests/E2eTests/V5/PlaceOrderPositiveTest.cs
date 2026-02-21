@@ -15,14 +15,25 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldPlaceOrderWithCorrectSubtotalPrice(Channel channel)
     {
-        (await _app.Erp().ReturnsProduct().Sku(Defaults.SKU).UnitPrice(20.00m).Execute())
+        (await _app.Erp()
+            .ReturnsProduct()
+            .Sku(Defaults.SKU)
+            .UnitPrice(20.00m)
+            .Execute())
             .ShouldSucceed();
 
         var shop = await _app.Shop(channel);
-        (await shop.PlaceOrder().OrderNumber(Defaults.ORDER_NUMBER).Sku(Defaults.SKU).Country(Defaults.COUNTRY).Quantity(5).Execute())
+        (await shop.PlaceOrder()
+            .OrderNumber(Defaults.ORDER_NUMBER)
+            .Sku(Defaults.SKU)
+            .Country(Defaults.COUNTRY)
+            .Quantity(5)
+            .Execute())
             .ShouldSucceed();
 
-        (await shop.ViewOrder().OrderNumber(Defaults.ORDER_NUMBER).Execute())
+        (await shop.ViewOrder()
+            .OrderNumber(Defaults.ORDER_NUMBER)
+            .Execute())
             .ShouldSucceed()
             .SubtotalPrice(100.00m);
     }
@@ -35,14 +46,25 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     [ChannelInlineData("99.99", "1", "99.99")]
     public async Task ShouldPlaceOrderWithCorrectSubtotalPriceParameterized(Channel channel, string unitPrice, string quantity, string subtotalPrice)
     {
-        (await _app.Erp().ReturnsProduct().Sku(Defaults.SKU).UnitPrice(unitPrice).Execute())
+        (await _app.Erp()
+            .ReturnsProduct()
+            .Sku(Defaults.SKU)
+            .UnitPrice(unitPrice)
+            .Execute())
             .ShouldSucceed();
 
         var shop = await _app.Shop(channel);
-        (await shop.PlaceOrder().OrderNumber(Defaults.ORDER_NUMBER).Sku(Defaults.SKU).Country(Defaults.COUNTRY).Quantity(quantity).Execute())
+        (await shop.PlaceOrder()
+            .OrderNumber(Defaults.ORDER_NUMBER)
+            .Sku(Defaults.SKU)
+            .Country(Defaults.COUNTRY)
+            .Quantity(quantity)
+            .Execute())
             .ShouldSucceed();
 
-        (await shop.ViewOrder().OrderNumber(Defaults.ORDER_NUMBER).Execute())
+        (await shop.ViewOrder()
+            .OrderNumber(Defaults.ORDER_NUMBER)
+            .Execute())
             .ShouldSucceed()
             .SubtotalPrice(subtotalPrice);
     }
@@ -51,16 +73,27 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldPlaceOrder(Channel channel)
     {
-        (await _app.Erp().ReturnsProduct().Sku(Defaults.SKU).UnitPrice(20.00m).Execute())
+        (await _app.Erp()
+            .ReturnsProduct()
+            .Sku(Defaults.SKU)
+            .UnitPrice(20.00m)
+            .Execute())
             .ShouldSucceed();
 
         var shop = await _app.Shop(channel);
-        (await shop.PlaceOrder().OrderNumber(Defaults.ORDER_NUMBER).Sku(Defaults.SKU).Country(Defaults.COUNTRY).Quantity(5).Execute())
+        (await shop.PlaceOrder()
+            .OrderNumber(Defaults.ORDER_NUMBER)
+            .Sku(Defaults.SKU)
+            .Country(Defaults.COUNTRY)
+            .Quantity(5)
+            .Execute())
             .ShouldSucceed()
             .OrderNumber(Defaults.ORDER_NUMBER)
             .OrderNumberStartsWith("ORD-");
 
-        (await shop.ViewOrder().OrderNumber(Defaults.ORDER_NUMBER).Execute())
+        (await shop.ViewOrder()
+            .OrderNumber(Defaults.ORDER_NUMBER)
+            .Execute())
             .ShouldSucceed()
             .OrderNumber(Defaults.ORDER_NUMBER)
             .Sku(Defaults.SKU)
