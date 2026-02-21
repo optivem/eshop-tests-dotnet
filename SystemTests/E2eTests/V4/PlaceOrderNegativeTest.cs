@@ -20,7 +20,13 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "invalid-quantity", Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Quantity = "invalid-quantity", 
+            Country = Defaults.COUNTRY 
+        };
+
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -33,7 +39,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = "NON-EXISTENT-SKU-12345", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = "NON-EXISTENT-SKU-12345", 
+            Quantity = Defaults.QUANTITY, 
+            Country = Defaults.COUNTRY 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -46,7 +57,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "-10", Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Quantity = "-10", 
+            Country = Defaults.COUNTRY 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -59,7 +75,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = "ANOTHER-SKU-67890", Quantity = "0", Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = "ANOTHER-SKU-67890", 
+            Quantity = "0", 
+            Country = Defaults.COUNTRY 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -73,7 +94,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = sku, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = sku, 
+            Quantity = Defaults.QUANTITY, 
+            Country = Defaults.COUNTRY 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -87,7 +113,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = emptyQuantity, Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Quantity = emptyQuantity, 
+            Country = Defaults.COUNTRY 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -102,7 +133,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = nonIntegerQuantity, Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Quantity = nonIntegerQuantity, 
+            Country = Defaults.COUNTRY 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -116,7 +152,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = emptyCountry };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Quantity = Defaults.QUANTITY, 
+            Country = emptyCountry 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -132,9 +173,18 @@ public class PlaceOrderNegativeTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest 
+        { 
+            Sku = sku, 
+            Price = "20.00" 
+        })).ShouldBeSuccess();
 
-        var request = new PlaceOrderRequest { Sku = sku, Quantity = Defaults.QUANTITY, Country = invalidCountry };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = sku, 
+            Quantity = Defaults.QUANTITY, 
+            Country = invalidCountry 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -147,7 +197,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Country = Defaults.COUNTRY, Quantity = null };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Country = Defaults.COUNTRY, 
+            Quantity = null 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -160,7 +215,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = null, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = null, 
+            Quantity = Defaults.QUANTITY, 
+            Country = Defaults.COUNTRY 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
@@ -173,7 +233,12 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = null };
+        var request = new PlaceOrderRequest 
+        { 
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Quantity = Defaults.QUANTITY, 
+            Country = null 
+        };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
 
         result.ShouldBeFailure();

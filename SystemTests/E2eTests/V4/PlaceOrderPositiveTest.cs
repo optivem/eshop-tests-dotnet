@@ -19,10 +19,19 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
+        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest 
+        { 
+            Sku = sku, 
+            Price = "20.00" 
+        }))
             .ShouldBeSuccess();
 
-        var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
+        var placeOrderRequest = new PlaceOrderRequest 
+        { 
+            Sku = sku, 
+            Quantity = "5", 
+            Country = Defaults.COUNTRY 
+        };
         var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
@@ -43,10 +52,19 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = unitPrice }))
+        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest 
+        { 
+            Sku = sku, 
+            Price = unitPrice 
+        }))
             .ShouldBeSuccess();
 
-        var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = quantity, Country = Defaults.COUNTRY };
+        var placeOrderRequest = new PlaceOrderRequest 
+        { 
+            Sku = sku, 
+            Quantity = quantity, 
+            Country = Defaults.COUNTRY 
+        };
         var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
@@ -63,10 +81,19 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest { Sku = sku, Price = "20.00" }))
+        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest 
+        { 
+            Sku = sku, 
+            Price = "20.00" 
+        }))
             .ShouldBeSuccess();
 
-        var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
+        var placeOrderRequest = new PlaceOrderRequest 
+        { 
+            Sku = sku, 
+            Quantity = "5", 
+            Country = Defaults.COUNTRY 
+        };
         var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 

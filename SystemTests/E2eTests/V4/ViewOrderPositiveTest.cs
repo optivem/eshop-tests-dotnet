@@ -19,9 +19,18 @@ public class ViewOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "25.00" })).ShouldBeSuccess();
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest 
+        { 
+            Sku = sku, 
+            Price = "25.00" 
+        })).ShouldBeSuccess();
 
-        var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "4", Country = Defaults.COUNTRY };
+        var placeOrderRequest = new PlaceOrderRequest 
+        { 
+            Sku = sku, 
+            Quantity = "4", 
+            Country = Defaults.COUNTRY 
+        };
         var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
