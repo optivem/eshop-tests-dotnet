@@ -14,10 +14,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await Scenario(channel)
             .Given().Product()
-            .When().PlaceOrder().WithQuantity("invalid-quantity")
+            .When().PlaceOrder()
+                .WithQuantity("invalid-quantity")
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("quantity", "Quantity must be an integer");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("quantity", "Quantity must be an integer");
     }
 
     [Theory]
@@ -25,10 +26,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNonExistentSku(Channel channel)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithSku("NON-EXISTENT-SKU-12345")
+            .When().PlaceOrder()
+                .WithSku("NON-EXISTENT-SKU-12345")
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("sku", "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("sku", "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
     }
 
     [Theory]
@@ -36,10 +38,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNegativeQuantity(Channel channel)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithQuantity(-10)
+            .When().PlaceOrder()
+                .WithQuantity(-10)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("quantity", "Quantity must be positive");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("quantity", "Quantity must be positive");
     }
 
     [Theory]
@@ -47,10 +50,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithZeroQuantity(Channel channel)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithQuantity(0)
+            .When().PlaceOrder()
+                .WithQuantity(0)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("quantity", "Quantity must be positive");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("quantity", "Quantity must be positive");
     }
 
     [Theory]
@@ -59,10 +63,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithEmptySku(Channel channel, string sku)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithSku(sku)
+            .When().PlaceOrder()
+                .WithSku(sku)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("sku", "SKU must not be empty");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("sku", "SKU must not be empty");
     }
 
     [Theory]
@@ -71,10 +76,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithEmptyQuantity(Channel channel, string emptyQuantity)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithQuantity(emptyQuantity)
+            .When().PlaceOrder()
+                .WithQuantity(emptyQuantity)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("quantity", "Quantity must not be empty");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("quantity", "Quantity must not be empty");
     }
 
     [Theory]
@@ -84,10 +90,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNonIntegerQuantity(Channel channel, string nonIntegerQuantity)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithQuantity(nonIntegerQuantity)
+            .When().PlaceOrder()
+                .WithQuantity(nonIntegerQuantity)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("quantity", "Quantity must be an integer");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("quantity", "Quantity must be an integer");
     }
 
     [Theory]
@@ -96,10 +103,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithEmptyCountry(Channel channel, string emptyCountry)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithCountry(emptyCountry)
+            .When().PlaceOrder()
+                .WithCountry(emptyCountry)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("country", "Country must not be empty");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("country", "Country must not be empty");
     }
 
     [Theory]
@@ -108,10 +116,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     {
         await Scenario(channel)
             .Given().Product()
-            .When().PlaceOrder().WithCountry("XX")
+            .When().PlaceOrder()
+                .WithCountry("XX")
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("country", "Country does not exist: XX");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("country", "Country does not exist: XX");
     }
 
     [Theory]
@@ -119,10 +128,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNullQuantity(Channel channel)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithQuantity(null)
+            .When().PlaceOrder()
+                .WithQuantity(null)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("quantity", "Quantity must not be empty");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("quantity", "Quantity must not be empty");
     }
 
     [Theory]
@@ -130,10 +140,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNullSku(Channel channel)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithSku(null)
+            .When().PlaceOrder()
+                .WithSku(null)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("sku", "SKU must not be empty");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("sku", "SKU must not be empty");
     }
 
     [Theory]
@@ -141,9 +152,10 @@ public class PlaceOrderNegativeTest : BaseE2eTest
     public async Task ShouldRejectOrderWithNullCountry(Channel channel)
     {
         await Scenario(channel)
-            .When().PlaceOrder().WithCountry(null)
+            .When().PlaceOrder()
+                .WithCountry(null)
             .Then().ShouldFail()
-            .ErrorMessage("The request contains one or more validation errors")
-            .FieldErrorMessage("country", "Country must not be empty");
+                .ErrorMessage("The request contains one or more validation errors")
+                .FieldErrorMessage("country", "Country must not be empty");
     }
 }

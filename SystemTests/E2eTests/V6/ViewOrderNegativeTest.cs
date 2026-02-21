@@ -20,8 +20,9 @@ public class ViewOrderNegativeTest : BaseE2eTest
     public async Task ShouldNotBeAbleToViewNonExistentOrder(Channel channel, string orderNumber, string expectedErrorMessage)
     {
         await Scenario(channel)
-            .When().ViewOrder().WithOrderNumber(orderNumber)
+            .When().ViewOrder()
+                .WithOrderNumber(orderNumber)
             .Then().ShouldFail()
-            .ErrorMessage(expectedErrorMessage);
+                .ErrorMessage(expectedErrorMessage);
     }
 }

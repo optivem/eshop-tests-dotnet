@@ -13,11 +13,13 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPrice(Channel channel)
     {
         await Scenario(channel)
-            .Given().Product().WithUnitPrice("20.00")
-            .When().PlaceOrder().WithQuantity(5)
+            .Given().Product()
+                .WithUnitPrice("20.00")
+            .When().PlaceOrder()
+                .WithQuantity(5)
             .Then().ShouldSucceed()
             .And().Order()
-            .HasSubtotalPrice("100.00");
+                    .HasSubtotalPrice("100.00");
     }
 
     [Theory]
@@ -29,11 +31,13 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     public async Task ShouldPlaceOrderWithCorrectSubtotalPriceParameterized(Channel channel, string unitPrice, string quantity, string subtotalPrice)
     {
         await Scenario(channel)
-            .Given().Product().WithUnitPrice(unitPrice)
-            .When().PlaceOrder().WithQuantity(quantity)
+            .Given().Product()
+                .WithUnitPrice(unitPrice)
+            .When().PlaceOrder()
+                .WithQuantity(quantity)
             .Then().ShouldSucceed()
             .And().Order()
-            .HasSubtotalPrice(subtotalPrice);
+                    .HasSubtotalPrice(subtotalPrice);
     }
 
     [Theory]
@@ -41,20 +45,22 @@ public class PlaceOrderPositiveTest : BaseE2eTest
     public async Task ShouldPlaceOrder(Channel channel)
     {
         await Scenario(channel)
-            .Given().Product().WithUnitPrice("20.00")
-            .When().PlaceOrder().WithQuantity(5)
+            .Given().Product()
+                .WithUnitPrice("20.00")
+            .When().PlaceOrder()
+                .WithQuantity(5)
             .Then().ShouldSucceed()
             .And().Order()
-            .HasOrderNumberPrefix("ORD-")
-            .HasQuantity(5)
-            .HasUnitPrice(20.00m)
-            .HasSubtotalPrice("100.00")
-            .HasStatus(OrderStatus.Placed)
-            .HasDiscountRateGreaterThanOrEqualToZero()
-            .HasDiscountAmountGreaterThanOrEqualToZero()
-            .HasSubtotalPriceGreaterThanZero()
-            .HasTaxRateGreaterThanOrEqualToZero()
-            .HasTaxAmountGreaterThanOrEqualToZero()
-            .HasTotalPriceGreaterThanZero();
+                    .HasOrderNumberPrefix("ORD-")
+                    .HasQuantity(5)
+                    .HasUnitPrice(20.00m)
+                    .HasSubtotalPrice("100.00")
+                    .HasStatus(OrderStatus.Placed)
+                    .HasDiscountRateGreaterThanOrEqualToZero()
+                    .HasDiscountAmountGreaterThanOrEqualToZero()
+                    .HasSubtotalPriceGreaterThanZero()
+                    .HasTaxRateGreaterThanOrEqualToZero()
+                    .HasTaxAmountGreaterThanOrEqualToZero()
+                    .HasTotalPriceGreaterThanZero();
     }
 }
