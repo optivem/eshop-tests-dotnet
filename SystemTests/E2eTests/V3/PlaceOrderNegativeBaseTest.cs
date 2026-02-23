@@ -1,4 +1,5 @@
 using Commons.Util;
+using E2eTests.Providers;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
@@ -14,7 +15,13 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
     [Fact]
     public async Task ShouldRejectOrderWithInvalidQuantity()
     {
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "invalid-quantity", Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest 
+        {
+            Sku = CreateUniqueSku(Defaults.SKU), 
+            Quantity = "invalid-quantity", 
+            Country = Defaults.COUNTRY 
+        };
+
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
@@ -47,10 +54,11 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptySku()
+    [Theory]
+    [ClassData(typeof(EmptyArgumentsProvider))]
+    public async Task ShouldRejectOrderWithEmptySku(string sku)
     {
-        var request = new PlaceOrderRequest { Sku = "", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest { Sku = sku, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
