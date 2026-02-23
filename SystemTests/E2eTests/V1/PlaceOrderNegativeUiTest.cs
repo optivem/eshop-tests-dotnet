@@ -50,17 +50,22 @@ public class PlaceOrderNegativeUiTest : BaseE2eTest
         await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "sku", "SKU must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptyQuantity()
+    [Theory]
+    [InlineData("")]
+    [InlineData(" ")]
+    [InlineData("  ")]
+    public async Task ShouldRejectOrderWithEmptyQuantity(string emptyQuantity)
     {
-        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), "", Defaults.COUNTRY);
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), emptyQuantity, Defaults.COUNTRY);
         await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithNonIntegerQuantity()
+    [Theory]
+    [InlineData("3.5")]
+    [InlineData("lala")]
+    public async Task ShouldRejectOrderWithNonIntegerQuantity(string nonIntegerQuantity)
     {
-        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), "3.5", Defaults.COUNTRY);
+        await NavigateToNewOrderAndSubmitAsync(CreateUniqueSku(Defaults.SKU), nonIntegerQuantity, Defaults.COUNTRY);
         await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
     }
 

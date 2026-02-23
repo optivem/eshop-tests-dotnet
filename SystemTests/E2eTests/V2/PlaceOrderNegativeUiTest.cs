@@ -89,13 +89,14 @@ public class PlaceOrderNegativeUiTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptyQuantity()
+    [Theory]
+    [ClassData(typeof(EmptyArgumentsProvider))]
+    public async Task ShouldRejectOrderWithEmptyQuantity(string emptyQuantity)
     {
         var homePage = await _shopUiClient!.OpenHomePageAsync();
         var newOrderPage = await homePage.ClickNewOrderAsync();
         await newOrderPage.InputSkuAsync(CreateUniqueSku(Defaults.SKU));
-        await newOrderPage.InputQuantityAsync("");
+        await newOrderPage.InputQuantityAsync(emptyQuantity);
         await newOrderPage.InputCountryAsync(Defaults.COUNTRY);
         await newOrderPage.ClickPlaceOrderAsync();
         var result = await newOrderPage.GetResultAsync();
@@ -103,13 +104,15 @@ public class PlaceOrderNegativeUiTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithNonIntegerQuantity()
+    [Theory]
+    [InlineData("3.5")]
+    [InlineData("lala")]
+    public async Task ShouldRejectOrderWithNonIntegerQuantity(string nonIntegerQuantity)
     {
         var homePage = await _shopUiClient!.OpenHomePageAsync();
         var newOrderPage = await homePage.ClickNewOrderAsync();
         await newOrderPage.InputSkuAsync(CreateUniqueSku(Defaults.SKU));
-        await newOrderPage.InputQuantityAsync("3.5");
+        await newOrderPage.InputQuantityAsync(nonIntegerQuantity);
         await newOrderPage.InputCountryAsync(Defaults.COUNTRY);
         await newOrderPage.ClickPlaceOrderAsync();
         var result = await newOrderPage.GetResultAsync();

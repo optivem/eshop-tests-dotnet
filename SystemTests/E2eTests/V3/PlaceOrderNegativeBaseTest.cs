@@ -84,13 +84,14 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptyQuantity()
+    [Theory]
+    [ClassData(typeof(EmptyArgumentsProvider))]
+    public async Task ShouldRejectOrderWithEmptyQuantity(string emptyQuantity)
     {
         var request = new PlaceOrderRequest 
         {
             Sku = CreateUniqueSku(Defaults.SKU), 
-            Quantity = "", 
+            Quantity = emptyQuantity, 
             Country = Defaults.COUNTRY 
         };
         var result = await _shopDriver!.PlaceOrderAsync(request);
@@ -98,13 +99,15 @@ public abstract class PlaceOrderNegativeBaseTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithNonIntegerQuantity()
+    [Theory]
+    [InlineData("3.5")]
+    [InlineData("lala")]
+    public async Task ShouldRejectOrderWithNonIntegerQuantity(string nonIntegerQuantity)
     {
         var request = new PlaceOrderRequest 
         {
             Sku = CreateUniqueSku(Defaults.SKU), 
-            Quantity = "3.5", 
+            Quantity = nonIntegerQuantity, 
             Country = Defaults.COUNTRY 
         };
         var result = await _shopDriver!.PlaceOrderAsync(request);

@@ -77,10 +77,11 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         result.Error.Errors.ShouldContain(e => e.Field == "sku" && e.Message == "SKU must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptyQuantity()
+    [Theory]
+    [ClassData(typeof(EmptyArgumentsProvider))]
+    public async Task ShouldRejectOrderWithEmptyQuantity(string emptyQuantity)
     {
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "", Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = emptyQuantity, Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.Detail.ShouldBe("The request contains one or more validation errors");
@@ -88,10 +89,12 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithNonIntegerQuantity()
+    [Theory]
+    [InlineData("3.5")]
+    [InlineData("lala")]
+    public async Task ShouldRejectOrderWithNonIntegerQuantity(string nonIntegerQuantity)
     {
-        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "3.5", Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = nonIntegerQuantity, Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.Detail.ShouldBe("The request contains one or more validation errors");

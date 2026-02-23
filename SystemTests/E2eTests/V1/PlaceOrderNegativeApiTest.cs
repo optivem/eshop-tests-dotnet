@@ -56,18 +56,23 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         AssertValidationError(statusCode, body, "sku", "SKU must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptyQuantity()
+    [Theory]
+    [InlineData("")]
+    [InlineData(" ")]
+    [InlineData("  ")]
+    public async Task ShouldRejectOrderWithEmptyQuantity(string emptyQuantity)
     {
-        var placeOrderJson = $$"""{"sku":"{{CreateUniqueSku(Defaults.SKU)}}","quantity":"","country":"{{Defaults.COUNTRY}}"}""";
+        var placeOrderJson = $$"""{"sku":"{{CreateUniqueSku(Defaults.SKU)}}","quantity":"{{emptyQuantity}}","country":"{{Defaults.COUNTRY}}"}""";
         var (statusCode, body) = await PlaceOrderViaApiAsync(placeOrderJson);
         AssertValidationError(statusCode, body, "quantity", "Quantity must not be empty");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithNonIntegerQuantity()
+    [Theory]
+    [InlineData("3.5")]
+    [InlineData("lala")]
+    public async Task ShouldRejectOrderWithNonIntegerQuantity(string nonIntegerQuantity)
     {
-        var placeOrderJson = $$"""{"sku":"{{CreateUniqueSku(Defaults.SKU)}}","quantity":"3.5","country":"{{Defaults.COUNTRY}}"}""";
+        var placeOrderJson = $$"""{"sku":"{{CreateUniqueSku(Defaults.SKU)}}","quantity":"{{nonIntegerQuantity}}","country":"{{Defaults.COUNTRY}}"}""";
         var (statusCode, body) = await PlaceOrderViaApiAsync(placeOrderJson);
         AssertValidationError(statusCode, body, "quantity", "Quantity must be an integer");
     }
