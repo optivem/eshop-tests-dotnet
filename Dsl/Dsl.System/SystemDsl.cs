@@ -1,7 +1,9 @@
 using Optivem.EShop.SystemTest.Core.Clock.Dsl;
 using Optivem.EShop.SystemTest.Core.Erp.Dsl;
+using Optivem.EShop.SystemTest.Core.Erp.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl;
+using Optivem.EShop.SystemTest.Infra.Erp.Driver;
 using Optivem.Testing;
 using Commons.Dsl;
 
@@ -38,11 +40,21 @@ public class SystemDsl : IAsyncDisposable
         return _shop;
     }
 
-    public ErpDsl Erp() => GetOrCreate(ref _erp, () => new ErpDsl(_configuration.ErpBaseUrl, _context));
+    public ErpDsl Erp() => GetOrCreate(ref _erp, () => new ErpDsl(CreateErpDriver(), _context));
 
     public TaxDsl Tax() => GetOrCreate(ref _tax, () => new TaxDsl(_configuration.TaxBaseUrl, _context));
 
     public ClockDsl Clock() => GetOrCreate(ref _clock, () => new ClockDsl(_configuration.ClockBaseUrl, _context));
+
+    private IErpDriver CreateErpDriver()
+    {
+        return _context.ExternalSystemMode switch
+        {
+            ExternalSystemMode.Real => new ErpRealDriver(_configuration.ErpBaseUrl),
+            ExternalSystemMode.Stub => new ErpStubDriver(_configuration.ErpBaseUrl),
+            _ => throw new InvalidOperationException($"Unknown external system mode: {_context.ExternalSystemMode}")
+        };
+    }
 
     public async ValueTask DisposeAsync()
     {

@@ -1,5 +1,5 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Erp.Client.Dtos;
+using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
 using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;

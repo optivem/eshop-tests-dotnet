@@ -1,10 +1,11 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Erp.Client;
-using Optivem.EShop.SystemTest.Core.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Infra.Erp.Client;
+using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos;
+using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Driver;
+namespace Optivem.EShop.SystemTest.Infra.Erp.Driver;
 
 public class ErpRealDriver : BaseErpDriver<ErpRealClient>
 {
@@ -30,6 +31,6 @@ public class ErpRealDriver : BaseErpDriver<ErpRealClient>
         };
 
         return _client.CreateProductAsync(createProductRequest)
-            .MapErrorAsync(ErpErrorResponse.From);
+            .MapErrorAsync(error => MapError(error));
     }
 }

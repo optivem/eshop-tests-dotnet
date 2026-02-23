@@ -6,6 +6,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Api;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Ui;
 using Optivem.EShop.SystemTest.Core.Tax.Driver;
+using Optivem.EShop.SystemTest.Infra.Erp.Driver;
 using Optivem.Testing;
 using Xunit;
 

@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Dsl\Dsl.System\Dsl.System.csproj" />
     <ProjectReference Include="..\Dsl\Dsl.Gherkin\Dsl.Gherkin.csproj" />
+    <ProjectReference Include="..\Infra\Infra.Erp\Infra.Erp.csproj" />
   </ItemGroup>
 
   <ItemGroup>

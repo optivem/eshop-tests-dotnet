@@ -1,9 +1,11 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Erp.Client;
+using Optivem.EShop.SystemTest.Core.Erp.Driver;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Infra.Erp.Client;
+using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Driver;
+namespace Optivem.EShop.SystemTest.Infra.Erp.Driver;
 
 public abstract class BaseErpDriver<TClient> : IErpDriver
     where TClient : BaseErpClient
@@ -32,7 +34,7 @@ public abstract class BaseErpDriver<TClient> : IErpDriver
 
     public virtual Task<Result<VoidValue, ErpErrorResponse>> GoToErpAsync()
         => _client.CheckHealthAsync()
-            .MapErrorAsync(ErpErrorResponse.From);
+            .MapErrorAsync(error => MapError(error));
 
     public virtual Task<Result<GetProductResponse, ErpErrorResponse>> GetProductAsync(GetProductRequest request)
         => _client.GetProductAsync(request.Sku)
@@ -41,7 +43,12 @@ public abstract class BaseErpDriver<TClient> : IErpDriver
                 Sku = productDetails.Id,
                 Price = productDetails.Price
             })
-            .MapErrorAsync(ErpErrorResponse.From);
+            .MapErrorAsync(error => MapError(error));
 
     public abstract Task<Result<VoidValue, ErpErrorResponse>> ReturnsProductAsync(ReturnsProductRequest request);
+
+    protected static ErpErrorResponse MapError(ExtErpErrorResponse extError)
+    {
+        return new ErpErrorResponse { Message = extError.Message };
+    }
 }

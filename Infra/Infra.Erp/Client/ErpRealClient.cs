@@ -1,8 +1,8 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Core.Erp.Client.Dtos.Error;
+using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos;
+using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Client;
+namespace Optivem.EShop.SystemTest.Infra.Erp.Client;
 
 public class ErpRealClient : BaseErpClient
 {

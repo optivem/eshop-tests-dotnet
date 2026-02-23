@@ -5,6 +5,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Api;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Ui;
 using Optivem.EShop.SystemTest.Core.Tax.Driver;
+using Optivem.EShop.SystemTest.Infra.Erp.Driver;
 using Xunit;
 
 namespace Optivem.EShop.SystemTest.Base.V3;

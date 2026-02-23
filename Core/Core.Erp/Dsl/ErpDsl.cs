@@ -10,25 +10,10 @@ public class ErpDsl : IDisposable
     private readonly UseCaseContext _context;
     private bool _disposed;
 
-    private ErpDsl(IErpDriver driver, UseCaseContext context)
+    public ErpDsl(IErpDriver driver, UseCaseContext context)
     {
         _driver = driver;
         _context = context;
-    }
-
-    public ErpDsl(string baseUrl, UseCaseContext context)
-        : this(CreateDriver(baseUrl, context), context)
-    {
-    }
-
-    private static IErpDriver CreateDriver(string baseUrl, UseCaseContext context)
-    {
-        return context.ExternalSystemMode switch
-        {
-            ExternalSystemMode.Real => new ErpRealDriver(baseUrl),
-            ExternalSystemMode.Stub => new ErpStubDriver(baseUrl),
-            _ => throw new InvalidOperationException($"Unknown external system mode: {context.ExternalSystemMode}")
-        };
     }
 
     public void Dispose()

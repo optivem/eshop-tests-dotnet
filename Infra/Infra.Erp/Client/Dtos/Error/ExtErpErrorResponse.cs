@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Core.Erp.Client.Dtos.Error;
+namespace Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos.Error;
 
 public class ExtErpErrorResponse
 {
@@ -7,10 +7,5 @@ public class ExtErpErrorResponse
     public static ExtErpErrorResponse From(string message)
     {
         return new ExtErpErrorResponse { Message = message };
-    }
-
-    public override string ToString()
-    {
-        return Message ?? string.Empty;
     }
 }
