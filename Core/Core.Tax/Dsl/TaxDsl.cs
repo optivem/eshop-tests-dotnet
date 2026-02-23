@@ -10,25 +10,10 @@ public class TaxDsl : IDisposable
     private readonly UseCaseContext _context;
     private bool _disposed;
 
-    private TaxDsl(ITaxDriver driver, UseCaseContext context)
+    public TaxDsl(ITaxDriver driver, UseCaseContext context)
     {
         _driver = driver;
         _context = context;
-    }
-
-    public TaxDsl(string baseUrl, UseCaseContext context)
-        : this(CreateDriver(baseUrl, context), context)
-    {
-    }
-
-    private static ITaxDriver CreateDriver(string baseUrl, UseCaseContext context)
-    {
-        return context.ExternalSystemMode switch
-        {
-            ExternalSystemMode.Real => new TaxRealDriver(baseUrl),
-            ExternalSystemMode.Stub => new TaxStubDriver(baseUrl),
-            _ => throw new ArgumentOutOfRangeException($"Unknown mode: {context.ExternalSystemMode}")
-        };
     }
 
     public void Dispose()

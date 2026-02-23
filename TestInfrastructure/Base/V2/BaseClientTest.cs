@@ -1,7 +1,7 @@
 using Optivem.EShop.SystemTest.Configuration;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Infra.Erp.Client;
-using Optivem.EShop.SystemTest.Core.Shop.Client.Api;
+using Optivem.EShop.SystemTest.Infra.Shop.Client.Api;
 using Optivem.EShop.SystemTest.Core.Shop.Client.Ui;
 using Optivem.EShop.SystemTest.Core.Tax.Client;
 using Xunit;

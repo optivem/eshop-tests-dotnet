@@ -17,7 +17,10 @@
     <ProjectReference Include="..\..\Core\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="..\..\Core\Core.Shop\Core.Shop.csproj" />
     <ProjectReference Include="..\..\Core\Core.Tax\Core.Tax.csproj" />
+    <ProjectReference Include="..\..\Infra\Infra.Clock\Infra.Clock.csproj" />
     <ProjectReference Include="..\..\Infra\Infra.Erp\Infra.Erp.csproj" />
+    <ProjectReference Include="..\..\Infra\Infra.Shop\Infra.Shop.csproj" />
+    <ProjectReference Include="..\..\Infra\Infra.Tax\Infra.Tax.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
   </ItemGroup>
 

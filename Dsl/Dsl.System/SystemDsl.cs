@@ -1,7 +1,13 @@
 using Optivem.EShop.SystemTest.Core.Clock.Dsl;
+using Optivem.EShop.SystemTest.Core.Clock.Driver;
 using Optivem.EShop.SystemTest.Core.Erp.Dsl;
 using Optivem.EShop.SystemTest.Core.Erp.Driver;
+using Optivem.EShop.SystemTest.Core.Shop;
+using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Api;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Ui;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl;
+using Optivem.EShop.SystemTest.Core.Tax.Driver;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl;
 using Optivem.EShop.SystemTest.Infra.Erp.Driver;
 using Optivem.Testing;
@@ -31,20 +37,26 @@ public class SystemDsl : IAsyncDisposable
     {
         if (_shop == null)
         {
-            _shop = await ShopDsl.CreateAsync(
-                _configuration.ShopUiBaseUrl,
-                _configuration.ShopApiBaseUrl,
-                channel,
-                _context);
+            _shop = await ShopDsl.CreateAsync(await CreateShopDriverAsync(channel), _context);
         }
         return _shop;
     }
 
     public ErpDsl Erp() => GetOrCreate(ref _erp, () => new ErpDsl(CreateErpDriver(), _context));
 
-    public TaxDsl Tax() => GetOrCreate(ref _tax, () => new TaxDsl(_configuration.TaxBaseUrl, _context));
+    public TaxDsl Tax() => GetOrCreate(ref _tax, () => new TaxDsl(CreateTaxDriver(), _context));
 
-    public ClockDsl Clock() => GetOrCreate(ref _clock, () => new ClockDsl(_configuration.ClockBaseUrl, _context));
+    public ClockDsl Clock() => GetOrCreate(ref _clock, () => new ClockDsl(CreateClockDriver(), _context));
+
+    private async Task<IShopDriver> CreateShopDriverAsync(Channel channel)
+    {
+        return channel.Type switch
+        {
+            ChannelType.UI => await ShopUiDriver.CreateAsync(_configuration.ShopUiBaseUrl),
+            ChannelType.API => new ShopApiDriver(_configuration.ShopApiBaseUrl),
+            _ => throw new InvalidOperationException($"Unknown channel: {channel}")
+        };
+    }
 
     private IErpDriver CreateErpDriver()
     {
@@ -52,6 +64,26 @@ public class SystemDsl : IAsyncDisposable
         {
             ExternalSystemMode.Real => new ErpRealDriver(_configuration.ErpBaseUrl),
             ExternalSystemMode.Stub => new ErpStubDriver(_configuration.ErpBaseUrl),
+            _ => throw new InvalidOperationException($"Unknown external system mode: {_context.ExternalSystemMode}")
+        };
+    }
+
+    private ITaxDriver CreateTaxDriver()
+    {
+        return _context.ExternalSystemMode switch
+        {
+            ExternalSystemMode.Real => new TaxRealDriver(_configuration.TaxBaseUrl),
+            ExternalSystemMode.Stub => new TaxStubDriver(_configuration.TaxBaseUrl),
+            _ => throw new InvalidOperationException($"Unknown external system mode: {_context.ExternalSystemMode}")
+        };
+    }
+
+    private IClockDriver CreateClockDriver()
+    {
+        return _context.ExternalSystemMode switch
+        {
+            ExternalSystemMode.Real => new ClockRealDriver(),
+            ExternalSystemMode.Stub => new ClockStubDriver(_configuration.ClockBaseUrl),
             _ => throw new InvalidOperationException($"Unknown external system mode: {_context.ExternalSystemMode}")
         };
     }

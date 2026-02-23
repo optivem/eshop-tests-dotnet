@@ -10,25 +10,10 @@ public class ClockDsl : IDisposable
     private readonly UseCaseContext _context;
     private bool _disposed;
 
-    private ClockDsl(IClockDriver driver, UseCaseContext context)
+    public ClockDsl(IClockDriver driver, UseCaseContext context)
     {
         _driver = driver;
         _context = context;
-    }
-
-    public ClockDsl(string baseUrl, UseCaseContext context)
-        : this(CreateDriver(baseUrl, context), context)
-    {
-    }
-
-    private static IClockDriver CreateDriver(string baseUrl, UseCaseContext context)
-    {
-        return context.ExternalSystemMode switch
-        {
-            ExternalSystemMode.Real => new ClockRealDriver(),
-            ExternalSystemMode.Stub => new ClockStubDriver(baseUrl),
-            _ => throw new NotSupportedException($"External system mode '{context.ExternalSystemMode}' is not supported for ClockDsl.")
-        };
     }
 
     public void Dispose()

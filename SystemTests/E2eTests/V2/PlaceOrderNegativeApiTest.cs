@@ -6,6 +6,7 @@ using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
 using Optivem.EShop.SystemTest.Base.V2;
+using Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Dtos.Errors;
 using Shouldly;
 using Xunit;
 
@@ -25,7 +26,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "invalid-quantity", Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must be an integer");
     }
 
     [Fact]
@@ -34,7 +37,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = "NON-EXISTENT-SKU-12345", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "sku" && e.Message == "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
     }
 
     [Fact]
@@ -43,7 +48,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "-10", Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must be positive");
     }
 
     [Fact]
@@ -52,7 +59,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "0", Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must be positive");
     }
 
     [Fact]
@@ -61,7 +70,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = "", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "sku" && e.Message == "SKU must not be empty");
     }
 
     [Fact]
@@ -70,7 +81,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "", Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must not be empty");
     }
 
     [Fact]
@@ -79,7 +92,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = "3.5", Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must be an integer");
     }
 
     [Fact]
@@ -88,7 +103,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = "" };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "country" && e.Message == "Country must not be empty");
     }
 
     [Fact]
@@ -99,7 +116,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = sku, Quantity = Defaults.QUANTITY, Country = "XX" };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country does not exist: XX");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "country" && e.Message == "Country does not exist: XX");
     }
 
     [Fact]
@@ -108,7 +127,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Country = Defaults.COUNTRY, Quantity = null };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must not be empty");
     }
 
     [Fact]
@@ -117,7 +138,9 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = null, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "sku" && e.Message == "SKU must not be empty");
     }
 
     [Fact]
@@ -126,6 +149,8 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         var request = new PlaceOrderRequest { Sku = CreateUniqueSku(Defaults.SKU), Quantity = Defaults.QUANTITY, Country = null };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
+        result.Error.Detail.ShouldBe("The request contains one or more validation errors");
+        result.Error.Errors.ShouldNotBeNull();
+        result.Error.Errors.ShouldContain(e => e.Field == "country" && e.Message == "Country must not be empty");
     }
 }

@@ -1,6 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
-using Optivem.EShop.SystemTest.Core.Shop.Client.Api.Dtos.Errors;
-
 namespace Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
 
 public class SystemError
@@ -27,21 +24,6 @@ public class SystemError
     public static SystemError Of(string message, IReadOnlyList<FieldError> fieldErrors)
     {
         return new SystemError(message, fieldErrors);
-    }
-
-    public static SystemError From(ProblemDetailResponse problemDetail)
-    {
-        var message = problemDetail.Detail ?? "Request failed";
-
-        if (problemDetail.Errors != null && problemDetail.Errors.Any())
-        {
-            var fieldErrors = problemDetail.Errors
-                .Select(e => new FieldError(e.Field ?? "unknown", e.Message ?? string.Empty, e.Code))
-                .ToList();
-            return Of(message, fieldErrors.AsReadOnly());
-        }
-
-        return Of(message);
     }
 
     public override string ToString()

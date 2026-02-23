@@ -1,10 +1,7 @@
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Api;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Ui;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Orders;
-using Optivem.Testing;
 using Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl;
@@ -20,20 +17,9 @@ public class ShopDsl : IAsyncDisposable
         _context = context;
     }
 
-    public static async Task<ShopDsl> CreateAsync(string uiBaseUrl, string apiBaseUrl, Channel channel, UseCaseContext context)
+    public static Task<ShopDsl> CreateAsync(IShopDriver driver, UseCaseContext context)
     {
-        var driver = await CreateDriverAsync(uiBaseUrl, apiBaseUrl, channel);
-        return new ShopDsl(driver, context);
-    }
-
-    private static async Task<IShopDriver> CreateDriverAsync(string uiBaseUrl, string apiBaseUrl, Channel channel)
-    {
-        return channel.Type switch
-        {
-            ChannelType.UI => await ShopUiDriver.CreateAsync(uiBaseUrl),
-            ChannelType.API => new ShopApiDriver(apiBaseUrl),
-            _ => throw new InvalidOperationException($"Unknown channel: {channel}")
-        };
+        return Task.FromResult(new ShopDsl(driver, context));
     }
 
     public async ValueTask DisposeAsync()

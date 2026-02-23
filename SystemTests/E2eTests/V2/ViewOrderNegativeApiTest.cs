@@ -21,6 +21,6 @@ public class ViewOrderNegativeApiTest : BaseE2eTest
         var orderNumber = "NON-EXISTENT-ORDER-99999";
         var result = await _shopApiClient!.Orders().ViewOrderAsync(orderNumber);
         result.ShouldBeFailure();
-        SystemError.From(result.Error).Message.ShouldBe("Order NON-EXISTENT-ORDER-99999 does not exist.");
+        result.Error.Detail.ShouldBe("Order NON-EXISTENT-ORDER-99999 does not exist.");
     }
 }
