@@ -1,6 +1,6 @@
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V3.Base;
 using Shouldly;
@@ -17,11 +17,11 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
         (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value.OrderNumber;
-        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
+        var viewOrderResult = await _shopDriver.ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(100.00m);
     }
@@ -37,11 +37,11 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
         (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = unitPrice })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = quantity, Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value.OrderNumber;
-        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
+        var viewOrderResult = await _shopDriver.ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
         viewOrderResult.Value!.SubtotalPrice.ShouldBe(decimal.Parse(expectedSubtotalPrice));
     }
@@ -53,13 +53,13 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
         (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "20.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "5", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value.OrderNumber;
         orderNumber.ShouldStartWith("ORD-");
 
-        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
+        var viewOrderResult = await _shopDriver.ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
 
         var order = viewOrderResult.Value!;
@@ -78,3 +78,5 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
         order.TotalPrice.ShouldBeGreaterThan(0);
     }
 }
+
+

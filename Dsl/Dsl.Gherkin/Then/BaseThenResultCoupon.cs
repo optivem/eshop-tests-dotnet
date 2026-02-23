@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using Commons.Dsl;
 using Dsl.Gherkin;
 using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 namespace Dsl.Gherkin.Then;
 

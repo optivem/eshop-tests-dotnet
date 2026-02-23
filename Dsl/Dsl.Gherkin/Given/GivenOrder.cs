@@ -1,6 +1,6 @@
 using Commons.Util;
 using Dsl.Gherkin.Given;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.Given;

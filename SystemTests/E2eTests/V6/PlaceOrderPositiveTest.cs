@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.V6.Base;
 using Optivem.Testing;
 using Xunit;
@@ -64,3 +64,4 @@ public class PlaceOrderPositiveTest : BaseE2eTest
                     .HasTotalPriceGreaterThanZero();
     }
 }
+

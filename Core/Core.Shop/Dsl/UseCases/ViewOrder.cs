@@ -1,10 +1,10 @@
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Orders;
+namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 public class ViewOrder : BaseShopCommand<ViewOrderResponse, ViewOrderVerification>
 {
@@ -25,7 +25,7 @@ public class ViewOrder : BaseShopCommand<ViewOrderResponse, ViewOrderVerificatio
     {
         var orderNumber = _context.GetResultValue(_orderNumberResultAlias);
 
-        var result = await _driver.Orders().ViewOrderAsync(orderNumber);
+        var result = await _driver.ViewOrderAsync(orderNumber);
 
         return new ShopUseCaseResult<ViewOrderResponse, ViewOrderVerification>(
             result,

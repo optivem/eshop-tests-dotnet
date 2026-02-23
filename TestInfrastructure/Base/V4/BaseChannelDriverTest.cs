@@ -3,8 +3,8 @@ using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Core.Erp.Driver;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Api;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Ui;
+using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Tax.Driver;
 using Optivem.EShop.SystemTest.Infra.Erp.Driver;
 using Optivem.Testing;
@@ -71,3 +71,4 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
         }
     }
 }
+

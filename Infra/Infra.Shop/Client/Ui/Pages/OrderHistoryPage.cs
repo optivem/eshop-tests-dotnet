@@ -1,6 +1,6 @@
 using Commons.Http;
 using Commons.Playwright;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 
 namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 
@@ -59,3 +59,4 @@ public class OrderHistoryPage : BasePage
         return string.Format(RowSelectorTemplate, orderNumber);
     }
 }
+

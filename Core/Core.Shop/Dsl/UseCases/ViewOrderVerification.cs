@@ -1,10 +1,10 @@
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Shouldly;
 using System.Globalization;
 using Commons.Util;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Orders;
+namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 {
@@ -133,7 +133,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return this;
     }
 
-    // Base Price Methods
     public ViewOrderVerification BasePrice(decimal expectedBasePrice)
     {
         Response.BasePrice.ShouldBe(expectedBasePrice,
@@ -153,7 +152,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return this;
     }
 
-    // Discount Rate Methods
     public ViewOrderVerification DiscountRate(decimal expectedDiscountRate)
     {
         Response.DiscountRate.ShouldBe(expectedDiscountRate,
@@ -166,7 +164,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return DiscountRate(Converter.ToDecimal(expectedDiscountRate)!.Value);
     }
 
-    // Discount Amount Methods  
     public ViewOrderVerification DiscountAmount(decimal expectedDiscountAmount)
     {
         Response.DiscountAmount.ShouldBe(expectedDiscountAmount,
@@ -179,7 +176,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return DiscountAmount(Converter.ToDecimal(expectedDiscountAmount)!.Value);
     }
 
-    // Tax Rate Methods
     public ViewOrderVerification TaxRate(decimal expectedTaxRate)
     {
         Response.TaxRate.ShouldBe(expectedTaxRate,
@@ -192,7 +188,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return TaxRate(Converter.ToDecimal(expectedTaxRate)!.Value);
     }
 
-    // Tax Amount Methods
     public ViewOrderVerification TaxAmount(decimal expectedTaxAmount)
     {
         Response.TaxAmount.ShouldBe(expectedTaxAmount,
@@ -205,7 +200,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return TaxAmount(Converter.ToDecimal(expectedTaxAmount)!.Value);
     }
 
-    // Total Price Methods
     public ViewOrderVerification TotalPrice(decimal expectedTotalPrice)
     {
         Response.TotalPrice.ShouldBe(expectedTotalPrice,
@@ -218,7 +212,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return TotalPrice(Converter.ToDecimal(expectedTotalPrice)!.Value);
     }
 
-    // Applied Coupon Code Methods
     public ViewOrderVerification AppliedCouponCode(string expectedCouponCodeAlias)
     {
         var expectedCouponCode = Context.GetParamValue(expectedCouponCodeAlias);
@@ -227,25 +220,10 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return this;
     }
 
-    public ViewOrderVerification AppliedCouponCodeIsNull()
-    {
-        Response.AppliedCouponCode.ShouldBeNull(
-            $"Expected applied coupon code to be null, but was '{Response.AppliedCouponCode}'");
-        return this;
-    }
-
-    // Order Number Prefix Method
     public ViewOrderVerification OrderNumberHasPrefix(string expectedPrefix)
     {
         Response.OrderNumber.ShouldStartWith(expectedPrefix, Case.Sensitive,
-            $"Expected order number to start with '{expectedPrefix}', but was: {Response.OrderNumber}");
-        return this;
-    }
-
-    // Order Timestamp Method
-    public ViewOrderVerification OrderTimestampIsNotNull()
-    {
-        Response.OrderTimestamp.ShouldNotBe(default, "Expected order timestamp to be set, but was null");
+            $"Expected order number to start with '{expectedPrefix}', but was '{Response.OrderNumber}'");
         return this;
     }
 }

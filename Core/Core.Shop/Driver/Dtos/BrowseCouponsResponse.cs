@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
+namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 
 public class BrowseCouponsResponse
 {

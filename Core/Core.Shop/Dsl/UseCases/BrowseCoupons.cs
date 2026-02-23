@@ -1,10 +1,10 @@
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 using Commons.Dsl;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;
+namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 public class BrowseCoupons : BaseShopCommand<BrowseCouponsResponse, BrowseCouponsVerification>
 {
@@ -15,7 +15,7 @@ public class BrowseCoupons : BaseShopCommand<BrowseCouponsResponse, BrowseCoupon
 
     public override async Task<ShopUseCaseResult<BrowseCouponsResponse, BrowseCouponsVerification>> Execute()
     {
-        var result = await _driver.Coupons().BrowseCouponsAsync();
+        var result = await _driver.BrowseCouponsAsync();
 
         return new ShopUseCaseResult<BrowseCouponsResponse, BrowseCouponsVerification>(
             result,

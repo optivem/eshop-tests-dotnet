@@ -1,7 +1,7 @@
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V4.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
@@ -27,7 +27,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Country = Defaults.COUNTRY 
         };
 
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
@@ -45,7 +45,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = Defaults.QUANTITY, 
             Country = Defaults.COUNTRY 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "Product does not exist for SKU: NON-EXISTENT-SKU-12345");
@@ -63,7 +63,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = "-10", 
             Country = Defaults.COUNTRY 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
@@ -81,7 +81,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = "0", 
             Country = Defaults.COUNTRY 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
@@ -100,7 +100,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = Defaults.QUANTITY, 
             Country = Defaults.COUNTRY 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
@@ -119,7 +119,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = emptyQuantity, 
             Country = Defaults.COUNTRY 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
@@ -139,7 +139,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = nonIntegerQuantity, 
             Country = Defaults.COUNTRY 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be an integer");
@@ -158,7 +158,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = Defaults.QUANTITY, 
             Country = emptyCountry 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
@@ -185,7 +185,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = Defaults.QUANTITY, 
             Country = invalidCountry 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", $"Country does not exist: {invalidCountry}");
@@ -203,7 +203,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Country = Defaults.COUNTRY, 
             Quantity = null 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must not be empty");
@@ -221,7 +221,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = Defaults.QUANTITY, 
             Country = Defaults.COUNTRY 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "sku", "SKU must not be empty");
@@ -239,9 +239,11 @@ public class PlaceOrderNegativeTest : BaseE2eTest
             Quantity = Defaults.QUANTITY, 
             Country = null 
         };
-        var result = await _shopDriver!.Orders().PlaceOrderAsync(request);
+        var result = await _shopDriver!.PlaceOrderAsync(request);
 
         result.ShouldBeFailure();
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
     }
 }
+
+

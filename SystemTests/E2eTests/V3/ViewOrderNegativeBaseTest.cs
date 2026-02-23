@@ -11,8 +11,9 @@ public abstract class ViewOrderNegativeBaseTest : BaseE2eTest
     public async Task ShouldNotBeAbleToViewNonExistentOrder()
     {
         var orderNumber = "NON-EXISTENT-ORDER-99999";
-        var result = await _shopDriver!.Orders().ViewOrderAsync(orderNumber);
+        var result = await _shopDriver!.ViewOrderAsync(orderNumber);
         result.ShouldBeFailure();
         result.Error.Message.ShouldBe("Order NON-EXISTENT-ORDER-99999 does not exist.");
     }
 }
+

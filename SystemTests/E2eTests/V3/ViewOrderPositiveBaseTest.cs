@@ -1,6 +1,6 @@
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V3.Base;
 using Shouldly;
@@ -17,12 +17,12 @@ public abstract class ViewOrderPositiveBaseTest : BaseE2eTest
         (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest { Sku = sku, Price = "25.00" })).ShouldBeSuccess();
 
         var placeOrderRequest = new PlaceOrderRequest { Sku = sku, Quantity = "4", Country = Defaults.COUNTRY };
-        var placeOrderResult = await _shopDriver!.Orders().PlaceOrderAsync(placeOrderRequest);
+        var placeOrderResult = await _shopDriver!.PlaceOrderAsync(placeOrderRequest);
         placeOrderResult.ShouldBeSuccess();
 
         var orderNumber = placeOrderResult.Value.OrderNumber;
 
-        var viewOrderResult = await _shopDriver.Orders().ViewOrderAsync(orderNumber);
+        var viewOrderResult = await _shopDriver.ViewOrderAsync(orderNumber);
         viewOrderResult.ShouldBeSuccess();
 
         var order = viewOrderResult.Value!;
@@ -40,3 +40,5 @@ public abstract class ViewOrderPositiveBaseTest : BaseE2eTest
         order.TotalPrice.ShouldBeGreaterThan(0);
     }
 }
+
+

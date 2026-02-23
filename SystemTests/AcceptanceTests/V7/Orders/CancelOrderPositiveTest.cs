@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.Testing;
 
 namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Orders;

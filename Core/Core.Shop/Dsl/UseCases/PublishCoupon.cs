@@ -1,11 +1,11 @@
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 using Commons.Dsl;
 using Commons.Util;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;
+namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 public class PublishCoupon : BaseShopCommand<VoidValue, VoidVerification>
 {
@@ -69,7 +69,7 @@ public class PublishCoupon : BaseShopCommand<VoidValue, VoidVerification>
             UsageLimit = _usageLimit
         };
 
-        var result = await _driver.Coupons().PublishCouponAsync(request);
+        var result = await _driver.PublishCouponAsync(request);
 
         return new ShopUseCaseResult<VoidValue, VoidVerification>(
             result,

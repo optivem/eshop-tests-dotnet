@@ -1,6 +1,6 @@
 using Commons.Playwright;
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 
 namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 

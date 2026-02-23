@@ -1,7 +1,5 @@
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Orders;
 using Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl;

@@ -2,23 +2,19 @@ using Commons.Util;
 using Commons.Http;
 using Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Dtos.Errors;
 using Optivem.EShop.SystemTest.Infra.Shop.Client.Api;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Api.Internal;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Api;
+namespace Optivem.EShop.SystemTest.Core.Shop.Driver;
 
 public class ShopApiDriver : IShopDriver
 {
     private readonly ShopApiClient _apiClient;
-    private readonly IOrderDriver _orderDriver;
-    private readonly ICouponDriver _couponDriver;
 
     public ShopApiDriver(string baseUrl)
     {
         _apiClient = new ShopApiClient(baseUrl);
-        _orderDriver = new ShopApiOrderDriver(_apiClient);
-        _couponDriver = new ShopApiCouponDriver(_apiClient);
     }
 
     public ValueTask DisposeAsync()
@@ -44,7 +40,23 @@ public class ShopApiDriver : IShopDriver
         return SystemError.Of(message);
     }
 
-    public IOrderDriver Orders() => _orderDriver;
+    public Task<Result<PlaceOrderResponse, SystemError>> PlaceOrderAsync(PlaceOrderRequest request)
+        => _apiClient.Orders().PlaceOrderAsync(request)
+            .MapErrorAsync(MapError);
 
-    public ICouponDriver Coupons() => _couponDriver;
+    public Task<Result<VoidValue, SystemError>> CancelOrderAsync(string? orderNumber)
+        => _apiClient.Orders().CancelOrderAsync(orderNumber)
+            .MapErrorAsync(MapError);
+
+    public Task<Result<ViewOrderResponse, SystemError>> ViewOrderAsync(string? orderNumber)
+        => _apiClient.Orders().ViewOrderAsync(orderNumber)
+            .MapErrorAsync(MapError);
+
+    public Task<Result<VoidValue, SystemError>> PublishCouponAsync(PublishCouponRequest request)
+        => _apiClient.Coupons().PublishCouponAsync(request)
+            .MapErrorAsync(MapError);
+
+    public Task<Result<BrowseCouponsResponse, SystemError>> BrowseCouponsAsync()
+        => _apiClient.Coupons().BrowseCouponsAsync()
+            .MapErrorAsync(MapError);
 }

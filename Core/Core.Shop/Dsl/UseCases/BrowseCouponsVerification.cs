@@ -1,9 +1,9 @@
 using Commons.Dsl;
 using Shouldly;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 using Commons.Util;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;
+namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsResponse>
 {

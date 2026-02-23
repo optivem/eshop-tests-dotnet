@@ -23,9 +23,10 @@ public class ViewOrderNegativeTest : BaseE2eTest
     {
         await SetChannelAsync(channel);
 
-        var result = await _shopDriver!.Orders().ViewOrderAsync(orderNumber);
+        var result = await _shopDriver!.ViewOrderAsync(orderNumber);
 
         result.ShouldBeFailure();
         result.Error.Message.ShouldBe(expectedErrorMessage);
     }
 }
+

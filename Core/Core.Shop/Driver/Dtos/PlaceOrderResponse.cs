@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 
 public class PlaceOrderResponse
 {

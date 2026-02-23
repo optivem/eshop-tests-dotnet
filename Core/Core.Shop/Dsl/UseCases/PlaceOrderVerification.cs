@@ -1,8 +1,8 @@
 using Commons.Dsl;
 using Shouldly;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Orders;
+namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 public class PlaceOrderVerification : ResponseVerification<PlaceOrderResponse>
 {

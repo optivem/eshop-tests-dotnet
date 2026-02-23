@@ -4,7 +4,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 using Commons.Util;
 using Commons.Dsl;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Orders;
+namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 public class CancelOrder : BaseShopCommand<VoidValue, VoidVerification>
 {
@@ -24,7 +24,7 @@ public class CancelOrder : BaseShopCommand<VoidValue, VoidVerification>
     public override async Task<ShopUseCaseResult<VoidValue, VoidVerification>> Execute()
     {
         var orderNumber = _context.GetResultValue(_orderNumberResultAlias);
-        var result = await _driver.Orders().CancelOrderAsync(orderNumber);
+        var result = await _driver.CancelOrderAsync(orderNumber);
 
         return new ShopUseCaseResult<VoidValue, VoidVerification>(
             result,
