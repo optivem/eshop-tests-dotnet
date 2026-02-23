@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 using Shouldly;
 
 namespace Optivem.EShop.SystemTest.E2eTests.V4.Helpers;

@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
+namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 
 public class SystemError
 {

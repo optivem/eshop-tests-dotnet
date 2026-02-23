@@ -1,8 +1,8 @@
 using Commons.Http;
 using Commons.Playwright;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
+namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 
 public class OrderHistoryPage : BasePage
 {

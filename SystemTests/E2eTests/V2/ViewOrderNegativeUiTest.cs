@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
+using Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.Base.V2;
 using Shouldly;

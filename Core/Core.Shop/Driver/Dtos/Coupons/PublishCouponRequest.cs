@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Coupons;
+namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
 
 public class PublishCouponRequest
 {

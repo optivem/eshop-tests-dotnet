@@ -1,5 +1,5 @@
 using Commons.Dsl;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
 using Shouldly;
 using System.Globalization;
 using Commons.Util;

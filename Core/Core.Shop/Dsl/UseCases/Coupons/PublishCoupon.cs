@@ -1,7 +1,7 @@
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Coupons;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 using Commons.Dsl;
 using Commons.Util;
 

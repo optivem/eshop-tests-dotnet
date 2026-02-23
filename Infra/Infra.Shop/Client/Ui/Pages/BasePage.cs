@@ -1,9 +1,9 @@
 using Commons.Playwright;
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Shop.Commons;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
+using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
+namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 
 public abstract class BasePage
 {

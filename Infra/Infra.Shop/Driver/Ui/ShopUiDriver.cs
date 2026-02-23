@@ -1,10 +1,10 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Shop.Client.Ui;
-using Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Internal;
+using Optivem.EShop.SystemTest.Infra.Shop.Client.Ui;
+using Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Driver.Ui.Internal;
-using static Optivem.EShop.SystemTest.Core.Shop.Commons.SystemResults;
+using static Optivem.EShop.SystemTest.Core.Shop.Driver.SystemResults;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Driver.Ui;
 

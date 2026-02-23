@@ -1,10 +1,10 @@
 using Microsoft.Playwright;
-using Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
+using Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 using Commons.Playwright;
 using System.Net;
 using PlaywrightGateway = Commons.Playwright.PageClient;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Client.Ui;
+namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui;
 
 public class ShopUiClient : IAsyncDisposable
 {

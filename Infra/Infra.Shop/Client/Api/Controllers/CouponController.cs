@@ -1,7 +1,7 @@
 using Commons.Http;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Dtos.Errors;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
 
 namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Controllers;
 

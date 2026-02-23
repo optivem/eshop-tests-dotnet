@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin;
 

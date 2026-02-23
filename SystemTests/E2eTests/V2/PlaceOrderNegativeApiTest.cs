@@ -1,11 +1,11 @@
 using Commons.Util;
 using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Orders;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
-using Optivem.EShop.SystemTest.E2eTests.Providers;
+using E2eTests.Providers;
 using Optivem.EShop.SystemTest.Base.V2;
 using Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Dtos.Errors;
 using Shouldly;

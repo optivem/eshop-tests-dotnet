@@ -1,6 +1,6 @@
 using Commons.Dsl;
 using Shouldly;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
 using Commons.Util;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Coupons;

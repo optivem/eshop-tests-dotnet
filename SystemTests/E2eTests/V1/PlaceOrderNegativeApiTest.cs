@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.Json;
+using E2eTests.Providers;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V1.Base;
 using Shouldly;
@@ -86,7 +87,6 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         await CreateProductViaErpAsync(sku, "20.00");
         var placeOrderJson = $$"""{"sku":"{{sku}}","quantity":"{{Defaults.QUANTITY}}","country":"XX"}""";
         var (statusCode, body) = await PlaceOrderViaApiAsync(placeOrderJson);
-        using Optivem.EShop.SystemTest.E2eTests.Providers;
         AssertValidationError(statusCode, body, "country", "Country does not exist: XX");
     }
 

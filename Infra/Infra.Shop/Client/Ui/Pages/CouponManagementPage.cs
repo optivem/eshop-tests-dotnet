@@ -1,8 +1,8 @@
 using Commons.Playwright;
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Coupons;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Coupons;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
+namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 
 public class CouponManagementPage : BasePage
 {

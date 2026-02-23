@@ -1,7 +1,7 @@
 using System.Text;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V1.Base;
-using Optivem.EShop.SystemTest.E2eTests.Providers;
+using E2eTests.Providers;
 using Shouldly;
 using Xunit;
 

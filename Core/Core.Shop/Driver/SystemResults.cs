@@ -1,7 +1,7 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Errors;
+using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Commons;
+namespace Optivem.EShop.SystemTest.Core.Shop.Driver;
 
 public static class SystemResults
 {
