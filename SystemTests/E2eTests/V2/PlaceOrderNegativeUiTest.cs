@@ -4,6 +4,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Client.Ui.Pages;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
+using Optivem.EShop.SystemTest.E2eTests.Providers;
 using Optivem.EShop.SystemTest.Base.V2;
 using Shouldly;
 using Xunit;
@@ -73,12 +74,13 @@ public class PlaceOrderNegativeUiTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "quantity", "Quantity must be positive");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptySku()
+    [Theory]
+    [ClassData(typeof(EmptyArgumentsProvider))]
+    public async Task ShouldRejectOrderWithEmptySku(string sku)
     {
         var homePage = await _shopUiClient!.OpenHomePageAsync();
         var newOrderPage = await homePage.ClickNewOrderAsync();
-        await newOrderPage.InputSkuAsync("");
+        await newOrderPage.InputSkuAsync(sku);
         await newOrderPage.InputQuantityAsync(Defaults.QUANTITY);
         await newOrderPage.InputCountryAsync(Defaults.COUNTRY);
         await newOrderPage.ClickPlaceOrderAsync();

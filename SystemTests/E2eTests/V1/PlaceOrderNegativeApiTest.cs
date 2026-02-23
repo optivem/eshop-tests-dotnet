@@ -86,6 +86,7 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         await CreateProductViaErpAsync(sku, "20.00");
         var placeOrderJson = $$"""{"sku":"{{sku}}","quantity":"{{Defaults.QUANTITY}}","country":"XX"}""";
         var (statusCode, body) = await PlaceOrderViaApiAsync(placeOrderJson);
+        using Optivem.EShop.SystemTest.E2eTests.Providers;
         AssertValidationError(statusCode, body, "country", "Country does not exist: XX");
     }
 

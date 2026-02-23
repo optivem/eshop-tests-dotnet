@@ -5,6 +5,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Commons.Dtos.Orders;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
+using Optivem.EShop.SystemTest.E2eTests.Providers;
 using Optivem.EShop.SystemTest.Base.V2;
 using Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Dtos.Errors;
 using Shouldly;
@@ -64,10 +65,11 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         result.Error.Errors.ShouldContain(e => e.Field == "quantity" && e.Message == "Quantity must be positive");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptySku()
+    [Theory]
+    [ClassData(typeof(EmptyArgumentsProvider))]
+    public async Task ShouldRejectOrderWithEmptySku(string sku)
     {
-        var request = new PlaceOrderRequest { Sku = "", Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
+        var request = new PlaceOrderRequest { Sku = sku, Quantity = Defaults.QUANTITY, Country = Defaults.COUNTRY };
         var result = await _shopApiClient!.Orders().PlaceOrderAsync(request);
         result.ShouldBeFailure();
         result.Error.Detail.ShouldBe("The request contains one or more validation errors");

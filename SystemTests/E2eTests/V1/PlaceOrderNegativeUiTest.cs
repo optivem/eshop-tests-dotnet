@@ -1,6 +1,7 @@
 using System.Text;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V1.Base;
+using Optivem.EShop.SystemTest.E2eTests.Providers;
 using Shouldly;
 using Xunit;
 
@@ -41,10 +42,11 @@ public class PlaceOrderNegativeUiTest : BaseE2eTest
         await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "quantity", "Quantity must be positive");
     }
 
-    [Fact]
-    public async Task ShouldRejectOrderWithEmptySku()
+    [Theory]
+    [ClassData(typeof(EmptyArgumentsProvider))]
+    public async Task ShouldRejectOrderWithEmptySku(string sku)
     {
-        await NavigateToNewOrderAndSubmitAsync("", Defaults.QUANTITY, Defaults.COUNTRY);
+        await NavigateToNewOrderAndSubmitAsync(sku, Defaults.QUANTITY, Defaults.COUNTRY);
         await AssertErrorAlertContainsAsync("The request contains one or more validation errors", "sku", "SKU must not be empty");
     }
 
