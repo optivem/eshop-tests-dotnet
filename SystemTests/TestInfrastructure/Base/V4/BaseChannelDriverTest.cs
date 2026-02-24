@@ -4,7 +4,7 @@ using Optivem.EShop.SystemTest.Driver.Ports.Erp;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop;
 using Optivem.EShop.SystemTest.Driver.Ports.Tax;
-using Optivem.EShop.SystemTest.Infra.Erp.Driver;
+using Optivem.EShop.SystemTest.Driver.Erp.Driver;
 using Optivem.EShop.SystemTest.Core.Tax.Driver;
 using Optivem.EShop.SystemTest.Core.Shop.Driver;
 using Optivem.Testing;

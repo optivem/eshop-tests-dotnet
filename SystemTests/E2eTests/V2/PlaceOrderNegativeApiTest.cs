@@ -1,5 +1,5 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos;
+using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos.Error;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
@@ -7,7 +7,7 @@ using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
 using E2eTests.Providers;
 using Optivem.EShop.SystemTest.Base.V2;
-using Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Dtos.Errors;
+using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
 using Shouldly;
 using Xunit;
 

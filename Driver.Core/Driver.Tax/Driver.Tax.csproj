@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Optivem.EShop.SystemTest.Driver.Tax</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Driver.Shared\Driver.Shared.csproj" />
+    <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\DslImpl\Core.Tax\Core.Tax.csproj" />
+    <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
+  </ItemGroup>
+
+</Project>
