@@ -4,14 +4,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Optivem.EShop.SystemTest.Driver.Tax</RootNamespace>
+    <RootNamespace>Optivem.EShop.SystemTest.Driver.Shop</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Driver.Shared\Driver.Shared.csproj" />
-    <ProjectReference Include="..\Commons\Commons.csproj" />
-    <ProjectReference Include="..\DslImpl\Core.Tax\Core.Tax.csproj" />
-    <ProjectReference Include="..\DriverPorts\DriverPorts.csproj" />
+    <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\DslImpl\Core.Shop\Core.Shop.csproj" />
+    <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>
 
 </Project>
