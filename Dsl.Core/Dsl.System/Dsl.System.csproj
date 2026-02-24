@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Optivem.EShop.SystemTest.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Optivem.Testing" Version="1.0.5" />
+    <PackageReference Include="Shouldly" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dsl.Clock\Dsl.Clock.csproj" />
+    <ProjectReference Include="..\Dsl.Erp\Dsl.Erp.csproj" />
+    <ProjectReference Include="..\Dsl.Shop\Dsl.Shop.csproj" />
+    <ProjectReference Include="..\Dsl.Tax\Dsl.Tax.csproj" />
+    <ProjectReference Include="..\..\Driver.Core\Driver.Clock\Driver.Clock.csproj" />
+    <ProjectReference Include="..\..\Driver.Core\Driver.Erp\Driver.Erp.csproj" />
+    <ProjectReference Include="..\..\Driver.Core\Driver.Shop\Driver.Shop.csproj" />
+    <ProjectReference Include="..\..\Driver.Core\Driver.Tax\Driver.Tax.csproj" />
+    <ProjectReference Include="..\..\Driver.Core\Driver.Commons\Driver.Commons.csproj" />
+    <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\Driver.Api\Driver.Api.csproj" />
+  </ItemGroup>
+
+</Project>

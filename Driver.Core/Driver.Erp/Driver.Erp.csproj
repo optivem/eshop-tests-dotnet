@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Optivem.EShop.SystemTest.Driver.Erp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WireMock.Net" Version="1.6.28" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Driver.Commons\Driver.Commons.csproj" />
+    <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\Dsl.Core\Dsl.Erp\Dsl.Erp.csproj" />
+    <ProjectReference Include="..\..\Driver.Api\Driver.Api.csproj" />
+  </ItemGroup>
+
+</Project>
