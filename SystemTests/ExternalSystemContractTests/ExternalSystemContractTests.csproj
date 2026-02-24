@@ -35,8 +35,8 @@
     <ProjectReference Include="..\..\Core\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="..\..\Core\Core.Shop\Core.Shop.csproj" />
     <ProjectReference Include="..\..\Core\Core.Tax\Core.Tax.csproj" />
-    <ProjectReference Include="..\..\Dsl\Dsl.Gherkin\Dsl.Gherkin.csproj" />
-    <ProjectReference Include="..\..\Dsl\Dsl.System\Dsl.System.csproj" />
+    <ProjectReference Include="..\..\DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj" />
+    <ProjectReference Include="..\..\DslImpl\Dsl.System\DslImpl.System.csproj" />
     <ProjectReference Include="..\..\TestInfrastructure\TestInfrastructure.csproj" />
   </ItemGroup>
 
