@@ -15,11 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DslImpl\Dsl.System\DslImpl.System.csproj" />
-    <ProjectReference Include="..\DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj" />
-    <ProjectReference Include="..\DriverImpl\Infra.Shop\Infra.Shop.csproj" />
-    <ProjectReference Include="..\DriverImpl\Infra.Tax\Infra.Tax.csproj" />
-    <ProjectReference Include="..\DriverImpl\Infra.Erp\Infra.Erp.csproj" />
+    <ProjectReference Include="..\..\DslImpl\Dsl.System\DslImpl.System.csproj" />
+    <ProjectReference Include="..\..\DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj" />
+    <ProjectReference Include="..\..\DriverImpl\Infra.Shop\Infra.Shop.csproj" />
+    <ProjectReference Include="..\..\DriverImpl\Infra.Tax\Infra.Tax.csproj" />
+    <ProjectReference Include="..\..\DriverImpl\Infra.Erp\Infra.Erp.csproj" />
   </ItemGroup>
 
   <ItemGroup>

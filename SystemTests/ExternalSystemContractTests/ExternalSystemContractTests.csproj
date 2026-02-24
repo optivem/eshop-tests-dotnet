@@ -37,7 +37,7 @@
     <ProjectReference Include="..\..\DslImpl\Core.Tax\Core.Tax.csproj" />
     <ProjectReference Include="..\..\DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj" />
     <ProjectReference Include="..\..\DslImpl\Dsl.System\DslImpl.System.csproj" />
-    <ProjectReference Include="..\..\TestInfrastructure\TestInfrastructure.csproj" />
+    <ProjectReference Include="..\TestInfrastructure\TestInfrastructure.csproj" />
   </ItemGroup>
 
 </Project>
