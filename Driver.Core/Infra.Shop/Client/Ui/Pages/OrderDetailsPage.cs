@@ -1,4 +1,4 @@
-using Driver.Impl.Commons.Playwright;
+using Driver.Shared.Playwright;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;

@@ -2,7 +2,7 @@ using Optivem.EShop.SystemTest.Driver.Ports.Tax;
 using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos;
 using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos.Error;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases.Base;
-using Driver.Impl.Commons.Dsl;
+using Driver.Shared.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases;
 

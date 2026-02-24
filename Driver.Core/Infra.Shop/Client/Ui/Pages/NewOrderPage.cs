@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
-using Driver.Impl.Commons.Http;
-using Driver.Impl.Commons.Playwright;
+using Driver.Shared.Http;
+using Driver.Shared.Playwright;
 
 namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;
 

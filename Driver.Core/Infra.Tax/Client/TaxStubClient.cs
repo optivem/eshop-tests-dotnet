@@ -1,6 +1,6 @@
 using Commons.Util;
-using Driver.Impl.Commons.WireMock;
-using Driver.Impl.Commons.Http;
+using Driver.Shared.WireMock;
+using Driver.Shared.Http;
 using Optivem.EShop.SystemTest.Infra.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Infra.Tax.Client.Dtos.Error;
 

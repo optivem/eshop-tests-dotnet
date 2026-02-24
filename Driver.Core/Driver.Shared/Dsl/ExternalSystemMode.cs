@@ -1,4 +1,4 @@
-namespace Driver.Impl.Commons.Dsl;
+namespace Driver.Shared.Dsl;
 
 public enum ExternalSystemMode
 {

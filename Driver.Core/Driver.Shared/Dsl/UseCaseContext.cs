@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Driver.Impl.Commons.Dsl;
+namespace Driver.Shared.Dsl;
 
 public class UseCaseContext
 {

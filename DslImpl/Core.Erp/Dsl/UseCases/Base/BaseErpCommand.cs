@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Driver.Ports.Erp;
 using Optivem.EShop.SystemTest.Driver.Ports.Erp.Dtos.Error;
-using Driver.Impl.Commons.Dsl;
+using Driver.Shared.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases.Base;
 

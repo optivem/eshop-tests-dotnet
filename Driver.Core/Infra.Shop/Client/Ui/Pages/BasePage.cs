@@ -1,4 +1,4 @@
-using Driver.Impl.Commons.Playwright;
+using Driver.Shared.Playwright;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos.Error;

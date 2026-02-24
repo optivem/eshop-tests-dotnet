@@ -1,4 +1,4 @@
-using Driver.Impl.Commons.Dsl;
+using Driver.Shared.Dsl;
 using Optivem.EShop.SystemTest.Base.V5;
 
 namespace Optivem.EShop.SystemTest.E2eTests.V5.Base;

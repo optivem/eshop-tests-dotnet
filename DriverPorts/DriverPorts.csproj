@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Driver.Core\Driver.Impl.Commons\Driver.Impl.Commons.csproj" />
+    <ProjectReference Include="..\Driver.Core\Driver.Shared\Driver.Shared.csproj" />
     <ProjectReference Include="..\Commons\Commons.csproj" />
   </ItemGroup>
 

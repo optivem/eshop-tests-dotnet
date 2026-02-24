@@ -1,4 +1,4 @@
-using Driver.Impl.Commons.Dsl;
+using Driver.Shared.Dsl;
 using DslImpl.Gherkin;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 

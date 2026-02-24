@@ -1,5 +1,5 @@
 using System.Runtime.CompilerServices;
-using Driver.Impl.Commons.Dsl;
+using Driver.Shared.Dsl;
 
 namespace DslImpl.Gherkin.Then;
 

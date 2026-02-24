@@ -1,4 +1,4 @@
-using Driver.Impl.Commons.Dsl;
+using Driver.Shared.Dsl;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 using Shouldly;
 using System.Globalization;

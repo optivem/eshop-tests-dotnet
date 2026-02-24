@@ -1,6 +1,6 @@
 using DslImpl.Gherkin;
 using DslImpl.Gherkin.When;
-using Driver.Impl.Commons.Dsl;
+using Driver.Shared.Dsl;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;

@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 
-namespace Driver.Impl.Commons.Dsl;
+namespace Driver.Shared.Dsl;
 
 [SuppressMessage("Major Code Smell", "S2436:Reduce the number of generic parameters",
     Justification = "Multiple generic parameters are required for DSL pattern to provide type safety across driver, response, and verification layers")]

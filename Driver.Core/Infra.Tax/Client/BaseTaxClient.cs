@@ -1,4 +1,4 @@
-using Driver.Impl.Commons.Http;
+using Driver.Shared.Http;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Infra.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Infra.Tax.Client.Dtos.Error;
