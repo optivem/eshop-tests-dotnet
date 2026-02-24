@@ -29,7 +29,7 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>    <ProjectReference Include="..\..\Driver.Core\Driver.Shared\Driver.Shared.csproj" />    <ProjectReference Include="..\..\Commons\Commons.csproj" />
+  <ItemGroup>    <ProjectReference Include="..\..\Driver.Shared\Driver.Shared.csproj" />    <ProjectReference Include="..\..\Commons\Commons.csproj" />
     <ProjectReference Include="..\..\DslImpl\Core.Clock\Core.Clock.csproj" />
     <ProjectReference Include="..\..\DslImpl\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="..\..\DslImpl\Core.Shop\Core.Shop.csproj" />

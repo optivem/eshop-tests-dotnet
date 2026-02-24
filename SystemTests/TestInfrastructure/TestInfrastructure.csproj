@@ -17,9 +17,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\DslImpl\Dsl.System\DslImpl.System.csproj" />
     <ProjectReference Include="..\..\DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Shop\Driver.Shop.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Tax\Driver.Tax.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Erp\Driver.Erp.csproj" />
+    <ProjectReference Include="..\..\Driver.Shop\Driver.Shop.csproj" />
+    <ProjectReference Include="..\..\Driver.Tax\Driver.Tax.csproj" />
+    <ProjectReference Include="..\..\Driver.Erp\Driver.Erp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
