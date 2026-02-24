@@ -1,7 +1,7 @@
 using Commons.Util;
 using Driver.Shared.Http;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
-using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
+using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Controllers;
 

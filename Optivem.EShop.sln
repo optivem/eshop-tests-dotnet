@@ -26,11 +26,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy-docker-images", "dep
 		.github\actions\deploy-docker-images\action.yml = .github\actions\deploy-docker-images\action.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Shop", "DslImpl\Core.Shop\Core.Shop.csproj", "{8F5F23B7-0DA0-41EF-B994-71294FD6AFBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Shop", "Dsl.Core\Dsl.System\Core.Shop\Core.Shop.csproj", "{8F5F23B7-0DA0-41EF-B994-71294FD6AFBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tax", "DslImpl\Core.Tax\Core.Tax.csproj", "{4FBEAD90-697E-4620-94CB-49ED8FC153C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tax", "Dsl.Core\Dsl.System\Core.Tax\Core.Tax.csproj", "{4FBEAD90-697E-4620-94CB-49ED8FC153C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Erp", "DslImpl\Core.Erp\Core.Erp.csproj", "{2CCE53DA-8189-4B87-A601-121261686691}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Erp", "Dsl.Core\Dsl.System\Core.Erp\Core.Erp.csproj", "{2CCE53DA-8189-4B87-A601-121261686691}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{56E2B456-6FAB-410A-B43B-A41342689283}"
 EndProject
@@ -40,11 +40,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeTests", "SystemTests\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2eTests", "SystemTests\E2eTests\E2eTests.csproj", "{D83196F4-27AC-4AF2-B36D-B809950FD142}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Clock", "DslImpl\Core.Clock\Core.Clock.csproj", "{3DBF5395-115C-4013-AFFD-BB314714735A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Clock", "Dsl.Core\Dsl.System\Core.Clock\Core.Clock.csproj", "{3DBF5395-115C-4013-AFFD-BB314714735A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DslImpl.System", "DslImpl\Dsl.System\DslImpl.System.csproj", "{E378D9B6-2C24-4F60-AE11-9558954FBD97}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DslImpl.Gherkin", "DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj", "{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsl.Core", "Dsl.Core\Dsl.Core.csproj", "{8E9B6817-8649-4F06-88F9-0E9F03185C1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Core", "Driver.Core\Driver.Core.csproj", "{B1C2D3E4-5F6A-7B8C-9D0E-1F2A3B4C5D6E}"
 EndProject
@@ -58,7 +56,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalSystemContractTests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{30258541-D0D8-F3FD-D559-E63D6BF074C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverPorts", "DriverPorts\DriverPorts.csproj", "{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Api", "Driver.Api\Driver.Api.csproj", "{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -142,30 +140,18 @@ Global
 		{3DBF5395-115C-4013-AFFD-BB314714735A}.Release|x64.Build.0 = Release|Any CPU
 		{3DBF5395-115C-4013-AFFD-BB314714735A}.Release|x86.ActiveCfg = Release|Any CPU
 		{3DBF5395-115C-4013-AFFD-BB314714735A}.Release|x86.Build.0 = Release|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Debug|x64.Build.0 = Debug|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Debug|x86.Build.0 = Debug|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Release|x64.ActiveCfg = Release|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Release|x64.Build.0 = Release|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Release|x86.ActiveCfg = Release|Any CPU
-		{E378D9B6-2C24-4F60-AE11-9558954FBD97}.Release|x86.Build.0 = Release|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Debug|x64.Build.0 = Debug|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Debug|x86.Build.0 = Debug|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Release|x64.ActiveCfg = Release|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Release|x64.Build.0 = Release|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Release|x86.ActiveCfg = Release|Any CPU
-		{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}.Release|x86.Build.0 = Release|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Debug|x64.Build.0 = Debug|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Debug|x86.Build.0 = Debug|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Release|x64.ActiveCfg = Release|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Release|x64.Build.0 = Release|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Release|x86.ActiveCfg = Release|Any CPU
+		{8E9B6817-8649-4F06-88F9-0E9F03185C1D}.Release|x86.Build.0 = Release|Any CPU
 		{9A1B2C3D-4E5F-6A7B-8C9D-0E1F2A3B4C5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A1B2C3D-4E5F-6A7B-8C9D-0E1F2A3B4C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A1B2C3D-4E5F-6A7B-8C9D-0E1F2A3B4C5D}.Debug|x64.ActiveCfg = Debug|Any CPU

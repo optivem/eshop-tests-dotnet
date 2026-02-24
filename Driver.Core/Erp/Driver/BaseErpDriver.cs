@@ -1,7 +1,7 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Driver.Ports.Erp;
-using Optivem.EShop.SystemTest.Driver.Ports.Erp.Dtos;
-using Optivem.EShop.SystemTest.Driver.Ports.Erp.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Api.Erp;
+using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
+using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
 using Optivem.EShop.SystemTest.Driver.Erp.Client;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
 

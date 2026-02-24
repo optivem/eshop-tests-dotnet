@@ -15,8 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\DslImpl\Dsl.System\DslImpl.System.csproj" />
-    <ProjectReference Include="..\..\DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj" />
+    <ProjectReference Include="..\..\Dsl.Core\Dsl.Core.csproj" />
     <ProjectReference Include="..\..\Driver.Core\Driver.Core.csproj" />
   </ItemGroup>
 

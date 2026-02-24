@@ -94,129 +94,129 @@ $transformations = @(
     @{
         pattern = 'Optivem\.EShop\.SystemTest\.Driver\.Ports'
         replacement = 'Optivem.EShop.SystemTest.Driver.Api'
-        includeFilter = { $_ -like '*\DriverPorts\*' }
+        includeFilter = { $_ -like '*\Driver.Api\*' }
     },
     
     # DslImpl transformations
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Clock\.'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Clock.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\Dsl.Core\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Clock\.'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Clock.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\Dsl.Core\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Clock$'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Clock'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\Dsl.Core\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Clock$'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Clock'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\Dsl.Core\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Erp\.'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Erp.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\Dsl.Core\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Erp\.'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Erp.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\Dsl.Core\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Erp$'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Erp'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Erp$'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Erp'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Shop\.'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Shop.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Shop\.'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Shop.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Shop$'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Shop'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Shop$'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Shop'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Tax\.'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Tax.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Tax\.'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Tax.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Tax$'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Tax'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Tax$'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Tax'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Gherkin\.'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Gherkin.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Gherkin\.'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Gherkin.'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Gherkin$'
         replacement = 'using Optivem.EShop.SystemTest.Dsl.Gherkin'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Gherkin$'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Gherkin'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core$'
         replacement = 'using Optivem.EShop.SystemTest.Dsl'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core$'
         replacement = 'namespace Optivem.EShop.SystemTest.Dsl'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'DslImpl\.Gherkin'
         replacement = 'Dsl.Gherkin'
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'DslImpl\.'
         replacement = 'Dsl.' 
-        includeFilter = { $_ -like '*\DslImpl\*' }
+        includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     }
 )
 

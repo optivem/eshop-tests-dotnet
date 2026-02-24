@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Optivem.EShop.SystemTest.Core.Tax</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Shouldly" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Driver.Core\Driver.Core.csproj" />
+    <ProjectReference Include="..\..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\..\Driver.Api\Driver.Api.csproj" />
+  </ItemGroup>
+
+</Project>

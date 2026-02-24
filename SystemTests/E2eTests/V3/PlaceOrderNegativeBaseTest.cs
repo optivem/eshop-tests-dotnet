@@ -1,7 +1,7 @@
 using Commons.Util;
 using E2eTests.Providers;
-using Optivem.EShop.SystemTest.Driver.Ports.Erp.Dtos;
-using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
+using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
+using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V3.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;

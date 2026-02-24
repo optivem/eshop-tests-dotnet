@@ -1,5 +1,5 @@
 using Driver.Shared.Playwright;
-using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
+using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
 
