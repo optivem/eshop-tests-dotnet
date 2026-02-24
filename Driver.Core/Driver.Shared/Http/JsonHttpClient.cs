@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Commons.Util;
 
-namespace Driver.Core.Commons.Http;
+namespace Driver.Core.Driver.Shared.Http;
 
 public class JsonHttpClient<E> : IDisposable
 {

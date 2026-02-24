@@ -1,4 +1,4 @@
-namespace Driver.Core.Commons.Dsl;
+namespace Driver.Core.Driver.Shared.Dsl;
 
 public interface IUseCase<T>
 {

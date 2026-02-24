@@ -1,5 +1,5 @@
-using Driver.Core.Driver.Commons.Http;
-using Driver.Core.Driver.Commons.Playwright;
+using Driver.Core.Driver.Shared.Http;
+using Driver.Core.Driver.Shared.Playwright;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;

@@ -1,6 +1,6 @@
 using Commons.Util;
-using Driver.Core.Driver.Commons.WireMock;
-using Driver.Core.Driver.Commons.Http;
+using Driver.Core.Driver.Shared.WireMock;
+using Driver.Core.Driver.Shared.Http;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
 

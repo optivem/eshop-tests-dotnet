@@ -1,6 +1,6 @@
 using Microsoft.Playwright;
 
-namespace Driver.Core.Commons.Playwright;
+namespace Driver.Core.Driver.Shared.Playwright;
 
 public class PageClient
 {

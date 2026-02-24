@@ -1,8 +1,8 @@
 using Microsoft.Playwright;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
-using Driver.Core.Driver.Commons.Playwright;
+using Driver.Core.Driver.Shared.Playwright;
 using System.Net;
-using PlaywrightGateway = Driver.Core.Commons.Playwright.PageClient;
+using PlaywrightGateway = Driver.Core.Driver.Shared.Playwright.PageClient;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui;
 
