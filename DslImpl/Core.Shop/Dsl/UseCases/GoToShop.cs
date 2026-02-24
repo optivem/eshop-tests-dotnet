@@ -2,7 +2,7 @@ using Optivem.EShop.SystemTest.Driver.Ports.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos.Error;
 using Commons.Util;
-using Commons.Dsl;
+using Driver.Impl.Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 

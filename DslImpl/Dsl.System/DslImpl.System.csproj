@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\DriverImpl\Infra.Erp\Infra.Erp.csproj" />
     <ProjectReference Include="..\..\DriverImpl\Infra.Shop\Infra.Shop.csproj" />
     <ProjectReference Include="..\..\DriverImpl\Infra.Tax\Infra.Tax.csproj" />
+    <ProjectReference Include="..\..\DriverImpl\Driver.Impl.Commons\Driver.Impl.Commons.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
     <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>

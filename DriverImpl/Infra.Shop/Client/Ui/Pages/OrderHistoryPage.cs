@@ -1,5 +1,5 @@
-using Commons.Http;
-using Commons.Playwright;
+using Driver.Impl.Commons.Http;
+using Driver.Impl.Commons.Playwright;
 using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Infra.Shop.Client.Ui.Pages;

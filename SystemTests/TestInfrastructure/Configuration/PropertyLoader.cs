@@ -1,4 +1,4 @@
-using Commons.Dsl;
+using Driver.Impl.Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Configuration;
 

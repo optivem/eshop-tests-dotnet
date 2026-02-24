@@ -1,4 +1,4 @@
-namespace Commons.Http;
+namespace Driver.Impl.Commons.Http;
 
 public static class HttpStatus
 {

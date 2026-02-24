@@ -1,6 +1,6 @@
 using Commons.Util;
-using Commons.WireMock;
-using Commons.Http;
+using Driver.Impl.Commons.WireMock;
+using Driver.Impl.Commons.Http;
 using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Infra.Erp.Client.Dtos.Error;
 

@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Driver.Ports.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
-using Commons.Dsl;
+using Driver.Impl.Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl;
 

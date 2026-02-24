@@ -1,6 +1,6 @@
 using Commons.Util;
 
-namespace Commons.Dsl;
+namespace Driver.Impl.Commons.Dsl;
 
 public class UseCaseResult<TSuccessResponse, TFailureResponse, TSuccessVerification, TFailureVerification>
 {

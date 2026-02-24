@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Driver.Impl.Commons\Driver.Impl.Commons.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
     <ProjectReference Include="..\..\DslImpl\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />

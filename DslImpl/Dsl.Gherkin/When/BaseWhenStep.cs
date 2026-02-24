@@ -1,5 +1,5 @@
 using DslImpl.Gherkin.Then;
-using Commons.Dsl;
+using Driver.Impl.Commons.Dsl;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.Testing;
 

@@ -1,4 +1,4 @@
-namespace Commons.Dsl;
+namespace Driver.Impl.Commons.Dsl;
 
 public class ResponseVerification<TResponse>
 {

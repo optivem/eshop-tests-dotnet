@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Driver.Ports.Tax;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases;
-using Commons.Dsl;
+using Driver.Impl.Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Tax.Dsl;
 

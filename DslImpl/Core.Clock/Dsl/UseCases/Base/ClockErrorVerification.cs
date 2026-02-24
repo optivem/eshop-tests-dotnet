@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.Driver.Ports.Clock.Dtos;
-using Commons.Dsl;
+using Driver.Impl.Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases.Base;
 

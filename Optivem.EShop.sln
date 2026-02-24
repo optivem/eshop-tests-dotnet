@@ -46,6 +46,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DslImpl.System", "DslImpl\D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DslImpl.Gherkin", "DslImpl\Dsl.Gherkin\DslImpl.Gherkin.csproj", "{8C3367B8-DAA4-40C1-A2CE-22DE4DB32009}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Impl.Commons", "DriverImpl\Driver.Impl.Commons\Driver.Impl.Commons.csproj", "{B1C2D3E4-5F6A-7B8C-9D0E-1F2A3B4C5D6E}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestInfrastructure", "SystemTests\TestInfrastructure\TestInfrastructure.csproj", "{9A1B2C3D-4E5F-6A7B-8C9D-0E1F2A3B4C5D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons", "Commons\Commons.csproj", "{A7EE5F0A-8DD6-2378-CF07-6BE04EE9164B}"

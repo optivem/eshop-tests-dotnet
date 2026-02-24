@@ -3,7 +3,7 @@ using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos;
 using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos.Error;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases.Base;
 using Commons.Util;
-using Commons.Dsl;
+using Driver.Impl.Commons.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases;
 
