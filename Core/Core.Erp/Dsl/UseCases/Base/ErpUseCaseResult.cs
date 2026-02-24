@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Ports.Erp.Dtos.Error;
 using Commons.Util;
 using Commons.Dsl;
 

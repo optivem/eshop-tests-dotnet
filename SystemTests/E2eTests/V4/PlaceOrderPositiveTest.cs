@@ -1,7 +1,8 @@
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop;
+using Optivem.EShop.SystemTest.Driver.Ports.Erp.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V4.Base;
 using Optivem.Testing;
@@ -19,7 +20,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest 
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest 
         { 
             Sku = sku, 
             Price = "20.00" 
@@ -52,7 +53,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest 
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest 
         { 
             Sku = sku, 
             Price = unitPrice 
@@ -81,7 +82,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         await SetChannelAsync(channel);
 
         var sku = CreateUniqueSku(Defaults.SKU);
-        (await _erpDriver!.ReturnsProductAsync(new Core.Erp.Driver.Dtos.ReturnsProductRequest 
+        (await _erpDriver!.ReturnsProductAsync(new ReturnsProductRequest 
         { 
             Sku = sku, 
             Price = "20.00" 

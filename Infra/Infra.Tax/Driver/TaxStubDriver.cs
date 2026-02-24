@@ -1,7 +1,7 @@
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core.Tax.Client;
-using Optivem.EShop.SystemTest.Core.Tax.Driver.Dtos;
-using Optivem.EShop.SystemTest.Core.Tax.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos.Error;
 using Optivem.EShop.SystemTest.Infra.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Infra.Tax.Client.Dtos.Error;
 

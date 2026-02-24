@@ -1,4 +1,5 @@
-using Optivem.EShop.SystemTest.Core.Clock.Driver.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Clock;
+using Optivem.EShop.SystemTest.Driver.Ports.Clock.Dtos;
 using Optivem.EShop.SystemTest.Core.Clock.Client;
 using Optivem.EShop.SystemTest.Infra.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Infra.Clock.Client.Dtos.Error;

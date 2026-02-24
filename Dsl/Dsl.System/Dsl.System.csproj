@@ -22,6 +22,7 @@
     <ProjectReference Include="..\..\Infra\Infra.Shop\Infra.Shop.csproj" />
     <ProjectReference Include="..\..\Infra\Infra.Tax\Infra.Tax.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>
 
 </Project>

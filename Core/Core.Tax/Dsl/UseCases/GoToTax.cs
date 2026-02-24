@@ -1,5 +1,5 @@
-using Optivem.EShop.SystemTest.Core.Tax.Driver;
-using Optivem.EShop.SystemTest.Core.Tax.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Ports.Tax;
+using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos.Error;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases.Base;
 using Commons.Util;
 using Commons.Dsl;

@@ -1,17 +1,18 @@
 using Optivem.EShop.SystemTest.Core.Clock.Dsl;
-using Optivem.EShop.SystemTest.Core.Clock.Driver;
+using Optivem.EShop.SystemTest.Driver.Ports.Clock;
 using Optivem.EShop.SystemTest.Core.Erp.Dsl;
-using Optivem.EShop.SystemTest.Core.Erp.Driver;
+using Optivem.EShop.SystemTest.Driver.Ports.Erp;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl;
-using Optivem.EShop.SystemTest.Core.Tax.Driver;
+using Optivem.EShop.SystemTest.Driver.Ports.Tax;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl;
 using Optivem.EShop.SystemTest.Infra.Erp.Driver;
 using Optivem.Testing;
 using Commons.Dsl;
+using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Core.Tax.Driver;
+using Optivem.EShop.SystemTest.Core.Clock.Driver;
 
 namespace Optivem.EShop.SystemTest.Core;
 

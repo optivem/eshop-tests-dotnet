@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Tax.Driver.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos;
 using Commons.Dsl;
 using Commons.Util;
 using Shouldly;

@@ -1,6 +1,6 @@
 using Commons.Dsl;
 using Shouldly;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos.Error;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 

@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Erp.Driver.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Erp.Dtos;
 using Commons.Dsl;
 using Shouldly;
 

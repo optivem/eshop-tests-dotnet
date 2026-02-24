@@ -1,7 +1,7 @@
 using Commons.Dsl;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos.Error;
 using System;
 using System.Collections.Generic;
 using System.Linq;

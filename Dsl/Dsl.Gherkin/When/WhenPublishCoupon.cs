@@ -2,7 +2,7 @@ using Dsl.Gherkin;
 using Dsl.Gherkin.When;
 using Commons.Dsl;
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
 using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;

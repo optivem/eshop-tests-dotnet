@@ -2,9 +2,9 @@ using Commons.Util;
 using Commons.Http;
 using Optivem.EShop.SystemTest.Infra.Shop.Client.Api.Dtos.Errors;
 using Optivem.EShop.SystemTest.Infra.Shop.Client.Api;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos.Error;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Driver;
 

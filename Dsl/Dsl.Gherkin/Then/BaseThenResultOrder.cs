@@ -3,7 +3,7 @@ using Commons.Dsl;
 using Dsl.Gherkin;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Core.Gherkin;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 
 namespace Dsl.Gherkin.Then;

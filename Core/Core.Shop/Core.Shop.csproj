@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>
 
   <ItemGroup>

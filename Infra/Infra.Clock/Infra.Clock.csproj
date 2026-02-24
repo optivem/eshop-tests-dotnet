@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
     <ProjectReference Include="..\..\Core\Core.Clock\Core.Clock.csproj" />
+    <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>
 
 </Project>

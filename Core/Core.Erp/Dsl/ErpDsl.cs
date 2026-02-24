@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Erp.Driver;
+using Optivem.EShop.SystemTest.Driver.Ports.Erp;
 using Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases;
 using Commons.Dsl;
 

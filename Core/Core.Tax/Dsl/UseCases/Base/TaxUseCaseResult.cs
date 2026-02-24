@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core.Tax.Driver.Dtos.Error;
+using Optivem.EShop.SystemTest.Driver.Ports.Tax.Dtos.Error;
 using Commons.Util;
 using Commons.Dsl;
 

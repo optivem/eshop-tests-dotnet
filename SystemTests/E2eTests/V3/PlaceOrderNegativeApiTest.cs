@@ -1,5 +1,5 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Core.Shop.Driver.Dtos;
+using Optivem.EShop.SystemTest.Driver.Ports.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
 using Optivem.EShop.SystemTest.Base.V3;

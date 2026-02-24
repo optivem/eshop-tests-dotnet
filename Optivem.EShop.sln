@@ -34,8 +34,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Erp", "Core\Core.Erp\C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{56E2B456-6FAB-410A-B43B-A41342689283}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{B0EE7BCE-7C7B-4D9A-9BEC-7F43E5F8816F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemTests", "SystemTests", "{A6AB4B29-58E6-B0B1-C4C3-A253A400F180}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeTests", "SystemTests\SmokeTests\SmokeTests.csproj", "{74327E14-D866-4BA2-80FE-E34E08C6A302}"
@@ -63,6 +61,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Shop", "Infra\Infra.Shop\Infra.Shop.csproj", "{5D68615C-6181-471F-B119-02C347D0FBB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Tax", "Infra\Infra.Tax\Infra.Tax.csproj", "{4A12A987-4A05-4CB2-B55C-AF7D230A08A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverPorts", "DriverPorts\DriverPorts.csproj", "{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -254,6 +254,18 @@ Global
 		{4A12A987-4A05-4CB2-B55C-AF7D230A08A2}.Release|x64.Build.0 = Release|Any CPU
 		{4A12A987-4A05-4CB2-B55C-AF7D230A08A2}.Release|x86.ActiveCfg = Release|Any CPU
 		{4A12A987-4A05-4CB2-B55C-AF7D230A08A2}.Release|x86.Build.0 = Release|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Debug|x64.Build.0 = Debug|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Debug|x86.Build.0 = Debug|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Release|x64.ActiveCfg = Release|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Release|x64.Build.0 = Release|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Release|x86.ActiveCfg = Release|Any CPU
+		{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
