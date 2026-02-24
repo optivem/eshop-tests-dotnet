@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Driver.Commons\Driver.Commons.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
-    <ProjectReference Include="..\..\Dsl.Core\Dsl.Tax\Dsl.Tax.csproj" />
+    <ProjectReference Include="..\..\Driver.Core\Driver.Tax\Driver.Tax.csproj" />
     <ProjectReference Include="..\..\Driver.Api\Driver.Api.csproj" />
   </ItemGroup>
 

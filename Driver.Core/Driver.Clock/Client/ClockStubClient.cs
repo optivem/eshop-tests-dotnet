@@ -4,7 +4,7 @@ using Driver.Core.Driver.Commons.Http;
 using Commons.Util;
 using Driver.Core.Driver.Commons.WireMock;
 
-namespace Optivem.EShop.SystemTest.Dsl.Clock.Client;
+namespace Optivem.EShop.SystemTest.Driver.Clock.Client;
 
 public class ClockStubClient : IDisposable
 {

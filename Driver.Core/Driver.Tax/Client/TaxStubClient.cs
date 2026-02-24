@@ -4,7 +4,7 @@ using Driver.Core.Driver.Commons.Http;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Dsl.Tax.Client;
+namespace Optivem.EShop.SystemTest.Driver.Tax.Client;
 
 public class TaxStubClient : BaseTaxClient
 {

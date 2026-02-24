@@ -1,11 +1,11 @@
 using Optivem.EShop.SystemTest.Driver.Api.Clock;
 using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
-using Optivem.EShop.SystemTest.Dsl.Clock.Client;
+using Optivem.EShop.SystemTest.Driver.Clock.Client;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
 using Commons.Util;
 
-namespace Optivem.EShop.SystemTest.Dsl.Clock.Driver;
+namespace Optivem.EShop.SystemTest.Driver.Clock.Driver;
 
 public class ClockRealDriver : IClockDriver
 {

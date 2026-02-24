@@ -3,7 +3,7 @@ using Commons.Util;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Dsl.Tax.Client;
+namespace Optivem.EShop.SystemTest.Driver.Tax.Client;
 
 public abstract class BaseTaxClient : IDisposable
 {

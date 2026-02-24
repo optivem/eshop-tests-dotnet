@@ -1,9 +1,9 @@
 using Commons.Util;
-using Optivem.EShop.SystemTest.Dsl.Tax.Client;
+using Optivem.EShop.SystemTest.Driver.Tax.Client;
 using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;
 using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Dsl.Tax.Driver;
+namespace Optivem.EShop.SystemTest.Driver.Tax.Driver;
 
 public class TaxRealDriver : BaseTaxDriver<TaxRealClient>
 {

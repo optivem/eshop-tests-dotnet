@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Dsl.Tax.Client;
+namespace Optivem.EShop.SystemTest.Driver.Tax.Client;
 
 public class TaxRealClient : BaseTaxClient
 {
