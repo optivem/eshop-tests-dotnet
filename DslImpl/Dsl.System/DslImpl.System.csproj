@@ -17,11 +17,7 @@
     <ProjectReference Include="..\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="..\Core.Shop\Core.Shop.csproj" />
     <ProjectReference Include="..\Core.Tax\Core.Tax.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Clock\Driver.Clock.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Erp\Driver.Erp.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Shop\Driver.Shop.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Tax\Driver.Tax.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Shared\Driver.Shared.csproj" />
+    <ProjectReference Include="..\..\Driver.Core\Driver.Core.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
     <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>
