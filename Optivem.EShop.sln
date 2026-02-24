@@ -26,11 +26,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy-docker-images", "dep
 		.github\actions\deploy-docker-images\action.yml = .github\actions\deploy-docker-images\action.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Shop", "Core\Core.Shop\Core.Shop.csproj", "{8F5F23B7-0DA0-41EF-B994-71294FD6AFBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Shop", "DslImpl\Core.Shop\Core.Shop.csproj", "{8F5F23B7-0DA0-41EF-B994-71294FD6AFBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tax", "Core\Core.Tax\Core.Tax.csproj", "{4FBEAD90-697E-4620-94CB-49ED8FC153C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tax", "DslImpl\Core.Tax\Core.Tax.csproj", "{4FBEAD90-697E-4620-94CB-49ED8FC153C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Erp", "Core\Core.Erp\Core.Erp.csproj", "{2CCE53DA-8189-4B87-A601-121261686691}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Erp", "DslImpl\Core.Erp\Core.Erp.csproj", "{2CCE53DA-8189-4B87-A601-121261686691}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{56E2B456-6FAB-410A-B43B-A41342689283}"
 EndProject
@@ -40,7 +40,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmokeTests", "SystemTests\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2eTests", "SystemTests\E2eTests\E2eTests.csproj", "{D83196F4-27AC-4AF2-B36D-B809950FD142}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Clock", "Core\Core.Clock\Core.Clock.csproj", "{3DBF5395-115C-4013-AFFD-BB314714735A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Clock", "DslImpl\Core.Clock\Core.Clock.csproj", "{3DBF5395-115C-4013-AFFD-BB314714735A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DslImpl.System", "DslImpl\Dsl.System\DslImpl.System.csproj", "{E378D9B6-2C24-4F60-AE11-9558954FBD97}"
 EndProject
@@ -56,11 +56,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalSystemContractTests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{30258541-D0D8-F3FD-D559-E63D6BF074C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Clock", "Infra\Infra.Clock\Infra.Clock.csproj", "{B45B945E-86C9-4194-95E3-5D7090811CED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Clock", "DriverImpl\Infra.Clock\Infra.Clock.csproj", "{B45B945E-86C9-4194-95E3-5D7090811CED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Shop", "Infra\Infra.Shop\Infra.Shop.csproj", "{5D68615C-6181-471F-B119-02C347D0FBB3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Shop", "DriverImpl\Infra.Shop\Infra.Shop.csproj", "{5D68615C-6181-471F-B119-02C347D0FBB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Tax", "Infra\Infra.Tax\Infra.Tax.csproj", "{4A12A987-4A05-4CB2-B55C-AF7D230A08A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Tax", "DriverImpl\Infra.Tax\Infra.Tax.csproj", "{4A12A987-4A05-4CB2-B55C-AF7D230A08A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverPorts", "DriverPorts\DriverPorts.csproj", "{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}"
 EndProject

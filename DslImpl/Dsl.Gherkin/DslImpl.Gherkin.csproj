@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Core.Shop\Core.Shop.csproj" />
+    <ProjectReference Include="..\Core.Shop\Core.Shop.csproj" />
     <ProjectReference Include="..\Dsl.System\DslImpl.System.csproj" />
     <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>

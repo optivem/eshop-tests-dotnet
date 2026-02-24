@@ -4,12 +4,16 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Optivem.EShop.SystemTest.Infra.Clock</RootNamespace>
+    <RootNamespace>Optivem.EShop.SystemTest.Infra.Erp</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="WireMock.Net" Version="1.6.28" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
-    <ProjectReference Include="..\..\Core\Core.Clock\Core.Clock.csproj" />
+    <ProjectReference Include="..\..\DslImpl\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="..\..\DriverPorts\DriverPorts.csproj" />
   </ItemGroup>
 
