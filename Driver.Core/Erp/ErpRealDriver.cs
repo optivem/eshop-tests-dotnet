@@ -5,7 +5,7 @@ using Optivem.EShop.SystemTest.Driver.Erp.Client;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Erp.Driver;
+namespace Optivem.EShop.SystemTest.Core.Erp;
 
 public class ErpRealDriver : BaseErpDriver<ErpRealClient>
 {

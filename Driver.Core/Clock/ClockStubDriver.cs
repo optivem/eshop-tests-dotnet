@@ -5,7 +5,7 @@ using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
 using Commons.Util;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Driver;
+namespace Optivem.EShop.SystemTest.Core.Clock;
 
 public class ClockStubDriver : IClockDriver
 {

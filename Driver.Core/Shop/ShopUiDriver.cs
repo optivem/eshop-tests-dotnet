@@ -6,7 +6,7 @@ using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
 using Optivem.EShop.SystemTest.Driver.Api.Shop;
 using static Optivem.EShop.SystemTest.Driver.Api.Shop.SystemResults;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Driver;
+namespace Optivem.EShop.SystemTest.Core.Shop;
 
 public class ShopUiDriver : IShopDriver
 {

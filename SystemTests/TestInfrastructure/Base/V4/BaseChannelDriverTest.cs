@@ -4,9 +4,8 @@ using Optivem.EShop.SystemTest.Driver.Api.Erp;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Driver.Api.Tax;
-using Optivem.EShop.SystemTest.Driver.Erp.Driver;
-using Optivem.EShop.SystemTest.Core.Tax.Driver;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
+using Optivem.EShop.SystemTest.Core.Erp;
+using Optivem.EShop.SystemTest.Core.Tax;
 using Optivem.Testing;
 using Xunit;
 

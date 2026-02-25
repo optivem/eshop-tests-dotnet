@@ -7,12 +7,11 @@ using Optivem.EShop.SystemTest.Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl;
 using Optivem.EShop.SystemTest.Driver.Api.Tax;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl;
-using Optivem.EShop.SystemTest.Driver.Erp.Driver;
+using Optivem.EShop.SystemTest.Core.Erp;
 using Optivem.Testing;
 using Driver.Shared.Dsl;
-using Optivem.EShop.SystemTest.Core.Shop.Driver;
-using Optivem.EShop.SystemTest.Core.Tax.Driver;
-using Optivem.EShop.SystemTest.Core.Clock.Driver;
+using Optivem.EShop.SystemTest.Core.Clock;
+using Optivem.EShop.SystemTest.Core.Tax;
 
 namespace Optivem.EShop.SystemTest.Core;
 

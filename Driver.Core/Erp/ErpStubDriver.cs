@@ -5,7 +5,7 @@ using Optivem.EShop.SystemTest.Driver.Erp.Client;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Erp.Driver;
+namespace Optivem.EShop.SystemTest.Core.Erp;
 
 /// <summary>
 /// ErpStubDriver uses WireMock to stub ERP API responses.

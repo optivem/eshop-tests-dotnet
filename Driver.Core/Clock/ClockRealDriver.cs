@@ -5,7 +5,7 @@ using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
 using Commons.Util;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Driver;
+namespace Optivem.EShop.SystemTest.Core.Clock;
 
 public class ClockRealDriver : IClockDriver
 {
@@ -37,7 +37,6 @@ public class ClockRealDriver : IClockDriver
 
     public Task<Result<VoidValue, ClockErrorResponse>> ReturnsTimeAsync(ReturnsTimeRequest request)
     {
-        // No-op for real driver - cannot configure system clock
         return Task.FromResult(Result.Success<ClockErrorResponse>());
     }
 

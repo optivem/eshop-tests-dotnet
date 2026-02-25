@@ -5,7 +5,7 @@ using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;
 using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Tax.Driver;
+namespace Optivem.EShop.SystemTest.Core.Tax;
 
 public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTaxClient
 {
