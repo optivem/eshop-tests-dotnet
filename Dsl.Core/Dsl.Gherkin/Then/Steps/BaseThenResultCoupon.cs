@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Dsl.Api.Then.Steps;
 using Driver.Shared.Dsl;
 using DslImpl.Gherkin;
 using Optivem.EShop.SystemTest.Core;
@@ -7,6 +8,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 namespace DslImpl.Gherkin.Then;
 
 public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, TDerived>
+    : IThenCouponAssertion
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
     where TDerived : BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, TDerived>
 {
@@ -32,11 +34,15 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         return Self;
     }
 
+    IThenCouponAssertion IThenCouponAssertion.HasDiscountRate(decimal discountRate) => HasDiscountRate(discountRate);
+
     public TDerived IsValidFrom(string validFrom)
     {
         _verifications.Add((v, code) => v.CouponHasValidFrom(code, validFrom));
         return Self;
     }
+
+    IThenCouponAssertion IThenCouponAssertion.IsValidFrom(string validFrom) => IsValidFrom(validFrom);
 
     public TDerived IsValidTo(string validTo)
     {
@@ -44,17 +50,23 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         return Self;
     }
 
+    IThenCouponAssertion IThenCouponAssertion.IsValidTo(string validTo) => IsValidTo(validTo);
+
     public TDerived HasUsageLimit(int usageLimit)
     {
         _verifications.Add((v, code) => v.CouponHasUsageLimit(code, usageLimit));
         return Self;
     }
 
+    IThenCouponAssertion IThenCouponAssertion.HasUsageLimit(int usageLimit) => HasUsageLimit(usageLimit);
+
     public TDerived HasUsedCount(int expectedUsedCount)
     {
         _verifications.Add((v, code) => v.CouponHasUsedCount(code, expectedUsedCount));
         return Self;
     }
+
+    IThenCouponAssertion IThenCouponAssertion.HasUsedCount(int expectedUsedCount) => HasUsedCount(expectedUsedCount);
 
     public TaskAwaiter GetAwaiter() => Execute().GetAwaiter();
 

@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Driver.Api\Driver.Api.csproj" />
     <Compile Remove="**\bin\**\*.cs" />
     <Compile Remove="**\obj\**\*.cs" />
   </ItemGroup>

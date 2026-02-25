@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Dsl.Api.Then.Steps;
 using Driver.Shared.Dsl;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
@@ -9,6 +10,7 @@ namespace DslImpl.Gherkin.Then;
 /// Enables fluent syntax: await Scenario(...).Then().ShouldFail().ErrorMessage("...").FieldErrorMessage("...");
 /// </summary>
 public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
+    : IThenFailureVerifier
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
@@ -25,11 +27,16 @@ public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
         return this;
     }
 
+    IThenFailureVerifier IThenFailureVerifier.ErrorMessage(string expectedMessage) => ErrorMessage(expectedMessage);
+
     public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> FieldErrorMessage(string expectedField, string expectedMessage)
     {
         _assertions.Add(v => v.FieldErrorMessage(expectedField, expectedMessage));
         return this;
     }
+
+    IThenFailureVerifier IThenFailureVerifier.FieldErrorMessage(string expectedField, string expectedMessage)
+        => FieldErrorMessage(expectedField, expectedMessage);
 
     /// <summary>
     /// Returns the failure assertion and for further chaining (e.g. .And().Order().HasStatus(...)).
@@ -39,6 +46,8 @@ public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
     {
         return new ThenFailureAnd<TSuccessResponse, TSuccessVerification>(_thenClause, _assertions);
     }
+
+    IThenFailureAnd IThenFailureVerifier.And() => And();
 
     public TaskAwaiter GetAwaiter() => ExecuteAssertions().GetAwaiter();
 

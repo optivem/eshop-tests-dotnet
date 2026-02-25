@@ -1,4 +1,5 @@
 using DslImpl.Gherkin;
+using Dsl.Api;
 using Optivem.EShop.SystemTest.Configuration;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Core.Gherkin;
@@ -20,7 +21,7 @@ public abstract class BaseScenarioDslTest : BaseConfigurableTest, IAsyncLifetime
         await Task.CompletedTask;
     }
 
-    protected ScenarioDsl Scenario(Channel channel)
+    protected IScenarioDsl Scenario(Channel channel)
     {
         return _scenarioFactory.Create(channel);
     }

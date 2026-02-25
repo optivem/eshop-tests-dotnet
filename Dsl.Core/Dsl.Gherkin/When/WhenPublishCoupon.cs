@@ -1,5 +1,6 @@
 using DslImpl.Gherkin;
 using DslImpl.Gherkin.When;
+using Dsl.Api.When.Steps;
 using Driver.Shared.Dsl;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
@@ -9,7 +10,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.When;
 
-public class PublishCouponBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
+public class PublishCouponBuilder : BaseWhenBuilder<VoidValue, VoidVerification>, IPublishCouponBuilder
 {
     private string? _couponCode;
     private string? _discountRate;
@@ -29,11 +30,15 @@ public class PublishCouponBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
         return this;
     }
 
+    IPublishCouponBuilder IPublishCouponBuilder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
+
     public PublishCouponBuilder WithDiscountRate(string? discountRate)
     {
         _discountRate = discountRate;
         return this;
     }
+
+    IPublishCouponBuilder IPublishCouponBuilder.WithDiscountRate(string? discountRate) => WithDiscountRate(discountRate);
 
     public PublishCouponBuilder WithDiscountRate(decimal discountRate)
     {
@@ -41,11 +46,15 @@ public class PublishCouponBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
         return this;
     }
 
+    IPublishCouponBuilder IPublishCouponBuilder.WithDiscountRate(decimal discountRate) => WithDiscountRate(discountRate);
+
     public PublishCouponBuilder WithValidFrom(string? validFrom)
     {
         _validFrom = validFrom;
         return this;
     }
+
+    IPublishCouponBuilder IPublishCouponBuilder.WithValidFrom(string? validFrom) => WithValidFrom(validFrom);
 
     public PublishCouponBuilder WithValidTo(string? validTo)
     {
@@ -53,17 +62,23 @@ public class PublishCouponBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
         return this;
     }
 
+    IPublishCouponBuilder IPublishCouponBuilder.WithValidTo(string? validTo) => WithValidTo(validTo);
+
     public PublishCouponBuilder WithUsageLimit(string? usageLimit)
     {
         _usageLimit = usageLimit;
         return this;
     }
 
+    IPublishCouponBuilder IPublishCouponBuilder.WithUsageLimit(string? usageLimit) => WithUsageLimit(usageLimit);
+
     public PublishCouponBuilder WithUsageLimit(int usageLimit)
     {
         _usageLimit = Converter.FromInteger(usageLimit);
         return this;
     }
+
+    IPublishCouponBuilder IPublishCouponBuilder.WithUsageLimit(int usageLimit) => WithUsageLimit(usageLimit);
 
     protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(SystemDsl app)
     {

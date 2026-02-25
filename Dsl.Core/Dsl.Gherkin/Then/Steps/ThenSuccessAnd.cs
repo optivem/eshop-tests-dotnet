@@ -1,9 +1,10 @@
+using Dsl.Api.Then.Steps;
 using Driver.Shared.Dsl;
 
 namespace DslImpl.Gherkin.Then;
 
 public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
-    : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>
+    : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>, IThenSuccessAnd
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     internal ThenSuccessAnd(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
@@ -23,6 +24,8 @@ public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
             () => Task.FromResult(couponCode));
     }
 
+    IThenCouponAssertion IThenSuccessAnd.Coupon(string couponCode) => Coupon(couponCode);
+
     public ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification> Coupon()
     {
         return new ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification>(
@@ -33,4 +36,10 @@ public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
                 return result.CouponCode ?? throw new InvalidOperationException("Cannot verify coupon: no coupon code available from the executed operation");
             });
     }
+
+    IThenCouponAssertion IThenSuccessAnd.Coupon() => Coupon();
+
+    IThenOrderAssertion IThenSuccessAnd.Order(string orderNumber) => Order(orderNumber);
+
+    IThenOrderAssertion IThenSuccessAnd.Order() => Order();
 }

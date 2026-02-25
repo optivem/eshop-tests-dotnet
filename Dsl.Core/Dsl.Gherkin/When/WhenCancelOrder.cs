@@ -1,5 +1,6 @@
 using DevLab.JmesPath.Functions;
 using DslImpl.Gherkin.When;
+using Dsl.Api.When.Steps;
 using Driver.Shared.Dsl;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core;
@@ -11,7 +12,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.Builders.When.CancelOrder;
 
-public class CancelOrderBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
+public class CancelOrderBuilder : BaseWhenBuilder<VoidValue, VoidVerification>, ICancelOrderBuilder
 {
     private string? _orderNumber;
 
@@ -25,6 +26,8 @@ public class CancelOrderBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
         _orderNumber = orderNumber;
         return this;
     }
+
+    ICancelOrderBuilder ICancelOrderBuilder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
 
     protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(SystemDsl app)
     {

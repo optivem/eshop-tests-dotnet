@@ -1,3 +1,4 @@
+using Dsl.Api.Then.Steps;
 using Driver.Shared.Dsl;
 using DslImpl.Gherkin;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
@@ -8,7 +9,7 @@ namespace DslImpl.Gherkin.Then;
 /// Order verification in failure path - no success check, runs failure assertions first then order verifications.
 /// </summary>
 public class ThenFailureOrder<TSuccessResponse, TSuccessVerification>
-    : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>
+    : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>, IThenOrderAssertion
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;

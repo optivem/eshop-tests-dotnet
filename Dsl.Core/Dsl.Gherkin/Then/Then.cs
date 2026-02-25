@@ -1,10 +1,12 @@
 using Driver.Shared.Dsl;
+using Dsl.Api.Then;
+using Dsl.Api.Then.Steps;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.Testing;
 
 namespace DslImpl.Gherkin.Then
 {
-    public class ThenClause<TSuccessResponse, TSuccessVerification> : BaseClause
+    public class ThenClause<TSuccessResponse, TSuccessVerification> : BaseClause, IThenClause
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
         private readonly SystemDsl _app;
@@ -24,10 +26,14 @@ namespace DslImpl.Gherkin.Then
             return new ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>(this);
         }
 
+        IThenSuccessVerifier IThenClause.ShouldSucceed() => ShouldSucceed();
+
         public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> ShouldFail()
         {
             return new ThenFailureVerifier<TSuccessResponse, TSuccessVerification>(this);
         }
+
+        IThenFailureVerifier IThenClause.ShouldFail() => ShouldFail();
 
         internal SystemDsl App => _app;
 

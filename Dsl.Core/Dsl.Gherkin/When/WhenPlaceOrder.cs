@@ -1,4 +1,5 @@
 using DslImpl.Gherkin.When;
+using Dsl.Api.When.Steps;
 using Driver.Shared.Dsl;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core;
@@ -9,7 +10,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.Builders.When.PlaceOrder;
 
-public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderVerification>
+public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderVerification>, IPlaceOrderBuilder
 {
     private string? _orderNumber;
     private string? _sku;
@@ -32,11 +33,15 @@ public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderV
         return this;
     }
 
+    IPlaceOrderBuilder IPlaceOrderBuilder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
+
     public PlaceOrderBuilder WithSku(string? sku)
     {
         _sku = sku;
         return this;
     }
+
+    IPlaceOrderBuilder IPlaceOrderBuilder.WithSku(string? sku) => WithSku(sku);
 
     public PlaceOrderBuilder WithQuantity(string? quantity)
     {
@@ -44,10 +49,14 @@ public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderV
         return this;
     }
 
+    IPlaceOrderBuilder IPlaceOrderBuilder.WithQuantity(string? quantity) => WithQuantity(quantity);
+
     public PlaceOrderBuilder WithQuantity(int quantity)
     {
         return WithQuantity(Converter.FromInteger(quantity));
     }
+
+    IPlaceOrderBuilder IPlaceOrderBuilder.WithQuantity(int quantity) => WithQuantity(quantity);
 
     public PlaceOrderBuilder WithCountry(string? country)
     {
@@ -55,16 +64,22 @@ public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderV
         return this;
     }
 
+    IPlaceOrderBuilder IPlaceOrderBuilder.WithCountry(string? country) => WithCountry(country);
+
     public PlaceOrderBuilder WithCouponCode(string? couponCode)
     {
         _couponCode = couponCode;
         return this;
     }
 
+    IPlaceOrderBuilder IPlaceOrderBuilder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
+
     public PlaceOrderBuilder WithCouponCode()
     {
         return WithCouponCode(DefaultCouponCode);
     }
+
+    IPlaceOrderBuilder IPlaceOrderBuilder.WithCouponCode() => WithCouponCode();
 
     protected override async Task<ExecutionResult<PlaceOrderResponse, PlaceOrderVerification>> Execute(SystemDsl app)
     {

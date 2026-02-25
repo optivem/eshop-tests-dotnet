@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Dsl.Api.Then.Steps;
 using Driver.Shared.Dsl;
 
 namespace DslImpl.Gherkin.Then;
@@ -8,6 +9,7 @@ namespace DslImpl.Gherkin.Then;
 /// Enables fluent syntax: await Scenario(...).Then().ShouldSucceed().And().Order().HasStatus(...);
 /// </summary>
 public class ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>
+    : IThenSuccessVerifier
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
@@ -21,6 +23,8 @@ public class ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>
     {
         return new ThenSuccessAnd<TSuccessResponse, TSuccessVerification>(_thenClause);
     }
+
+    IThenSuccessAnd IThenSuccessVerifier.And() => And();
 
     /// <summary>
     /// When awaited with no further chaining, runs the success verification.

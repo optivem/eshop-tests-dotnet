@@ -1,12 +1,13 @@
 using DslImpl.Gherkin;
 using DslImpl.Gherkin.When;
+using Dsl.Api.When.Steps;
 using Driver.Shared.Dsl;
 using Commons.Util;
 using Optivem.EShop.SystemTest.Core;
 
 namespace DslImpl.Gherkin.When;
 
-public class GoToShopBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
+public class GoToShopBuilder : BaseWhenBuilder<VoidValue, VoidVerification>, IGoToShopBuilder
 {
     public GoToShopBuilder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {

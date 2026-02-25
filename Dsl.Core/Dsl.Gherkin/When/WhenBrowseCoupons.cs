@@ -1,5 +1,6 @@
 using DslImpl.Gherkin;
 using DslImpl.Gherkin.When;
+using Dsl.Api.When.Steps;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
@@ -8,7 +9,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.When;
 
-public class BrowseCouponsBuilder : BaseWhenBuilder<BrowseCouponsResponse, BrowseCouponsVerification>
+public class BrowseCouponsBuilder : BaseWhenBuilder<BrowseCouponsResponse, BrowseCouponsVerification>, IBrowseCouponsBuilder
 {
     public BrowseCouponsBuilder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {

@@ -1,10 +1,11 @@
+using Dsl.Api.Then.Steps;
 using Driver.Shared.Dsl;
 using DslImpl.Gherkin;
 
 namespace DslImpl.Gherkin.Then;
 
 public class ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>
-    : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>
+    : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>, IThenOrderAssertion
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     internal ThenSuccessOrderVerifier(

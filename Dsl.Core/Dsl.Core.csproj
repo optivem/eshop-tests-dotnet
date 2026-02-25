@@ -18,6 +18,7 @@
     <ProjectReference Include="Dsl.System\Core.Erp\Core.Erp.csproj" />
     <ProjectReference Include="Dsl.System\Core.Shop\Core.Shop.csproj" />
     <ProjectReference Include="Dsl.System\Core.Tax\Core.Tax.csproj" />
+    <ProjectReference Include="..\Dsl.Api\Dsl.Api.csproj" />
     <ProjectReference Include="..\Driver.Core\Driver.Core.csproj" />
     <ProjectReference Include="..\Driver.Common\Driver.Common.csproj" />
     <ProjectReference Include="..\Commons\Commons.csproj" />

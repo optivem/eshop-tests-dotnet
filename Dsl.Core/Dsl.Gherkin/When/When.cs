@@ -2,6 +2,8 @@ using DslImpl.Gherkin.Builders.When.PlaceOrder;
 using DslImpl.Gherkin.Builders.When.CancelOrder;
 using DslImpl.Gherkin.When;
 using DslImpl.Gherkin.Then;
+using Dsl.Api.When;
+using Dsl.Api.When.Steps;
 using Optivem.Testing;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Core.Gherkin;
@@ -10,7 +12,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.When
 {
-    public class WhenClause : BaseClause
+    public class WhenClause : BaseClause, IWhenClause
     {
         private readonly SystemDsl _app;
         private readonly ScenarioDsl _scenario;
@@ -66,29 +68,41 @@ namespace DslImpl.Gherkin.When
             return new GoToShopBuilder(_app, _scenario, () => EnsureGiven());
         }
 
+        IGoToShopBuilder IWhenClause.GoToShop() => GoToShop();
+
         public PlaceOrderBuilder PlaceOrder()
         {
             return new PlaceOrderBuilder(_app, _scenario, () => EnsureGiven());
         }
+
+        IPlaceOrderBuilder IWhenClause.PlaceOrder() => PlaceOrder();
 
         public CancelOrderBuilder CancelOrder()
         {
             return new CancelOrderBuilder(_app, _scenario, () => EnsureGiven());
         }
 
+        ICancelOrderBuilder IWhenClause.CancelOrder() => CancelOrder();
+
         public ViewOrderBuilder ViewOrder()
         {
             return new ViewOrderBuilder(_app, _scenario, () => EnsureGiven());
         }
+
+        IViewOrderBuilder IWhenClause.ViewOrder() => ViewOrder();
 
         public PublishCouponBuilder PublishCoupon()
         {
             return new PublishCouponBuilder(_app, _scenario, () => EnsureGiven());
         }
 
+        IPublishCouponBuilder IWhenClause.PublishCoupon() => PublishCoupon();
+
         public BrowseCouponsBuilder BrowseCoupons()
         {
             return new BrowseCouponsBuilder(_app, _scenario, () => EnsureGiven());
         }
+
+        IBrowseCouponsBuilder IWhenClause.BrowseCoupons() => BrowseCoupons();
     }
 }

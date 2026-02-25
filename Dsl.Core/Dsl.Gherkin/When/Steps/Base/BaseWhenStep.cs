@@ -1,4 +1,6 @@
 using DslImpl.Gherkin.Then;
+using Dsl.Api.Then;
+using Dsl.Api.When.Steps.Base;
 using Driver.Shared.Dsl;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.Testing;
@@ -6,6 +8,7 @@ using Optivem.Testing;
 namespace DslImpl.Gherkin.When;
 
 public abstract class BaseWhenBuilder<TSuccessResponse, TSuccessVerification>
+    : IWhenStep
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly SystemDsl _app;
@@ -27,6 +30,8 @@ public abstract class BaseWhenBuilder<TSuccessResponse, TSuccessVerification>
             return await Execute(_app);
         });
     }
+
+    IThenClause IWhenStep.Then() => Then();
 
     protected abstract Task<ExecutionResult<TSuccessResponse, TSuccessVerification>> Execute(SystemDsl app);
 

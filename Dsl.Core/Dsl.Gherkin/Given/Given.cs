@@ -1,11 +1,14 @@
 using DslImpl.Gherkin.When;
+using Dsl.Api.Given;
+using Dsl.Api.Given.Steps;
+using Dsl.Api.When;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Core.Gherkin.Given;
 using Optivem.Testing;
 
 namespace DslImpl.Gherkin.Given
 {
-    public class GivenClause : BaseClause
+    public class GivenClause : BaseClause, IGivenClause
     {
         private readonly SystemDsl _app;
         private readonly ScenarioDsl _scenario;
@@ -34,6 +37,8 @@ namespace DslImpl.Gherkin.Given
             return productBuilder;
         }
 
+        IGivenProductBuilder IGivenClause.Product() => Product();
+
         public GivenOrderBuilder Order()
         {
             var orderBuilder = new GivenOrderBuilder(this);
@@ -41,11 +46,15 @@ namespace DslImpl.Gherkin.Given
             return orderBuilder;
         }
 
+        IGivenOrderBuilder IGivenClause.Order() => Order();
+
         public GivenClockBuilder Clock()
         {
             _clock = new GivenClockBuilder(this);
             return _clock;
         }
+
+        IGivenClockBuilder IGivenClause.Clock() => Clock();
 
         public GivenCountryBuilder Country()
         {
@@ -54,6 +63,8 @@ namespace DslImpl.Gherkin.Given
             return taxRateBuilder;
         }
 
+        IGivenCountryBuilder IGivenClause.Country() => Country();
+
         public GivenCouponBuilder Coupon()
         {
             var couponBuilder = new GivenCouponBuilder(this);
@@ -61,10 +72,14 @@ namespace DslImpl.Gherkin.Given
             return couponBuilder;
         }
 
+        IGivenCouponBuilder IGivenClause.Coupon() => Coupon();
+
         public WhenClause When()
         {
             return new WhenClause(Channel, _app, _scenario, _products.Any(), _countries.Any(), SetupGiven);
         }
+
+        IWhenClause IGivenClause.When() => When();
 
         private async Task SetupGiven()
         {

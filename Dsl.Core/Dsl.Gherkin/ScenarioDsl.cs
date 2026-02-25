@@ -1,12 +1,15 @@
 using DslImpl.Gherkin.Given;
 using DslImpl.Gherkin.When;
+using Dsl.Api;
+using Dsl.Api.Given;
+using Dsl.Api.When;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.Testing;
 using System;
 
 namespace DslImpl.Gherkin;
 
-public class ScenarioDsl
+public class ScenarioDsl : IScenarioDsl
 {
     private readonly Channel _channel;
     private readonly SystemDsl _app;
@@ -27,11 +30,15 @@ public class ScenarioDsl
         return new GivenClause(_channel, _app, this);
     }
 
+    IGivenClause IScenarioDsl.Given() => Given();
+
     public WhenClause When()
     {
         EnsureNotExecuted();
         return new WhenClause(_channel, _app, this);
     }
+
+    IWhenClause IScenarioDsl.When() => When();
 
     public void MarkAsExecuted()
     {
