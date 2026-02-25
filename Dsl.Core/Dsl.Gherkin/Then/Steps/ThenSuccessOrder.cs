@@ -9,7 +9,7 @@ public class ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     internal ThenSuccessOrderVerifier(
-        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        ThenStage<TSuccessResponse, TSuccessVerification> thenClause,
         Func<Task<string>> orderNumberFactory)
         : base(thenClause, orderNumberFactory)
     {

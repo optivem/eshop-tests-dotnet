@@ -8,7 +8,7 @@ using Optivem.Testing;
 
 namespace DslImpl.Gherkin.Given
 {
-    public class GivenClause : BaseClause, IGivenClause
+    public class GivenStage : BaseClause, IGiven
     {
         private readonly SystemDsl _app;
         private readonly ScenarioDsl _scenario;
@@ -18,7 +18,7 @@ namespace DslImpl.Gherkin.Given
         private readonly List<GivenCountryBuilder> _countries;
         private readonly List<GivenCouponBuilder> _coupons;
 
-        public GivenClause(Channel channel, SystemDsl app, ScenarioDsl scenario)
+        public GivenStage(Channel channel, SystemDsl app, ScenarioDsl scenario)
             : base(channel)
         {
             _app = app;
@@ -37,7 +37,7 @@ namespace DslImpl.Gherkin.Given
             return productBuilder;
         }
 
-        IGivenProductBuilder IGivenClause.Product() => Product();
+        IGivenProductBuilder IGiven.Product() => Product();
 
         public GivenOrderBuilder Order()
         {
@@ -46,7 +46,7 @@ namespace DslImpl.Gherkin.Given
             return orderBuilder;
         }
 
-        IGivenOrderBuilder IGivenClause.Order() => Order();
+        IGivenOrderBuilder IGiven.Order() => Order();
 
         public GivenClockBuilder Clock()
         {
@@ -54,7 +54,7 @@ namespace DslImpl.Gherkin.Given
             return _clock;
         }
 
-        IGivenClockBuilder IGivenClause.Clock() => Clock();
+        IGivenClockBuilder IGiven.Clock() => Clock();
 
         public GivenCountryBuilder Country()
         {
@@ -63,7 +63,7 @@ namespace DslImpl.Gherkin.Given
             return taxRateBuilder;
         }
 
-        IGivenCountryBuilder IGivenClause.Country() => Country();
+        IGivenCountryBuilder IGiven.Country() => Country();
 
         public GivenCouponBuilder Coupon()
         {
@@ -72,14 +72,14 @@ namespace DslImpl.Gherkin.Given
             return couponBuilder;
         }
 
-        IGivenCouponBuilder IGivenClause.Coupon() => Coupon();
+        IGivenCouponBuilder IGiven.Coupon() => Coupon();
 
-        public WhenClause When()
+        public WhenStage When()
         {
-            return new WhenClause(Channel, _app, _scenario, _products.Any(), _countries.Any(), SetupGiven);
+            return new WhenStage(Channel, _app, _scenario, _products.Any(), _countries.Any(), SetupGiven);
         }
 
-        IWhenClause IGivenClause.When() => When();
+        IWhen IGiven.When() => When();
 
         private async Task SetupGiven()
         {

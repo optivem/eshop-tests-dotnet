@@ -12,12 +12,12 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
     where TDerived : BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, TDerived>
 {
-    protected readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
+    protected readonly ThenStage<TSuccessResponse, TSuccessVerification> _thenClause;
     protected readonly Func<Task<string>> _couponCodeFactory;
     protected readonly List<Action<BrowseCouponsVerification, string>> _verifications = [];
 
     protected BaseThenResultCoupon(
-        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        ThenStage<TSuccessResponse, TSuccessVerification> thenClause,
         Func<Task<string>> couponCodeFactory)
     {
         _thenClause = thenClause;

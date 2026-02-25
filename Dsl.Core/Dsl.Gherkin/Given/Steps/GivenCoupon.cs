@@ -13,7 +13,7 @@ public class GivenCouponBuilder : BaseGivenBuilder, IGivenCouponBuilder
     private string? _validTo;
     private string? _usageLimit;
 
-    public GivenCouponBuilder(GivenClause givenClause) : base(givenClause)
+    public GivenCouponBuilder(GivenStage givenClause) : base(givenClause)
     {
         WithCouponCode(DefaultCouponCode);
         WithDiscountRate(DefaultDiscountRate);

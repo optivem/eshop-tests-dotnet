@@ -15,7 +15,7 @@ public class GivenOrderBuilder : BaseGivenBuilder, IGivenOrderBuilder
     private string? _couponCodeAlias;
     private OrderStatus _status;
 
-    public GivenOrderBuilder(GivenClause givenClause) : base(givenClause)
+    public GivenOrderBuilder(GivenStage givenClause) : base(givenClause)
     {
         WithOrderNumber(DefaultOrderNumber);
         WithSku(DefaultSku);

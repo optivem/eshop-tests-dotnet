@@ -24,21 +24,21 @@ public class ScenarioDsl : IScenarioDsl
 
     internal Channel Channel => _channel;
 
-    public GivenClause Given()
+    public GivenStage Given()
     {
         EnsureNotExecuted();
-        return new GivenClause(_channel, _app, this);
+        return new GivenStage(_channel, _app, this);
     }
 
-    IGivenClause IScenarioDsl.Given() => Given();
+    IGiven IScenarioDsl.Given() => Given();
 
-    public WhenClause When()
+    public WhenStage When()
     {
         EnsureNotExecuted();
-        return new WhenClause(_channel, _app, this);
+        return new WhenStage(_channel, _app, this);
     }
 
-    IWhenClause IScenarioDsl.When() => When();
+    IWhen IScenarioDsl.When() => When();
 
     public void MarkAsExecuted()
     {

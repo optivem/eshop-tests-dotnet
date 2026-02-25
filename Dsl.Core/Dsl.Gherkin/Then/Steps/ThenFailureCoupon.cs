@@ -15,7 +15,7 @@ public class ThenFailureCoupon<TSuccessResponse, TSuccessVerification>
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;
 
     internal ThenFailureCoupon(
-        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        ThenStage<TSuccessResponse, TSuccessVerification> thenClause,
         List<Action<SystemErrorFailureVerification>> failureAssertions,
         Func<Task<string>> couponCodeFactory)
         : base(thenClause, couponCodeFactory)

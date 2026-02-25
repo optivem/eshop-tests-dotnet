@@ -5,7 +5,7 @@ namespace Dsl.Api.Given.Steps.Base;
 
 public interface IGivenStep
 {
-    IGivenClause And();
+    IGiven And();
 
-    IWhenClause When();
+    IWhen When();
 }

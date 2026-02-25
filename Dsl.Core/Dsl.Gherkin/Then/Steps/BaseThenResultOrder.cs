@@ -14,12 +14,12 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
     where TDerived : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TDerived>
 {
-    protected readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
+    protected readonly ThenStage<TSuccessResponse, TSuccessVerification> _thenClause;
     protected readonly Func<Task<string>> _orderNumberFactory;
     protected readonly List<Action<ViewOrderVerification>> _verifications = [];
 
     protected BaseThenResultOrder(
-        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        ThenStage<TSuccessResponse, TSuccessVerification> thenClause,
         Func<Task<string>> orderNumberFactory)
     {
         _thenClause = thenClause;

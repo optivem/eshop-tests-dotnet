@@ -12,9 +12,9 @@ public class ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>
     : IThenSuccessVerifier
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
-    private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
+    private readonly ThenStage<TSuccessResponse, TSuccessVerification> _thenClause;
 
-    internal ThenSuccessVerifier(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    internal ThenSuccessVerifier(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }

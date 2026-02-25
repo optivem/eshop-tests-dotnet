@@ -11,7 +11,7 @@ public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;
 
     internal ThenFailureAnd(
-        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        ThenStage<TSuccessResponse, TSuccessVerification> thenClause,
         List<Action<SystemErrorFailureVerification>> failureAssertions)
         : base(thenClause)
     {

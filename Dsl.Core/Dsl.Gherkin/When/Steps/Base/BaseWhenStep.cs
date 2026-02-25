@@ -22,16 +22,16 @@ public abstract class BaseWhenBuilder<TSuccessResponse, TSuccessVerification>
         _ensureGiven = ensureGiven;
     }
 
-    public ThenClause<TSuccessResponse, TSuccessVerification> Then()
+    public ThenStage<TSuccessResponse, TSuccessVerification> Then()
     {
-        return new ThenClause<TSuccessResponse, TSuccessVerification>(Channel, _app, async () =>
+        return new ThenStage<TSuccessResponse, TSuccessVerification>(Channel, _app, async () =>
         {
             await _ensureGiven();
             return await Execute(_app);
         });
     }
 
-    IThenClause IWhenStep.Then() => Then();
+    IThen IWhenStep.Then() => Then();
 
     protected abstract Task<ExecutionResult<TSuccessResponse, TSuccessVerification>> Execute(SystemDsl app);
 

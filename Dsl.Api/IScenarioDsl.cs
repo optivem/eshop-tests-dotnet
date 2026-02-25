@@ -5,7 +5,7 @@ namespace Dsl.Api;
 
 public interface IScenarioDsl
 {
-    IGivenClause Given();
+    IGiven Given();
 
-    IWhenClause When();
+    IWhen When();
 }

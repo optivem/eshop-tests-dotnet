@@ -3,7 +3,7 @@ using Dsl.Api.When;
 
 namespace Dsl.Api.Given;
 
-public interface IGivenClause
+public interface IGiven
 {
     IGivenProductBuilder Product();
 
@@ -15,5 +15,5 @@ public interface IGivenClause
 
     IGivenCouponBuilder Coupon();
 
-    IWhenClause When();
+    IWhen When();
 }

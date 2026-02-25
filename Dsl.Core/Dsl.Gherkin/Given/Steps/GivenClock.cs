@@ -9,7 +9,7 @@ public class GivenClockBuilder : BaseGivenBuilder, IGivenClockBuilder
 {
     private string? _time;
 
-    public GivenClockBuilder(GivenClause givenClause) : base(givenClause)
+    public GivenClockBuilder(GivenStage givenClause) : base(givenClause)
     {
         WithTime(DefaultTime);
     }

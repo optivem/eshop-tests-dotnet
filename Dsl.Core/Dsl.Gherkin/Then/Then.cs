@@ -6,7 +6,7 @@ using Optivem.Testing;
 
 namespace DslImpl.Gherkin.Then
 {
-    public class ThenClause<TSuccessResponse, TSuccessVerification> : BaseClause, IThenClause
+    public class ThenStage<TSuccessResponse, TSuccessVerification> : BaseClause, IThen
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
         private readonly SystemDsl _app;
@@ -14,7 +14,7 @@ namespace DslImpl.Gherkin.Then
         private ExecutionResult<TSuccessResponse, TSuccessVerification>? _executionResult;
         private bool _executionCompleted = false;
 
-        public ThenClause(Channel channel, SystemDsl app, Func<Task<ExecutionResult<TSuccessResponse, TSuccessVerification>>> lazyExecute)
+        public ThenStage(Channel channel, SystemDsl app, Func<Task<ExecutionResult<TSuccessResponse, TSuccessVerification>>> lazyExecute)
             : base(channel)
         {
             _app = app;
@@ -26,14 +26,14 @@ namespace DslImpl.Gherkin.Then
             return new ThenSuccessVerifier<TSuccessResponse, TSuccessVerification>(this);
         }
 
-        IThenSuccessVerifier IThenClause.ShouldSucceed() => ShouldSucceed();
+        IThenSuccessVerifier IThen.ShouldSucceed() => ShouldSucceed();
 
         public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> ShouldFail()
         {
             return new ThenFailureVerifier<TSuccessResponse, TSuccessVerification>(this);
         }
 
-        IThenFailureVerifier IThenClause.ShouldFail() => ShouldFail();
+        IThenFailureVerifier IThen.ShouldFail() => ShouldFail();
 
         internal SystemDsl App => _app;
 

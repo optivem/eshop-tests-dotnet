@@ -13,10 +13,10 @@ public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
     : IThenFailureVerifier
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
-    private readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
+    private readonly ThenStage<TSuccessResponse, TSuccessVerification> _thenClause;
     private readonly List<Action<SystemErrorFailureVerification>> _assertions = [];
 
-    internal ThenFailureVerifier(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    internal ThenFailureVerifier(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }

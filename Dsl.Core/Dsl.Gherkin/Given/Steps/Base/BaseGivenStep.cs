@@ -9,26 +9,26 @@ namespace DslImpl.Gherkin.Given;
 
 public abstract class BaseGivenBuilder : IGivenStep
 {
-    private readonly GivenClause _givenClause;
+    private readonly GivenStage _givenClause;
 
-    protected BaseGivenBuilder(GivenClause givenClause)
+    protected BaseGivenBuilder(GivenStage givenClause)
     {
         _givenClause = givenClause;
     }
 
-    public GivenClause And()
+    public GivenStage And()
     {
         return _givenClause;
     }
 
-    IGivenClause IGivenStep.And() => And();
+    IGiven IGivenStep.And() => And();
 
-    public WhenClause When()
+    public WhenStage When()
     {
         return _givenClause.When();
     }
 
-    IWhenClause IGivenStep.When() => When();
+    IWhen IGivenStep.When() => When();
 
     internal abstract Task Execute(SystemDsl app);
 

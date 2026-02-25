@@ -15,7 +15,7 @@ public class ThenFailureOrder<TSuccessResponse, TSuccessVerification>
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;
 
     internal ThenFailureOrder(
-        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        ThenStage<TSuccessResponse, TSuccessVerification> thenClause,
         List<Action<SystemErrorFailureVerification>> failureAssertions,
         Func<Task<string>> orderNumberFactory)
         : base(thenClause, orderNumberFactory)

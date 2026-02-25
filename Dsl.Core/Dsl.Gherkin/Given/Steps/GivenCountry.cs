@@ -9,7 +9,7 @@ public class GivenCountryBuilder : BaseGivenBuilder, IGivenCountryBuilder
     private string? _country;
     private string? _taxRate;
 
-    public GivenCountryBuilder(GivenClause givenClause)
+    public GivenCountryBuilder(GivenStage givenClause)
         : base(givenClause)
     {
         WithCode(DefaultCountry);

@@ -9,7 +9,7 @@ public class ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     internal ThenSuccessCouponVerifier(
-        ThenClause<TSuccessResponse, TSuccessVerification> thenClause,
+        ThenStage<TSuccessResponse, TSuccessVerification> thenClause,
         Func<Task<string>> couponCodeFactory)
         : base(thenClause, couponCodeFactory)
     {

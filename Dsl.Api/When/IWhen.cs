@@ -2,7 +2,7 @@ using Dsl.Api.When.Steps;
 
 namespace Dsl.Api.When;
 
-public interface IWhenClause
+public interface IWhen
 {
     IGoToShopBuilder GoToShop();
 

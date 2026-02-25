@@ -6,9 +6,9 @@ public abstract class BaseThenAndVerifier<TSuccessResponse, TSuccessVerification
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
     where TOrderAssertion : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TOrderAssertion>
 {
-    protected readonly ThenClause<TSuccessResponse, TSuccessVerification> _thenClause;
+    protected readonly ThenStage<TSuccessResponse, TSuccessVerification> _thenClause;
 
-    protected BaseThenAndVerifier(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    protected BaseThenAndVerifier(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }

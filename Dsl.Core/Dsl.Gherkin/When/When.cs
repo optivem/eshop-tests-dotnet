@@ -12,7 +12,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.When
 {
-    public class WhenClause : BaseClause, IWhenClause
+    public class WhenStage : BaseClause, IWhen
     {
         private readonly SystemDsl _app;
         private readonly ScenarioDsl _scenario;
@@ -20,7 +20,7 @@ namespace DslImpl.Gherkin.When
         private bool _hasTaxRate;
         private readonly Func<Task>? _givenSetup;
 
-        public WhenClause(Channel channel, SystemDsl app, ScenarioDsl scenario, bool hasProduct, bool hasTaxRate, Func<Task>? givenSetup = null)
+        public WhenStage(Channel channel, SystemDsl app, ScenarioDsl scenario, bool hasProduct, bool hasTaxRate, Func<Task>? givenSetup = null)
             : base(channel)
         {
             _app = app;
@@ -30,7 +30,7 @@ namespace DslImpl.Gherkin.When
             _givenSetup = givenSetup;
         }
 
-        public WhenClause(Channel channel, SystemDsl app, ScenarioDsl scenario)
+        public WhenStage(Channel channel, SystemDsl app, ScenarioDsl scenario)
             : this(channel, app, scenario, false, false, null)
         {
         }
@@ -68,41 +68,41 @@ namespace DslImpl.Gherkin.When
             return new GoToShopBuilder(_app, _scenario, () => EnsureGiven());
         }
 
-        IGoToShopBuilder IWhenClause.GoToShop() => GoToShop();
+        IGoToShopBuilder IWhen.GoToShop() => GoToShop();
 
         public PlaceOrderBuilder PlaceOrder()
         {
             return new PlaceOrderBuilder(_app, _scenario, () => EnsureGiven());
         }
 
-        IPlaceOrderBuilder IWhenClause.PlaceOrder() => PlaceOrder();
+        IPlaceOrderBuilder IWhen.PlaceOrder() => PlaceOrder();
 
         public CancelOrderBuilder CancelOrder()
         {
             return new CancelOrderBuilder(_app, _scenario, () => EnsureGiven());
         }
 
-        ICancelOrderBuilder IWhenClause.CancelOrder() => CancelOrder();
+        ICancelOrderBuilder IWhen.CancelOrder() => CancelOrder();
 
         public ViewOrderBuilder ViewOrder()
         {
             return new ViewOrderBuilder(_app, _scenario, () => EnsureGiven());
         }
 
-        IViewOrderBuilder IWhenClause.ViewOrder() => ViewOrder();
+        IViewOrderBuilder IWhen.ViewOrder() => ViewOrder();
 
         public PublishCouponBuilder PublishCoupon()
         {
             return new PublishCouponBuilder(_app, _scenario, () => EnsureGiven());
         }
 
-        IPublishCouponBuilder IWhenClause.PublishCoupon() => PublishCoupon();
+        IPublishCouponBuilder IWhen.PublishCoupon() => PublishCoupon();
 
         public BrowseCouponsBuilder BrowseCoupons()
         {
             return new BrowseCouponsBuilder(_app, _scenario, () => EnsureGiven());
         }
 
-        IBrowseCouponsBuilder IWhenClause.BrowseCoupons() => BrowseCoupons();
+        IBrowseCouponsBuilder IWhen.BrowseCoupons() => BrowseCoupons();
     }
 }

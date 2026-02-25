@@ -4,5 +4,5 @@ namespace Dsl.Api.When.Steps.Base;
 
 public interface IWhenStep
 {
-    IThenClause Then();
+    IThen Then();
 }

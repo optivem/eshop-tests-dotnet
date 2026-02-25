@@ -10,7 +10,7 @@ public class GivenProductBuilder : BaseGivenBuilder, IGivenProductBuilder
     private string? _sku;
     private string? _unitPrice;
 
-    public GivenProductBuilder(GivenClause givenClause)
+    public GivenProductBuilder(GivenStage givenClause)
         : base(givenClause)
     {
         WithSku(DefaultSku);

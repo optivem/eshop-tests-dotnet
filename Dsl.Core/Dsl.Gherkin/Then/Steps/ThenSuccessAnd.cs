@@ -7,7 +7,7 @@ public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
     : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>, IThenSuccessAnd
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
-    internal ThenSuccessAnd(ThenClause<TSuccessResponse, TSuccessVerification> thenClause)
+    internal ThenSuccessAnd(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
         : base(thenClause)
     {
     }
