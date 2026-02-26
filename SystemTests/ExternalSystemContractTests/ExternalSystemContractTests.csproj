@@ -32,10 +32,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Driver.Core\Driver.Core.csproj" />
     <ProjectReference Include="..\..\Commons\Commons.csproj" />
-    <ProjectReference Include="..\..\Dsl.Core\System\Core.Clock\Core.Clock.csproj" />
-    <ProjectReference Include="..\..\Dsl.Core\System\Core.Erp\Core.Erp.csproj" />
-    <ProjectReference Include="..\..\Dsl.Core\System\Core.Shop\Core.Shop.csproj" />
-    <ProjectReference Include="..\..\Dsl.Core\System\Core.Tax\Core.Tax.csproj" />
+    <ProjectReference Include="..\..\Dsl.Core\System\Clock\Clock.csproj" />
+    <ProjectReference Include="..\..\Dsl.Core\System\Erp\Erp.csproj" />
+    <ProjectReference Include="..\..\Dsl.Core\System\Shop\Shop.csproj" />
+    <ProjectReference Include="..\..\Dsl.Core\System\Tax\Tax.csproj" />
     <ProjectReference Include="..\..\Dsl.Core\Dsl.Core.csproj" />
     <ProjectReference Include="..\TestInfrastructure\TestInfrastructure.csproj" />
   </ItemGroup>

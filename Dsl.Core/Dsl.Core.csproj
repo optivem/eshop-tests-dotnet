@@ -14,10 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="System\Core.Clock\Core.Clock.csproj" />
-    <ProjectReference Include="System\Core.Erp\Core.Erp.csproj" />
-    <ProjectReference Include="System\Core.Shop\Core.Shop.csproj" />
-    <ProjectReference Include="System\Core.Tax\Core.Tax.csproj" />
+    <ProjectReference Include="System\Clock\Clock.csproj" />
+    <ProjectReference Include="System\Erp\Erp.csproj" />
+    <ProjectReference Include="System\Shop\Shop.csproj" />
+    <ProjectReference Include="System\Tax\Tax.csproj" />
     <ProjectReference Include="..\Dsl.Api\Dsl.Api.csproj" />
     <ProjectReference Include="..\Driver.Core\Driver.Core.csproj" />
     <ProjectReference Include="..\Driver.Common\Driver.Common.csproj" />
@@ -26,10 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="System\Core.Clock\**\*.cs" />
-    <Compile Remove="System\Core.Erp\**\*.cs" />
-    <Compile Remove="System\Core.Shop\**\*.cs" />
-    <Compile Remove="System\Core.Tax\**\*.cs" />
+    <Compile Remove="System\Clock\**\*.cs" />
+    <Compile Remove="System\Erp\**\*.cs" />
+    <Compile Remove="System\Shop\**\*.cs" />
+    <Compile Remove="System\Tax\**\*.cs" />
     <Compile Remove="**\bin\**\*.cs" />
     <Compile Remove="**\obj\**\*.cs" />
   </ItemGroup>
