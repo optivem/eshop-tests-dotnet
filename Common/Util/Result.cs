@@ -1,4 +1,4 @@
-namespace Commons.Util;
+namespace Common.Util;
 
 public class Result<T, E>
 {

@@ -3,7 +3,7 @@ using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
 using Optivem.EShop.SystemTest.Core.Clock.Client;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
-using Commons.Util;
+using Common.Util;
 
 namespace Optivem.EShop.SystemTest.Core.Clock;
 

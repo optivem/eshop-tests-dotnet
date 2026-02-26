@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Driver.Core\Driver.Core.csproj" />
-    <ProjectReference Include="..\..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.csproj" />
     <ProjectReference Include="..\..\..\Driver.Api\Driver.Api.csproj" />
   </ItemGroup>
 

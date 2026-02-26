@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Driver.Core\Driver.Core.csproj" />
-    <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\Common\Common.csproj" />
     <ProjectReference Include="..\..\Dsl.Core\System\Clock\Clock.csproj" />
     <ProjectReference Include="..\..\Dsl.Core\System\Erp\Erp.csproj" />
     <ProjectReference Include="..\..\Dsl.Core\System\Shop\Shop.csproj" />
