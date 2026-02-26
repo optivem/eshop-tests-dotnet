@@ -3,7 +3,7 @@ using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
 using Optivem.Testing;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Orders;
+namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
 
 public class CancelOrderPositiveTest : BaseAcceptanceTest
 {

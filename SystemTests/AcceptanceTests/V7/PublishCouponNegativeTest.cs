@@ -2,7 +2,7 @@ using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.Testing;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Coupons;
+namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
 
 public class PublishCouponNegativeTest : BaseAcceptanceTest
 {

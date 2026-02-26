@@ -2,16 +2,17 @@ using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.Testing;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Coupons;
+namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
 
-public class BrowseCouponsPositiveTest : BaseAcceptanceTest
+public class ViewOrderPositiveTest : BaseAcceptanceTest
 {
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    public async Task ShouldBeAbleToBrowseCoupons(Channel channel)
+    public async Task ShouldBeAbleToViewOrder(Channel channel)
     {
         await Scenario(channel)
-            .When().BrowseCoupons()
+            .Given().Order()
+            .When().ViewOrder()
             .Then().ShouldSucceed();
     }
 }

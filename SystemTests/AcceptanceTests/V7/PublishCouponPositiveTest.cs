@@ -4,7 +4,7 @@ using Dsl.Api.Then.Steps;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Coupons;
+namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
 
 public class PublishCouponPositiveTest : BaseAcceptanceTest
 {

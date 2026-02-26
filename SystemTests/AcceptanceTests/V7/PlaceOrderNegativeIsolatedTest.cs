@@ -3,7 +3,7 @@ using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Orders;
+namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
 
 [Collection("Isolated")]
 public class PlaceOrderNegativeIsolatedTest : BaseAcceptanceTest
