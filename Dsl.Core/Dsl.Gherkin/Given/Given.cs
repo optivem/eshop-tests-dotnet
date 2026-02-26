@@ -12,67 +12,67 @@ namespace DslImpl.Gherkin.Given
     {
         private readonly SystemDsl _app;
         private readonly ScenarioDsl _scenario;
-        private readonly List<GivenProductBuilder> _products;
-        private readonly List<GivenOrderBuilder> _orders;
-        private GivenClockBuilder _clock;
-        private readonly List<GivenCountryBuilder> _countries;
-        private readonly List<GivenCouponBuilder> _coupons;
+        private readonly List<GivenProduct> _products;
+        private readonly List<GivenOrder> _orders;
+        private GivenClock _clock;
+        private readonly List<GivenCountry> _countries;
+        private readonly List<GivenCoupon> _coupons;
 
         public GivenStage(Channel channel, SystemDsl app, ScenarioDsl scenario)
             : base(channel)
         {
             _app = app;
             _scenario = scenario;
-            _products = new List<GivenProductBuilder>();
-            _orders = new List<GivenOrderBuilder>();
-            _clock = new GivenClockBuilder(this);
-            _countries = new List<GivenCountryBuilder>();
-            _coupons = new List<GivenCouponBuilder>();
+            _products = new List<GivenProduct>();
+            _orders = new List<GivenOrder>();
+            _clock = new GivenClock(this);
+            _countries = new List<GivenCountry>();
+            _coupons = new List<GivenCoupon>();
         }
 
-        public GivenProductBuilder Product()
+        public GivenProduct Product()
         {
-            var productBuilder = new GivenProductBuilder(this);
+            var productBuilder = new GivenProduct(this);
             _products.Add(productBuilder);
             return productBuilder;
         }
 
-        IGivenProductBuilder IGiven.Product() => Product();
+        IGivenProduct IGiven.Product() => Product();
 
-        public GivenOrderBuilder Order()
+        public GivenOrder Order()
         {
-            var orderBuilder = new GivenOrderBuilder(this);
+            var orderBuilder = new GivenOrder(this);
             _orders.Add(orderBuilder);
             return orderBuilder;
         }
 
-        IGivenOrderBuilder IGiven.Order() => Order();
+        IGivenOrder IGiven.Order() => Order();
 
-        public GivenClockBuilder Clock()
+        public GivenClock Clock()
         {
-            _clock = new GivenClockBuilder(this);
+            _clock = new GivenClock(this);
             return _clock;
         }
 
-        IGivenClockBuilder IGiven.Clock() => Clock();
+        IGivenClock IGiven.Clock() => Clock();
 
-        public GivenCountryBuilder Country()
+        public GivenCountry Country()
         {
-            var taxRateBuilder = new GivenCountryBuilder(this);
+            var taxRateBuilder = new GivenCountry(this);
             _countries.Add(taxRateBuilder);
             return taxRateBuilder;
         }
 
-        IGivenCountryBuilder IGiven.Country() => Country();
+        IGivenCountry IGiven.Country() => Country();
 
-        public GivenCouponBuilder Coupon()
+        public GivenCoupon Coupon()
         {
-            var couponBuilder = new GivenCouponBuilder(this);
+            var couponBuilder = new GivenCoupon(this);
             _coupons.Add(couponBuilder);
             return couponBuilder;
         }
 
-        IGivenCouponBuilder IGiven.Coupon() => Coupon();
+        IGivenCoupon IGiven.Coupon() => Coupon();
 
         public WhenStage When()
         {
@@ -98,7 +98,7 @@ namespace DslImpl.Gherkin.Given
         {
             if (_orders.Any() && !_products.Any())
             {
-                var defaultProduct = new GivenProductBuilder(this);
+                var defaultProduct = new GivenProduct(this);
                 _products.Add(defaultProduct);
             }
 
@@ -112,7 +112,7 @@ namespace DslImpl.Gherkin.Given
         {
             if (_orders.Any() && !_countries.Any())
             {
-                var defaultCountry = new GivenCountryBuilder(this);
+                var defaultCountry = new GivenCountry(this);
                 _countries.Add(defaultCountry);
             }
 
@@ -132,7 +132,7 @@ namespace DslImpl.Gherkin.Given
         {
             if (_orders.Any() && !_coupons.Any())
             {
-                var defaultCoupon = new GivenCouponBuilder(this);
+                var defaultCoupon = new GivenCoupon(this);
                 _coupons.Add(defaultCoupon);
             }
 

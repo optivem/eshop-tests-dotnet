@@ -63,46 +63,46 @@ namespace DslImpl.Gherkin.When
             }
         }
 
-        public GoToShopBuilder GoToShop()
+        public GoToShop GoToShop()
         {
-            return new GoToShopBuilder(_app, _scenario, () => EnsureGiven());
+            return new GoToShop(_app, _scenario, () => EnsureGiven());
         }
 
-        IGoToShopBuilder IWhen.GoToShop() => GoToShop();
+        IGoToShop IWhen.GoToShop() => GoToShop();
 
-        public PlaceOrderBuilder PlaceOrder()
+        public PlaceOrder PlaceOrder()
         {
-            return new PlaceOrderBuilder(_app, _scenario, () => EnsureGiven());
+            return new PlaceOrder(_app, _scenario, () => EnsureGiven());
         }
 
-        IPlaceOrderBuilder IWhen.PlaceOrder() => PlaceOrder();
+        IPlaceOrder IWhen.PlaceOrder() => PlaceOrder();
 
-        public CancelOrderBuilder CancelOrder()
+        public CancelOrder CancelOrder()
         {
-            return new CancelOrderBuilder(_app, _scenario, () => EnsureGiven());
+            return new CancelOrder(_app, _scenario, () => EnsureGiven());
         }
 
-        ICancelOrderBuilder IWhen.CancelOrder() => CancelOrder();
+        ICancelOrder IWhen.CancelOrder() => CancelOrder();
 
-        public ViewOrderBuilder ViewOrder()
+        public ViewOrder ViewOrder()
         {
-            return new ViewOrderBuilder(_app, _scenario, () => EnsureGiven());
+            return new ViewOrder(_app, _scenario, () => EnsureGiven());
         }
 
-        IViewOrderBuilder IWhen.ViewOrder() => ViewOrder();
+        IViewOrder IWhen.ViewOrder() => ViewOrder();
 
-        public PublishCouponBuilder PublishCoupon()
+        public PublishCoupon PublishCoupon()
         {
-            return new PublishCouponBuilder(_app, _scenario, () => EnsureGiven());
+            return new PublishCoupon(_app, _scenario, () => EnsureGiven());
         }
 
-        IPublishCouponBuilder IWhen.PublishCoupon() => PublishCoupon();
+        IPublishCoupon IWhen.PublishCoupon() => PublishCoupon();
 
-        public BrowseCouponsBuilder BrowseCoupons()
+        public BrowseCoupons BrowseCoupons()
         {
-            return new BrowseCouponsBuilder(_app, _scenario, () => EnsureGiven());
+            return new BrowseCoupons(_app, _scenario, () => EnsureGiven());
         }
 
-        IBrowseCouponsBuilder IWhen.BrowseCoupons() => BrowseCoupons();
+        IBrowseCoupons IWhen.BrowseCoupons() => BrowseCoupons();
     }
 }

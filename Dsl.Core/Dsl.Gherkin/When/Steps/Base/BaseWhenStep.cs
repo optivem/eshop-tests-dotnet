@@ -7,7 +7,7 @@ using Optivem.Testing;
 
 namespace DslImpl.Gherkin.When;
 
-public abstract class BaseWhenBuilder<TSuccessResponse, TSuccessVerification>
+public abstract class BaseWhen<TSuccessResponse, TSuccessVerification>
     : IWhenStep
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
@@ -15,7 +15,7 @@ public abstract class BaseWhenBuilder<TSuccessResponse, TSuccessVerification>
     private readonly ScenarioDsl _scenario;
     private readonly Func<Task> _ensureGiven;
 
-    protected BaseWhenBuilder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven)
+    protected BaseWhen(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven)
     {
         _app = app;
         _scenario = scenario;

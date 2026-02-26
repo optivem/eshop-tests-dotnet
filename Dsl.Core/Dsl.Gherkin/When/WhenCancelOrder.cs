@@ -12,22 +12,22 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.Builders.When.CancelOrder;
 
-public class CancelOrderBuilder : BaseWhenBuilder<VoidValue, VoidVerification>, ICancelOrderBuilder
+public class CancelOrder : BaseWhen<VoidValue, VoidVerification>, ICancelOrder
 {
     private string? _orderNumber;
 
-    public CancelOrderBuilder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public CancelOrder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
         WithOrderNumber(DefaultOrderNumber);
     }
 
-    public CancelOrderBuilder WithOrderNumber(string? orderNumber)
+    public CancelOrder WithOrderNumber(string? orderNumber)
     {
         _orderNumber = orderNumber;
         return this;
     }
 
-    ICancelOrderBuilder ICancelOrderBuilder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
+    ICancelOrder ICancelOrder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
 
     protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(SystemDsl app)
     {

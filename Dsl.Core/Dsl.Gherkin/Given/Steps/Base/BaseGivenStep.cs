@@ -7,11 +7,11 @@ using Optivem.Testing;
 
 namespace DslImpl.Gherkin.Given;
 
-public abstract class BaseGivenBuilder : IGivenStep
+public abstract class BaseGiven : IGivenStep
 {
     private readonly GivenStage _givenClause;
 
-    protected BaseGivenBuilder(GivenStage givenClause)
+    protected BaseGiven(GivenStage givenClause)
     {
         _givenClause = givenClause;
     }

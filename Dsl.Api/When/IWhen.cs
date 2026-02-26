@@ -4,15 +4,15 @@ namespace Dsl.Api.When;
 
 public interface IWhen
 {
-    IGoToShopBuilder GoToShop();
+    IGoToShop GoToShop();
 
-    IPlaceOrderBuilder PlaceOrder();
+    IPlaceOrder PlaceOrder();
 
-    ICancelOrderBuilder CancelOrder();
+    ICancelOrder CancelOrder();
 
-    IViewOrderBuilder ViewOrder();
+    IViewOrder ViewOrder();
 
-    IPublishCouponBuilder PublishCoupon();
+    IPublishCoupon PublishCoupon();
 
-    IBrowseCouponsBuilder BrowseCoupons();
+    IBrowseCoupons BrowseCoupons();
 }

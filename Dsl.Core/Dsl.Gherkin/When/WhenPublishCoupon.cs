@@ -10,7 +10,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.When;
 
-public class PublishCouponBuilder : BaseWhenBuilder<VoidValue, VoidVerification>, IPublishCouponBuilder
+public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoupon
 {
     private string? _couponCode;
     private string? _discountRate;
@@ -18,67 +18,67 @@ public class PublishCouponBuilder : BaseWhenBuilder<VoidValue, VoidVerification>
     private string? _validTo;
     private string? _usageLimit;
 
-    public PublishCouponBuilder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public PublishCoupon(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
         WithCouponCode(DefaultCouponCode);
         WithDiscountRate(DefaultDiscountRate);
     }
 
-    public PublishCouponBuilder WithCouponCode(string? couponCode)
+    public PublishCoupon WithCouponCode(string? couponCode)
     {
         _couponCode = couponCode;
         return this;
     }
 
-    IPublishCouponBuilder IPublishCouponBuilder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
+    IPublishCoupon IPublishCoupon.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
 
-    public PublishCouponBuilder WithDiscountRate(string? discountRate)
+    public PublishCoupon WithDiscountRate(string? discountRate)
     {
         _discountRate = discountRate;
         return this;
     }
 
-    IPublishCouponBuilder IPublishCouponBuilder.WithDiscountRate(string? discountRate) => WithDiscountRate(discountRate);
+    IPublishCoupon IPublishCoupon.WithDiscountRate(string? discountRate) => WithDiscountRate(discountRate);
 
-    public PublishCouponBuilder WithDiscountRate(decimal discountRate)
+    public PublishCoupon WithDiscountRate(decimal discountRate)
     {
         _discountRate = Converter.FromDecimal(discountRate);
         return this;
     }
 
-    IPublishCouponBuilder IPublishCouponBuilder.WithDiscountRate(decimal discountRate) => WithDiscountRate(discountRate);
+    IPublishCoupon IPublishCoupon.WithDiscountRate(decimal discountRate) => WithDiscountRate(discountRate);
 
-    public PublishCouponBuilder WithValidFrom(string? validFrom)
+    public PublishCoupon WithValidFrom(string? validFrom)
     {
         _validFrom = validFrom;
         return this;
     }
 
-    IPublishCouponBuilder IPublishCouponBuilder.WithValidFrom(string? validFrom) => WithValidFrom(validFrom);
+    IPublishCoupon IPublishCoupon.WithValidFrom(string? validFrom) => WithValidFrom(validFrom);
 
-    public PublishCouponBuilder WithValidTo(string? validTo)
+    public PublishCoupon WithValidTo(string? validTo)
     {
         _validTo = validTo;
         return this;
     }
 
-    IPublishCouponBuilder IPublishCouponBuilder.WithValidTo(string? validTo) => WithValidTo(validTo);
+    IPublishCoupon IPublishCoupon.WithValidTo(string? validTo) => WithValidTo(validTo);
 
-    public PublishCouponBuilder WithUsageLimit(string? usageLimit)
+    public PublishCoupon WithUsageLimit(string? usageLimit)
     {
         _usageLimit = usageLimit;
         return this;
     }
 
-    IPublishCouponBuilder IPublishCouponBuilder.WithUsageLimit(string? usageLimit) => WithUsageLimit(usageLimit);
+    IPublishCoupon IPublishCoupon.WithUsageLimit(string? usageLimit) => WithUsageLimit(usageLimit);
 
-    public PublishCouponBuilder WithUsageLimit(int usageLimit)
+    public PublishCoupon WithUsageLimit(int usageLimit)
     {
         _usageLimit = Converter.FromInteger(usageLimit);
         return this;
     }
 
-    IPublishCouponBuilder IPublishCouponBuilder.WithUsageLimit(int usageLimit) => WithUsageLimit(usageLimit);
+    IPublishCoupon IPublishCoupon.WithUsageLimit(int usageLimit) => WithUsageLimit(usageLimit);
 
     protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(SystemDsl app)
     {

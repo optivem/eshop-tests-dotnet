@@ -4,40 +4,40 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.Given;
 
-public class GivenCountryBuilder : BaseGivenBuilder, IGivenCountryBuilder
+public class GivenCountry : BaseGiven, IGivenCountry
 {
     private string? _country;
     private string? _taxRate;
 
-    public GivenCountryBuilder(GivenStage givenClause)
+    public GivenCountry(GivenStage givenClause)
         : base(givenClause)
     {
         WithCode(DefaultCountry);
         WithTaxRate(DefaultTaxRate);
     }
 
-    public GivenCountryBuilder WithCode(string country)
+    public GivenCountry WithCode(string country)
     {
         _country = country;
         return this;
     }
 
-    IGivenCountryBuilder IGivenCountryBuilder.WithCode(string country) => WithCode(country);
+    IGivenCountry IGivenCountry.WithCode(string country) => WithCode(country);
 
-    public GivenCountryBuilder WithTaxRate(string taxRate)
+    public GivenCountry WithTaxRate(string taxRate)
     {
         _taxRate = taxRate;
         return this;
     }
 
-    IGivenCountryBuilder IGivenCountryBuilder.WithTaxRate(string taxRate) => WithTaxRate(taxRate);
+    IGivenCountry IGivenCountry.WithTaxRate(string taxRate) => WithTaxRate(taxRate);
 
-    public GivenCountryBuilder WithTaxRate(decimal taxRate)
+    public GivenCountry WithTaxRate(decimal taxRate)
     {
         return WithTaxRate(taxRate.ToString());
     }
 
-    IGivenCountryBuilder IGivenCountryBuilder.WithTaxRate(decimal taxRate) => WithTaxRate(taxRate);
+    IGivenCountry IGivenCountry.WithTaxRate(decimal taxRate) => WithTaxRate(taxRate);
 
     internal override async Task Execute(SystemDsl app)
     {

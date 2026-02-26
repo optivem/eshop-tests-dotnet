@@ -10,7 +10,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.Builders.When.PlaceOrder;
 
-public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderVerification>, IPlaceOrderBuilder
+public class PlaceOrder : BaseWhen<PlaceOrderResponse, PlaceOrderVerification>, IPlaceOrder
 {
     private string? _orderNumber;
     private string? _sku;
@@ -18,7 +18,7 @@ public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderV
     private string? _country;
     private string? _couponCode;
 
-    public PlaceOrderBuilder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public PlaceOrder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
         WithOrderNumber(DefaultOrderNumber);
         WithSku(DefaultSku);
@@ -27,59 +27,59 @@ public class PlaceOrderBuilder : BaseWhenBuilder<PlaceOrderResponse, PlaceOrderV
         WithCouponCode(Empty);
     }
 
-    public PlaceOrderBuilder WithOrderNumber(string? orderNumber)
+    public PlaceOrder WithOrderNumber(string? orderNumber)
     {
         _orderNumber = orderNumber;
         return this;
     }
 
-    IPlaceOrderBuilder IPlaceOrderBuilder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
+    IPlaceOrder IPlaceOrder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
 
-    public PlaceOrderBuilder WithSku(string? sku)
+    public PlaceOrder WithSku(string? sku)
     {
         _sku = sku;
         return this;
     }
 
-    IPlaceOrderBuilder IPlaceOrderBuilder.WithSku(string? sku) => WithSku(sku);
+    IPlaceOrder IPlaceOrder.WithSku(string? sku) => WithSku(sku);
 
-    public PlaceOrderBuilder WithQuantity(string? quantity)
+    public PlaceOrder WithQuantity(string? quantity)
     {
         _quantity = quantity;
         return this;
     }
 
-    IPlaceOrderBuilder IPlaceOrderBuilder.WithQuantity(string? quantity) => WithQuantity(quantity);
+    IPlaceOrder IPlaceOrder.WithQuantity(string? quantity) => WithQuantity(quantity);
 
-    public PlaceOrderBuilder WithQuantity(int quantity)
+    public PlaceOrder WithQuantity(int quantity)
     {
         return WithQuantity(Converter.FromInteger(quantity));
     }
 
-    IPlaceOrderBuilder IPlaceOrderBuilder.WithQuantity(int quantity) => WithQuantity(quantity);
+    IPlaceOrder IPlaceOrder.WithQuantity(int quantity) => WithQuantity(quantity);
 
-    public PlaceOrderBuilder WithCountry(string? country)
+    public PlaceOrder WithCountry(string? country)
     {
         _country = country;
         return this;
     }
 
-    IPlaceOrderBuilder IPlaceOrderBuilder.WithCountry(string? country) => WithCountry(country);
+    IPlaceOrder IPlaceOrder.WithCountry(string? country) => WithCountry(country);
 
-    public PlaceOrderBuilder WithCouponCode(string? couponCode)
+    public PlaceOrder WithCouponCode(string? couponCode)
     {
         _couponCode = couponCode;
         return this;
     }
 
-    IPlaceOrderBuilder IPlaceOrderBuilder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
+    IPlaceOrder IPlaceOrder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
 
-    public PlaceOrderBuilder WithCouponCode()
+    public PlaceOrder WithCouponCode()
     {
         return WithCouponCode(DefaultCouponCode);
     }
 
-    IPlaceOrderBuilder IPlaceOrderBuilder.WithCouponCode() => WithCouponCode();
+    IPlaceOrder IPlaceOrder.WithCouponCode() => WithCouponCode();
 
     protected override async Task<ExecutionResult<PlaceOrderResponse, PlaceOrderVerification>> Execute(SystemDsl app)
     {

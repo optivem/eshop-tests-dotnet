@@ -7,9 +7,9 @@ using Optivem.EShop.SystemTest.Core;
 
 namespace DslImpl.Gherkin.When;
 
-public class GoToShopBuilder : BaseWhenBuilder<VoidValue, VoidVerification>, IGoToShopBuilder
+public class GoToShop : BaseWhen<VoidValue, VoidVerification>, IGoToShop
 {
-    public GoToShopBuilder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public GoToShop(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
     }
 

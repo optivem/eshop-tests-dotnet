@@ -5,22 +5,22 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Gherkin.Given;
 
-public class GivenClockBuilder : BaseGivenBuilder, IGivenClockBuilder
+public class GivenClock : BaseGiven, IGivenClock
 {
     private string? _time;
 
-    public GivenClockBuilder(GivenStage givenClause) : base(givenClause)
+    public GivenClock(GivenStage givenClause) : base(givenClause)
     {
         WithTime(DefaultTime);
     }
 
-    public GivenClockBuilder WithTime(string? time)
+    public GivenClock WithTime(string? time)
     {
         _time = time;
         return this;
     }
 
-    IGivenClockBuilder IGivenClockBuilder.WithTime(string? time) => WithTime(time);
+    IGivenClock IGivenClock.WithTime(string? time) => WithTime(time);
 
     internal override async Task Execute(SystemDsl app)
     {

@@ -5,7 +5,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.Given;
 
-public class GivenCouponBuilder : BaseGivenBuilder, IGivenCouponBuilder
+public class GivenCoupon : BaseGiven, IGivenCoupon
 {
     private string? _couponCode;
     private string? _discountRate;
@@ -13,7 +13,7 @@ public class GivenCouponBuilder : BaseGivenBuilder, IGivenCouponBuilder
     private string? _validTo;
     private string? _usageLimit;
 
-    public GivenCouponBuilder(GivenStage givenClause) : base(givenClause)
+    public GivenCoupon(GivenStage givenClause) : base(givenClause)
     {
         WithCouponCode(DefaultCouponCode);
         WithDiscountRate(DefaultDiscountRate);
@@ -22,61 +22,61 @@ public class GivenCouponBuilder : BaseGivenBuilder, IGivenCouponBuilder
         WithUsageLimit(Empty);
     }
 
-    public GivenCouponBuilder WithCouponCode(string? couponCode)
+    public GivenCoupon WithCouponCode(string? couponCode)
     {
         _couponCode = couponCode;
         return this;
     }
 
-    IGivenCouponBuilder IGivenCouponBuilder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
+    IGivenCoupon IGivenCoupon.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
 
-    public GivenCouponBuilder WithDiscountRate(string? discountRate)
+    public GivenCoupon WithDiscountRate(string? discountRate)
     {
         _discountRate = discountRate;
         return this;
     }
 
-    IGivenCouponBuilder IGivenCouponBuilder.WithDiscountRate(string? discountRate) => WithDiscountRate(discountRate);
+    IGivenCoupon IGivenCoupon.WithDiscountRate(string? discountRate) => WithDiscountRate(discountRate);
 
-    public GivenCouponBuilder WithDiscountRate(decimal? discountRate)
+    public GivenCoupon WithDiscountRate(decimal? discountRate)
     {
         _discountRate = Converter.FromDecimal(discountRate);
         return this;
     }
 
-    IGivenCouponBuilder IGivenCouponBuilder.WithDiscountRate(decimal? discountRate) => WithDiscountRate(discountRate);
+    IGivenCoupon IGivenCoupon.WithDiscountRate(decimal? discountRate) => WithDiscountRate(discountRate);
 
 
-    public GivenCouponBuilder WithValidFrom(string? validFrom)
+    public GivenCoupon WithValidFrom(string? validFrom)
     {
         _validFrom = validFrom;
         return this;
     }
 
-    IGivenCouponBuilder IGivenCouponBuilder.WithValidFrom(string? validFrom) => WithValidFrom(validFrom);
+    IGivenCoupon IGivenCoupon.WithValidFrom(string? validFrom) => WithValidFrom(validFrom);
 
-    public GivenCouponBuilder WithValidTo(string? validTo)
+    public GivenCoupon WithValidTo(string? validTo)
     {
         _validTo = validTo;
         return this;
     }
 
-    IGivenCouponBuilder IGivenCouponBuilder.WithValidTo(string? validTo) => WithValidTo(validTo);
+    IGivenCoupon IGivenCoupon.WithValidTo(string? validTo) => WithValidTo(validTo);
 
-    public GivenCouponBuilder WithUsageLimit(string? usageLimit)
+    public GivenCoupon WithUsageLimit(string? usageLimit)
     {
         _usageLimit = usageLimit;
         return this;
     }
 
-    IGivenCouponBuilder IGivenCouponBuilder.WithUsageLimit(string? usageLimit) => WithUsageLimit(usageLimit);
+    IGivenCoupon IGivenCoupon.WithUsageLimit(string? usageLimit) => WithUsageLimit(usageLimit);
 
-    public GivenCouponBuilder WithUsageLimit(int? usageLimit)
+    public GivenCoupon WithUsageLimit(int? usageLimit)
     {
         return WithUsageLimit(Converter.FromInteger(usageLimit));
     }
 
-    IGivenCouponBuilder IGivenCouponBuilder.WithUsageLimit(int? usageLimit) => WithUsageLimit(usageLimit);
+    IGivenCoupon IGivenCoupon.WithUsageLimit(int? usageLimit) => WithUsageLimit(usageLimit);
 
     internal override async Task Execute(SystemDsl app)
     {

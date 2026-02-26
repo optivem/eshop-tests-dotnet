@@ -6,7 +6,7 @@ using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.Given;
 
-public class GivenOrderBuilder : BaseGivenBuilder, IGivenOrderBuilder
+public class GivenOrder : BaseGiven, IGivenOrder
 {
     private string? _orderNumber;
     private string? _sku;
@@ -15,7 +15,7 @@ public class GivenOrderBuilder : BaseGivenBuilder, IGivenOrderBuilder
     private string? _couponCodeAlias;
     private OrderStatus _status;
 
-    public GivenOrderBuilder(GivenStage givenClause) : base(givenClause)
+    public GivenOrder(GivenStage givenClause) : base(givenClause)
     {
         WithOrderNumber(DefaultOrderNumber);
         WithSku(DefaultSku);
@@ -25,60 +25,60 @@ public class GivenOrderBuilder : BaseGivenBuilder, IGivenOrderBuilder
         WithStatus(DefaultOrderStatus);
     }
 
-    public GivenOrderBuilder WithOrderNumber(string orderNumber)
+    public GivenOrder WithOrderNumber(string orderNumber)
     {
         _orderNumber = orderNumber;
         return this;
     }
 
-    IGivenOrderBuilder IGivenOrderBuilder.WithOrderNumber(string orderNumber) => WithOrderNumber(orderNumber);
+    IGivenOrder IGivenOrder.WithOrderNumber(string orderNumber) => WithOrderNumber(orderNumber);
 
-    public GivenOrderBuilder WithSku(string? sku)
+    public GivenOrder WithSku(string? sku)
     {
         _sku = sku;
         return this;
     }
 
-    IGivenOrderBuilder IGivenOrderBuilder.WithSku(string? sku) => WithSku(sku);
+    IGivenOrder IGivenOrder.WithSku(string? sku) => WithSku(sku);
 
-    public GivenOrderBuilder WithQuantity(string? quantity)
+    public GivenOrder WithQuantity(string? quantity)
     {
         _quantity = quantity;
         return this;
     }
 
-    IGivenOrderBuilder IGivenOrderBuilder.WithQuantity(string? quantity) => WithQuantity(quantity);
+    IGivenOrder IGivenOrder.WithQuantity(string? quantity) => WithQuantity(quantity);
 
-    public GivenOrderBuilder WithQuantity(int? quantity)
+    public GivenOrder WithQuantity(int? quantity)
     {
         return WithQuantity(Converter.FromInteger(quantity));
     }
 
-    IGivenOrderBuilder IGivenOrderBuilder.WithQuantity(int? quantity) => WithQuantity(quantity);
+    IGivenOrder IGivenOrder.WithQuantity(int? quantity) => WithQuantity(quantity);
 
-    public GivenOrderBuilder WithCountry(string? country)
+    public GivenOrder WithCountry(string? country)
     {
         _country = country;
         return this;
     }
 
-    IGivenOrderBuilder IGivenOrderBuilder.WithCountry(string? country) => WithCountry(country);
+    IGivenOrder IGivenOrder.WithCountry(string? country) => WithCountry(country);
 
-    public GivenOrderBuilder WithCouponCode(string? couponCodeAlias)
+    public GivenOrder WithCouponCode(string? couponCodeAlias)
     {
         _couponCodeAlias = couponCodeAlias;
         return this;
     }
 
-    IGivenOrderBuilder IGivenOrderBuilder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
+    IGivenOrder IGivenOrder.WithCouponCode(string? couponCode) => WithCouponCode(couponCode);
 
-    public GivenOrderBuilder WithStatus(OrderStatus status)
+    public GivenOrder WithStatus(OrderStatus status)
     {
         _status = status;
         return this;
     }
 
-    IGivenOrderBuilder IGivenOrderBuilder.WithStatus(OrderStatus status) => WithStatus(status);
+    IGivenOrder IGivenOrder.WithStatus(OrderStatus status) => WithStatus(status);
 
     internal override async Task Execute(SystemDsl app)
     {

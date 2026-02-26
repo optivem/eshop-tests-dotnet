@@ -5,15 +5,15 @@ namespace Dsl.Api.Given;
 
 public interface IGiven
 {
-    IGivenProductBuilder Product();
+    IGivenProduct Product();
 
-    IGivenOrderBuilder Order();
+    IGivenOrder Order();
 
-    IGivenClockBuilder Clock();
+    IGivenClock Clock();
 
-    IGivenCountryBuilder Country();
+    IGivenCountry Country();
 
-    IGivenCouponBuilder Coupon();
+    IGivenCoupon Coupon();
 
     IWhen When();
 }
