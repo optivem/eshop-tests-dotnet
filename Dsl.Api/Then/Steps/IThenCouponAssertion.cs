@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace Dsl.Api.Then.Steps;
 
 public interface IThenCouponAssertion
@@ -13,6 +11,4 @@ public interface IThenCouponAssertion
     IThenCouponAssertion HasUsageLimit(int usageLimit);
 
     IThenCouponAssertion HasUsedCount(int expectedUsedCount);
-
-    TaskAwaiter GetAwaiter();
 }

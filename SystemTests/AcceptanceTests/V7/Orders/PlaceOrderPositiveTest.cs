@@ -1,6 +1,7 @@
 using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Dsl.Api.Then.Steps;
 using Optivem.Testing;
 
 namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Orders;
