@@ -9,7 +9,7 @@ namespace DslImpl.Gherkin.Then;
 /// Coupon verification in failure path - no success check, runs failure assertions first then coupon verifications.
 /// </summary>
 public class ThenFailureCoupon<TSuccessResponse, TSuccessVerification>
-    : BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, ThenFailureCoupon<TSuccessResponse, TSuccessVerification>>, IThenCouponAssertion
+    : BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, ThenFailureCoupon<TSuccessResponse, TSuccessVerification>>, IThenCoupon
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;

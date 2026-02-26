@@ -5,7 +5,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 namespace DslImpl.Gherkin.Then;
 
 public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
-    : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>, IThenFailureAnd
+    : BaseThenAnd<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>, IThenFailureAnd
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;
@@ -31,7 +31,7 @@ public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
             () => Task.FromResult(couponCode));
     }
 
-    IThenCouponAssertion IThenFailureAnd.Coupon(string couponCode) => Coupon(couponCode);
+    IThenCoupon IThenFailureAnd.Coupon(string couponCode) => Coupon(couponCode);
 
     /// <summary>
     /// Verifies coupon from execution result (coupon code from the executed operation).
@@ -48,9 +48,9 @@ public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
             });
     }
 
-    IThenCouponAssertion IThenFailureAnd.Coupon() => Coupon();
+    IThenCoupon IThenFailureAnd.Coupon() => Coupon();
 
-    IThenOrderAssertion IThenFailureAnd.Order(string orderNumber) => Order(orderNumber);
+    IThenOrder IThenFailureAnd.Order(string orderNumber) => Order(orderNumber);
 
-    IThenOrderAssertion IThenFailureAnd.Order() => Order();
+    IThenOrder IThenFailureAnd.Order() => Order();
 }

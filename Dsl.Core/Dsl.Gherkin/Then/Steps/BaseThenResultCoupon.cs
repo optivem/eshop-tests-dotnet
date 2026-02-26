@@ -8,7 +8,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 namespace DslImpl.Gherkin.Then;
 
 public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, TDerived>
-    : IThenCouponAssertion
+    : IThenCoupon
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
     where TDerived : BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, TDerived>
 {
@@ -34,7 +34,7 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         return Self;
     }
 
-    IThenCouponAssertion IThenCouponAssertion.HasDiscountRate(decimal discountRate) => HasDiscountRate(discountRate);
+    IThenCoupon IThenCoupon.HasDiscountRate(decimal discountRate) => HasDiscountRate(discountRate);
 
     public TDerived IsValidFrom(string validFrom)
     {
@@ -42,7 +42,7 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         return Self;
     }
 
-    IThenCouponAssertion IThenCouponAssertion.IsValidFrom(string validFrom) => IsValidFrom(validFrom);
+    IThenCoupon IThenCoupon.IsValidFrom(string validFrom) => IsValidFrom(validFrom);
 
     public TDerived IsValidTo(string validTo)
     {
@@ -50,7 +50,7 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         return Self;
     }
 
-    IThenCouponAssertion IThenCouponAssertion.IsValidTo(string validTo) => IsValidTo(validTo);
+    IThenCoupon IThenCoupon.IsValidTo(string validTo) => IsValidTo(validTo);
 
     public TDerived HasUsageLimit(int usageLimit)
     {
@@ -58,7 +58,7 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         return Self;
     }
 
-    IThenCouponAssertion IThenCouponAssertion.HasUsageLimit(int usageLimit) => HasUsageLimit(usageLimit);
+    IThenCoupon IThenCoupon.HasUsageLimit(int usageLimit) => HasUsageLimit(usageLimit);
 
     public TDerived HasUsedCount(int expectedUsedCount)
     {
@@ -66,7 +66,7 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         return Self;
     }
 
-    IThenCouponAssertion IThenCouponAssertion.HasUsedCount(int expectedUsedCount) => HasUsedCount(expectedUsedCount);
+    IThenCoupon IThenCoupon.HasUsedCount(int expectedUsedCount) => HasUsedCount(expectedUsedCount);
 
     public TaskAwaiter GetAwaiter() => Execute().GetAwaiter();
 

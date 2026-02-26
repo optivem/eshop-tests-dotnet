@@ -9,7 +9,7 @@ namespace DslImpl.Gherkin.Then;
 /// Order verification in failure path - no success check, runs failure assertions first then order verifications.
 /// </summary>
 public class ThenFailureOrder<TSuccessResponse, TSuccessVerification>
-    : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>, IThenOrderAssertion
+    : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>, IThenOrder
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly List<Action<SystemErrorFailureVerification>> _failureAssertions;

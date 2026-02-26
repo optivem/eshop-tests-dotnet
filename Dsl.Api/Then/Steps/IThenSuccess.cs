@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace Dsl.Api.Then.Steps;
 
-public interface IThenSuccessVerifier
+public interface IThenSuccess
 {
     IThenSuccessAnd And();
 

@@ -1,0 +1,14 @@
+namespace Dsl.Api.Then.Steps;
+
+public interface IThenCoupon
+{
+    IThenCoupon HasDiscountRate(decimal discountRate);
+
+    IThenCoupon IsValidFrom(string validFrom);
+
+    IThenCoupon IsValidTo(string validTo);
+
+    IThenCoupon HasUsageLimit(int usageLimit);
+
+    IThenCoupon HasUsedCount(int expectedUsedCount);
+}

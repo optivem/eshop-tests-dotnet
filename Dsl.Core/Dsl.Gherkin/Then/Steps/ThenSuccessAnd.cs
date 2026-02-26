@@ -4,7 +4,7 @@ using Driver.Shared.Dsl;
 namespace DslImpl.Gherkin.Then;
 
 public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
-    : BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>>, IThenSuccessAnd
+    : BaseThenAnd<TSuccessResponse, TSuccessVerification, ThenSuccessOrder<TSuccessResponse, TSuccessVerification>>, IThenSuccessAnd
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     internal ThenSuccessAnd(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
@@ -12,23 +12,23 @@ public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
     {
     }
 
-    protected override ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification> CreateOrderAssertion(Func<Task<string>> orderNumberFactory)
+    protected override ThenSuccessOrder<TSuccessResponse, TSuccessVerification> CreateOrderAssertion(Func<Task<string>> orderNumberFactory)
     {
-        return new ThenSuccessOrderVerifier<TSuccessResponse, TSuccessVerification>(_thenClause, orderNumberFactory);
+        return new ThenSuccessOrder<TSuccessResponse, TSuccessVerification>(_thenClause, orderNumberFactory);
     }
 
-    public ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification> Coupon(string couponCode)
+    public ThenSuccessCoupon<TSuccessResponse, TSuccessVerification> Coupon(string couponCode)
     {
-        return new ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification>(
+        return new ThenSuccessCoupon<TSuccessResponse, TSuccessVerification>(
             _thenClause,
             () => Task.FromResult(couponCode));
     }
 
-    IThenCouponAssertion IThenSuccessAnd.Coupon(string couponCode) => Coupon(couponCode);
+    IThenCoupon IThenSuccessAnd.Coupon(string couponCode) => Coupon(couponCode);
 
-    public ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification> Coupon()
+    public ThenSuccessCoupon<TSuccessResponse, TSuccessVerification> Coupon()
     {
-        return new ThenSuccessCouponVerifier<TSuccessResponse, TSuccessVerification>(
+        return new ThenSuccessCoupon<TSuccessResponse, TSuccessVerification>(
             _thenClause,
             async () =>
             {
@@ -37,9 +37,9 @@ public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
             });
     }
 
-    IThenCouponAssertion IThenSuccessAnd.Coupon() => Coupon();
+    IThenCoupon IThenSuccessAnd.Coupon() => Coupon();
 
-    IThenOrderAssertion IThenSuccessAnd.Order(string orderNumber) => Order(orderNumber);
+    IThenOrder IThenSuccessAnd.Order(string orderNumber) => Order(orderNumber);
 
-    IThenOrderAssertion IThenSuccessAnd.Order() => Order();
+    IThenOrder IThenSuccessAnd.Order() => Order();
 }

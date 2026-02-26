@@ -3,9 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace Dsl.Api.Then.Steps;
 
-public static class IThenCouponAssertionAwaiterExtensions
+public static class IThenCouponAwaiterExtensions
 {
-    public static TaskAwaiter GetAwaiter(this IThenCouponAssertion assertion)
+    public static TaskAwaiter GetAwaiter(this IThenCoupon assertion)
     {
         var method = assertion.GetType().GetMethod(nameof(GetAwaiter), BindingFlags.Public | BindingFlags.Instance, Type.EmptyTypes);
 

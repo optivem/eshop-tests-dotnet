@@ -2,11 +2,11 @@ namespace Dsl.Api.Then.Steps;
 
 public interface IThenSuccessAnd
 {
-    IThenOrderAssertion Order(string orderNumber);
+    IThenOrder Order(string orderNumber);
 
-    IThenOrderAssertion Order();
+    IThenOrder Order();
 
-    IThenCouponAssertion Coupon(string couponCode);
+    IThenCoupon Coupon(string couponCode);
 
-    IThenCouponAssertion Coupon();
+    IThenCoupon Coupon();
 }

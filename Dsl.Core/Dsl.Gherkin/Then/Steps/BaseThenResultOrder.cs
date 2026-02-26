@@ -10,7 +10,7 @@ using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 namespace DslImpl.Gherkin.Then;
 
 public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TDerived>
-    : IThenOrderAssertion
+    : IThenOrder
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
     where TDerived : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TDerived>
 {
@@ -36,7 +36,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasStatus(OrderStatus expectedStatus) => HasStatus(expectedStatus);
+    IThenOrder IThenOrder.HasStatus(OrderStatus expectedStatus) => HasStatus(expectedStatus);
 
     public TDerived HasBasePrice(decimal expectedBasePrice)
     {
@@ -44,7 +44,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasBasePrice(decimal expectedBasePrice) => HasBasePrice(expectedBasePrice);
+    IThenOrder IThenOrder.HasBasePrice(decimal expectedBasePrice) => HasBasePrice(expectedBasePrice);
 
     public TDerived HasBasePrice(string basePrice)
     {
@@ -52,7 +52,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasBasePrice(string basePrice) => HasBasePrice(basePrice);
+    IThenOrder IThenOrder.HasBasePrice(string basePrice) => HasBasePrice(basePrice);
 
     public TDerived HasSubtotalPrice(decimal expectedSubtotalPrice)
     {
@@ -60,7 +60,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasSubtotalPrice(decimal expectedSubtotalPrice) => HasSubtotalPrice(expectedSubtotalPrice);
+    IThenOrder IThenOrder.HasSubtotalPrice(decimal expectedSubtotalPrice) => HasSubtotalPrice(expectedSubtotalPrice);
 
     public TDerived HasSubtotalPrice(string expectedSubtotalPrice)
     {
@@ -68,7 +68,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasSubtotalPrice(string expectedSubtotalPrice) => HasSubtotalPrice(expectedSubtotalPrice);
+    IThenOrder IThenOrder.HasSubtotalPrice(string expectedSubtotalPrice) => HasSubtotalPrice(expectedSubtotalPrice);
 
     public TDerived HasTotalPrice(decimal expectedTotalPrice)
     {
@@ -76,7 +76,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTotalPrice(decimal expectedTotalPrice) => HasTotalPrice(expectedTotalPrice);
+    IThenOrder IThenOrder.HasTotalPrice(decimal expectedTotalPrice) => HasTotalPrice(expectedTotalPrice);
 
     public TDerived HasTotalPrice(string expectedTotalPrice)
     {
@@ -84,7 +84,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTotalPrice(string expectedTotalPrice) => HasTotalPrice(expectedTotalPrice);
+    IThenOrder IThenOrder.HasTotalPrice(string expectedTotalPrice) => HasTotalPrice(expectedTotalPrice);
 
     public TDerived HasTaxRate(decimal expectedTaxRate)
     {
@@ -92,7 +92,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTaxRate(decimal expectedTaxRate) => HasTaxRate(expectedTaxRate);
+    IThenOrder IThenOrder.HasTaxRate(decimal expectedTaxRate) => HasTaxRate(expectedTaxRate);
 
     public TDerived HasTaxRate(string expectedTaxRate)
     {
@@ -100,7 +100,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTaxRate(string expectedTaxRate) => HasTaxRate(expectedTaxRate);
+    IThenOrder IThenOrder.HasTaxRate(string expectedTaxRate) => HasTaxRate(expectedTaxRate);
 
     public TDerived HasTaxAmount(string expectedTaxAmount)
     {
@@ -108,7 +108,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTaxAmount(string expectedTaxAmount) => HasTaxAmount(expectedTaxAmount);
+    IThenOrder IThenOrder.HasTaxAmount(string expectedTaxAmount) => HasTaxAmount(expectedTaxAmount);
 
     public TDerived HasDiscountRate(decimal expectedDiscountRate)
     {
@@ -116,7 +116,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasDiscountRate(decimal expectedDiscountRate) => HasDiscountRate(expectedDiscountRate);
+    IThenOrder IThenOrder.HasDiscountRate(decimal expectedDiscountRate) => HasDiscountRate(expectedDiscountRate);
 
     public TDerived HasDiscountAmount(decimal expectedDiscountAmount)
     {
@@ -124,7 +124,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasDiscountAmount(decimal expectedDiscountAmount) => HasDiscountAmount(expectedDiscountAmount);
+    IThenOrder IThenOrder.HasDiscountAmount(decimal expectedDiscountAmount) => HasDiscountAmount(expectedDiscountAmount);
 
     public TDerived HasDiscountAmount(string expectedDiscountAmount)
     {
@@ -132,7 +132,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasDiscountAmount(string expectedDiscountAmount) => HasDiscountAmount(expectedDiscountAmount);
+    IThenOrder IThenOrder.HasDiscountAmount(string expectedDiscountAmount) => HasDiscountAmount(expectedDiscountAmount);
 
     public TDerived HasAppliedCoupon(string expectedCouponCode)
     {
@@ -140,7 +140,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasAppliedCoupon(string expectedCouponCode) => HasAppliedCoupon(expectedCouponCode);
+    IThenOrder IThenOrder.HasAppliedCoupon(string expectedCouponCode) => HasAppliedCoupon(expectedCouponCode);
 
     public TDerived HasAppliedCoupon()
     {
@@ -148,7 +148,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasAppliedCoupon() => HasAppliedCoupon();
+    IThenOrder IThenOrder.HasAppliedCoupon() => HasAppliedCoupon();
 
     public TDerived HasOrderNumberPrefix(string expectedPrefix)
     {
@@ -156,7 +156,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasOrderNumberPrefix(string expectedPrefix) => HasOrderNumberPrefix(expectedPrefix);
+    IThenOrder IThenOrder.HasOrderNumberPrefix(string expectedPrefix) => HasOrderNumberPrefix(expectedPrefix);
 
     public TDerived HasSku(string expectedSku)
     {
@@ -164,7 +164,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasSku(string expectedSku) => HasSku(expectedSku);
+    IThenOrder IThenOrder.HasSku(string expectedSku) => HasSku(expectedSku);
 
     public TDerived HasQuantity(int expectedQuantity)
     {
@@ -172,7 +172,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasQuantity(int expectedQuantity) => HasQuantity(expectedQuantity);
+    IThenOrder IThenOrder.HasQuantity(int expectedQuantity) => HasQuantity(expectedQuantity);
 
     public TDerived HasCountry(string expectedCountry)
     {
@@ -180,7 +180,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasCountry(string expectedCountry) => HasCountry(expectedCountry);
+    IThenOrder IThenOrder.HasCountry(string expectedCountry) => HasCountry(expectedCountry);
 
     public TDerived HasUnitPrice(decimal expectedUnitPrice)
     {
@@ -188,7 +188,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasUnitPrice(decimal expectedUnitPrice) => HasUnitPrice(expectedUnitPrice);
+    IThenOrder IThenOrder.HasUnitPrice(decimal expectedUnitPrice) => HasUnitPrice(expectedUnitPrice);
 
     public TDerived HasDiscountRateGreaterThanOrEqualToZero()
     {
@@ -196,7 +196,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasDiscountRateGreaterThanOrEqualToZero() => HasDiscountRateGreaterThanOrEqualToZero();
+    IThenOrder IThenOrder.HasDiscountRateGreaterThanOrEqualToZero() => HasDiscountRateGreaterThanOrEqualToZero();
 
     public TDerived HasDiscountAmountGreaterThanOrEqualToZero()
     {
@@ -204,7 +204,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasDiscountAmountGreaterThanOrEqualToZero() => HasDiscountAmountGreaterThanOrEqualToZero();
+    IThenOrder IThenOrder.HasDiscountAmountGreaterThanOrEqualToZero() => HasDiscountAmountGreaterThanOrEqualToZero();
 
     public TDerived HasSubtotalPriceGreaterThanZero()
     {
@@ -212,7 +212,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasSubtotalPriceGreaterThanZero() => HasSubtotalPriceGreaterThanZero();
+    IThenOrder IThenOrder.HasSubtotalPriceGreaterThanZero() => HasSubtotalPriceGreaterThanZero();
 
     public TDerived HasTaxRateGreaterThanOrEqualToZero()
     {
@@ -220,7 +220,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTaxRateGreaterThanOrEqualToZero() => HasTaxRateGreaterThanOrEqualToZero();
+    IThenOrder IThenOrder.HasTaxRateGreaterThanOrEqualToZero() => HasTaxRateGreaterThanOrEqualToZero();
 
     public TDerived HasTaxAmountGreaterThanOrEqualToZero()
     {
@@ -228,7 +228,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTaxAmountGreaterThanOrEqualToZero() => HasTaxAmountGreaterThanOrEqualToZero();
+    IThenOrder IThenOrder.HasTaxAmountGreaterThanOrEqualToZero() => HasTaxAmountGreaterThanOrEqualToZero();
 
     public TDerived HasTotalPriceGreaterThanZero()
     {
@@ -236,7 +236,7 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         return Self;
     }
 
-    IThenOrderAssertion IThenOrderAssertion.HasTotalPriceGreaterThanZero() => HasTotalPriceGreaterThanZero();
+    IThenOrder IThenOrder.HasTotalPriceGreaterThanZero() => HasTotalPriceGreaterThanZero();
 
     public TaskAwaiter GetAwaiter() => Execute().GetAwaiter();
 

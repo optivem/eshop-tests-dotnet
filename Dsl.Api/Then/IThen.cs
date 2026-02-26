@@ -4,7 +4,7 @@ namespace Dsl.Api.Then;
 
 public interface IThen
 {
-    IThenSuccessVerifier ShouldSucceed();
+    IThenSuccess ShouldSucceed();
 
-    IThenFailureVerifier ShouldFail();
+    IThenFailure ShouldFail();
 }

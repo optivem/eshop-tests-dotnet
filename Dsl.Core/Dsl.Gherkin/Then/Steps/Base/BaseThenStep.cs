@@ -2,13 +2,13 @@ using Driver.Shared.Dsl;
 
 namespace DslImpl.Gherkin.Then;
 
-public abstract class BaseThenAndVerifier<TSuccessResponse, TSuccessVerification, TOrderAssertion>
+public abstract class BaseThenAnd<TSuccessResponse, TSuccessVerification, TOrderAssertion>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
     where TOrderAssertion : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TOrderAssertion>
 {
     protected readonly ThenStage<TSuccessResponse, TSuccessVerification> _thenClause;
 
-    protected BaseThenAndVerifier(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
+    protected BaseThenAnd(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }

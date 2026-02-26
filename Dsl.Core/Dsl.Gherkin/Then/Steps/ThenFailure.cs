@@ -9,33 +9,33 @@ namespace DslImpl.Gherkin.Then;
 /// Deferred failure assertion - allows chaining ErrorMessage/FieldErrorMessage before awaiting.
 /// Enables fluent syntax: await Scenario(...).Then().ShouldFail().ErrorMessage("...").FieldErrorMessage("...");
 /// </summary>
-public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
-    : IThenFailureVerifier
+public class ThenFailure<TSuccessResponse, TSuccessVerification>
+    : IThenFailure
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
     private readonly ThenStage<TSuccessResponse, TSuccessVerification> _thenClause;
     private readonly List<Action<SystemErrorFailureVerification>> _assertions = [];
 
-    internal ThenFailureVerifier(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
+    internal ThenFailure(ThenStage<TSuccessResponse, TSuccessVerification> thenClause)
     {
         _thenClause = thenClause;
     }
 
-    public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> ErrorMessage(string expectedMessage)
+    public ThenFailure<TSuccessResponse, TSuccessVerification> ErrorMessage(string expectedMessage)
     {
         _assertions.Add(v => v.ErrorMessage(expectedMessage));
         return this;
     }
 
-    IThenFailureVerifier IThenFailureVerifier.ErrorMessage(string expectedMessage) => ErrorMessage(expectedMessage);
+    IThenFailure IThenFailure.ErrorMessage(string expectedMessage) => ErrorMessage(expectedMessage);
 
-    public ThenFailureVerifier<TSuccessResponse, TSuccessVerification> FieldErrorMessage(string expectedField, string expectedMessage)
+    public ThenFailure<TSuccessResponse, TSuccessVerification> FieldErrorMessage(string expectedField, string expectedMessage)
     {
         _assertions.Add(v => v.FieldErrorMessage(expectedField, expectedMessage));
         return this;
     }
 
-    IThenFailureVerifier IThenFailureVerifier.FieldErrorMessage(string expectedField, string expectedMessage)
+    IThenFailure IThenFailure.FieldErrorMessage(string expectedField, string expectedMessage)
         => FieldErrorMessage(expectedField, expectedMessage);
 
     /// <summary>
@@ -47,7 +47,7 @@ public class ThenFailureVerifier<TSuccessResponse, TSuccessVerification>
         return new ThenFailureAnd<TSuccessResponse, TSuccessVerification>(_thenClause, _assertions);
     }
 
-    IThenFailureAnd IThenFailureVerifier.And() => And();
+    IThenFailureAnd IThenFailure.And() => And();
 
     public TaskAwaiter GetAwaiter() => ExecuteAssertions().GetAwaiter();
 
