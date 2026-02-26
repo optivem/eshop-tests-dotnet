@@ -1,4 +1,4 @@
-using DslImpl.Gherkin;
+using DslImpl.Scenario;
 using Dsl.Api;
 using Optivem.EShop.SystemTest.Configuration;
 using Optivem.EShop.SystemTest.Core;

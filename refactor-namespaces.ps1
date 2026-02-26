@@ -180,22 +180,22 @@ $transformations = @(
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Gherkin\.'
-        replacement = 'using Optivem.EShop.SystemTest.Dsl.Gherkin.'
+        replacement = 'using Optivem.EShop.SystemTest.Scenario.'
         includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Gherkin\.'
-        replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Gherkin.'
+        replacement = 'namespace Optivem.EShop.SystemTest.Scenario.'
         includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'using Optivem\.EShop\.SystemTest\.Core\.Gherkin$'
-        replacement = 'using Optivem.EShop.SystemTest.Dsl.Gherkin'
+        replacement = 'using Optivem.EShop.SystemTest.Scenario'
         includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
         pattern = 'namespace Optivem\.EShop\.SystemTest\.Core\.Gherkin$'
-        replacement = 'namespace Optivem.EShop.SystemTest.Dsl.Gherkin'
+        replacement = 'namespace Optivem.EShop.SystemTest.Scenario'
         includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
@@ -210,7 +210,7 @@ $transformations = @(
     },
     @{
         pattern = 'DslImpl\.Gherkin'
-        replacement = 'Dsl.Gherkin'
+        replacement = 'Scenario'
         includeFilter = { $_ -like '*\\Dsl.Core\\*' }
     },
     @{
