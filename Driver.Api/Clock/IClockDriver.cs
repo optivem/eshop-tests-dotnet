@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
-using Common.Util;
+using Common;
 
 namespace Optivem.EShop.SystemTest.Driver.Api.Clock;
 

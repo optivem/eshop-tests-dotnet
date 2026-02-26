@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
 using Driver.Shared.Dsl;
-using Common.Util;
+using Common;
 using Shouldly;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases;

@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
 

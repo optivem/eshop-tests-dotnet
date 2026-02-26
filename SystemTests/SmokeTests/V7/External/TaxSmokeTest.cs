@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Base.V5;
 using Shouldly;
 using Xunit;

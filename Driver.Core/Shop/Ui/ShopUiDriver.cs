@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;

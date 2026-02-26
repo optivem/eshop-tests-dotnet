@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Driver.Shared.WireMock;
 using Driver.Shared.Http;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos;

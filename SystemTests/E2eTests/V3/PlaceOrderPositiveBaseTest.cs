@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;

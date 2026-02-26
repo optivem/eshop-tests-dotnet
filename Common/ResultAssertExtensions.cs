@@ -1,6 +1,6 @@
 using Shouldly;
 
-namespace Common.Util;
+namespace Common;
 
 public static class ResultAssertExtensions
 {

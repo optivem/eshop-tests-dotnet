@@ -1,5 +1,5 @@
 using Driver.Shared.Http;
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
 

@@ -1,7 +1,7 @@
 using Optivem.EShop.SystemTest.Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
-using Common.Util;
+using Common;
 using Driver.Shared.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
