@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl;
 

@@ -1,7 +1,7 @@
 using DevLab.JmesPath.Functions;
 using DslImpl.Scenario.When;
 using Dsl.Api.When.Steps;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using Common;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Core.Gherkin;

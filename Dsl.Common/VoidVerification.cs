@@ -1,6 +1,6 @@
 using Common;
 
-namespace Driver.Shared.Dsl;
+namespace Dsl.Common;
 
 public class VoidVerification : ResponseVerification<VoidValue>
 {

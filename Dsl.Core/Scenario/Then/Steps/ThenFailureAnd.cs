@@ -1,5 +1,5 @@
 using Dsl.Api.Then.Steps;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
 namespace DslImpl.Scenario.Then;

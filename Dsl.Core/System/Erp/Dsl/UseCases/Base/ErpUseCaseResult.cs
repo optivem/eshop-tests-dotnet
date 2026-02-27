@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
 using Common;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 
 namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases.Base;
 

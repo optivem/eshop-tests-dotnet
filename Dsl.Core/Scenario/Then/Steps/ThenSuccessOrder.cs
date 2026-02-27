@@ -1,5 +1,5 @@
 using Dsl.Api.Then.Steps;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using DslImpl.Scenario;
 
 namespace DslImpl.Scenario.Then;

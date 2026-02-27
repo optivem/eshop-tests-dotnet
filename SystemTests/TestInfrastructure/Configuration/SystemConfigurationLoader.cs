@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Configuration;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using Optivem.EShop.SystemTest.Core;
 
 namespace Optivem.EShop.SystemTest.Configuration;

@@ -1,5 +1,5 @@
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 
 namespace Optivem.EShop.SystemTest.Core;
 

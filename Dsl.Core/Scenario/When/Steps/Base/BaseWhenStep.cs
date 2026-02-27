@@ -1,7 +1,7 @@
 using DslImpl.Scenario.Then;
 using Dsl.Api.Then;
 using Dsl.Api.When.Steps.Base;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.Testing;
 

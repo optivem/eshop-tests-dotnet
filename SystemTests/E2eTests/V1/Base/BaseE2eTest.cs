@@ -1,4 +1,4 @@
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using ConfigEnvironment = Optivem.EShop.SystemTest.Configuration.Environment;
 using Optivem.EShop.SystemTest.Configuration;
 using Optivem.EShop.SystemTest.Base.V1;

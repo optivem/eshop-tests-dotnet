@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 using Dsl.Api.Then.Steps;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using DslImpl.Scenario;
 using Optivem.EShop.SystemTest.Core;
 using Optivem.EShop.SystemTest.Core.Gherkin;

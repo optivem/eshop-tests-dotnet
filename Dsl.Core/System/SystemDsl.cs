@@ -9,7 +9,7 @@ using Optivem.EShop.SystemTest.Driver.Api.Tax;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl;
 using Optivem.EShop.SystemTest.Core.Erp;
 using Optivem.Testing;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using Optivem.EShop.SystemTest.Core.Clock;
 using Optivem.EShop.SystemTest.Core.Tax;
 

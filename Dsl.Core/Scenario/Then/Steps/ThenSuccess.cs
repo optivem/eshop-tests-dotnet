@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 using Dsl.Api.Then.Steps;
-using Driver.Shared.Dsl;
+using Dsl.Common;
 
 namespace DslImpl.Scenario.Then;
 

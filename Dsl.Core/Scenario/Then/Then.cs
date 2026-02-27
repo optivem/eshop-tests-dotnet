@@ -1,4 +1,4 @@
-using Driver.Shared.Dsl;
+using Dsl.Common;
 using Dsl.Api.Then;
 using Dsl.Api.Then.Steps;
 using Optivem.EShop.SystemTest.Core;
