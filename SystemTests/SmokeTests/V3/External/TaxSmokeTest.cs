@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Base.V3;
+using SystemTests.TestInfrastructure.Base.V3;
 using Shouldly;
 using Xunit;
 
@@ -20,3 +20,4 @@ public class TaxSmokeTest : BaseDriverTest
         result.ShouldBeSuccess();
     }
 }
+

@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Base.V4;
+using SystemTests.TestInfrastructure.Base.V4;
 using Driver.Core.Shop;
 using Optivem.Testing;
 using Shouldly;
@@ -19,4 +19,5 @@ public class ShopSmokeTest : BaseChannelDriverTest
         result.ShouldBeSuccess();
     }
 }
+
 

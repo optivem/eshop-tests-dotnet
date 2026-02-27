@@ -1,5 +1,5 @@
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Base.V5;
+using SystemTests.TestInfrastructure.Base.V5;
 
 namespace Optivem.EShop.SystemTest.E2eTests.V5.Base;
 
@@ -10,3 +10,4 @@ public abstract class BaseE2eTest : BaseSystemDslTest
         return ExternalSystemMode.Real;
     }
 }
+

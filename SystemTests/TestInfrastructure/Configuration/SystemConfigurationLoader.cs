@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Dsl.Common;
 using Dsl.Core;
 
-namespace Optivem.EShop.SystemTest.Configuration;
+namespace SystemTests.TestInfrastructure.Configuration;
 
 public static class SystemConfigurationLoader
 {
@@ -54,5 +54,6 @@ public static class SystemConfigurationLoader
         return value;
     }
 }
+
 
 

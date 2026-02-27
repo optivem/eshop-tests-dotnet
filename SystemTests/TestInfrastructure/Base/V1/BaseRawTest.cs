@@ -1,10 +1,10 @@
 using System.Text.Json;
 using Microsoft.Playwright;
-using Optivem.EShop.SystemTest.Configuration;
+using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.Base.V1;
+namespace SystemTests.TestInfrastructure.Base.V1;
 
 public abstract class BaseRawTest : BaseConfigurableTest, IAsyncLifetime
 {
@@ -89,5 +89,6 @@ public abstract class BaseRawTest : BaseConfigurableTest, IAsyncLifetime
         _taxHttpClient?.Dispose();
     }
 }
+
 
 

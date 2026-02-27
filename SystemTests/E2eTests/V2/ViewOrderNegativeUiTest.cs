@@ -1,6 +1,6 @@
 using Driver.Core.Shop.Client.Ui.Pages;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
-using Optivem.EShop.SystemTest.Base.V2;
+using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;
 
@@ -24,4 +24,5 @@ public class ViewOrderNegativeUiTest : BaseE2eTest
         (await orderHistoryPage.WaitForOrderRowAsync(orderNumber, 3000)).ShouldBeFalse();
     }
 }
+
 

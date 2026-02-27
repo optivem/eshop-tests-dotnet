@@ -1,7 +1,7 @@
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Base.V3;
-using ConfigEnvironment = Optivem.EShop.SystemTest.Configuration.Environment;
-using Optivem.EShop.SystemTest.Configuration;
+using SystemTests.TestInfrastructure.Base.V3;
+using ConfigEnvironment = SystemTests.TestInfrastructure.Configuration.Environment;
+using SystemTests.TestInfrastructure.Configuration;
 
 namespace Optivem.EShop.SystemTest.E2eTests.V3.Base;
 
@@ -26,3 +26,4 @@ public abstract class BaseE2eTest : BaseDriverTest
         return $"{baseSku}-{suffix}";
     }
 }
+

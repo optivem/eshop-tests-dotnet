@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Base.V2;
+using SystemTests.TestInfrastructure.Base.V2;
 using Xunit;
 
 namespace Optivem.EShop.SystemTest.SmokeTests.V2.External;
@@ -19,3 +19,4 @@ public class ErpSmokeTest : BaseClientTest
         result.ShouldBeSuccess();
     }
 }
+

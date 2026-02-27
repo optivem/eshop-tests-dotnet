@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Configuration;
+using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
 using Driver.Core.Erp.Client;
 using Driver.Core.Shop.Client.Api;
@@ -6,7 +6,7 @@ using Driver.Core.Shop.Client.Ui;
 using Driver.Core.Tax.Client;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.Base.V2;
+namespace SystemTests.TestInfrastructure.Base.V2;
 
 public abstract class BaseClientTest : BaseConfigurableTest, IAsyncLifetime
 {
@@ -50,5 +50,6 @@ public abstract class BaseClientTest : BaseConfigurableTest, IAsyncLifetime
         _taxClient?.Dispose();
     }
 }
+
 
 

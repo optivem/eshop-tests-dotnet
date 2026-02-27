@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Configuration;
+using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
 using Driver.Api.Erp;
 using Driver.Core.Shop;
@@ -9,7 +9,7 @@ using Driver.Core.Tax;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.Base.V4;
+namespace SystemTests.TestInfrastructure.Base.V4;
 
 
 public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifetime
@@ -70,6 +70,7 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
         }
     }
 }
+
 
 
 

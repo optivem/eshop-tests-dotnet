@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Base.V5;
+using SystemTests.TestInfrastructure.Base.V5;
 using Driver.Core.Shop;
 using Optivem.Testing;
 using Shouldly;
@@ -18,4 +18,5 @@ public class ShopSmokeTest : BaseSystemDslTest
             .ShouldSucceed();
     }
 }
+
 

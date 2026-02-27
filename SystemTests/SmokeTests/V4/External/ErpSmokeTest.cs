@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Base.V4;
+using SystemTests.TestInfrastructure.Base.V4;
 using Shouldly;
 using Xunit;
 
@@ -14,3 +14,4 @@ public class ErpSmokeTest : BaseChannelDriverTest
         result.ShouldBeSuccess();
     }
 }
+

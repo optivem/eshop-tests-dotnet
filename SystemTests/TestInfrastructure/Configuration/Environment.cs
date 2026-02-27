@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Configuration;
+namespace SystemTests.TestInfrastructure.Configuration;
 
 public enum Environment
 {
@@ -7,3 +7,4 @@ public enum Environment
     Qa,
     Production
 }
+

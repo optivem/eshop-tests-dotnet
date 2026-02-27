@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Base.V3;
+using SystemTests.TestInfrastructure.Base.V3;
 
 namespace Optivem.EShop.SystemTest.E2eTests.V3;
 
@@ -9,3 +9,4 @@ public class PlaceOrderPositiveUiTest : PlaceOrderPositiveBaseTest
         return SetUpShopUiDriverAsync();
     }
 }
+

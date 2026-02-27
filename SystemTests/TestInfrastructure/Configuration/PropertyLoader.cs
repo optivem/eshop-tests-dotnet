@@ -1,6 +1,6 @@
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Configuration;
+namespace SystemTests.TestInfrastructure.Configuration;
 
 public static class PropertyLoader
 {
@@ -39,3 +39,4 @@ public static class PropertyLoader
         return value;
     }
 }
+

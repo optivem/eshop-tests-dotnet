@@ -1,7 +1,7 @@
 using Dsl.Common;
 using Dsl.Core;
 
-namespace Optivem.EShop.SystemTest.Configuration;
+namespace SystemTests.TestInfrastructure.Configuration;
 
 public abstract class BaseConfigurableTest
 {
@@ -26,5 +26,6 @@ public abstract class BaseConfigurableTest
         return SystemConfigurationLoader.Load(environment, externalSystemMode);
     }
 }
+
 
 

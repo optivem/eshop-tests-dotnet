@@ -3,7 +3,7 @@ using Driver.Core.Erp.Client.Dtos;
 using Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
-using Optivem.EShop.SystemTest.Base.V2;
+using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;
 
@@ -85,6 +85,7 @@ public class PlaceOrderPositiveApiTest : BaseE2eTest
         order.TotalPrice.ShouldBeGreaterThan(0);
     }
 }
+
 
 
 

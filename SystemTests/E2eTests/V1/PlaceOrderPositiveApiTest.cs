@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V1.Base;
-using Optivem.EShop.SystemTest.Base.V1;
+using SystemTests.TestInfrastructure.Base.V1;
 using Shouldly;
 using Xunit;
 
@@ -108,3 +108,4 @@ public class PlaceOrderPositiveApiTest : BaseE2eTest
     }
 
 }
+

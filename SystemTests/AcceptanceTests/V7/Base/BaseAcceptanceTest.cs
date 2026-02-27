@@ -1,5 +1,5 @@
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Base.V7;
+using SystemTests.TestInfrastructure.Base.V7;
 
 namespace Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
 
@@ -10,3 +10,4 @@ public abstract class BaseAcceptanceTest : BaseScenarioDslTest
         return ExternalSystemMode.Stub;
     }
 }
+

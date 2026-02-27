@@ -1,7 +1,7 @@
 using Dsl.Common;
-using ConfigEnvironment = Optivem.EShop.SystemTest.Configuration.Environment;
-using Optivem.EShop.SystemTest.Configuration;
-using Optivem.EShop.SystemTest.Base.V2;
+using ConfigEnvironment = SystemTests.TestInfrastructure.Configuration.Environment;
+using SystemTests.TestInfrastructure.Configuration;
+using SystemTests.TestInfrastructure.Base.V2;
 
 namespace Optivem.EShop.SystemTest.E2eTests.V2.Base;
 
@@ -26,3 +26,4 @@ public abstract class BaseE2eTest : BaseClientTest
         return $"{baseSku}-{suffix}";
     }
 }
+

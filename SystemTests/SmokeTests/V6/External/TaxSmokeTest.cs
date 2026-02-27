@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Base.V5;
+using SystemTests.TestInfrastructure.Base.V5;
 using Shouldly;
 using Xunit;
 
@@ -15,3 +15,4 @@ public class TaxSmokeTest : BaseSystemDslTest
             .ShouldSucceed();
     }
 }
+

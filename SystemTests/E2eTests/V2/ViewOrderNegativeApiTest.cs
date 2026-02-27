@@ -1,7 +1,7 @@
 using Common;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Driver.Api.Shop.Dtos.Error;
-using Optivem.EShop.SystemTest.Base.V2;
+using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;
 
@@ -24,4 +24,5 @@ public class ViewOrderNegativeApiTest : BaseE2eTest
         result.Error.Detail.ShouldBe("Order NON-EXISTENT-ORDER-99999 does not exist.");
     }
 }
+
 

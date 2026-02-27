@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Base.V2;
+using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;
 
@@ -18,3 +18,4 @@ public class ShopUiSmokeTest : BaseClientTest
         (await _shopUiClient.IsPageLoadedAsync()).ShouldBeTrue();
     }
 }
+
