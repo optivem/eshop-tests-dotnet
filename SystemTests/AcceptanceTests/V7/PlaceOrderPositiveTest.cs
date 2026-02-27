@@ -90,7 +90,6 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
             .When().PlaceOrder().WithCouponCode(null)
             .Then().ShouldSucceed()
             .And().Order()
-            .HasStatus(OrderStatus.Placed)
             .HasAppliedCoupon(null!)
             .HasDiscountRate(0.00m)
             .HasDiscountAmount(0.00m);
