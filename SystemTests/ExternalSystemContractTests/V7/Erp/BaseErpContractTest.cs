@@ -1,6 +1,6 @@
-using Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Base;
+using SystemTests.ExternalSystemContractTests.V7.Base;
 
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Erp;
+namespace SystemTests.ExternalSystemContractTests.V7.Erp;
 
 public abstract class BaseErpContractTest : BaseExternalSystemContractTest
 {
@@ -21,3 +21,4 @@ public abstract class BaseErpContractTest : BaseExternalSystemContractTest
             .Price(12.0m);
     }
 }
+

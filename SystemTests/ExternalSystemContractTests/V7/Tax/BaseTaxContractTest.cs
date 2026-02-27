@@ -1,6 +1,6 @@
-using Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Base;
+using SystemTests.ExternalSystemContractTests.V7.Base;
 
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Tax;
+namespace SystemTests.ExternalSystemContractTests.V7.Tax;
 
 public abstract class BaseTaxContractTest : BaseExternalSystemContractTest
 {
@@ -21,3 +21,4 @@ public abstract class BaseTaxContractTest : BaseExternalSystemContractTest
             .TaxRateIsPositive();
     }
 }
+

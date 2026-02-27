@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Clock;
+namespace SystemTests.ExternalSystemContractTests.V7.Clock;
 
 public class ClockStubContractTest : BaseClockContractTest
 {
@@ -18,3 +18,4 @@ public class ClockStubContractTest : BaseClockContractTest
             .Time("2024-01-02T09:00:00Z");
     }
 }
+

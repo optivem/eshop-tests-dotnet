@@ -1,6 +1,6 @@
-using Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Base;
+using SystemTests.ExternalSystemContractTests.V7.Base;
 
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Clock;
+namespace SystemTests.ExternalSystemContractTests.V7.Clock;
 
 public abstract class BaseClockContractTest : BaseExternalSystemContractTest
 {
@@ -18,3 +18,4 @@ public abstract class BaseClockContractTest : BaseExternalSystemContractTest
             .TimeIsNotNull();
     }
 }
+

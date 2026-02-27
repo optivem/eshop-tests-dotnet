@@ -2,7 +2,7 @@ using Dsl.Common;
 using SystemTests.TestInfrastructure.Base.V5;
 using Dsl.Core;
 
-namespace Optivem.EShop.SystemTest.ExternalSystemContractTests.V7.Base;
+namespace SystemTests.ExternalSystemContractTests.V7.Base;
 
 public abstract class BaseExternalSystemContractTest : BaseSystemDslTest
 {
@@ -12,5 +12,6 @@ public abstract class BaseExternalSystemContractTest : BaseSystemDslTest
 
     protected sealed override ExternalSystemMode? GetFixedExternalSystemMode() => FixedExternalSystemMode;
 }
+
 
 
