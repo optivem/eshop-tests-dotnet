@@ -3,7 +3,7 @@ using SystemTests.TestInfrastructure.Base.V5;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V7.External;
+namespace SystemTests.SmokeTests.V7.External;
 
 public class TaxSmokeTest : BaseSystemDslTest
 {
@@ -15,4 +15,5 @@ public class TaxSmokeTest : BaseSystemDslTest
             .ShouldSucceed();
     }
 }
+
 

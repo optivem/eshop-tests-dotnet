@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.SmokeTests.V3.System;
+namespace SystemTests.SmokeTests.V3.System;
 
 public class ShopUiSmokeTest : ShopBaseSmokeTest
 {
@@ -7,3 +7,4 @@ public class ShopUiSmokeTest : ShopBaseSmokeTest
         await SetUpShopUiDriverAsync();
     }
 }
+

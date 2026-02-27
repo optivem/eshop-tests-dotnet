@@ -3,7 +3,7 @@ using Driver.Core.Shop;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V7.System;
+namespace SystemTests.SmokeTests.V7.System;
 
 public class ShopSmokeTest : BaseScenarioDslTest
 {
@@ -16,5 +16,6 @@ public class ShopSmokeTest : BaseScenarioDslTest
             .Then().ShouldSucceed();
     }
 }
+
 
 

@@ -3,7 +3,7 @@ using SystemTests.TestInfrastructure.Base.V4;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V4.External;
+namespace SystemTests.SmokeTests.V4.External;
 
 public class ErpSmokeTest : BaseChannelDriverTest
 {
@@ -14,4 +14,5 @@ public class ErpSmokeTest : BaseChannelDriverTest
         result.ShouldBeSuccess();
     }
 }
+
 

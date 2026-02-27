@@ -3,7 +3,7 @@ using SystemTests.TestInfrastructure.Base.V3;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V3.System;
+namespace SystemTests.SmokeTests.V3.System;
 
 public abstract class ShopBaseSmokeTest : BaseDriverTest
 {
@@ -21,4 +21,5 @@ public abstract class ShopBaseSmokeTest : BaseDriverTest
         result.ShouldBeSuccess();
     }
 }
+
 

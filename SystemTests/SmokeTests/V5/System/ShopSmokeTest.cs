@@ -5,7 +5,7 @@ using Optivem.Testing;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V5.System;
+namespace SystemTests.SmokeTests.V5.System;
 
 public class ShopSmokeTest : BaseSystemDslTest
 {
@@ -18,5 +18,6 @@ public class ShopSmokeTest : BaseSystemDslTest
             .ShouldSucceed();
     }
 }
+
 
 

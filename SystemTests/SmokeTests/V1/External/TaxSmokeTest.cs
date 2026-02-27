@@ -1,7 +1,7 @@
 using SystemTests.TestInfrastructure.Base.V1;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V1.External;
+namespace SystemTests.SmokeTests.V1.External;
 
 public class TaxSmokeTest : BaseRawTest
 {
@@ -24,4 +24,5 @@ public class TaxSmokeTest : BaseRawTest
         Assert.Equal(200, (int)response.StatusCode);
     }
 }
+
 

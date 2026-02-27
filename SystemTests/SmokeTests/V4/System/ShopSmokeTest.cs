@@ -5,7 +5,7 @@ using Optivem.Testing;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V4.System;
+namespace SystemTests.SmokeTests.V4.System;
 
 public class ShopSmokeTest : BaseChannelDriverTest
 {
@@ -19,5 +19,6 @@ public class ShopSmokeTest : BaseChannelDriverTest
         result.ShouldBeSuccess();
     }
 }
+
 
 

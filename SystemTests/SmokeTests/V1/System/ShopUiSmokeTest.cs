@@ -1,7 +1,7 @@
 using SystemTests.TestInfrastructure.Base.V1;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V1.System;
+namespace SystemTests.SmokeTests.V1.System;
 
 public class ShopUiSmokeTest : BaseRawTest
 {
@@ -26,4 +26,5 @@ public class ShopUiSmokeTest : BaseRawTest
         Assert.Contains("</html>", pageContent);
     }
 }
+
 

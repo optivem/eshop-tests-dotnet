@@ -3,7 +3,7 @@ using SystemTests.TestInfrastructure.Base.V3;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V3.External;
+namespace SystemTests.SmokeTests.V3.External;
 
 public class TaxSmokeTest : BaseDriverTest
 {
@@ -20,4 +20,5 @@ public class TaxSmokeTest : BaseDriverTest
         result.ShouldBeSuccess();
     }
 }
+
 

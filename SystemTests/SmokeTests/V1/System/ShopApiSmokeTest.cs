@@ -1,7 +1,7 @@
 using SystemTests.TestInfrastructure.Base.V1;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V1.System;
+namespace SystemTests.SmokeTests.V1.System;
 
 public class ShopApiSmokeTest : BaseRawTest
 {
@@ -24,4 +24,5 @@ public class ShopApiSmokeTest : BaseRawTest
         Assert.Equal(200, (int)response.StatusCode);
     }
 }
+
 

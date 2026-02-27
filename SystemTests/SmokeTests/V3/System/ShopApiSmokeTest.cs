@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.SmokeTests.V3.System;
+namespace SystemTests.SmokeTests.V3.System;
 
 public class ShopApiSmokeTest : ShopBaseSmokeTest
 {
@@ -8,3 +8,4 @@ public class ShopApiSmokeTest : ShopBaseSmokeTest
         return Task.CompletedTask;
     }
 }
+

@@ -2,7 +2,7 @@ using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.SmokeTests.V2.System;
+namespace SystemTests.SmokeTests.V2.System;
 
 public class ShopUiSmokeTest : BaseClientTest
 {
@@ -18,4 +18,5 @@ public class ShopUiSmokeTest : BaseClientTest
         (await _shopUiClient.IsPageLoadedAsync()).ShouldBeTrue();
     }
 }
+
 
