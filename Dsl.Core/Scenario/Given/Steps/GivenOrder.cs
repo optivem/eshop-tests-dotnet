@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Dsl.Api.Given.Steps;
 using DslImpl.Scenario.Given;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;

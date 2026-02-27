@@ -1,5 +1,5 @@
 using Driver.Shared.Dsl;
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
 namespace DslImpl.Scenario

@@ -2,7 +2,7 @@ using DslImpl.Scenario;
 using DslImpl.Scenario.When;
 using Dsl.Api.When.Steps;
 using Driver.Shared.Dsl;
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Core;
 
 namespace DslImpl.Scenario.When;

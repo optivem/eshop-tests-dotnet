@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.E2eTests.V4.Base;
 using Optivem.Testing;

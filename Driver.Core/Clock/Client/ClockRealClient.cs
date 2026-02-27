@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
 

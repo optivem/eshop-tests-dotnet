@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Core.Tax.Client;
 using Optivem.EShop.SystemTest.Driver.Api.Tax;
 using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;

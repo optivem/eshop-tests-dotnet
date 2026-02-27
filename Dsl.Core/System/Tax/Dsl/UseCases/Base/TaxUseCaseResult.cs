@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
-using Common.Util;
+using Common;
 using Driver.Shared.Dsl;
 
 namespace Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases.Base;

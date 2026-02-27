@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
 
 namespace Optivem.EShop.SystemTest.Driver.Api.Shop;

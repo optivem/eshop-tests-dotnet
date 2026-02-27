@@ -1,6 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Common.Util;
+using Common;
 
 namespace Driver.Shared.WireMock;
 

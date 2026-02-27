@@ -1,5 +1,5 @@
 using Driver.Shared.Playwright;
-using Common.Util;
+using Common;
 using Optivem.EShop.SystemTest.Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
 

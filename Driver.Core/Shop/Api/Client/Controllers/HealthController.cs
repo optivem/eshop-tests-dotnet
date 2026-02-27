@@ -1,4 +1,4 @@
-using Common.Util;
+using Common;
 using Driver.Shared.Http;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
 
