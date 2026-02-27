@@ -1,8 +1,8 @@
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
-using Driver.Shared.Http;
+using D;
 using Common;
-using Driver.Shared.WireMock;
+using D;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Client;
 
