@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using D;
+using D;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop;
+namespace Driver.Api.Shop;
 
 public interface IShopDriver : IAsyncDisposable
 {

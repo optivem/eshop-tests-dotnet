@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Shouldly;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using D;
 using Common;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;

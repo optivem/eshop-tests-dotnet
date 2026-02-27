@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using D;
 using Optivem.EShop.SystemTest.E2eTests.V6.Base;
 using Optivem.Testing;
 using Xunit;

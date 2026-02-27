@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+namespace Driver.Api.Clock.Dtos.Error;
 
 public class ClockErrorResponse
 {

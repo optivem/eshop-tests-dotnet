@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+using D;
+using D;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Tax;
+namespace Driver.Api.Tax;
 
 public interface ITaxDriver : IDisposable
 {

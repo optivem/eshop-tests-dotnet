@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+using D.Dtos;
 using Dsl.Common;
 using Common;
 using Shouldly;

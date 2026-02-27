@@ -1,7 +1,7 @@
 using Common;
 using E2eTests.Providers;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using D;
+using D;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V3.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;

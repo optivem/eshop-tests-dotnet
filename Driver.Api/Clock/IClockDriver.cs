@@ -1,7 +1,7 @@
-using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+using D.Dtos;
 using Common;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Clock;
+namespace Driver.Api.Clock;
 
 public interface IClockDriver : IDisposable
 {

@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;
+namespace Driver.Api.Tax.Dtos;
 
 public class GetTaxResponse
 {

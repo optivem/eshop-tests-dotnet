@@ -1,6 +1,6 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
+using D;
+using D;
 using Optivem.EShop.SystemTest.Driver.Erp.Client;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;

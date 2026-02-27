@@ -1,5 +1,5 @@
-using Optivem.EShop.SystemTest.Driver.Api.Clock;
-using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+using D;
+using D.Dtos;
 using Optivem.EShop.SystemTest.Core.Clock.Client;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;

@@ -1,7 +1,7 @@
 using Driver.Shared.Playwright;
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using D;
+using D;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
 

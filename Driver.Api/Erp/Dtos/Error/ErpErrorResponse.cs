@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
+namespace Driver.Api.Erp.Dtos.Error;
 
 public class ErpErrorResponse
 {

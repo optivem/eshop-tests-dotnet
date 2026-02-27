@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases;
-using Optivem.EShop.SystemTest.Driver.Api.Clock;
+using D;
 using Dsl.Common;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Dsl;

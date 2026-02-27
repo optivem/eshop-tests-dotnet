@@ -1,7 +1,7 @@
 using Common;
 using Dsl.Api.Given.Steps;
 using DslImpl.Scenario.Given;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using D;
 using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.Given;

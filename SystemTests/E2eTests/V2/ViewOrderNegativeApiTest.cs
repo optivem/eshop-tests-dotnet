@@ -1,6 +1,6 @@
 using Common;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using D;
 using Optivem.EShop.SystemTest.Base.V2;
 using Shouldly;
 using Xunit;

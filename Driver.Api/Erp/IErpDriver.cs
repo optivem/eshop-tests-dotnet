@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
+using D;
+using D;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Erp;
+namespace Driver.Api.Erp;
 
 public interface IErpDriver : IDisposable
 {

@@ -1,10 +1,10 @@
 using Common;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
-using static Optivem.EShop.SystemTest.Driver.Api.Shop.SystemResults;
+using D;
+using D;
+using D;
+using static D.SystemResults;
 
 namespace Optivem.EShop.SystemTest.Core.Shop;
 

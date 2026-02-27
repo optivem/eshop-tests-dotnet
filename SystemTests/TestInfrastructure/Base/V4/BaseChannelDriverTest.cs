@@ -1,9 +1,9 @@
 using Optivem.EShop.SystemTest.Configuration;
 using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Driver.Api.Erp;
+using D;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Tax;
+using D;
+using D;
 using Optivem.EShop.SystemTest.Core.Erp;
 using Optivem.EShop.SystemTest.Core.Tax;
 using Optivem.Testing;

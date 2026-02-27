@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
+using D;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 using Dsl.Common;
 

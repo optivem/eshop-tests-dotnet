@@ -1,8 +1,8 @@
 using Common;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
+using D;
+using D;
+using D;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V4.Base;
 using Optivem.Testing;

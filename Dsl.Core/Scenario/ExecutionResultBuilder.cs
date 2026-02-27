@@ -1,7 +1,7 @@
 using Dsl.Common;
 using Common;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using D;
 using System;
 using System.Collections.Generic;
 using System.Linq;
