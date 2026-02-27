@@ -1,10 +1,10 @@
 using Driver.Api.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
+using Driver.Core.Shop.Dsl.UseCases.Base;
 using Dsl.Common;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+namespace Driver.Core.Shop.Dsl.UseCases;
 
 public class ViewOrder : BaseShopCommand<ViewOrderResponse, ViewOrderVerification>
 {
@@ -33,4 +33,5 @@ public class ViewOrder : BaseShopCommand<ViewOrderResponse, ViewOrderVerificatio
             (response, ctx) => new ViewOrderVerification(response, ctx));
     }
 }
+
 

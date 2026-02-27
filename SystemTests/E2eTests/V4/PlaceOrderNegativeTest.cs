@@ -1,6 +1,6 @@
 using Common;
 using Driver.Api.Erp.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop;
+using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V4.Base;
@@ -245,6 +245,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
     }
 }
+
 
 
 

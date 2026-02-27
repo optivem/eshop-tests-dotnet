@@ -2,10 +2,10 @@ using System.Runtime.CompilerServices;
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
 using DslImpl.Scenario;
-using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Core.Gherkin;
+using Driver.Core;
+using Driver.Core.Gherkin;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+using Driver.Core.Shop.Dsl.UseCases;
 
 namespace DslImpl.Scenario.Then;
 
@@ -256,4 +256,5 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         }
     }
 }
+
 

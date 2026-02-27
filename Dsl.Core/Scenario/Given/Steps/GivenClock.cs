@@ -1,7 +1,7 @@
 using Dsl.Api.Given.Steps;
-using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Core.Gherkin;
-using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
+using Driver.Core;
+using Driver.Core.Gherkin;
+using static Driver.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Scenario.Given;
 
@@ -30,3 +30,4 @@ public class GivenClock : BaseGiven, IGivenClock
             .ShouldSucceed();
     }
 }
+

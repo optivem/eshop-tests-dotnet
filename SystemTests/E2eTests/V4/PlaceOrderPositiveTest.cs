@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Core.Shop;
+using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop;
 using Driver.Api.Erp.Dtos;
@@ -120,6 +120,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         order.TotalPrice.ShouldBeGreaterThan(0);
     }
 }
+
 
 
 

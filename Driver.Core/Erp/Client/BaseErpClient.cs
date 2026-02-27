@@ -1,9 +1,9 @@
 using Driver.Common.Http;
 using Common;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
+using Driver.Core.Erp.Client.Dtos;
+using Driver.Core.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Erp.Client;
+namespace Driver.Core.Erp.Client;
 
 public abstract class BaseErpClient : IDisposable
 {
@@ -38,4 +38,5 @@ public abstract class BaseErpClient : IDisposable
     public Task<Result<ExtProductDetailsResponse, ExtErpErrorResponse>> GetProductAsync(string? sku)
         => HttpClient.GetAsync<ExtProductDetailsResponse>($"{ProductsEndpoint}/{sku}");
 }
+
 

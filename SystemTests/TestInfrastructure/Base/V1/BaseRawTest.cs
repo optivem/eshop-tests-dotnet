@@ -1,7 +1,7 @@
 using System.Text.Json;
 using Microsoft.Playwright;
 using Optivem.EShop.SystemTest.Configuration;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 using Xunit;
 
 namespace Optivem.EShop.SystemTest.Base.V1;
@@ -89,3 +89,4 @@ public abstract class BaseRawTest : BaseConfigurableTest, IAsyncLifetime
         _taxHttpClient?.Dispose();
     }
 }
+

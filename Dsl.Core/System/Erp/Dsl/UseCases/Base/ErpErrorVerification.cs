@@ -2,7 +2,7 @@ using Driver.Api.Erp.Dtos.Error;
 using Dsl.Common;
 using Shouldly;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases.Base;
+namespace Driver.Core.Erp.Dsl.UseCases.Base;
 
 public class ErpErrorVerification : ResponseVerification<ErpErrorResponse>
 {
@@ -23,4 +23,5 @@ public class ErpErrorVerification : ResponseVerification<ErpErrorResponse>
         return this;
     }
 }
+
 

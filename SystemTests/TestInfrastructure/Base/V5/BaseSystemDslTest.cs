@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.Configuration;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 using Xunit;
 
 namespace Optivem.EShop.SystemTest.Base.V5;
@@ -21,3 +21,4 @@ public abstract class BaseSystemDslTest : BaseConfigurableTest, IAsyncLifetime
             await _app.DisposeAsync();
     }
 }
+

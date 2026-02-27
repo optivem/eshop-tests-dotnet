@@ -1,5 +1,5 @@
 using Common;
-using Optivem.EShop.SystemTest.Core.Shop;
+using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V5.Base;
@@ -50,5 +50,6 @@ public class ViewOrderPositiveTest : BaseE2eTest
             .TotalPriceGreaterThanZero();
     }
 }
+
 
 

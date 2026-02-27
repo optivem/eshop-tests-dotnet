@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
+namespace Driver.Core.Erp.Client.Dtos.Error;
 
 public class ExtErpErrorResponse
 {
@@ -9,3 +9,4 @@ public class ExtErpErrorResponse
         return new ExtErpErrorResponse { Message = message };
     }
 }
+

@@ -3,7 +3,7 @@ using Shouldly;
 using Driver.Api.Shop.Dtos;
 using Common;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+namespace Driver.Core.Shop.Dsl.UseCases;
 
 public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsResponse>
 {
@@ -74,4 +74,5 @@ public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsRespo
         return coupon;
     }
 }
+
 

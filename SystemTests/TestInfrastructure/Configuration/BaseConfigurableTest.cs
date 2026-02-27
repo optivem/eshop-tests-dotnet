@@ -1,5 +1,5 @@
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 
 namespace Optivem.EShop.SystemTest.Configuration;
 
@@ -26,3 +26,4 @@ public abstract class BaseConfigurableTest
         return SystemConfigurationLoader.Load(environment, externalSystemMode);
     }
 }
+

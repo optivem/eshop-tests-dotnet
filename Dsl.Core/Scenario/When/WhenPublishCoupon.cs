@@ -4,11 +4,11 @@ using Dsl.Api.When.Steps;
 using Dsl.Common;
 using Common;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+using Driver.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
-using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
+using static Driver.Core.Gherkin.GherkinDefaults;
 
-namespace Optivem.EShop.SystemTest.Core.Gherkin.When;
+namespace Driver.Core.Gherkin.When;
 
 public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoupon
 {
@@ -96,4 +96,5 @@ public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoup
             .Build();
     }
 }
+
 

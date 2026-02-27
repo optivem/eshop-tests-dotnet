@@ -1,7 +1,7 @@
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
 using DslImpl.Scenario;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
+using Driver.Core.Shop.Dsl.UseCases.Base;
 
 namespace DslImpl.Scenario.Then;
 
@@ -35,3 +35,4 @@ public class ThenFailureOrder<TSuccessResponse, TSuccessVerification>
         return Task.CompletedTask;
     }
 }
+

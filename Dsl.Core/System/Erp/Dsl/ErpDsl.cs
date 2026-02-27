@@ -1,8 +1,8 @@
 using Driver.Api.Erp;
-using Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases;
+using Driver.Core.Erp.Dsl.UseCases;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Dsl;
+namespace Driver.Core.Erp.Dsl;
 
 public class ErpDsl : IDisposable
 {
@@ -36,4 +36,5 @@ public class ErpDsl : IDisposable
 
     public GetProduct GetProduct() => new(_driver, _context);
 }
+
 

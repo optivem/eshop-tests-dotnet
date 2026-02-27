@@ -1,9 +1,9 @@
 using Common;
-using Optivem.EShop.SystemTest.Core.Tax.Client;
+using Driver.Core.Tax.Client;
 using Driver.Api.Tax.Dtos;
 using Driver.Api.Tax.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Tax;
+namespace Driver.Core.Tax;
 
 public class TaxRealDriver : BaseTaxDriver<TaxRealClient>
 {
@@ -17,3 +17,4 @@ public class TaxRealDriver : BaseTaxDriver<TaxRealClient>
         return Task.FromResult(Result.Success<TaxErrorResponse>());
     }
 }
+

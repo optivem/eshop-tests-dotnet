@@ -1,8 +1,8 @@
 using Dsl.Api.Given.Steps;
 using DslImpl.Scenario.Given;
-using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
+using static Driver.Core.Gherkin.GherkinDefaults;
 
-namespace Optivem.EShop.SystemTest.Core.Gherkin.Given;
+namespace Driver.Core.Gherkin.Given;
 
 public class GivenCountry : BaseGiven, IGivenCountry
 {
@@ -48,3 +48,4 @@ public class GivenCountry : BaseGiven, IGivenCountry
             .ShouldSucceed();
     }
 }
+

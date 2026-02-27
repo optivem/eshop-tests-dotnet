@@ -2,7 +2,7 @@ using DslImpl.Scenario.When;
 using Dsl.Api.Given;
 using Dsl.Api.Given.Steps.Base;
 using Dsl.Api.When;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 using Optivem.Testing;
 
 namespace DslImpl.Scenario.Given;
@@ -34,3 +34,4 @@ public abstract class BaseGiven : IGivenStep
 
     protected Channel Channel => _givenClause.Channel;
 }
+

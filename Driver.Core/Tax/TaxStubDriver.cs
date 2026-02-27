@@ -1,11 +1,11 @@
 using Common;
-using Optivem.EShop.SystemTest.Core.Tax.Client;
+using Driver.Core.Tax.Client;
 using Driver.Api.Tax.Dtos;
 using Driver.Api.Tax.Dtos.Error;
-using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
+using Driver.Core.Tax.Client.Dtos;
+using Driver.Core.Tax.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Tax;
+namespace Driver.Core.Tax;
 
 public class TaxStubDriver : BaseTaxDriver<TaxStubClient>
 {
@@ -29,3 +29,4 @@ public class TaxStubDriver : BaseTaxDriver<TaxStubClient>
             .MapErrorAsync(MapError);
     }
 }
+

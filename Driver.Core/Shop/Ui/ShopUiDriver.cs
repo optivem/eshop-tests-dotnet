@@ -1,12 +1,12 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
+using Driver.Core.Shop.Client.Ui;
+using Driver.Core.Shop.Client.Ui.Pages;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop.Dtos.Error;
 using Driver.Api.Shop;
 using static Driver.Api.Shop.SystemResults;
 
-namespace Optivem.EShop.SystemTest.Core.Shop;
+namespace Driver.Core.Shop;
 
 public class ShopUiDriver : IShopDriver
 {
@@ -296,3 +296,4 @@ public class ShopUiDriver : IShopDriver
     }
 
 }
+

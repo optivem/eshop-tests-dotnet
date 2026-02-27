@@ -1,11 +1,11 @@
 using Common;
 using Driver.Api.Erp.Dtos;
 using Driver.Api.Erp.Dtos.Error;
-using Optivem.EShop.SystemTest.Driver.Erp.Client;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
+using Driver.Core.Erp.Client;
+using Driver.Core.Erp.Client.Dtos;
+using Driver.Core.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Erp;
+namespace Driver.Core.Erp;
 
 public class ErpRealDriver : BaseErpDriver<ErpRealClient>
 {
@@ -34,3 +34,4 @@ public class ErpRealDriver : BaseErpDriver<ErpRealClient>
             .MapErrorAsync(error => MapError(error));
     }
 }
+

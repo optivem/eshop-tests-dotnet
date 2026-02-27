@@ -2,7 +2,7 @@ using Driver.Api.Clock;
 using Driver.Api.Clock.Dtos;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases.Base;
+namespace Driver.Core.Clock.Dsl.UseCases.Base;
 
 public abstract class BaseClockCommand<TResponse, TVerification>
     where TVerification : ResponseVerification<TResponse>
@@ -18,4 +18,5 @@ public abstract class BaseClockCommand<TResponse, TVerification>
 
     public abstract Task<ClockUseCaseResult<TResponse, TVerification>> Execute();
 }
+
 

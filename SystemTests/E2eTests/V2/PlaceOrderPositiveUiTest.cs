@@ -1,6 +1,6 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
+using Driver.Core.Erp.Client.Dtos;
+using Driver.Core.Shop.Client.Ui.Pages;
 using Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
@@ -114,5 +114,6 @@ public class PlaceOrderPositiveUiTest : BaseE2eTest
         (await orderDetailsPage.GetTotalPriceAsync()).ShouldBeGreaterThan(0);
     }
 }
+
 
 

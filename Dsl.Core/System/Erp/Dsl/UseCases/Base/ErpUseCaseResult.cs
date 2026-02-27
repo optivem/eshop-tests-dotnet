@@ -2,7 +2,7 @@ using Driver.Api.Erp.Dtos.Error;
 using Common;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases.Base;
+namespace Driver.Core.Erp.Dsl.UseCases.Base;
 
 public class ErpUseCaseResult<TSuccessResponse, TSuccessVerification>
     : UseCaseResult<TSuccessResponse, ErpErrorResponse, TSuccessVerification, ErpErrorVerification>
@@ -16,4 +16,5 @@ public class ErpUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+
 

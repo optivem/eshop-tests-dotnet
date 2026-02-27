@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
-using Optivem.EShop.SystemTest.Core.Shop;
+using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
 using Dsl.Api.Then.Steps;
 using Optivem.Testing;
@@ -172,5 +172,6 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
     }
 
 }
+
 
 

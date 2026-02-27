@@ -3,7 +3,7 @@ using Common;
 using Driver.Api.Shop;
 using Driver.Api.Shop.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
+namespace Driver.Core.Shop.Client.Ui.Pages;
 
 public abstract class BasePage
 {
@@ -139,5 +139,6 @@ public abstract class BasePage
         return selector.Replace(NotificationSelector, NotificationSelector + idAttribute);
     }
 }
+
 
 

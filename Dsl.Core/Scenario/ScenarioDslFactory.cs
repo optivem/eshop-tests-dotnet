@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 using Optivem.Testing;
 
 namespace DslImpl.Scenario
@@ -15,3 +15,4 @@ namespace DslImpl.Scenario
         public ScenarioDsl Create(Channel channel) { return new ScenarioDsl(channel, _app); }
     }
 }
+

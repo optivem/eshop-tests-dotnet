@@ -1,9 +1,9 @@
 using Optivem.EShop.SystemTest.Configuration;
-using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Driver.Erp.Client;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Api;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui;
-using Optivem.EShop.SystemTest.Core.Tax.Client;
+using Driver.Core;
+using Driver.Core.Erp.Client;
+using Driver.Core.Shop.Client.Api;
+using Driver.Core.Shop.Client.Ui;
+using Driver.Core.Tax.Client;
 using Xunit;
 
 namespace Optivem.EShop.SystemTest.Base.V2;
@@ -50,3 +50,4 @@ public abstract class BaseClientTest : BaseConfigurableTest, IAsyncLifetime
         _taxClient?.Dispose();
     }
 }
+

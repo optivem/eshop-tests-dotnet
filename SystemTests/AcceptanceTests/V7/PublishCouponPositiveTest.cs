@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
-using Optivem.EShop.SystemTest.Core.Shop;
+using Driver.Core.Shop;
 using Dsl.Api.Then.Steps;
 using Optivem.Testing;
 using Xunit;
@@ -56,3 +56,4 @@ public class PublishCouponPositiveTest : BaseAcceptanceTest
             .HasUsedCount(0);
     }
 }
+

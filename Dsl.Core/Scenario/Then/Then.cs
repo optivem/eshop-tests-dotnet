@@ -1,7 +1,7 @@
 using Dsl.Common;
 using Dsl.Api.Then;
 using Dsl.Api.Then.Steps;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 using Optivem.Testing;
 
 namespace DslImpl.Scenario.Then
@@ -48,3 +48,4 @@ namespace DslImpl.Scenario.Then
         }
     }
 }
+

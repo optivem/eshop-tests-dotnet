@@ -2,7 +2,7 @@ using Driver.Api.Erp;
 using Driver.Api.Erp.Dtos.Error;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases.Base;
+namespace Driver.Core.Erp.Dsl.UseCases.Base;
 
 public abstract class BaseErpCommand<TResponse, TVerification>
     where TVerification : ResponseVerification<TResponse>
@@ -18,4 +18,5 @@ public abstract class BaseErpCommand<TResponse, TVerification>
 
     public abstract Task<ErpUseCaseResult<TResponse, TVerification>> Execute();
 }
+
 

@@ -1,7 +1,7 @@
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core;
+namespace Driver.Core;
 
 public class SystemConfiguration
 {
@@ -29,3 +29,4 @@ public class SystemConfiguration
     public string ClockBaseUrl => clockBaseUrl;
     public ExternalSystemMode ExternalSystemMode => externalSystemMode;
 }
+

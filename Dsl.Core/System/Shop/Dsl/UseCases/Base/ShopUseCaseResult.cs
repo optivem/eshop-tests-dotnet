@@ -2,7 +2,7 @@ using Common;
 using Dsl.Common;
 using Driver.Api.Shop.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
+namespace Driver.Core.Shop.Dsl.UseCases.Base;
 
 public class ShopUseCaseResult<TSuccessResponse, TSuccessVerification>
     : UseCaseResult<TSuccessResponse, SystemError, TSuccessVerification, SystemErrorFailureVerification>
@@ -16,4 +16,5 @@ public class ShopUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+
 

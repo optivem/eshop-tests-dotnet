@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Optivem.EShop.SystemTest.Base.V4;
-using Optivem.EShop.SystemTest.Core.Shop;
+using Driver.Core.Shop;
 
 namespace Optivem.EShop.SystemTest.E2eTests.V4.Base;
 
@@ -17,3 +17,4 @@ public abstract class BaseE2eTest : BaseChannelDriverTest
         return $"{baseSku}-{suffix}";
     }
 }
+

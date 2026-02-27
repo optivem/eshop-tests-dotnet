@@ -1,10 +1,10 @@
 using Common;
 using Driver.Common.WireMock;
 using Driver.Common.Http;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
+using Driver.Core.Erp.Client.Dtos;
+using Driver.Core.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Erp.Client;
+namespace Driver.Core.Erp.Client;
 
 public class ErpStubClient : BaseErpClient
 {
@@ -28,4 +28,5 @@ public class ErpStubClient : BaseErpClient
             .MapErrorAsync(ExtErpErrorResponse.From);
 
 }
+
 

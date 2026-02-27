@@ -2,7 +2,7 @@ using Dsl.Common;
 using Shouldly;
 using Driver.Api.Shop.Dtos;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+namespace Driver.Core.Shop.Dsl.UseCases;
 
 public class PlaceOrderVerification : ResponseVerification<PlaceOrderResponse>
 {
@@ -27,4 +27,5 @@ public class PlaceOrderVerification : ResponseVerification<PlaceOrderResponse>
         return this;
     }
 }
+
 

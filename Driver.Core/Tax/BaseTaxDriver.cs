@@ -1,11 +1,11 @@
 using Common;
-using Optivem.EShop.SystemTest.Core.Tax.Client;
+using Driver.Core.Tax.Client;
 using Driver.Api.Tax;
 using Driver.Api.Tax.Dtos;
 using Driver.Api.Tax.Dtos.Error;
-using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
+using Driver.Core.Tax.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Tax;
+namespace Driver.Core.Tax;
 
 public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTaxClient
 {
@@ -49,3 +49,4 @@ public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTa
     protected static TaxErrorResponse MapError(ExtTaxErrorResponse errorResponse)
         => new TaxErrorResponse { Message = errorResponse.Message };
 }
+

@@ -2,7 +2,7 @@ using Driver.Api.Erp.Dtos;
 using Dsl.Common;
 using Shouldly;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases;
+namespace Driver.Core.Erp.Dsl.UseCases;
 
 public class GetProductVerification : ResponseVerification<GetProductResponse>
 {
@@ -31,4 +31,5 @@ public class GetProductVerification : ResponseVerification<GetProductResponse>
         return Price(decimal.Parse(expectedPrice));
     }
 }
+
 

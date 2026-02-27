@@ -3,7 +3,7 @@ using DslImpl.Scenario.When;
 using Dsl.Api.When.Steps;
 using Dsl.Common;
 using Common;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 
 namespace DslImpl.Scenario.When;
 
@@ -23,3 +23,4 @@ public class GoToShop : BaseWhen<VoidValue, VoidVerification>, IGoToShop
             .Build();
     }
 }
+

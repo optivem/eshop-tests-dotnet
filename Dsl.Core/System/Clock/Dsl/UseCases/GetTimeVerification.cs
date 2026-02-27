@@ -3,7 +3,7 @@ using Dsl.Common;
 using Common;
 using Shouldly;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases;
+namespace Driver.Core.Clock.Dsl.UseCases;
 
 public class GetTimeVerification : ResponseVerification<GetTimeResponse>
 {
@@ -74,4 +74,5 @@ public class GetTimeVerification : ResponseVerification<GetTimeResponse>
         return TimeIsBetween(start, end);
     }
 }
+
 

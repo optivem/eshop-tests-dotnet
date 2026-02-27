@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Common;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
+using Driver.Core.Shop.Dsl.UseCases.Base;
 
 namespace DslImpl.Scenario
 {
@@ -33,3 +33,4 @@ namespace DslImpl.Scenario
         public ExecutionResultContext Context { get; }
     }
 }
+

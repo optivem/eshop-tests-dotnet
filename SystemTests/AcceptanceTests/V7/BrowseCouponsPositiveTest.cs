@@ -1,5 +1,5 @@
 using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
-using Optivem.EShop.SystemTest.Core.Shop;
+using Driver.Core.Shop;
 using Optivem.Testing;
 
 namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
@@ -15,3 +15,4 @@ public class BrowseCouponsPositiveTest : BaseAcceptanceTest
             .Then().ShouldSucceed();
     }
 }
+

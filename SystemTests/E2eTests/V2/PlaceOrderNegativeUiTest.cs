@@ -1,6 +1,6 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
+using Driver.Core.Erp.Client.Dtos;
+using Driver.Core.Shop.Client.Ui.Pages;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
@@ -150,3 +150,4 @@ public class PlaceOrderNegativeUiTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country does not exist: XX");
     }
 }
+

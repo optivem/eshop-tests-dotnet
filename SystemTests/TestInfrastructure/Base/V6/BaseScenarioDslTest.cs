@@ -1,8 +1,8 @@
 using DslImpl.Scenario;
 using Dsl.Api;
 using Optivem.EShop.SystemTest.Configuration;
-using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Core.Gherkin;
+using Driver.Core;
+using Driver.Core.Gherkin;
 using Optivem.Testing;
 using Xunit;
 
@@ -32,3 +32,4 @@ public abstract class BaseScenarioDslTest : BaseConfigurableTest, IAsyncLifetime
             await _app.DisposeAsync();
     }
 }
+

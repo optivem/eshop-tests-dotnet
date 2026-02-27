@@ -1,7 +1,7 @@
 using Driver.Common.Http;
 using Driver.Common.Playwright;
 
-namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
+namespace Driver.Core.Shop.Client.Ui.Pages;
 
 public class HomePage : BasePage
 {
@@ -31,4 +31,5 @@ public class HomePage : BasePage
         return new CouponManagementPage(PageClient);
     }
 }
+
 

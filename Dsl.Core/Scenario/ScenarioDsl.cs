@@ -3,7 +3,7 @@ using DslImpl.Scenario.When;
 using Dsl.Api;
 using Dsl.Api.Given;
 using Dsl.Api.When;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 using Optivem.Testing;
 using System;
 
@@ -55,3 +55,4 @@ public class ScenarioDsl : IScenarioDsl
         }
     }
 }
+

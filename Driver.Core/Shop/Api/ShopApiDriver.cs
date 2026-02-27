@@ -1,12 +1,12 @@
 using Common;
 using Driver.Common.Http;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Api;
+using Driver.Core.Shop.Client.Api.Dtos.Errors;
+using Driver.Core.Shop.Client.Api;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop.Dtos.Error;
 using Driver.Api.Shop;
 
-namespace Optivem.EShop.SystemTest.Core.Shop;
+namespace Driver.Core.Shop;
 
 public class ShopApiDriver : IShopDriver
 {
@@ -60,4 +60,5 @@ public class ShopApiDriver : IShopDriver
         => _apiClient.Coupons().BrowseCouponsAsync()
             .MapErrorAsync(MapError);
 }
+
 

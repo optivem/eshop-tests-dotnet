@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
+namespace Driver.Core.Clock.Client.Dtos.Error;
 
 public class ExtClockErrorResponse
 {
@@ -14,3 +14,4 @@ public class ExtClockErrorResponse
         return Message ?? string.Empty;
     }
 }
+

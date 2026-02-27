@@ -1,8 +1,8 @@
-using Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases;
+using Driver.Core.Clock.Dsl.UseCases;
 using Driver.Api.Clock;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Dsl;
+namespace Driver.Core.Clock.Dsl;
 
 public class ClockDsl : IDisposable
 {
@@ -36,4 +36,5 @@ public class ClockDsl : IDisposable
 
     public GetTime GetTime() => new(_driver, _context);
 }
+
 

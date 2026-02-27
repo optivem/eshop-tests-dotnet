@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
+namespace Driver.Core.Erp.Client.Dtos;
 
 public class ExtProductDetailsResponse
 {
@@ -9,3 +9,4 @@ public class ExtProductDetailsResponse
     public required string Category { get; set; }
     public required string Brand { get; set; }
 }
+

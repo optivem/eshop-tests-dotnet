@@ -4,7 +4,7 @@ using Shouldly;
 using System.Globalization;
 using Common;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+namespace Driver.Core.Shop.Dsl.UseCases;
 
 public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 {
@@ -227,4 +227,5 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return this;
     }
 }
+
 

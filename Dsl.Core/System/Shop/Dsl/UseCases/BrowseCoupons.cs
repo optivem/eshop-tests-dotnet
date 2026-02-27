@@ -1,10 +1,10 @@
 using Driver.Api.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
+using Driver.Core.Shop.Dsl.UseCases.Base;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop.Dtos.Error;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+namespace Driver.Core.Shop.Dsl.UseCases;
 
 public class BrowseCoupons : BaseShopCommand<BrowseCouponsResponse, BrowseCouponsVerification>
 {
@@ -23,4 +23,5 @@ public class BrowseCoupons : BaseShopCommand<BrowseCouponsResponse, BrowseCoupon
             (response, ctx) => new BrowseCouponsVerification(response, ctx));
     }
 }
+
 

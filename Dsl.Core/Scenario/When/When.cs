@@ -5,10 +5,10 @@ using DslImpl.Scenario.Then;
 using Dsl.Api.When;
 using Dsl.Api.When.Steps;
 using Optivem.Testing;
-using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Core.Gherkin;
-using Optivem.EShop.SystemTest.Core.Gherkin.When;
-using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
+using Driver.Core;
+using Driver.Core.Gherkin;
+using Driver.Core.Gherkin.When;
+using static Driver.Core.Gherkin.GherkinDefaults;
 
 namespace DslImpl.Scenario.When
 {
@@ -106,3 +106,4 @@ namespace DslImpl.Scenario.When
         IBrowseCoupons IWhen.BrowseCoupons() => BrowseCoupons();
     }
 }
+

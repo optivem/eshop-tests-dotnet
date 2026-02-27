@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
+using Driver.Core.Clock.Client.Dtos;
+using Driver.Core.Clock.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Client;
+namespace Driver.Core.Clock.Client;
 
 public class ClockRealClient
 {
@@ -18,3 +18,4 @@ public class ClockRealClient
 
     private static DateTimeOffset Now => DateTimeOffset.UtcNow;
 }
+

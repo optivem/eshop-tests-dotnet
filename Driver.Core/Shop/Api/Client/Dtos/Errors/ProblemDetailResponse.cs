@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
+namespace Driver.Core.Shop.Client.Api.Dtos.Errors;
 
 public class ProblemDetailResponse
 {
@@ -18,3 +18,4 @@ public class ProblemDetailResponse
         public object? RejectedValue { get; set; }
     }
 }
+

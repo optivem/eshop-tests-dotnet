@@ -2,8 +2,8 @@ using DslImpl.Scenario.When;
 using Dsl.Api.Given;
 using Dsl.Api.Given.Steps;
 using Dsl.Api.When;
-using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Core.Gherkin.Given;
+using Driver.Core;
+using Driver.Core.Gherkin.Given;
 using Optivem.Testing;
 
 namespace DslImpl.Scenario.Given
@@ -151,3 +151,4 @@ namespace DslImpl.Scenario.Given
         }
     }
 }
+

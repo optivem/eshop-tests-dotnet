@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Core;
+using Driver.Core;
 
 namespace Optivem.EShop.SystemTest.Configuration;
 
@@ -54,3 +54,4 @@ public static class SystemConfigurationLoader
         return value;
     }
 }
+

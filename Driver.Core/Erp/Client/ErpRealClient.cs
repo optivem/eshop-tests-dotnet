@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
+using Driver.Core.Erp.Client.Dtos;
+using Driver.Core.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Erp.Client;
+namespace Driver.Core.Erp.Client;
 
 public class ErpRealClient : BaseErpClient
 {
@@ -16,3 +16,4 @@ public class ErpRealClient : BaseErpClient
     public Task<Result<VoidValue, ExtErpErrorResponse>> CreateProductAsync(ExtCreateProductRequest request)
         => HttpClient.PostAsync(ProductsEndpoint, request);
 }
+

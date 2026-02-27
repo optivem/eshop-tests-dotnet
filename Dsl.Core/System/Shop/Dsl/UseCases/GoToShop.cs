@@ -1,10 +1,10 @@
 using Driver.Api.Shop;
-using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
+using Driver.Core.Shop.Dsl.UseCases.Base;
 using Driver.Api.Shop.Dtos.Error;
 using Common;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
+namespace Driver.Core.Shop.Dsl.UseCases;
 
 public class GoToShop : BaseShopCommand<VoidValue, VoidVerification>
 {
@@ -23,4 +23,5 @@ public class GoToShop : BaseShopCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+
 

@@ -1,10 +1,10 @@
 using Driver.Api.Erp;
 using Driver.Api.Erp.Dtos;
 using Driver.Api.Erp.Dtos.Error;
-using Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases.Base;
+using Driver.Core.Erp.Dsl.UseCases.Base;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases;
+namespace Driver.Core.Erp.Dsl.UseCases;
 
 public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerification>
 {
@@ -38,4 +38,5 @@ public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerificat
             (response, ctx) => new GetProductVerification(response, ctx));
     }
 }
+
 

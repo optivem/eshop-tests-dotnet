@@ -1,11 +1,11 @@
 using Driver.Api.Clock;
 using Driver.Api.Clock.Dtos;
-using Optivem.EShop.SystemTest.Core.Clock.Client;
-using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
+using Driver.Core.Clock.Client;
+using Driver.Core.Clock.Client.Dtos;
+using Driver.Core.Clock.Client.Dtos.Error;
 using Common;
 
-namespace Optivem.EShop.SystemTest.Core.Clock;
+namespace Driver.Core.Clock;
 
 public class ClockStubDriver : IClockDriver
 {
@@ -53,3 +53,4 @@ public class ClockStubDriver : IClockDriver
     private static ClockErrorResponse MapError(ExtClockErrorResponse errorResponse)
         => new ClockErrorResponse { Message = errorResponse.Message };
 }
+

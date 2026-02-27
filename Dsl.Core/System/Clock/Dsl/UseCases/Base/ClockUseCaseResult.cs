@@ -2,7 +2,7 @@ using Driver.Api.Clock.Dtos;
 using Common;
 using Dsl.Common;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases.Base;
+namespace Driver.Core.Clock.Dsl.UseCases.Base;
 
 public class ClockUseCaseResult<TSuccessResponse, TSuccessVerification>
     : UseCaseResult<TSuccessResponse, ClockErrorResponse, TSuccessVerification, ClockErrorVerification>
@@ -16,4 +16,5 @@ public class ClockUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+
 

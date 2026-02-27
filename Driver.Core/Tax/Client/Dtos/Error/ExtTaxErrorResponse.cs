@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
+namespace Driver.Core.Tax.Client.Dtos.Error;
 
 public class ExtTaxErrorResponse
 {
@@ -17,3 +17,4 @@ public class ExtTaxErrorResponse
         return Message ?? string.Empty;
     }
 }
+

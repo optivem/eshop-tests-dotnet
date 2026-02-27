@@ -2,10 +2,10 @@ using Common;
 using Driver.Api.Erp;
 using Driver.Api.Erp.Dtos;
 using Driver.Api.Erp.Dtos.Error;
-using Optivem.EShop.SystemTest.Driver.Erp.Client;
-using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos.Error;
+using Driver.Core.Erp.Client;
+using Driver.Core.Erp.Client.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Core.Erp;
+namespace Driver.Core.Erp;
 
 public abstract class BaseErpDriver<TClient> : IErpDriver
     where TClient : BaseErpClient
@@ -52,3 +52,4 @@ public abstract class BaseErpDriver<TClient> : IErpDriver
         return new ErpErrorResponse { Message = extError.Message };
     }
 }
+

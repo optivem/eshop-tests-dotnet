@@ -1,10 +1,10 @@
-using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
+using Driver.Core.Clock.Client.Dtos;
+using Driver.Core.Clock.Client.Dtos.Error;
 using Driver.Common.Http;
 using Common;
 using Driver.Common.WireMock;
 
-namespace Optivem.EShop.SystemTest.Core.Clock.Client;
+namespace Driver.Core.Clock.Client;
 
 public class ClockStubClient : IDisposable
 {
@@ -49,4 +49,5 @@ public class ClockStubClient : IDisposable
         => _wireMockClient.StubGetAsync(ClockTimeEndpoint, HttpStatus.Ok, response)
             .MapErrorAsync(ExtClockErrorResponse.From);
 }
+
 

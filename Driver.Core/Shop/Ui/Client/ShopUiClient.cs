@@ -1,10 +1,10 @@
 using Microsoft.Playwright;
-using Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
+using Driver.Core.Shop.Client.Ui.Pages;
 using Driver.Common.Playwright;
 using System.Net;
 using PlaywrightGateway = Driver.Common.Playwright.PageClient;
 
-namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui;
+namespace Driver.Core.Shop.Client.Ui;
 
 public class ShopUiClient : IAsyncDisposable
 {
@@ -99,4 +99,5 @@ public class ShopUiClient : IAsyncDisposable
         _playwright?.Dispose();
     }
 }
+
 

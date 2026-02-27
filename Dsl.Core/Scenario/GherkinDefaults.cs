@@ -1,6 +1,6 @@
 using Driver.Api.Shop.Dtos;
 
-namespace Optivem.EShop.SystemTest.Core.Gherkin;
+namespace Driver.Core.Gherkin;
 
 /// <summary>
 /// Default values for Gherkin test builders.
@@ -33,4 +33,5 @@ public static class GherkinDefaults
 
     public const string Empty = "";
 }
+
 
