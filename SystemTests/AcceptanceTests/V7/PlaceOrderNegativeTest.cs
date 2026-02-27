@@ -1,9 +1,9 @@
-using Optivem.EShop.SystemTest.AcceptanceTests.Commons.Providers;
-using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
+using SystemTests.AcceptanceTests.Commons.Providers;
+using SystemTests.AcceptanceTests.V7.Base;
 using Driver.Core.Shop;
 using Optivem.Testing;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
+namespace SystemTests.AcceptanceTests.V7;
 
 public class PlaceOrderNegativeTest : BaseAcceptanceTest
 {
@@ -169,4 +169,5 @@ public class PlaceOrderNegativeTest : BaseAcceptanceTest
             .FieldErrorMessage("couponCode", "Coupon code LIMITED2024 has exceeded its usage limit");
     }
 }
+
 

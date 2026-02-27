@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.Commons.Providers;
+namespace SystemTests.AcceptanceTests.Commons.Providers;
 
 /// <summary>
 /// Provides test arguments for empty quantity validation tests.
@@ -15,3 +15,4 @@ public class EmptyArgumentsProvider : IEnumerable<object[]>
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
+

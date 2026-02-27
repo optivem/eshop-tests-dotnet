@@ -1,10 +1,10 @@
-using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
+using SystemTests.AcceptanceTests.V7.Base;
 using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
+namespace SystemTests.AcceptanceTests.V7;
 
 [Collection("Isolated")]
 public class CancelOrderNegativeIsolatedTest : BaseAcceptanceTest
@@ -29,6 +29,7 @@ public class CancelOrderNegativeIsolatedTest : BaseAcceptanceTest
             .HasStatus(OrderStatus.Placed);
     }
 }
+
 
 
 

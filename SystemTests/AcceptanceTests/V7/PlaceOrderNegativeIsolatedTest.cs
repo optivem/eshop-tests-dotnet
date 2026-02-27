@@ -1,9 +1,9 @@
-using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
+using SystemTests.AcceptanceTests.V7.Base;
 using Driver.Core.Shop;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
+namespace SystemTests.AcceptanceTests.V7;
 
 [Collection("Isolated")]
 public class PlaceOrderNegativeIsolatedTest : BaseAcceptanceTest
@@ -22,4 +22,5 @@ public class PlaceOrderNegativeIsolatedTest : BaseAcceptanceTest
             .FieldErrorMessage("couponCode", "Coupon code SUMMER2023 has expired");
     }
 }
+
 
