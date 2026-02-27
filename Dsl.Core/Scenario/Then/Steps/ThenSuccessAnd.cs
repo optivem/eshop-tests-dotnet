@@ -1,7 +1,7 @@
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
     : BaseThenAnd<TSuccessResponse, TSuccessVerification, ThenSuccessOrder<TSuccessResponse, TSuccessVerification>>, IThenSuccessAnd
@@ -43,3 +43,4 @@ public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
 
     IThenOrder IThenSuccessAnd.Order() => Order();
 }
+

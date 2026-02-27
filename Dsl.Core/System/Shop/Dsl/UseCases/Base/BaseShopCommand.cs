@@ -2,7 +2,7 @@ using Driver.Api.Shop;
 using Dsl.Common;
 using Driver.Api.Shop.Dtos.Error;
 
-namespace Driver.Core.Shop.Dsl.UseCases.Base;
+namespace Dsl.Core.Shop.Dsl.UseCases.Base;
 
 public abstract class BaseShopCommand<TResponse, TVerification>
     where TVerification : ResponseVerification<TResponse>
@@ -18,5 +18,6 @@ public abstract class BaseShopCommand<TResponse, TVerification>
 
     public abstract Task<ShopUseCaseResult<TResponse, TVerification>> Execute();
 }
+
 
 

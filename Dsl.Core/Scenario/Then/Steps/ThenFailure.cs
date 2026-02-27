@@ -1,9 +1,9 @@
 using System.Runtime.CompilerServices;
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
-using Driver.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.Dsl.UseCases.Base;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 /// <summary>
 /// Deferred failure assertion - allows chaining ErrorMessage/FieldErrorMessage before awaiting.
@@ -63,4 +63,5 @@ public class ThenFailure<TSuccessResponse, TSuccessVerification>
         }
     }
 }
+
 

@@ -1,8 +1,8 @@
 using Driver.Api.Erp;
-using Driver.Core.Erp.Dsl.UseCases;
+using Dsl.Core.Erp.Dsl.UseCases;
 using Dsl.Common;
 
-namespace Driver.Core.Erp.Dsl;
+namespace Dsl.Core.Erp.Dsl;
 
 public class ErpDsl : IDisposable
 {
@@ -36,5 +36,6 @@ public class ErpDsl : IDisposable
 
     public GetProduct GetProduct() => new(_driver, _context);
 }
+
 
 

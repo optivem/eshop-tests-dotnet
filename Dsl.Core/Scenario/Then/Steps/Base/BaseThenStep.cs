@@ -1,6 +1,6 @@
 using Dsl.Common;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 public abstract class BaseThenAnd<TSuccessResponse, TSuccessVerification, TOrderAssertion>
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
@@ -29,3 +29,4 @@ public abstract class BaseThenAnd<TSuccessResponse, TSuccessVerification, TOrder
         });
     }
 }
+

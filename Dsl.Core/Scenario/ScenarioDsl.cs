@@ -1,5 +1,5 @@
-using DslImpl.Scenario.Given;
-using DslImpl.Scenario.When;
+using Dsl.Core.Scenario.Given;
+using Dsl.Core.Scenario.When;
 using Dsl.Api;
 using Dsl.Api.Given;
 using Dsl.Api.When;
@@ -7,7 +7,7 @@ using Driver.Core;
 using Optivem.Testing;
 using System;
 
-namespace DslImpl.Scenario;
+namespace Dsl.Core.Scenario;
 
 public class ScenarioDsl : IScenarioDsl
 {
@@ -55,4 +55,5 @@ public class ScenarioDsl : IScenarioDsl
         }
     }
 }
+
 

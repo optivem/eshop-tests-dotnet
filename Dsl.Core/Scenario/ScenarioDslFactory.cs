@@ -1,7 +1,7 @@
 using Driver.Core;
 using Optivem.Testing;
 
-namespace DslImpl.Scenario
+namespace Dsl.Core.Scenario
 {
     public class ScenarioDslFactory
     {
@@ -15,4 +15,5 @@ namespace DslImpl.Scenario
         public ScenarioDsl Create(Channel channel) { return new ScenarioDsl(channel, _app); }
     }
 }
+
 

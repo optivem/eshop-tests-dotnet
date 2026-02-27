@@ -2,7 +2,7 @@ using Driver.Api.Tax.Dtos.Error;
 using Common;
 using Dsl.Common;
 
-namespace Driver.Core.Tax.Dsl.UseCases.Base;
+namespace Dsl.Core.Tax.Dsl.UseCases.Base;
 
 public class TaxUseCaseResult<TSuccessResponse, TSuccessVerification>
     : UseCaseResult<TSuccessResponse, TaxErrorResponse, TSuccessVerification, TaxErrorVerification>
@@ -16,5 +16,6 @@ public class TaxUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+
 
 

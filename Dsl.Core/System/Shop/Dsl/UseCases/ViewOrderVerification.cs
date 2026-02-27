@@ -4,7 +4,7 @@ using Shouldly;
 using System.Globalization;
 using Common;
 
-namespace Driver.Core.Shop.Dsl.UseCases;
+namespace Dsl.Core.Shop.Dsl.UseCases;
 
 public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
 {
@@ -227,5 +227,6 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return this;
     }
 }
+
 
 

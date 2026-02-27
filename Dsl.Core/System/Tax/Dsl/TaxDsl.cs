@@ -1,8 +1,8 @@
 using Driver.Api.Tax;
-using Driver.Core.Tax.Dsl.UseCases;
+using Dsl.Core.Tax.Dsl.UseCases;
 using Dsl.Common;
 
-namespace Driver.Core.Tax.Dsl;
+namespace Dsl.Core.Tax.Dsl;
 
 public class TaxDsl : IDisposable
 {
@@ -34,5 +34,6 @@ public class TaxDsl : IDisposable
     public ReturnsTaxRate ReturnsTaxRate() => new(_driver, _context);
     public GetTaxRate GetTaxRate() => new(_driver, _context);
 }
+
 
 

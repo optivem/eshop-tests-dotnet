@@ -3,7 +3,7 @@ using Dsl.Common;
 using Common;
 using Shouldly;
 
-namespace Driver.Core.Clock.Dsl.UseCases;
+namespace Dsl.Core.Clock.Dsl.UseCases;
 
 public class GetTimeVerification : ResponseVerification<GetTimeResponse>
 {
@@ -74,5 +74,6 @@ public class GetTimeVerification : ResponseVerification<GetTimeResponse>
         return TimeIsBetween(start, end);
     }
 }
+
 
 

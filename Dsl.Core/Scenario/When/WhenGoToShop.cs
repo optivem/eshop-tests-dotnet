@@ -1,11 +1,11 @@
-using DslImpl.Scenario;
-using DslImpl.Scenario.When;
+using Dsl.Core.Scenario;
+using Dsl.Core.Scenario.When;
 using Dsl.Api.When.Steps;
 using Dsl.Common;
 using Common;
 using Driver.Core;
 
-namespace DslImpl.Scenario.When;
+namespace Dsl.Core.Scenario.When;
 
 public class GoToShop : BaseWhen<VoidValue, VoidVerification>, IGoToShop
 {
@@ -23,4 +23,5 @@ public class GoToShop : BaseWhen<VoidValue, VoidVerification>, IGoToShop
             .Build();
     }
 }
+
 

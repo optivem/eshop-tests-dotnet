@@ -1,11 +1,11 @@
-using DslImpl.Scenario.Then;
+using Dsl.Core.Scenario.Then;
 using Dsl.Api.Then;
 using Dsl.Api.When.Steps.Base;
 using Dsl.Common;
 using Driver.Core;
 using Optivem.Testing;
 
-namespace DslImpl.Scenario.When;
+namespace Dsl.Core.Scenario.When;
 
 public abstract class BaseWhen<TSuccessResponse, TSuccessVerification>
     : IWhenStep
@@ -37,4 +37,5 @@ public abstract class BaseWhen<TSuccessResponse, TSuccessVerification>
 
     protected Channel Channel => _scenario.Channel;
 }
+
 

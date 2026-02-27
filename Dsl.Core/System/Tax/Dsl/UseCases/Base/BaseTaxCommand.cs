@@ -2,7 +2,7 @@ using Driver.Api.Tax;
 using Driver.Api.Tax.Dtos.Error;
 using Dsl.Common;
 
-namespace Driver.Core.Tax.Dsl.UseCases.Base;
+namespace Dsl.Core.Tax.Dsl.UseCases.Base;
 
 public abstract class BaseTaxCommand<TResponse, TVerification>
     where TVerification : ResponseVerification<TResponse>
@@ -18,5 +18,6 @@ public abstract class BaseTaxCommand<TResponse, TVerification>
 
     public abstract Task<TaxUseCaseResult<TResponse, TVerification>> Execute();
 }
+
 
 

@@ -1,10 +1,10 @@
 using Driver.Api.Erp;
 using Driver.Api.Erp.Dtos;
 using Driver.Api.Erp.Dtos.Error;
-using Driver.Core.Erp.Dsl.UseCases.Base;
+using Dsl.Core.Erp.Dsl.UseCases.Base;
 using Dsl.Common;
 
-namespace Driver.Core.Erp.Dsl.UseCases;
+namespace Dsl.Core.Erp.Dsl.UseCases;
 
 public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerification>
 {
@@ -38,5 +38,6 @@ public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerificat
             (response, ctx) => new GetProductVerification(response, ctx));
     }
 }
+
 
 

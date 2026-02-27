@@ -1,9 +1,9 @@
 using Common;
 using Dsl.Api.Given.Steps;
-using DslImpl.Scenario.Given;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using Dsl.Core.Scenario.Given;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace Driver.Core.Gherkin.Given;
+namespace Dsl.Core.Gherkin.Given;
 
 public class GivenProduct : BaseGiven, IGivenProduct
 {
@@ -49,4 +49,5 @@ public class GivenProduct : BaseGiven, IGivenProduct
             .ShouldSucceed();
     }
 }
+
 

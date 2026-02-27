@@ -1,11 +1,11 @@
 using Driver.Core;
 using Dsl.Api.When.Steps;
 using Driver.Api.Shop.Dtos;
-using Driver.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace DslImpl.Scenario.When;
+namespace Dsl.Core.Scenario.When;
 
 public class ViewOrder : BaseWhen<ViewOrderResponse, ViewOrderVerification>, IViewOrder
 {
@@ -36,5 +36,6 @@ public class ViewOrder : BaseWhen<ViewOrderResponse, ViewOrderVerification>, IVi
             .Build();
     }
 }
+
 
 

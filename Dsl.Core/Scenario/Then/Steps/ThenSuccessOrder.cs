@@ -1,8 +1,8 @@
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
-using DslImpl.Scenario;
+using Dsl.Core.Scenario;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 public class ThenSuccessOrder<TSuccessResponse, TSuccessVerification>
     : BaseThenResultOrder<TSuccessResponse, TSuccessVerification, ThenSuccessOrder<TSuccessResponse, TSuccessVerification>>, IThenOrder
@@ -21,3 +21,4 @@ public class ThenSuccessOrder<TSuccessResponse, TSuccessVerification>
         return Task.CompletedTask;
     }
 }
+

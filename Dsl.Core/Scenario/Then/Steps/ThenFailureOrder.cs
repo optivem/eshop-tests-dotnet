@@ -1,9 +1,9 @@
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
-using DslImpl.Scenario;
-using Driver.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Scenario;
+using Dsl.Core.Shop.Dsl.UseCases.Base;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 /// <summary>
 /// Order verification in failure path - no success check, runs failure assertions first then order verifications.
@@ -35,4 +35,5 @@ public class ThenFailureOrder<TSuccessResponse, TSuccessVerification>
         return Task.CompletedTask;
     }
 }
+
 

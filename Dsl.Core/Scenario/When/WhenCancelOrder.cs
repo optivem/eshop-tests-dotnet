@@ -1,16 +1,16 @@
 using DevLab.JmesPath.Functions;
-using DslImpl.Scenario.When;
+using Dsl.Core.Scenario.When;
 using Dsl.Api.When.Steps;
 using Dsl.Common;
 using Common;
 using Driver.Core;
-using Driver.Core.Gherkin;
+using Dsl.Core.Gherkin;
 using Driver.Api.Shop.Dtos;
-using Driver.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace DslImpl.Scenario.Builders.When.CancelOrder;
+namespace Dsl.Core.Scenario.Builders.When.CancelOrder;
 
 public class CancelOrder : BaseWhen<VoidValue, VoidVerification>, ICancelOrder
 {
@@ -41,5 +41,6 @@ public class CancelOrder : BaseWhen<VoidValue, VoidVerification>, ICancelOrder
             .Build();
     }
 }
+
 
 

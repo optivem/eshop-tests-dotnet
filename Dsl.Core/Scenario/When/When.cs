@@ -1,16 +1,16 @@
-using DslImpl.Scenario.Builders.When.PlaceOrder;
-using DslImpl.Scenario.Builders.When.CancelOrder;
-using DslImpl.Scenario.When;
-using DslImpl.Scenario.Then;
+using Dsl.Core.Scenario.Builders.When.PlaceOrder;
+using Dsl.Core.Scenario.Builders.When.CancelOrder;
+using Dsl.Core.Scenario.When;
+using Dsl.Core.Scenario.Then;
 using Dsl.Api.When;
 using Dsl.Api.When.Steps;
 using Optivem.Testing;
 using Driver.Core;
-using Driver.Core.Gherkin;
-using Driver.Core.Gherkin.When;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using Dsl.Core.Gherkin;
+using Dsl.Core.Gherkin.When;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace DslImpl.Scenario.When
+namespace Dsl.Core.Scenario.When
 {
     public class WhenStage : BaseClause, IWhen
     {
@@ -106,4 +106,5 @@ namespace DslImpl.Scenario.When
         IBrowseCoupons IWhen.BrowseCoupons() => BrowseCoupons();
     }
 }
+
 

@@ -1,12 +1,12 @@
-using DslImpl.Scenario.When;
+using Dsl.Core.Scenario.When;
 using Dsl.Api.Given;
 using Dsl.Api.Given.Steps;
 using Dsl.Api.When;
 using Driver.Core;
-using Driver.Core.Gherkin.Given;
+using Dsl.Core.Gherkin.Given;
 using Optivem.Testing;
 
-namespace DslImpl.Scenario.Given
+namespace Dsl.Core.Scenario.Given
 {
     public class GivenStage : BaseClause, IGiven
     {
@@ -151,4 +151,5 @@ namespace DslImpl.Scenario.Given
         }
     }
 }
+
 

@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 /// <summary>
 /// Deferred success assertion builder - allows chaining .And().Order().HasStatus(...) before awaiting.
@@ -37,3 +37,4 @@ public class ThenSuccess<TSuccessResponse, TSuccessVerification>
         _ = result.Result.ShouldSucceed();
     }
 }
+

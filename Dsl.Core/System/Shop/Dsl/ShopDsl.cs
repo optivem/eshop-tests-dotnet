@@ -1,8 +1,8 @@
 using Driver.Api.Shop;
-using Driver.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.Dsl.UseCases;
 using Dsl.Common;
 
-namespace Driver.Core.Shop.Dsl;
+namespace Dsl.Core.Shop.Dsl;
 
 public class ShopDsl : IAsyncDisposable
 {
@@ -38,5 +38,6 @@ public class ShopDsl : IAsyncDisposable
 
     public PublishCoupon PublishCoupon() => new(_driver, _context);
 }
+
 
 

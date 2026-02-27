@@ -1,19 +1,19 @@
-using Driver.Core.Clock.Dsl;
+using Dsl.Core.Clock.Dsl;
 using Driver.Api.Clock;
-using Driver.Core.Erp.Dsl;
+using Dsl.Core.Erp.Dsl;
 using Driver.Api.Erp;
 using Driver.Core.Shop;
 using Driver.Api.Shop;
-using Driver.Core.Shop.Dsl;
+using Dsl.Core.Shop.Dsl;
 using Driver.Api.Tax;
-using Driver.Core.Tax.Dsl;
+using Dsl.Core.Tax.Dsl;
 using Driver.Core.Erp;
 using Optivem.Testing;
 using Dsl.Common;
 using Driver.Core.Clock;
 using Driver.Core.Tax;
 
-namespace Driver.Core;
+namespace Dsl.Core;
 
 public class SystemDsl : IAsyncDisposable
 {
@@ -105,6 +105,7 @@ public class SystemDsl : IAsyncDisposable
         return instance ??= supplier();
     }
 }
+
 
 
 

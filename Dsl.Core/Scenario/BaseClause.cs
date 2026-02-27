@@ -1,6 +1,6 @@
 using Optivem.Testing;
 
-namespace DslImpl.Scenario
+namespace Dsl.Core.Scenario
 {
     public class BaseClause
     {
@@ -12,3 +12,4 @@ namespace DslImpl.Scenario
         }
     }
 }
+

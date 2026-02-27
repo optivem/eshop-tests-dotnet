@@ -2,7 +2,7 @@ using Common;
 using Dsl.Common;
 using Driver.Api.Shop.Dtos.Error;
 
-namespace Driver.Core.Shop.Dsl.UseCases.Base;
+namespace Dsl.Core.Shop.Dsl.UseCases.Base;
 
 public class ShopUseCaseResult<TSuccessResponse, TSuccessVerification>
     : UseCaseResult<TSuccessResponse, SystemError, TSuccessVerification, SystemErrorFailureVerification>
@@ -16,5 +16,6 @@ public class ShopUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+
 
 

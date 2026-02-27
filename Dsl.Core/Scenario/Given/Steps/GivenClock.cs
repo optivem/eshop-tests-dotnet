@@ -1,9 +1,9 @@
 using Dsl.Api.Given.Steps;
 using Driver.Core;
-using Driver.Core.Gherkin;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using Dsl.Core.Gherkin;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace DslImpl.Scenario.Given;
+namespace Dsl.Core.Scenario.Given;
 
 public class GivenClock : BaseGiven, IGivenClock
 {
@@ -30,4 +30,5 @@ public class GivenClock : BaseGiven, IGivenClock
             .ShouldSucceed();
     }
 }
+
 

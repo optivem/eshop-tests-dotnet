@@ -1,8 +1,8 @@
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
-using Driver.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.Dsl.UseCases.Base;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
     : BaseThenAnd<TSuccessResponse, TSuccessVerification, ThenFailureOrder<TSuccessResponse, TSuccessVerification>>, IThenFailureAnd
@@ -54,4 +54,5 @@ public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
 
     IThenOrder IThenFailureAnd.Order() => Order();
 }
+
 

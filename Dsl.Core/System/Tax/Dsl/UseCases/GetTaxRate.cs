@@ -1,10 +1,10 @@
 using Driver.Api.Tax;
 using Driver.Api.Tax.Dtos;
 using Driver.Api.Tax.Dtos.Error;
-using Driver.Core.Tax.Dsl.UseCases.Base;
+using Dsl.Core.Tax.Dsl.UseCases.Base;
 using Dsl.Common;
 
-namespace Driver.Core.Tax.Dsl.UseCases;
+namespace Dsl.Core.Tax.Dsl.UseCases;
 
 public class GetTaxRate : BaseTaxCommand<GetTaxResponse, GetTaxVerification>
 {
@@ -33,5 +33,6 @@ public class GetTaxRate : BaseTaxCommand<GetTaxResponse, GetTaxVerification>
             (response, ctx) => new GetTaxVerification(response, ctx));
     }
 }
+
 
 

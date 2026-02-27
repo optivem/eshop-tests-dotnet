@@ -1,13 +1,13 @@
 using System.Runtime.CompilerServices;
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
-using DslImpl.Scenario;
+using Dsl.Core.Scenario;
 using Driver.Core;
-using Driver.Core.Gherkin;
+using Dsl.Core.Gherkin;
 using Driver.Api.Shop.Dtos;
-using Driver.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.Dsl.UseCases;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification, TDerived>
     : IThenOrder
@@ -256,5 +256,6 @@ public abstract class BaseThenResultOrder<TSuccessResponse, TSuccessVerification
         }
     }
 }
+
 
 

@@ -2,7 +2,7 @@ using Driver.Api.Erp.Dtos.Error;
 using Dsl.Common;
 using Shouldly;
 
-namespace Driver.Core.Erp.Dsl.UseCases.Base;
+namespace Dsl.Core.Erp.Dsl.UseCases.Base;
 
 public class ErpErrorVerification : ResponseVerification<ErpErrorResponse>
 {
@@ -23,5 +23,6 @@ public class ErpErrorVerification : ResponseVerification<ErpErrorResponse>
         return this;
     }
 }
+
 
 

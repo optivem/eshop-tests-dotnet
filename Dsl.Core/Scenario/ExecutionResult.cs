@@ -1,8 +1,8 @@
 using Dsl.Common;
 using Common;
-using Driver.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.Dsl.UseCases.Base;
 
-namespace DslImpl.Scenario
+namespace Dsl.Core.Scenario
 {
     public class ExecutionResult<TSuccessResponse, TSuccessVerification>
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
@@ -33,4 +33,5 @@ namespace DslImpl.Scenario
         public ExecutionResultContext Context { get; }
     }
 }
+
 

@@ -1,11 +1,11 @@
-using DslImpl.Scenario.When;
+using Dsl.Core.Scenario.When;
 using Dsl.Api.Given;
 using Dsl.Api.Given.Steps.Base;
 using Dsl.Api.When;
 using Driver.Core;
 using Optivem.Testing;
 
-namespace DslImpl.Scenario.Given;
+namespace Dsl.Core.Scenario.Given;
 
 public abstract class BaseGiven : IGivenStep
 {
@@ -34,4 +34,5 @@ public abstract class BaseGiven : IGivenStep
 
     protected Channel Channel => _givenClause.Channel;
 }
+
 

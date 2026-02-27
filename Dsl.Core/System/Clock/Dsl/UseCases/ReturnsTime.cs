@@ -1,10 +1,10 @@
-using Driver.Core.Clock.Dsl.UseCases.Base;
+using Dsl.Core.Clock.Dsl.UseCases.Base;
 using Driver.Api.Clock;
 using Driver.Api.Clock.Dtos;
 using Common;
 using Dsl.Common;
 
-namespace Driver.Core.Clock.Dsl.UseCases;
+namespace Dsl.Core.Clock.Dsl.UseCases;
 
 public class ReturnsTime : BaseClockCommand<VoidValue, VoidVerification>
 {
@@ -36,5 +36,6 @@ public class ReturnsTime : BaseClockCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+
 
 

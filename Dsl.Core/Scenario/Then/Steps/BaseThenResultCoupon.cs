@@ -1,11 +1,11 @@
 using System.Runtime.CompilerServices;
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
-using DslImpl.Scenario;
+using Dsl.Core.Scenario;
 using Driver.Core;
-using Driver.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.Dsl.UseCases;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, TDerived>
     : IThenCoupon
@@ -87,4 +87,5 @@ public abstract class BaseThenResultCoupon<TSuccessResponse, TSuccessVerificatio
         }
     }
 }
+
 

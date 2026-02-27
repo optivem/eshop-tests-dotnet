@@ -1,11 +1,11 @@
 using Driver.Api.Shop;
-using Driver.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.Dsl.UseCases.Base;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop.Dtos.Error;
 using Dsl.Common;
 using Common;
 
-namespace Driver.Core.Shop.Dsl.UseCases;
+namespace Dsl.Core.Shop.Dsl.UseCases;
 
 public class PublishCoupon : BaseShopCommand<VoidValue, VoidVerification>
 {
@@ -77,5 +77,6 @@ public class PublishCoupon : BaseShopCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+
 
 

@@ -1,6 +1,6 @@
 using Driver.Api.Shop.Dtos;
 
-namespace Driver.Core.Gherkin;
+namespace Dsl.Core.Gherkin;
 
 /// <summary>
 /// Default values for Gherkin test builders.
@@ -33,5 +33,6 @@ public static class GherkinDefaults
 
     public const string Empty = "";
 }
+
 
 

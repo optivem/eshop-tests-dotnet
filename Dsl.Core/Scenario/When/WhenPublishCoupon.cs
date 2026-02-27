@@ -1,14 +1,14 @@
-using DslImpl.Scenario;
-using DslImpl.Scenario.When;
+using Dsl.Core.Scenario;
+using Dsl.Core.Scenario.When;
 using Dsl.Api.When.Steps;
 using Dsl.Common;
 using Common;
 using Driver.Api.Shop.Dtos;
-using Driver.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace Driver.Core.Gherkin.When;
+namespace Dsl.Core.Gherkin.When;
 
 public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoupon
 {
@@ -96,5 +96,6 @@ public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoup
             .Build();
     }
 }
+
 
 

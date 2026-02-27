@@ -1,10 +1,10 @@
 using Driver.Api.Erp;
 using Driver.Api.Erp.Dtos.Error;
-using Driver.Core.Erp.Dsl.UseCases.Base;
+using Dsl.Core.Erp.Dsl.UseCases.Base;
 using Common;
 using Dsl.Common;
 
-namespace Driver.Core.Erp.Dsl.UseCases;
+namespace Dsl.Core.Erp.Dsl.UseCases;
 
 public class GoToErp : BaseErpCommand<VoidValue, VoidVerification>
 {
@@ -23,5 +23,6 @@ public class GoToErp : BaseErpCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+
 
 

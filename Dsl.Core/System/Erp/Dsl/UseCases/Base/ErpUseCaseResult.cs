@@ -2,7 +2,7 @@ using Driver.Api.Erp.Dtos.Error;
 using Common;
 using Dsl.Common;
 
-namespace Driver.Core.Erp.Dsl.UseCases.Base;
+namespace Dsl.Core.Erp.Dsl.UseCases.Base;
 
 public class ErpUseCaseResult<TSuccessResponse, TSuccessVerification>
     : UseCaseResult<TSuccessResponse, ErpErrorResponse, TSuccessVerification, ErpErrorVerification>
@@ -16,5 +16,6 @@ public class ErpUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+
 
 

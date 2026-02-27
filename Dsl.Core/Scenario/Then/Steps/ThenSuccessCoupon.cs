@@ -1,8 +1,8 @@
 using Dsl.Api.Then.Steps;
 using Dsl.Common;
-using DslImpl.Scenario;
+using Dsl.Core.Scenario;
 
-namespace DslImpl.Scenario.Then;
+namespace Dsl.Core.Scenario.Then;
 
 public class ThenSuccessCoupon<TSuccessResponse, TSuccessVerification>
     : BaseThenResultCoupon<TSuccessResponse, TSuccessVerification, ThenSuccessCoupon<TSuccessResponse, TSuccessVerification>>, IThenCoupon
@@ -21,3 +21,4 @@ public class ThenSuccessCoupon<TSuccessResponse, TSuccessVerification>
         return Task.CompletedTask;
     }
 }
+

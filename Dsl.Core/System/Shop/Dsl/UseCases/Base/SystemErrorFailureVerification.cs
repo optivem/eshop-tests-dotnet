@@ -2,7 +2,7 @@ using Dsl.Common;
 using Shouldly;
 using Driver.Api.Shop.Dtos.Error;
 
-namespace Driver.Core.Shop.Dsl.UseCases.Base;
+namespace Dsl.Core.Shop.Dsl.UseCases.Base;
 
 public class SystemErrorFailureVerification : ResponseVerification<SystemError>
 {
@@ -45,5 +45,6 @@ public class SystemErrorFailureVerification : ResponseVerification<SystemError>
         return this;
     }
 }
+
 
 

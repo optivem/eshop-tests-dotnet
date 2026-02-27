@@ -1,7 +1,7 @@
 using Driver.Api.Clock.Dtos;
 using Dsl.Common;
 
-namespace Driver.Core.Clock.Dsl.UseCases.Base;
+namespace Dsl.Core.Clock.Dsl.UseCases.Base;
 
 public class ClockErrorVerification : ResponseVerification<ClockErrorResponse>
 {
@@ -10,5 +10,6 @@ public class ClockErrorVerification : ResponseVerification<ClockErrorResponse>
     {
     }
 }
+
 
 

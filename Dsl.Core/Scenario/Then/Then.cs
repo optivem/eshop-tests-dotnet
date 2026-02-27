@@ -4,7 +4,7 @@ using Dsl.Api.Then.Steps;
 using Driver.Core;
 using Optivem.Testing;
 
-namespace DslImpl.Scenario.Then
+namespace Dsl.Core.Scenario.Then
 {
     public class ThenStage<TSuccessResponse, TSuccessVerification> : BaseClause, IThen
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
@@ -48,4 +48,5 @@ namespace DslImpl.Scenario.Then
         }
     }
 }
+
 

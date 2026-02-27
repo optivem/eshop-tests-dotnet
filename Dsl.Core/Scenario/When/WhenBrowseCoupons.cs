@@ -1,13 +1,13 @@
-using DslImpl.Scenario;
-using DslImpl.Scenario.When;
+using Dsl.Core.Scenario;
+using Dsl.Core.Scenario.When;
 using Dsl.Api.When.Steps;
 using Driver.Core;
 using Driver.Api.Shop.Dtos;
-using Driver.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace DslImpl.Scenario.When;
+namespace Dsl.Core.Scenario.When;
 
 public class BrowseCoupons : BaseWhen<BrowseCouponsResponse, BrowseCouponsVerification>, IBrowseCoupons
 {
@@ -25,5 +25,6 @@ public class BrowseCoupons : BaseWhen<BrowseCouponsResponse, BrowseCouponsVerifi
             .Build();
     }
 }
+
 
 

@@ -2,7 +2,7 @@ using Driver.Api.Erp.Dtos;
 using Dsl.Common;
 using Shouldly;
 
-namespace Driver.Core.Erp.Dsl.UseCases;
+namespace Dsl.Core.Erp.Dsl.UseCases;
 
 public class GetProductVerification : ResponseVerification<GetProductResponse>
 {
@@ -31,5 +31,6 @@ public class GetProductVerification : ResponseVerification<GetProductResponse>
         return Price(decimal.Parse(expectedPrice));
     }
 }
+
 
 

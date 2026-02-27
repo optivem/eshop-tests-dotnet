@@ -1,10 +1,10 @@
 using Common;
 using Dsl.Api.Given.Steps;
-using DslImpl.Scenario.Given;
+using Dsl.Core.Scenario.Given;
 using Driver.Api.Shop.Dtos;
-using static Driver.Core.Gherkin.GherkinDefaults;
+using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace Driver.Core.Gherkin.Given;
+namespace Dsl.Core.Gherkin.Given;
 
 public class GivenOrder : BaseGiven, IGivenOrder
 {
@@ -102,5 +102,6 @@ public class GivenOrder : BaseGiven, IGivenOrder
         }
     }
 }
+
 
 

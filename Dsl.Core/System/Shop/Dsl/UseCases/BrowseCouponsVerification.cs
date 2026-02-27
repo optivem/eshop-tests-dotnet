@@ -3,7 +3,7 @@ using Shouldly;
 using Driver.Api.Shop.Dtos;
 using Common;
 
-namespace Driver.Core.Shop.Dsl.UseCases;
+namespace Dsl.Core.Shop.Dsl.UseCases;
 
 public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsResponse>
 {
@@ -74,5 +74,6 @@ public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsRespo
         return coupon;
     }
 }
+
 
 

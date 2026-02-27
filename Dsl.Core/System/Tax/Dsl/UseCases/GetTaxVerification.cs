@@ -3,7 +3,7 @@ using Dsl.Common;
 using Common;
 using Shouldly;
 
-namespace Driver.Core.Tax.Dsl.UseCases;
+namespace Dsl.Core.Tax.Dsl.UseCases;
 
 public class GetTaxVerification : ResponseVerification<GetTaxResponse>
 {
@@ -39,5 +39,6 @@ public class GetTaxVerification : ResponseVerification<GetTaxResponse>
         return this;
     }
 }
+
 
 

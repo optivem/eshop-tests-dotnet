@@ -2,7 +2,7 @@ using Driver.Api.Tax.Dtos.Error;
 using Dsl.Common;
 using Shouldly;
 
-namespace Driver.Core.Tax.Dsl.UseCases.Base;
+namespace Dsl.Core.Tax.Dsl.UseCases.Base;
 
 public class TaxErrorVerification : ResponseVerification<TaxErrorResponse>
 {
@@ -23,5 +23,6 @@ public class TaxErrorVerification : ResponseVerification<TaxErrorResponse>
         return this;
     }
 }
+
 
 

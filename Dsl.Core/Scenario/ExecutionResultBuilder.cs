@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Common;
-using Driver.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.Dsl.UseCases.Base;
 using Driver.Api.Shop.Dtos.Error;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DslImpl.Scenario
+namespace Dsl.Core.Scenario
 {
     public class ExecutionResultBuilder<TSuccessResponse, TSuccessVerification>
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
@@ -44,5 +44,6 @@ namespace DslImpl.Scenario
         }
     }
 }
+
 
 

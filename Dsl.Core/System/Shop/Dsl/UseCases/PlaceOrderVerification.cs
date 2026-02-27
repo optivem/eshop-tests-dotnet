@@ -2,7 +2,7 @@ using Dsl.Common;
 using Shouldly;
 using Driver.Api.Shop.Dtos;
 
-namespace Driver.Core.Shop.Dsl.UseCases;
+namespace Dsl.Core.Shop.Dsl.UseCases;
 
 public class PlaceOrderVerification : ResponseVerification<PlaceOrderResponse>
 {
@@ -27,5 +27,6 @@ public class PlaceOrderVerification : ResponseVerification<PlaceOrderResponse>
         return this;
     }
 }
+
 
 

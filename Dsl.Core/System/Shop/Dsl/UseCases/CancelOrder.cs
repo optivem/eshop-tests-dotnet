@@ -1,10 +1,10 @@
 using Driver.Api.Shop;
-using Driver.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.Dsl.UseCases.Base;
 using Driver.Api.Shop.Dtos.Error;
 using Common;
 using Dsl.Common;
 
-namespace Driver.Core.Shop.Dsl.UseCases;
+namespace Dsl.Core.Shop.Dsl.UseCases;
 
 public class CancelOrder : BaseShopCommand<VoidValue, VoidVerification>
 {
@@ -32,5 +32,6 @@ public class CancelOrder : BaseShopCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+
 
 

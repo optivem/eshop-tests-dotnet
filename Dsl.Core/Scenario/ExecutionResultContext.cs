@@ -1,4 +1,4 @@
-namespace DslImpl.Scenario;
+namespace Dsl.Core.Scenario;
 
 /// <summary>
 /// Context extracted from execution result - order number and coupon code from the executed operation.
@@ -14,3 +14,4 @@ public class ExecutionResultContext
     public string? OrderNumber { get; }
     public string? CouponCode { get; }
 }
+

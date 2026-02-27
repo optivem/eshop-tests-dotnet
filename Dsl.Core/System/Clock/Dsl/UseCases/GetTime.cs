@@ -1,9 +1,9 @@
-using Driver.Core.Clock.Dsl.UseCases.Base;
+using Dsl.Core.Clock.Dsl.UseCases.Base;
 using Driver.Api.Clock;
 using Driver.Api.Clock.Dtos;
 using Dsl.Common;
 
-namespace Driver.Core.Clock.Dsl.UseCases;
+namespace Dsl.Core.Clock.Dsl.UseCases;
 
 public class GetTime : BaseClockCommand<GetTimeResponse, GetTimeVerification>
 {
@@ -22,5 +22,6 @@ public class GetTime : BaseClockCommand<GetTimeResponse, GetTimeVerification>
             (response, ctx) => new GetTimeVerification(response, ctx));
     }
 }
+
 
 

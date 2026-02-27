@@ -1,8 +1,8 @@
-using Driver.Core.Clock.Dsl.UseCases;
+using Dsl.Core.Clock.Dsl.UseCases;
 using Driver.Api.Clock;
 using Dsl.Common;
 
-namespace Driver.Core.Clock.Dsl;
+namespace Dsl.Core.Clock.Dsl;
 
 public class ClockDsl : IDisposable
 {
@@ -36,5 +36,6 @@ public class ClockDsl : IDisposable
 
     public GetTime GetTime() => new(_driver, _context);
 }
+
 
 

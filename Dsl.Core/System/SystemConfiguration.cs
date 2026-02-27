@@ -1,7 +1,7 @@
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Dsl.Common;
 
-namespace Driver.Core;
+namespace Dsl.Core;
 
 public class SystemConfiguration
 {
@@ -29,4 +29,5 @@ public class SystemConfiguration
     public string ClockBaseUrl => clockBaseUrl;
     public ExternalSystemMode ExternalSystemMode => externalSystemMode;
 }
+
 
