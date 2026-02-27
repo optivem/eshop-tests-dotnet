@@ -1,7 +1,7 @@
 using Driver.Api.Shop.Dtos.Error;
 using Shouldly;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
+namespace SystemTests.E2eTests.V4.Helpers;
 
 public static class SystemErrorAssertExtensions
 {
@@ -13,4 +13,5 @@ public static class SystemErrorAssertExtensions
             $"Expected field error {{ field: '{expectedField}', message: '{expectedFieldMessage}' }}. Actual: [{string.Join(", ", error.Fields.Select(f => $"{{ field: '{f.Field}', message: '{f.Message}' }}"))}]");
     }
 }
+
 

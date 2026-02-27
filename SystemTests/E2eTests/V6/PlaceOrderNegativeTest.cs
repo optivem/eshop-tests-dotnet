@@ -1,10 +1,10 @@
 using E2eTests.Providers;
 using Driver.Core.Shop;
-using Optivem.EShop.SystemTest.E2eTests.V6.Base;
+using SystemTests.E2eTests.V6.Base;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V6;
+namespace SystemTests.E2eTests.V6;
 
 public class PlaceOrderNegativeTest : BaseE2eTest
 {
@@ -159,4 +159,5 @@ public class PlaceOrderNegativeTest : BaseE2eTest
                 .FieldErrorMessage("country", "Country must not be empty");
     }
 }
+
 

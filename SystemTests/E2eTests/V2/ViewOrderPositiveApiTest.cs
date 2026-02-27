@@ -1,13 +1,13 @@
 using Common;
 using Driver.Core.Erp.Client.Dtos;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V2.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V2.Base;
 using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V2;
+namespace SystemTests.E2eTests.V2;
 
 public class ViewOrderPositiveApiTest : BaseE2eTest
 {
@@ -47,6 +47,7 @@ public class ViewOrderPositiveApiTest : BaseE2eTest
         order.TotalPrice.ShouldBeGreaterThan(0);
     }
 }
+
 
 
 

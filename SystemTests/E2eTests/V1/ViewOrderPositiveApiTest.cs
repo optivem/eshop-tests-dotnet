@@ -1,12 +1,12 @@
 using System.Net;
 using System.Text;
 using System.Text.Json;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V1.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V1.Base;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V1;
+namespace SystemTests.E2eTests.V1;
 
 public class ViewOrderPositiveApiTest : BaseE2eTest
 {
@@ -66,3 +66,4 @@ public class ViewOrderPositiveApiTest : BaseE2eTest
         return doc.RootElement.GetProperty("orderNumber").GetString()!;
     }
 }
+

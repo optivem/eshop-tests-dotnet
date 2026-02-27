@@ -1,9 +1,9 @@
 using Common;
-using Optivem.EShop.SystemTest.E2eTests.V3.Base;
+using SystemTests.E2eTests.V3.Base;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V3;
+namespace SystemTests.E2eTests.V3;
 
 public abstract class ViewOrderNegativeBaseTest : BaseE2eTest
 {
@@ -16,4 +16,5 @@ public abstract class ViewOrderNegativeBaseTest : BaseE2eTest
         result.Error.Message.ShouldBe("Order NON-EXISTENT-ORDER-99999 does not exist.");
     }
 }
+
 

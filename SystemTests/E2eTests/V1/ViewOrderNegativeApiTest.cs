@@ -1,9 +1,9 @@
 using System.Text.Json;
-using Optivem.EShop.SystemTest.E2eTests.V1.Base;
+using SystemTests.E2eTests.V1.Base;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V1;
+namespace SystemTests.E2eTests.V1;
 
 public class ViewOrderNegativeApiTest : BaseE2eTest
 {
@@ -25,3 +25,4 @@ public class ViewOrderNegativeApiTest : BaseE2eTest
         doc.RootElement.GetProperty("detail").GetString().ShouldBe("Order NON-EXISTENT-ORDER-99999 does not exist.");
     }
 }
+

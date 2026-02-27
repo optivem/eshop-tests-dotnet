@@ -1,11 +1,11 @@
 using Common;
 using Driver.Core.Shop;
-using Optivem.EShop.SystemTest.E2eTests.V4.Base;
+using SystemTests.E2eTests.V4.Base;
 using Optivem.Testing;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V4;
+namespace SystemTests.E2eTests.V4;
 
 public class ViewOrderNegativeTest : BaseE2eTest
 {
@@ -29,5 +29,6 @@ public class ViewOrderNegativeTest : BaseE2eTest
         result.Error.Message.ShouldBe(expectedErrorMessage);
     }
 }
+
 
 

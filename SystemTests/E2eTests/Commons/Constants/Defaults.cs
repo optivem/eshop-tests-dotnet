@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
+namespace SystemTests.E2eTests.Commons.Constants;
 
 public static class Defaults
 {
@@ -7,3 +7,4 @@ public static class Defaults
     public const string QUANTITY = "1";
     public const string COUNTRY = "US";
 }
+

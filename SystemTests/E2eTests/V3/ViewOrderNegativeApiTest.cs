@@ -1,6 +1,6 @@
 using SystemTests.TestInfrastructure.Base.V3;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V3;
+namespace SystemTests.E2eTests.V3;
 
 public class ViewOrderNegativeApiTest : ViewOrderNegativeBaseTest
 {
@@ -10,4 +10,5 @@ public class ViewOrderNegativeApiTest : ViewOrderNegativeBaseTest
         return Task.CompletedTask;
     }
 }
+
 

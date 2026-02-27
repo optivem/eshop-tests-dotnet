@@ -3,13 +3,13 @@ using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop;
 using Driver.Api.Erp.Dtos;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V4.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V4.Base;
 using Optivem.Testing;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V4;
+namespace SystemTests.E2eTests.V4;
 
 public class PlaceOrderPositiveTest : BaseE2eTest
 {
@@ -120,6 +120,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
         order.TotalPrice.ShouldBeGreaterThan(0);
     }
 }
+
 
 
 

@@ -1,10 +1,10 @@
 using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.E2eTests.V6.Base;
+using SystemTests.E2eTests.V6.Base;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V6;
+namespace SystemTests.E2eTests.V6;
 
 public class PlaceOrderPositiveTest : BaseE2eTest
 {
@@ -64,6 +64,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
                     .HasTotalPriceGreaterThanZero();
     }
 }
+
 
 
 

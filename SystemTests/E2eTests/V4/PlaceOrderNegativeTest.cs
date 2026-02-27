@@ -2,15 +2,15 @@ using Common;
 using Driver.Api.Erp.Dtos;
 using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V4.Base;
-using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V4.Base;
+using SystemTests.E2eTests.V4.Helpers;
 using Optivem.Testing;
 using E2eTests.Providers;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V4;
+namespace SystemTests.E2eTests.V4;
 
 public class PlaceOrderNegativeTest : BaseE2eTest
 {
@@ -245,6 +245,7 @@ public class PlaceOrderNegativeTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country must not be empty");
     }
 }
+
 
 
 

@@ -1,11 +1,11 @@
 using System.Text;
 using System.Text.RegularExpressions;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V1.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V1.Base;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V1;
+namespace SystemTests.E2eTests.V1;
 
 public class PlaceOrderPositiveUiTest : BaseE2eTest
 {
@@ -138,3 +138,4 @@ public class PlaceOrderPositiveUiTest : BaseE2eTest
         ((int)response.StatusCode).ShouldBe(201);
     }
 }
+

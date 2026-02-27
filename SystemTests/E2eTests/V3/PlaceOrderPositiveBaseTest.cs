@@ -1,12 +1,12 @@
 using Common;
 using Driver.Api.Erp.Dtos;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V3.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V3.Base;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V3;
+namespace SystemTests.E2eTests.V3;
 
 public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
 {
@@ -78,6 +78,7 @@ public abstract class PlaceOrderPositiveBaseTest : BaseE2eTest
         order.TotalPrice.ShouldBeGreaterThan(0);
     }
 }
+
 
 
 

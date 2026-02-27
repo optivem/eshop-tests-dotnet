@@ -1,6 +1,6 @@
 using SystemTests.TestInfrastructure.Base.V3;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V3;
+namespace SystemTests.E2eTests.V3;
 
 public class ViewOrderNegativeUiTest : ViewOrderNegativeBaseTest
 {
@@ -9,4 +9,5 @@ public class ViewOrderNegativeUiTest : ViewOrderNegativeBaseTest
         return SetUpShopUiDriverAsync();
     }
 }
+
 

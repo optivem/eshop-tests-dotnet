@@ -3,7 +3,7 @@ using ConfigEnvironment = SystemTests.TestInfrastructure.Configuration.Environme
 using SystemTests.TestInfrastructure.Configuration;
 using SystemTests.TestInfrastructure.Base.V2;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V2.Base;
+namespace SystemTests.E2eTests.V2.Base;
 
 public abstract class BaseE2eTest : BaseClientTest
 {
@@ -26,4 +26,5 @@ public abstract class BaseE2eTest : BaseClientTest
         return $"{baseSku}-{suffix}";
     }
 }
+
 

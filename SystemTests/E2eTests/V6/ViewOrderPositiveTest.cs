@@ -1,11 +1,11 @@
 using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V6.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V6.Base;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V6;
+namespace SystemTests.E2eTests.V6;
 
 public class ViewOrderPositiveTest : BaseE2eTest
 {
@@ -40,6 +40,7 @@ public class ViewOrderPositiveTest : BaseE2eTest
                 .HasTotalPriceGreaterThanZero();
     }
 }
+
 
 
 

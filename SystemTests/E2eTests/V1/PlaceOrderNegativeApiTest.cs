@@ -1,12 +1,12 @@
 using System.Text;
 using System.Text.Json;
 using E2eTests.Providers;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V1.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V1.Base;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V1;
+namespace SystemTests.E2eTests.V1;
 
 public class PlaceOrderNegativeApiTest : BaseE2eTest
 {
@@ -157,3 +157,4 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         found.ShouldBeTrue($"Expected errors to contain field='{field}', message='{message}'");
     }
 }
+

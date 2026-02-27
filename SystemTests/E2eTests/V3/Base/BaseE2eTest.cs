@@ -3,7 +3,7 @@ using SystemTests.TestInfrastructure.Base.V3;
 using ConfigEnvironment = SystemTests.TestInfrastructure.Configuration.Environment;
 using SystemTests.TestInfrastructure.Configuration;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V3.Base;
+namespace SystemTests.E2eTests.V3.Base;
 
 public abstract class BaseE2eTest : BaseDriverTest
 {
@@ -26,4 +26,5 @@ public abstract class BaseE2eTest : BaseDriverTest
         return $"{baseSku}-{suffix}";
     }
 }
+
 

@@ -1,13 +1,13 @@
 using Common;
 using Driver.Core.Shop;
 using Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V5.Base;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V5.Base;
 using Optivem.Testing;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V5;
+namespace SystemTests.E2eTests.V5;
 
 public class PlaceOrderPositiveTest : BaseE2eTest
 {
@@ -110,6 +110,7 @@ public class PlaceOrderPositiveTest : BaseE2eTest
             .TotalPriceGreaterThanZero();
     }
 }
+
 
 
 

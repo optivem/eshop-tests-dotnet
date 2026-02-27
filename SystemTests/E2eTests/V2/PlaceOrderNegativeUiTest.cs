@@ -1,15 +1,15 @@
 using Common;
 using Driver.Core.Erp.Client.Dtos;
 using Driver.Core.Shop.Client.Ui.Pages;
-using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
-using Optivem.EShop.SystemTest.E2eTests.V2.Base;
-using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
+using SystemTests.E2eTests.Commons.Constants;
+using SystemTests.E2eTests.V2.Base;
+using SystemTests.E2eTests.V4.Helpers;
 using E2eTests.Providers;
 using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V2;
+namespace SystemTests.E2eTests.V2;
 
 public class PlaceOrderNegativeUiTest : BaseE2eTest
 {
@@ -150,5 +150,6 @@ public class PlaceOrderNegativeUiTest : BaseE2eTest
         result.Error.ShouldHaveMessageAndField("The request contains one or more validation errors", "country", "Country does not exist: XX");
     }
 }
+
 
 

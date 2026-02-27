@@ -1,9 +1,9 @@
 using Driver.Core.Shop;
-using Optivem.EShop.SystemTest.E2eTests.V7.Base;
+using SystemTests.E2eTests.V7.Base;
 using Optivem.Testing;
 using Xunit;
 
-namespace Optivem.EShop.SystemTest.E2eTests.V7;
+namespace SystemTests.E2eTests.V7;
 
 public class PlaceOrderPositiveTest : BaseE2eTest
 {
@@ -16,4 +16,5 @@ public class PlaceOrderPositiveTest : BaseE2eTest
             .Then().ShouldSucceed();
     }
 }
+
 
