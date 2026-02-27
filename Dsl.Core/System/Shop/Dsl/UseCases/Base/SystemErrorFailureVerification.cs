@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Shouldly;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos.Error;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
@@ -45,3 +45,4 @@ public class SystemErrorFailureVerification : ResponseVerification<SystemError>
         return this;
     }
 }
+

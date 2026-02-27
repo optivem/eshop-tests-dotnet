@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+using Driver.Api.Tax.Dtos.Error;
 using Common;
 using Dsl.Common;
 
@@ -16,3 +16,4 @@ public class TaxUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+

@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+namespace Driver.Api.Tax.Dtos.Error;
 
 public class TaxErrorResponse
 {
@@ -9,3 +9,4 @@ public class TaxErrorResponse
         return Message ?? string.Empty;
     }
 }
+

@@ -1,7 +1,7 @@
 using Common;
 using Optivem.EShop.SystemTest.Driver.Erp.Client.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.E2eTests.Commons.Constants;
 using Optivem.EShop.SystemTest.E2eTests.V2.Base;
 using Optivem.EShop.SystemTest.E2eTests.V4.Helpers;
@@ -159,4 +159,5 @@ public class PlaceOrderNegativeApiTest : BaseE2eTest
         result.Error.Errors.ShouldContain(e => e.Field == "country" && e.Message == "Country must not be empty");
     }
 }
+
 

@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
+using Driver.Api.Erp.Dtos.Error;
 using Common;
 using Dsl.Common;
 
@@ -16,3 +16,4 @@ public class ErpUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+

@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Shouldly;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 using Common;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
@@ -74,3 +74,4 @@ public class BrowseCouponsVerification : ResponseVerification<BrowseCouponsRespo
         return coupon;
     }
 }
+

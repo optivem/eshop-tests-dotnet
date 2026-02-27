@@ -1,7 +1,7 @@
 using Common;
 using Driver.Common.Http;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Controllers;
 
@@ -25,5 +25,6 @@ public class OrderController
     public Task<Result<VoidValue, ProblemDetailResponse>> CancelOrderAsync(string? orderNumber)
         => _httpClient.PostAsync($"{Endpoint}/{orderNumber}/cancel");
 }
+
 
 

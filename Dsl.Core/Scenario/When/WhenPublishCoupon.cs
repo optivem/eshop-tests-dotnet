@@ -3,7 +3,7 @@ using DslImpl.Scenario.When;
 using Dsl.Api.When.Steps;
 using Dsl.Common;
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
 using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
@@ -96,3 +96,4 @@ public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoup
             .Build();
     }
 }
+

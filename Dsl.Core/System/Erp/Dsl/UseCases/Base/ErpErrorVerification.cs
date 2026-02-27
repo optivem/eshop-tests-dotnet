@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
+using Driver.Api.Erp.Dtos.Error;
 using Dsl.Common;
 using Shouldly;
 
@@ -23,3 +23,4 @@ public class ErpErrorVerification : ResponseVerification<ErpErrorResponse>
         return this;
     }
 }
+

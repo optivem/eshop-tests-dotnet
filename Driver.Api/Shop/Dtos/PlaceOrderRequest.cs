@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+namespace Driver.Api.Shop.Dtos;
 
 public class PlaceOrderRequest
 {
@@ -7,3 +7,4 @@ public class PlaceOrderRequest
     public string? Country { get; set; }
     public string? CouponCode { get; set; }
 }
+

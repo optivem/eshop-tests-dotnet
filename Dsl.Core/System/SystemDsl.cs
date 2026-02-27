@@ -1,11 +1,11 @@
 using Optivem.EShop.SystemTest.Core.Clock.Dsl;
-using Optivem.EShop.SystemTest.Driver.Api.Clock;
+using Driver.Api.Clock;
 using Optivem.EShop.SystemTest.Core.Erp.Dsl;
-using Optivem.EShop.SystemTest.Driver.Api.Erp;
+using Driver.Api.Erp;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
+using Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl;
-using Optivem.EShop.SystemTest.Driver.Api.Tax;
+using Driver.Api.Tax;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl;
 using Optivem.EShop.SystemTest.Core.Erp;
 using Optivem.Testing;
@@ -105,4 +105,5 @@ public class SystemDsl : IAsyncDisposable
         return instance ??= supplier();
     }
 }
+
 

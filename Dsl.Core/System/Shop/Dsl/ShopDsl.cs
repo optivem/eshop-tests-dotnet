@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
+using Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 using Dsl.Common;
 
@@ -38,3 +38,4 @@ public class ShopDsl : IAsyncDisposable
 
     public PublishCoupon PublishCoupon() => new(_driver, _context);
 }
+

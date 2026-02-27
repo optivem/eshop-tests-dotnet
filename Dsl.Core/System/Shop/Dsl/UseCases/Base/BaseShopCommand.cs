@@ -1,6 +1,6 @@
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
+using Driver.Api.Shop;
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos.Error;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
@@ -18,3 +18,4 @@ public abstract class BaseShopCommand<TResponse, TVerification>
 
     public abstract Task<ShopUseCaseResult<TResponse, TVerification>> Execute();
 }
+

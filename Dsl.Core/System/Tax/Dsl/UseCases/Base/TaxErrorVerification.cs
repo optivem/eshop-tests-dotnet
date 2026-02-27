@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+using Driver.Api.Tax.Dtos.Error;
 using Dsl.Common;
 using Shouldly;
 
@@ -23,3 +23,4 @@ public class TaxErrorVerification : ResponseVerification<TaxErrorResponse>
         return this;
     }
 }
+

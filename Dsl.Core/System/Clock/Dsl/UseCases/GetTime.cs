@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Driver.Api.Clock;
-using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+using Driver.Api.Clock;
+using Driver.Api.Clock.Dtos;
 using Dsl.Common;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases;
@@ -22,3 +22,4 @@ public class GetTime : BaseClockCommand<GetTimeResponse, GetTimeVerification>
             (response, ctx) => new GetTimeVerification(response, ctx));
     }
 }
+

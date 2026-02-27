@@ -1,7 +1,7 @@
 using Common;
 using Dsl.Api.Given.Steps;
 using DslImpl.Scenario.Given;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin.Given;
@@ -102,3 +102,4 @@ public class GivenOrder : BaseGiven, IGivenOrder
         }
     }
 }
+

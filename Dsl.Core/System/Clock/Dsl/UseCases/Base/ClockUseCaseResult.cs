@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+using Driver.Api.Clock.Dtos;
 using Common;
 using Dsl.Common;
 
@@ -16,3 +16,4 @@ public class ClockUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+

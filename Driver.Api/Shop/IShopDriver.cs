@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop;
+namespace Driver.Api.Shop;
 
 public interface IShopDriver : IAsyncDisposable
 {
@@ -13,3 +13,4 @@ public interface IShopDriver : IAsyncDisposable
     Task<Result<VoidValue, SystemError>> PublishCouponAsync(PublishCouponRequest request);
     Task<Result<BrowseCouponsResponse, SystemError>> BrowseCouponsAsync();
 }
+

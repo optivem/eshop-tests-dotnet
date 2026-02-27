@@ -2,7 +2,7 @@ using DslImpl.Scenario;
 using DslImpl.Scenario.When;
 using Dsl.Api.When.Steps;
 using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
 using static Optivem.EShop.SystemTest.Core.Gherkin.GherkinDefaults;
@@ -25,3 +25,4 @@ public class BrowseCoupons : BaseWhen<BrowseCouponsResponse, BrowseCouponsVerifi
             .Build();
     }
 }
+

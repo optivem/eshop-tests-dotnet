@@ -1,5 +1,5 @@
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 using Shouldly;
 using System.Globalization;
 using Common;
@@ -227,3 +227,4 @@ public class ViewOrderVerification : ResponseVerification<ViewOrderResponse>
         return this;
     }
 }
+

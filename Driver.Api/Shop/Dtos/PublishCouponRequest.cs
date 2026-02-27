@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+namespace Driver.Api.Shop.Dtos;
 
 public class PublishCouponRequest
 {
@@ -8,3 +8,4 @@ public class PublishCouponRequest
     public string? ValidTo { get; set; }
     public string? UsageLimit { get; set; }
 }
+

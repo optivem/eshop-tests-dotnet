@@ -1,6 +1,6 @@
-using Optivem.EShop.SystemTest.Driver.Api.Erp;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
+using Driver.Api.Erp;
+using Driver.Api.Erp.Dtos;
+using Driver.Api.Erp.Dtos.Error;
 using Optivem.EShop.SystemTest.Core.Erp.Dsl.UseCases.Base;
 using Dsl.Common;
 
@@ -38,3 +38,4 @@ public class GetProduct : BaseErpCommand<GetProductResponse, GetProductVerificat
             (response, ctx) => new GetProductVerification(response, ctx));
     }
 }
+

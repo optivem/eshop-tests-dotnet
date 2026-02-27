@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+using Driver.Api.Tax.Dtos;
+using Driver.Api.Tax.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Tax;
+namespace Driver.Api.Tax;
 
 public interface ITaxDriver : IDisposable
 {
@@ -10,3 +10,4 @@ public interface ITaxDriver : IDisposable
     Task<Result<GetTaxResponse, TaxErrorResponse>> GetTaxRateAsync(string? country);
     Task<Result<VoidValue, TaxErrorResponse>> ReturnsTaxRateAsync(ReturnsTaxRateRequest request);
 }
+

@@ -1,7 +1,7 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop;
+namespace Driver.Api.Shop;
 
 public static class SystemResults
 {
@@ -35,3 +35,4 @@ public static class SystemResults
         return Result<T, SystemError>.Failure(error);
     }
 }
+

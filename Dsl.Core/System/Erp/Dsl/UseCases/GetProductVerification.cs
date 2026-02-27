@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
+using Driver.Api.Erp.Dtos;
 using Dsl.Common;
 using Shouldly;
 
@@ -31,3 +31,4 @@ public class GetProductVerification : ResponseVerification<GetProductResponse>
         return Price(decimal.Parse(expectedPrice));
     }
 }
+

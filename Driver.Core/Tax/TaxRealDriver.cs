@@ -1,7 +1,7 @@
 using Common;
 using Optivem.EShop.SystemTest.Core.Tax.Client;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+using Driver.Api.Tax.Dtos;
+using Driver.Api.Tax.Dtos.Error;
 
 namespace Optivem.EShop.SystemTest.Core.Tax;
 

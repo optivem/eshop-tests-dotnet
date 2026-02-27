@@ -1,6 +1,6 @@
 using Common;
 using Dsl.Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos.Error;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
 
@@ -16,3 +16,4 @@ public class ShopUseCaseResult<TSuccessResponse, TSuccessVerification>
     {
     }
 }
+

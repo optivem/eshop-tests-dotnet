@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+namespace Driver.Api.Shop.Dtos.Error;
 
 public class SystemError
 {
@@ -73,3 +73,4 @@ public class SystemError
         }
     }
 }
+

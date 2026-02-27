@@ -1,5 +1,5 @@
-using Optivem.EShop.SystemTest.Driver.Api.Tax;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+using Driver.Api.Tax;
+using Driver.Api.Tax.Dtos.Error;
 using Dsl.Common;
 
 namespace Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases.Base;
@@ -18,3 +18,4 @@ public abstract class BaseTaxCommand<TResponse, TVerification>
 
     public abstract Task<TaxUseCaseResult<TResponse, TVerification>> Execute();
 }
+

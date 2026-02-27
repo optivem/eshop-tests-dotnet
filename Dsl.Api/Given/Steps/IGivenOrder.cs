@@ -1,5 +1,5 @@
 using Dsl.Api.Given.Steps.Base;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 
 namespace Dsl.Api.Given.Steps;
 

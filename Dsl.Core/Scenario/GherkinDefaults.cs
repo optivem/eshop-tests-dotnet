@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Core.Gherkin;
 
@@ -33,3 +33,4 @@ public static class GherkinDefaults
 
     public const string Empty = "";
 }
+

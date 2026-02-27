@@ -1,8 +1,8 @@
 using Optivem.EShop.SystemTest.Configuration;
 using Optivem.EShop.SystemTest.Core;
-using Optivem.EShop.SystemTest.Driver.Api.Erp;
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Tax;
+using Driver.Api.Erp;
+using Driver.Api.Shop;
+using Driver.Api.Tax;
 using Optivem.EShop.SystemTest.Core.Erp;
 using Optivem.EShop.SystemTest.Core.Shop;
 using Optivem.EShop.SystemTest.Core.Tax;
@@ -48,4 +48,5 @@ public abstract class BaseDriverTest : BaseConfigurableTest, IAsyncLifetime
         _taxDriver?.Dispose();
     }
 }
+
 

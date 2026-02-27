@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Tax;
+using Driver.Api.Tax;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases;
 using Dsl.Common;
 
@@ -34,3 +34,4 @@ public class TaxDsl : IDisposable
     public ReturnsTaxRate ReturnsTaxRate() => new(_driver, _context);
     public GetTaxRate GetTaxRate() => new(_driver, _context);
 }
+

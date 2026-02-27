@@ -1,6 +1,6 @@
 using Driver.Common.Playwright;
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
 
@@ -170,4 +170,5 @@ public class CouponManagementPage : BasePage
         return Converter.ToInteger(text, TextUnlimited);
     }
 }
+
 

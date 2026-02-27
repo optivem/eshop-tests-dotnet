@@ -1,6 +1,6 @@
-using Optivem.EShop.SystemTest.Driver.Api.Tax;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Tax.Dtos.Error;
+using Driver.Api.Tax;
+using Driver.Api.Tax.Dtos;
+using Driver.Api.Tax.Dtos.Error;
 using Optivem.EShop.SystemTest.Core.Tax.Dsl.UseCases.Base;
 using Common;
 using Dsl.Common;
@@ -52,3 +52,4 @@ public class ReturnsTaxRate : BaseTaxCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+

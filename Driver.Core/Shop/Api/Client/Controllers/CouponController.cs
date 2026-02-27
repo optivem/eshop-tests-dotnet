@@ -1,7 +1,7 @@
 using Driver.Common.Http;
 using Common;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Controllers;
 
@@ -22,4 +22,5 @@ public class CouponController
     public Task<Result<BrowseCouponsResponse, ProblemDetailResponse>> BrowseCouponsAsync()
         => _httpClient.GetAsync<BrowseCouponsResponse>(Endpoint);
 }
+
 

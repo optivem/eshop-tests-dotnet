@@ -1,8 +1,8 @@
 using Common;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Erp.Dtos.Error;
+using Driver.Api.Erp.Dtos;
+using Driver.Api.Erp.Dtos.Error;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Erp;
+namespace Driver.Api.Erp;
 
 public interface IErpDriver : IDisposable
 {
@@ -12,3 +12,4 @@ public interface IErpDriver : IDisposable
 
     Task<Result<VoidValue, ErpErrorResponse>> ReturnsProductAsync(ReturnsProductRequest request);
 }
+

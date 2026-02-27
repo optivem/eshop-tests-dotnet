@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.AcceptanceTests.V7.Base;
 using Optivem.EShop.SystemTest.Core.Shop;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 using Optivem.Testing;
 
 namespace Optivem.EShop.SystemTest.AcceptanceTests.V7;
@@ -19,3 +19,4 @@ public class CancelOrderPositiveTest : BaseAcceptanceTest
             .HasStatus(OrderStatus.Cancelled);
     }
 }
+

@@ -1,7 +1,7 @@
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
+using Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos.Error;
 using Dsl.Common;
 
 namespace Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases;
@@ -89,3 +89,4 @@ public class PlaceOrder : BaseShopCommand<PlaceOrderResponse, PlaceOrderVerifica
             (response, ctx) => new PlaceOrderVerification(response, ctx));
     }
 }
+

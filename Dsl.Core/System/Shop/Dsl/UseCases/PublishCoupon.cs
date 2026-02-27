@@ -1,7 +1,7 @@
-using Optivem.EShop.SystemTest.Driver.Api.Shop;
+using Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Core.Shop.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
+using Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos.Error;
 using Dsl.Common;
 using Common;
 
@@ -77,3 +77,4 @@ public class PublishCoupon : BaseShopCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+

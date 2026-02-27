@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+namespace Driver.Api.Shop.Dtos;
 
 public class BrowseCouponsResponse
 {
@@ -17,3 +17,4 @@ public class CouponDto
     public int? UsageLimit { get; set; }
     public int? UsedCount { get; set; }
 }
+

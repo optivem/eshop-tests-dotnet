@@ -1,4 +1,4 @@
-namespace Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+namespace Driver.Api.Shop.Dtos;
 
 public class ViewOrderResponse
 {
@@ -18,3 +18,4 @@ public class ViewOrderResponse
     public required string Country { get; set; }
     public string? AppliedCouponCode { get; set; }
 }
+

@@ -1,6 +1,6 @@
 using Optivem.EShop.SystemTest.Core.Clock.Dsl.UseCases.Base;
-using Optivem.EShop.SystemTest.Driver.Api.Clock;
-using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+using Driver.Api.Clock;
+using Driver.Api.Clock.Dtos;
 using Common;
 using Dsl.Common;
 
@@ -23,3 +23,4 @@ public class GoToClock : BaseClockCommand<VoidValue, VoidVerification>
             (response, ctx) => new VoidVerification(response, ctx));
     }
 }
+

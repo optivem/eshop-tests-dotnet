@@ -1,5 +1,5 @@
 using Driver.Common.Playwright;
-using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos;
+using Driver.Api.Shop.Dtos;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
 
@@ -143,4 +143,5 @@ public class OrderDetailsPage : BasePage
         return value / 100;
     }
 }
+
 

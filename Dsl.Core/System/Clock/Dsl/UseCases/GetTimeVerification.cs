@@ -1,4 +1,4 @@
-using Optivem.EShop.SystemTest.Driver.Api.Clock.Dtos;
+using Driver.Api.Clock.Dtos;
 using Dsl.Common;
 using Common;
 using Shouldly;
@@ -74,3 +74,4 @@ public class GetTimeVerification : ResponseVerification<GetTimeResponse>
         return TimeIsBetween(start, end);
     }
 }
+
