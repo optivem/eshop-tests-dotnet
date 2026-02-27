@@ -1,8 +1,8 @@
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Clock.Client.Dtos.Error;
-using Driver.Shared.Http;
+using Driver.Common.Http;
 using Common;
-using Driver.Shared.WireMock;
+using Driver.Common.WireMock;
 
 namespace Optivem.EShop.SystemTest.Core.Clock.Client;
 
@@ -49,3 +49,4 @@ public class ClockStubClient : IDisposable
         => _wireMockClient.StubGetAsync(ClockTimeEndpoint, HttpStatus.Ok, response)
             .MapErrorAsync(ExtClockErrorResponse.From);
 }
+

@@ -1,4 +1,4 @@
-namespace Driver.Shared.Http;
+namespace Driver.Common.Http;
 
 public static class HttpStatus
 {
@@ -15,3 +15,4 @@ public static class HttpStatus
     public const int BadGateway = 502;
     public const int ServiceUnavailable = 503;
 }
+

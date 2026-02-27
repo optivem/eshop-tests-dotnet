@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
-using Driver.Shared.Http;
-using Driver.Shared.Playwright;
+using Driver.Common.Http;
+using Driver.Common.Playwright;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Ui.Pages;
 
@@ -57,3 +57,4 @@ public class NewOrderPage : BasePage
         return match.Groups[OrderNumberMatcherGroup].Value;
     }
 }
+

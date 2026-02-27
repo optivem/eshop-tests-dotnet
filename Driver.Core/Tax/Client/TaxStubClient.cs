@@ -1,6 +1,6 @@
 using Common;
-using Driver.Shared.WireMock;
-using Driver.Shared.Http;
+using Driver.Common.WireMock;
+using Driver.Common.Http;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
 
@@ -21,3 +21,4 @@ public class TaxStubClient : BaseTaxClient
         => _wireMockClient.StubGetAsync($"{TaxCountriesEndpoint}/{response.Id}", HttpStatus.Ok, response)
             .MapErrorAsync(ExtTaxErrorResponse.From);
 }
+

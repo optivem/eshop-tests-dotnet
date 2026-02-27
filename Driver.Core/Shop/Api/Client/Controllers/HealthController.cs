@@ -1,5 +1,5 @@
 using Common;
-using Driver.Shared.Http;
+using Driver.Common.Http;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
 
 namespace Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Controllers;
@@ -18,3 +18,4 @@ public class HealthController
     public Task<Result<VoidValue, ProblemDetailResponse>> CheckHealthAsync()
         => _httpClient.GetAsync(Endpoint);
 }
+

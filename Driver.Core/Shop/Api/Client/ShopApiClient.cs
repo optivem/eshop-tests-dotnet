@@ -1,4 +1,4 @@
-using Driver.Shared.Http;
+using Driver.Common.Http;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Dtos.Errors;
 using Optivem.EShop.SystemTest.Driver.Shop.Client.Api.Controllers;
 
@@ -42,3 +42,4 @@ public class ShopApiClient : IDisposable
 
 
 }
+

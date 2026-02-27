@@ -1,4 +1,4 @@
-using Driver.Shared.Playwright;
+using Driver.Common.Playwright;
 using Common;
 using Optivem.EShop.SystemTest.Driver.Api.Shop;
 using Optivem.EShop.SystemTest.Driver.Api.Shop.Dtos.Error;
@@ -139,3 +139,4 @@ public abstract class BasePage
         return selector.Replace(NotificationSelector, NotificationSelector + idAttribute);
     }
 }
+

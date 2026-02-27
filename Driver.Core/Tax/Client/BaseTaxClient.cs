@@ -1,4 +1,4 @@
-using Driver.Shared.Http;
+using Driver.Common.Http;
 using Common;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos;
 using Optivem.EShop.SystemTest.Driver.Tax.Client.Dtos.Error;
@@ -38,3 +38,4 @@ public abstract class BaseTaxClient : IDisposable
     public Task<Result<ExtCountryDetailsResponse, ExtTaxErrorResponse>> GetCountryAsync(string? country)
         => _httpClient.GetAsync<ExtCountryDetailsResponse>($"{CountriesEndpoint}/{country}");
 }
+
