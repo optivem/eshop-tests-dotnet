@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Channel\Channel.csproj" />
     <ProjectReference Include="..\..\..\Driver.Adapter\Driver.Adapter.csproj" />
     <ProjectReference Include="..\..\..\Common\Common.csproj" />
     <ProjectReference Include="..\..\..\Driver.Port\Driver.Port.csproj" />
