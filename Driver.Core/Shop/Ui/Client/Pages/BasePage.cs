@@ -3,7 +3,7 @@ using Common;
 using Driver.Api.Shop;
 using Driver.Api.Shop.Dtos.Error;
 
-namespace Driver.Core.Shop.Client.Ui.Pages;
+namespace Driver.Core.Shop.Ui.Client.Pages;
 
 public abstract class BasePage
 {

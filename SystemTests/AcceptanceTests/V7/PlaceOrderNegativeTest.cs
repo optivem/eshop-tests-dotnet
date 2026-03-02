@@ -1,6 +1,6 @@
 using SystemTests.AcceptanceTests.Commons.Providers;
 using SystemTests.AcceptanceTests.V7.Base;
-using Driver.Core.Shop;
+using Dsl.Core.Shop;
 using Optivem.Testing;
 
 namespace SystemTests.AcceptanceTests.V7;

@@ -1,6 +1,6 @@
 using Dsl.Common;
 using SystemTests.TestInfrastructure.Base.V4;
-using Driver.Core.Shop;
+using Dsl.Core.Shop;
 
 namespace SystemTests.E2eTests.V4.Base;
 

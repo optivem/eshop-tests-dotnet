@@ -7,7 +7,7 @@ using SystemTests.E2eTests.V2.Base;
 using SystemTests.E2eTests.V4.Helpers;
 using E2eTests.Providers;
 using SystemTests.TestInfrastructure.Base.V2;
-using Driver.Core.Shop.Client.Api.Dtos.Errors;
+using Driver.Core.Shop.Api.Client.Dtos.Errors;
 using Shouldly;
 using Xunit;
 

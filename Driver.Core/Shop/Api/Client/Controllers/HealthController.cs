@@ -1,8 +1,8 @@
 using Common;
 using Driver.Common.Http;
-using Driver.Core.Shop.Client.Api.Dtos.Errors;
+using Driver.Core.Shop.Api.Client.Dtos.Errors;
 
-namespace Driver.Core.Shop.Client.Api.Controllers;
+namespace Driver.Core.Shop.Api.Client.Controllers;
 
 public class HealthController
 {

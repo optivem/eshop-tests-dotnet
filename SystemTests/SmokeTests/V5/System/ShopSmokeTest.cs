@@ -1,6 +1,6 @@
 using Common;
 using SystemTests.TestInfrastructure.Base.V5;
-using Driver.Core.Shop;
+using Dsl.Core.Shop;
 using Optivem.Testing;
 using Shouldly;
 using Xunit;

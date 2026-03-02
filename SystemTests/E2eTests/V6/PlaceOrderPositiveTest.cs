@@ -1,4 +1,4 @@
-using Driver.Core.Shop;
+using Dsl.Core.Shop;
 using Driver.Api.Shop.Dtos;
 using SystemTests.E2eTests.V6.Base;
 using Optivem.Testing;

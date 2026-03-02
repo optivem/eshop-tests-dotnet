@@ -1,5 +1,5 @@
 using E2eTests.Providers;
-using Driver.Core.Shop;
+using Dsl.Core.Shop;
 using SystemTests.E2eTests.V6.Base;
 using Optivem.Testing;
 using Xunit;

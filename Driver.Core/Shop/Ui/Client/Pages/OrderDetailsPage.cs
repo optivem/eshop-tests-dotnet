@@ -1,7 +1,7 @@
 using Driver.Common.Playwright;
 using Driver.Api.Shop.Dtos;
 
-namespace Driver.Core.Shop.Client.Ui.Pages;
+namespace Driver.Core.Shop.Ui.Client.Pages;
 
 public class OrderDetailsPage : BasePage
 {

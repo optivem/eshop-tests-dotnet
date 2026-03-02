@@ -1,5 +1,5 @@
 using Common;
-using Driver.Core.Shop;
+using Dsl.Core.Shop;
 using SystemTests.E2eTests.Commons.Constants;
 using SystemTests.E2eTests.V5.Base;
 using Optivem.Testing;

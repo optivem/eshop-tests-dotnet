@@ -1,8 +1,8 @@
 using Driver.Common.Http;
-using Driver.Core.Shop.Client.Api.Dtos.Errors;
-using Driver.Core.Shop.Client.Api.Controllers;
+using Driver.Core.Shop.Api.Client.Dtos.Errors;
+using Driver.Core.Shop.Api.Client.Controllers;
 
-namespace Driver.Core.Shop.Client.Api;
+namespace Driver.Core.Shop.Api.Client;
 
 public class ShopApiClient : IDisposable
 {

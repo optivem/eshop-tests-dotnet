@@ -1,4 +1,4 @@
-namespace Driver.Core.Shop;
+namespace Dsl.Core.Shop;
 
 public static class ChannelType
 {

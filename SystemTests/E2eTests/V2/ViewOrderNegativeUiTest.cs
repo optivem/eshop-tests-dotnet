@@ -1,4 +1,4 @@
-using Driver.Core.Shop.Client.Ui.Pages;
+using Driver.Core.Shop.Ui.Client.Pages;
 using SystemTests.E2eTests.V2.Base;
 using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;

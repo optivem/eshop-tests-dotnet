@@ -4,7 +4,8 @@ using Driver.Api.Erp;
 using Driver.Api.Shop;
 using Driver.Api.Tax;
 using Driver.Core.Erp;
-using Driver.Core.Shop;
+using Driver.Core.Shop.Api;
+using Driver.Core.Shop.Ui;
 using Driver.Core.Tax;
 using Xunit;
 

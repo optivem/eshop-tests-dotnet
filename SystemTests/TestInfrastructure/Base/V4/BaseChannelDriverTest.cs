@@ -1,7 +1,9 @@
 using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
 using Driver.Api.Erp;
-using Driver.Core.Shop;
+using Driver.Core.Shop.Api;
+using Driver.Core.Shop.Ui;
+using Dsl.Core.Shop;
 using Driver.Api.Shop;
 using Driver.Api.Tax;
 using Driver.Core.Erp;

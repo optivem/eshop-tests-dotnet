@@ -1,12 +1,12 @@
 using Common;
-using Driver.Core.Shop.Client.Ui;
-using Driver.Core.Shop.Client.Ui.Pages;
+using Driver.Core.Shop.Ui.Client;
+using Driver.Core.Shop.Ui.Client.Pages;
 using Driver.Api.Shop.Dtos;
 using Driver.Api.Shop.Dtos.Error;
 using Driver.Api.Shop;
 using static Driver.Api.Shop.SystemResults;
 
-namespace Driver.Core.Shop;
+namespace Driver.Core.Shop.Ui;
 
 public class ShopUiDriver : IShopDriver
 {

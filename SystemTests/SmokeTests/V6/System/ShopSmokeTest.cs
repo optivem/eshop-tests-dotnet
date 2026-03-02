@@ -1,5 +1,5 @@
 using SystemTests.TestInfrastructure.Base.V6;
-using Driver.Core.Shop;
+using Dsl.Core.Shop;
 using Optivem.Testing;
 using Xunit;
 
