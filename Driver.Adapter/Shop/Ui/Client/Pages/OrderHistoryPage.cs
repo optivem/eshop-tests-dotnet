@@ -1,5 +1,5 @@
-using Driver.Common.Http;
-using Driver.Common.Playwright;
+using Driver.Common.Client.Http;
+using Driver.Common.Client.Playwright;
 using Driver.Port.Shop.Dtos;
 
 namespace Driver.Adapter.Shop.Ui.Client.Pages;

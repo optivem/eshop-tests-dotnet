@@ -5,7 +5,7 @@ using Dsl.Core.Scenario;
 using Driver.Adapter;
 using Dsl.Core.Gherkin;
 using Driver.Port.Shop.Dtos;
-using Dsl.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.UseCases;
 
 namespace Dsl.Core.Scenario.Then;
 

@@ -1,6 +1,6 @@
 using Common;
-using Driver.Common.WireMock;
-using Driver.Common.Http;
+using Driver.Common.Client.WireMock;
+using Driver.Common.Client.Http;
 using Driver.Adapter.Tax.Client.Dtos;
 using Driver.Adapter.Tax.Client.Dtos.Error;
 

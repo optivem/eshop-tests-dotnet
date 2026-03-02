@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using Dsl.Port.Then.Steps;
 using Dsl.Common;
-using Dsl.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.UseCases.Base;
 
 namespace Dsl.Core.Scenario.Then;
 

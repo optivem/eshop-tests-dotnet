@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
-using Driver.Common.Http;
-using Driver.Common.Playwright;
+using Driver.Common.Client.Http;
+using Driver.Common.Client.Playwright;
 
 namespace Driver.Adapter.Shop.Ui.Client.Pages;
 

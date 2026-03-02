@@ -1,8 +1,8 @@
 using Microsoft.Playwright;
 using Driver.Adapter.Shop.Ui.Client.Pages;
-using Driver.Common.Playwright;
+using Driver.Common.Client.Playwright;
 using System.Net;
-using PlaywrightGateway = Driver.Common.Playwright.PageClient;
+using PlaywrightGateway = Driver.Common.Client.Playwright.PageClient;
 
 namespace Driver.Adapter.Shop.Ui.Client;
 

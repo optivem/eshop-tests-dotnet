@@ -1,5 +1,5 @@
 using Common;
-using Driver.Common.Http;
+using Driver.Common.Client.Http;
 using Driver.Adapter.Shop.Api.Client.Dtos.Errors;
 
 namespace Driver.Adapter.Shop.Api.Client.Controllers;

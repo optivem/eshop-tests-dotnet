@@ -1,4 +1,4 @@
-using Driver.Common.Http;
+using Driver.Common.Client.Http;
 using Common;
 using Driver.Adapter.Shop.Api.Client.Dtos.Errors;
 using Driver.Port.Shop.Dtos;

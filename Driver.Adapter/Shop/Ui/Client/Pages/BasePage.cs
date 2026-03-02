@@ -1,4 +1,4 @@
-using Driver.Common.Playwright;
+using Driver.Common.Client.Playwright;
 using Common;
 using Driver.Port.Shop;
 using Driver.Port.Shop.Dtos.Error;

@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Common;
-using Dsl.Core.Shop.Dsl.UseCases.Base;
+using Dsl.Core.Shop.UseCases.Base;
 
 namespace Dsl.Core.Scenario
 {

@@ -1,4 +1,4 @@
-using Driver.Common.Http;
+using Driver.Common.Client.Http;
 using Common;
 using Driver.Adapter.Tax.Client.Dtos;
 using Driver.Adapter.Tax.Client.Dtos.Error;

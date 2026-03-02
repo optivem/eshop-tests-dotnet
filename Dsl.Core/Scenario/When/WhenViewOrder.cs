@@ -1,7 +1,7 @@
 using Driver.Adapter;
 using Dsl.Port.When.Steps;
 using Driver.Port.Shop.Dtos;
-using Dsl.Core.Shop.Dsl.UseCases;
+using Dsl.Core.Shop.UseCases;
 using Optivem.Testing;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 

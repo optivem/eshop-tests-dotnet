@@ -1,8 +1,8 @@
 using Driver.Adapter.Clock.Client.Dtos;
 using Driver.Adapter.Clock.Client.Dtos.Error;
-using Driver.Common.Http;
+using Driver.Common.Client.Http;
 using Common;
-using Driver.Common.WireMock;
+using Driver.Common.Client.WireMock;
 
 namespace Driver.Adapter.Clock.Client;
 
