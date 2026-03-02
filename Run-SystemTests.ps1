@@ -15,7 +15,7 @@ Remove-Variable -Name 'ProgressPreference' -ErrorAction SilentlyContinue
 $WorkingDirectory = Get-Location
 
 # Repository configuration
-$RepoName = "modern-acceptance-testing-in-legacy-code"
+$RepoName = "eshop"
 $RepoUrl = "https://github.com/optivem/$RepoName.git"
 $RepoPath = Join-Path (Get-Location) "..\$RepoName"
 $ScriptPath = Join-Path $RepoPath "Run-SystemTests.ps1"

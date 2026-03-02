@@ -21,6 +21,7 @@ TestResults/
 *.trx
 *.html
 *.xml
+build-result.txt
 
 # Visual Studio cache/options
 .vsts/

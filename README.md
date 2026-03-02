@@ -1,6 +1,6 @@
 # Modern Acceptance Testing in Legacy Code (.NET)
 
-[![acceptance-stage](https://github.com/optivem/modern-acceptance-testing-in-legacy-code-dotnet/actions/workflows/acceptance-stage.yml/badge.svg)](https://github.com/optivem/modern-acceptance-testing-in-legacy-code-dotnet/actions/workflows/acceptance-stage.yml)
+[![acceptance-stage](https://github.com/optivem/eshop-tests-dotnet/actions/workflows/acceptance-stage.yml/badge.svg)](https://github.com/optivem/eshop-tests-dotnet/actions/workflows/acceptance-stage.yml)
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ $PSVersionTable.PSVersion
 
 This will:
 
-1. Clone or pull the [monolith repository](https://github.com/optivem/modern-acceptance-testing-in-legacy-code) (Frontend, Backend, Docker setup)
+1. Clone or pull the [monolith repository](https://github.com/optivem/eshop) (Frontend, Backend, Docker setup)
 2. Build the Backend and Frontend
 3. Start Docker containers (Frontend, Backend, PostgreSQL, & Simulated External APIs)
 4. Wait for all services to be healthy

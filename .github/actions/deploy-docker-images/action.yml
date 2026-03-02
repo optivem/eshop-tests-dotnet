@@ -36,14 +36,14 @@ runs:
   steps:
     - name: Checkout Base Repository
       run: |
-        if [ -d "modern-acceptance-testing-in-legacy-code/.git" ]; then
+        if [ -d "eshop/.git" ]; then
           echo "📂 Base repository already exists, pulling latest changes..."
-          cd modern-acceptance-testing-in-legacy-code
+          cd eshop
           git pull origin main
           cd ..
         else
           echo "📥 Cloning base repository..."
-          git clone https://github.com/optivem/modern-acceptance-testing-in-legacy-code.git modern-acceptance-testing-in-legacy-code
+          git clone https://github.com/optivem/eshop.git eshop
         fi
         echo "✅ Base repository ready"
       shell: bash
@@ -79,7 +79,7 @@ runs:
         
         COMPOSE_FILE="docker-compose.pipeline.${{ inputs.external-system-mode }}.yml"
         echo "📄 Using compose file: $COMPOSE_FILE"
-        docker compose -f modern-acceptance-testing-in-legacy-code/$COMPOSE_FILE up -d
+        docker compose -f eshop/$COMPOSE_FILE up -d
 
       shell: bash
 
