@@ -1,8 +1,8 @@
 using Common;
-using Driver.Api.Erp.Dtos;
-using Driver.Api.Erp.Dtos.Error;
+using Driver.Port.Erp.Dtos;
+using Driver.Port.Erp.Dtos.Error;
 
-namespace Driver.Api.Erp;
+namespace Driver.Port.Erp;
 
 public interface IErpDriver : IDisposable
 {

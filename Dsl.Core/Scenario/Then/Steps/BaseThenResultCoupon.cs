@@ -1,8 +1,8 @@
 using System.Runtime.CompilerServices;
-using Dsl.Api.Then.Steps;
+using Dsl.Port.Then.Steps;
 using Dsl.Common;
 using Dsl.Core.Scenario;
-using Driver.Core;
+using Driver.Adapter;
 using Dsl.Core.Shop.Dsl.UseCases;
 
 namespace Dsl.Core.Scenario.Then;

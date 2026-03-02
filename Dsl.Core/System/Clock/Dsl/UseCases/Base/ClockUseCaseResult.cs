@@ -1,4 +1,4 @@
-using Driver.Api.Clock.Dtos;
+using Driver.Port.Clock.Dtos;
 using Common;
 using Dsl.Common;
 

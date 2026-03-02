@@ -1,5 +1,5 @@
-using Dsl.Api.Given.Steps;
-using Driver.Core;
+using Dsl.Port.Given.Steps;
+using Driver.Adapter;
 using Dsl.Core.Gherkin;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 

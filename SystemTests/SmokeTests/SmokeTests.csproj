@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TestInfrastructure\TestInfrastructure.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Core.csproj" />
+    <ProjectReference Include="..\..\Driver.Adapter\Driver.Adapter.csproj" />
     <ProjectReference Include="..\..\Common\Common.csproj" />
   </ItemGroup>
 

@@ -1,9 +1,9 @@
 using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
-using Driver.Core.Erp.Client;
-using Driver.Core.Shop.Api.Client;
-using Driver.Core.Shop.Ui.Client;
-using Driver.Core.Tax.Client;
+using Driver.Adapter.Erp.Client;
+using Driver.Adapter.Shop.Api.Client;
+using Driver.Adapter.Shop.Ui.Client;
+using Driver.Adapter.Tax.Client;
 using Xunit;
 
 namespace SystemTests.TestInfrastructure.Base.V2;

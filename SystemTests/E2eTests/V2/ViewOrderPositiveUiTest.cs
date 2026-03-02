@@ -1,7 +1,7 @@
 using Common;
-using Driver.Core.Erp.Client.Dtos;
-using Driver.Core.Shop.Ui.Client.Pages;
-using Driver.Api.Shop.Dtos;
+using Driver.Adapter.Erp.Client.Dtos;
+using Driver.Adapter.Shop.Ui.Client.Pages;
+using Driver.Port.Shop.Dtos;
 using SystemTests.E2eTests.Commons.Constants;
 using SystemTests.E2eTests.V2.Base;
 using SystemTests.TestInfrastructure.Base.V2;

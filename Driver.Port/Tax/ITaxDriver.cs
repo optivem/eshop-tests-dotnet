@@ -1,8 +1,8 @@
 using Common;
-using Driver.Api.Tax.Dtos;
-using Driver.Api.Tax.Dtos.Error;
+using Driver.Port.Tax.Dtos;
+using Driver.Port.Tax.Dtos.Error;
 
-namespace Driver.Api.Tax;
+namespace Driver.Port.Tax;
 
 public interface ITaxDriver : IDisposable
 {

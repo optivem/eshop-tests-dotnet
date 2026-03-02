@@ -1,19 +1,19 @@
 using Dsl.Core.Clock.Dsl;
-using Driver.Api.Clock;
+using Driver.Port.Clock;
 using Dsl.Core.Erp.Dsl;
-using Driver.Api.Erp;
-using Driver.Core.Shop.Api;
-using Driver.Core.Shop.Ui;
+using Driver.Port.Erp;
+using Driver.Adapter.Shop.Api;
+using Driver.Adapter.Shop.Ui;
 using Dsl.Core.Shop;
-using Driver.Api.Shop;
+using Driver.Port.Shop;
 using Dsl.Core.Shop.Dsl;
-using Driver.Api.Tax;
+using Driver.Port.Tax;
 using Dsl.Core.Tax.Dsl;
-using Driver.Core.Erp;
+using Driver.Adapter.Erp;
 using Optivem.Testing;
 using Dsl.Common;
-using Driver.Core.Clock;
-using Driver.Core.Tax;
+using Driver.Adapter.Clock;
+using Driver.Adapter.Tax;
 
 namespace Dsl.Core;
 

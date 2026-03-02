@@ -1,4 +1,4 @@
-namespace Driver.Api.Erp.Dtos.Error;
+namespace Driver.Port.Erp.Dtos.Error;
 
 public class ErpErrorResponse
 {

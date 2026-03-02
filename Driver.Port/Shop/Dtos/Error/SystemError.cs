@@ -1,4 +1,4 @@
-namespace Driver.Api.Shop.Dtos.Error;
+namespace Driver.Port.Shop.Dtos.Error;
 
 public class SystemError
 {

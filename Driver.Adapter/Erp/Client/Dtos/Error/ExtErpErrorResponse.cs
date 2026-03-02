@@ -1,4 +1,4 @@
-namespace Driver.Core.Erp.Client.Dtos.Error;
+namespace Driver.Adapter.Erp.Client.Dtos.Error;
 
 public class ExtErpErrorResponse
 {

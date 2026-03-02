@@ -1,11 +1,11 @@
 using Common;
-using Driver.Core.Tax.Client;
-using Driver.Api.Tax;
-using Driver.Api.Tax.Dtos;
-using Driver.Api.Tax.Dtos.Error;
-using Driver.Core.Tax.Client.Dtos.Error;
+using Driver.Adapter.Tax.Client;
+using Driver.Port.Tax;
+using Driver.Port.Tax.Dtos;
+using Driver.Port.Tax.Dtos.Error;
+using Driver.Adapter.Tax.Client.Dtos.Error;
 
-namespace Driver.Core.Tax;
+namespace Driver.Adapter.Tax;
 
 public abstract class BaseTaxDriver<TClient> : ITaxDriver where TClient : BaseTaxClient
 {

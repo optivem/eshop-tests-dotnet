@@ -1,6 +1,6 @@
-using Dsl.Api.Then;
+using Dsl.Port.Then;
 
-namespace Dsl.Api.When.Steps.Base;
+namespace Dsl.Port.When.Steps.Base;
 
 public interface IWhenStep
 {

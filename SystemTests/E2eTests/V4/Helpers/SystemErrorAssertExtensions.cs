@@ -1,4 +1,4 @@
-using Driver.Api.Shop.Dtos.Error;
+using Driver.Port.Shop.Dtos.Error;
 using Shouldly;
 
 namespace SystemTests.E2eTests.V4.Helpers;

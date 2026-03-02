@@ -1,4 +1,4 @@
-namespace Driver.Core.Erp.Client.Dtos;
+namespace Driver.Adapter.Erp.Client.Dtos;
 
 public class ExtProductDetailsResponse
 {

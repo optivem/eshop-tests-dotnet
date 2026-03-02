@@ -1,9 +1,9 @@
 using Driver.Common.Playwright;
 using Common;
-using Driver.Api.Shop;
-using Driver.Api.Shop.Dtos.Error;
+using Driver.Port.Shop;
+using Driver.Port.Shop.Dtos.Error;
 
-namespace Driver.Core.Shop.Ui.Client.Pages;
+namespace Driver.Adapter.Shop.Ui.Client.Pages;
 
 public abstract class BasePage
 {

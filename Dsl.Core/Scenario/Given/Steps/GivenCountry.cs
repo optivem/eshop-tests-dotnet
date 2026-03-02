@@ -1,4 +1,4 @@
-using Dsl.Api.Given.Steps;
+using Dsl.Port.Given.Steps;
 using Dsl.Core.Scenario.Given;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 

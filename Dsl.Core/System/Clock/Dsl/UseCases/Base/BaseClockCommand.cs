@@ -1,5 +1,5 @@
-using Driver.Api.Clock;
-using Driver.Api.Clock.Dtos;
+using Driver.Port.Clock;
+using Driver.Port.Clock.Dtos;
 using Dsl.Common;
 
 namespace Dsl.Core.Clock.Dsl.UseCases.Base;

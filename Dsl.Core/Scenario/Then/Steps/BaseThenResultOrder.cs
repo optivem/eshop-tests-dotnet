@@ -1,10 +1,10 @@
 using System.Runtime.CompilerServices;
-using Dsl.Api.Then.Steps;
+using Dsl.Port.Then.Steps;
 using Dsl.Common;
 using Dsl.Core.Scenario;
-using Driver.Core;
+using Driver.Adapter;
 using Dsl.Core.Gherkin;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 using Dsl.Core.Shop.Dsl.UseCases;
 
 namespace Dsl.Core.Scenario.Then;

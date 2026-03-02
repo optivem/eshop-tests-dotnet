@@ -1,8 +1,8 @@
 using Driver.Common.Http;
 using Driver.Common.Playwright;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 
-namespace Driver.Core.Shop.Ui.Client.Pages;
+namespace Driver.Adapter.Shop.Ui.Client.Pages;
 
 public class OrderHistoryPage : BasePage
 {

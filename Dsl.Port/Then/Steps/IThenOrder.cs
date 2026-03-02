@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 
-namespace Dsl.Api.Then.Steps;
+namespace Dsl.Port.Then.Steps;
 
 public interface IThenOrder
 {

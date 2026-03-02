@@ -1,6 +1,6 @@
-using Dsl.Api.Then.Steps;
+using Dsl.Port.Then.Steps;
 
-namespace Dsl.Api.Then;
+namespace Dsl.Port.Then;
 
 public interface IThen
 {

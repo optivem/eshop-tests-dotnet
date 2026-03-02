@@ -1,6 +1,6 @@
-using Dsl.Api.When.Steps.Base;
+using Dsl.Port.When.Steps.Base;
 
-namespace Dsl.Api.When.Steps;
+namespace Dsl.Port.When.Steps;
 
 public interface IPublishCoupon : IWhenStep
 {

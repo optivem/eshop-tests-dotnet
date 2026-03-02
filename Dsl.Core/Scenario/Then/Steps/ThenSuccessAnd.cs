@@ -1,4 +1,4 @@
-using Dsl.Api.Then.Steps;
+using Dsl.Port.Then.Steps;
 using Dsl.Common;
 
 namespace Dsl.Core.Scenario.Then;

@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Dsl.Core\Dsl.Core.csproj" />
-    <ProjectReference Include="..\..\Driver.Core\Driver.Core.csproj" />
+    <ProjectReference Include="..\..\Driver.Adapter\Driver.Adapter.csproj" />
   </ItemGroup>
 
   <ItemGroup>

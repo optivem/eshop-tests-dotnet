@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Shouldly;
-using Driver.Api.Shop.Dtos.Error;
+using Driver.Port.Shop.Dtos.Error;
 
 namespace Dsl.Core.Shop.Dsl.UseCases.Base;
 

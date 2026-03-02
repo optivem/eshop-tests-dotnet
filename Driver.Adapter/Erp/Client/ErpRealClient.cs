@@ -1,8 +1,8 @@
 using Common;
-using Driver.Core.Erp.Client.Dtos;
-using Driver.Core.Erp.Client.Dtos.Error;
+using Driver.Adapter.Erp.Client.Dtos;
+using Driver.Adapter.Erp.Client.Dtos.Error;
 
-namespace Driver.Core.Erp.Client;
+namespace Driver.Adapter.Erp.Client;
 
 public class ErpRealClient : BaseErpClient
 {

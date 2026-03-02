@@ -1,6 +1,6 @@
 using SystemTests.AcceptanceTests.V7.Base;
 using Dsl.Core.Shop;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 using Optivem.Testing;
 using Xunit;
 

@@ -1,11 +1,11 @@
-using Driver.Api.Clock;
-using Driver.Api.Clock.Dtos;
-using Driver.Core.Clock.Client;
-using Driver.Core.Clock.Client.Dtos;
-using Driver.Core.Clock.Client.Dtos.Error;
+using Driver.Port.Clock;
+using Driver.Port.Clock.Dtos;
+using Driver.Adapter.Clock.Client;
+using Driver.Adapter.Clock.Client.Dtos;
+using Driver.Adapter.Clock.Client.Dtos.Error;
 using Common;
 
-namespace Driver.Core.Clock;
+namespace Driver.Adapter.Clock;
 
 public class ClockRealDriver : IClockDriver
 {

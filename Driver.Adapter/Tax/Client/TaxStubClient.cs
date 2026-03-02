@@ -1,10 +1,10 @@
 using Common;
 using Driver.Common.WireMock;
 using Driver.Common.Http;
-using Driver.Core.Tax.Client.Dtos;
-using Driver.Core.Tax.Client.Dtos.Error;
+using Driver.Adapter.Tax.Client.Dtos;
+using Driver.Adapter.Tax.Client.Dtos.Error;
 
-namespace Driver.Core.Tax.Client;
+namespace Driver.Adapter.Tax.Client;
 
 public class TaxStubClient : BaseTaxClient
 {

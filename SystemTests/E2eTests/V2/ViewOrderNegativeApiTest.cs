@@ -1,6 +1,6 @@
 using Common;
 using SystemTests.E2eTests.V2.Base;
-using Driver.Api.Shop.Dtos.Error;
+using Driver.Port.Shop.Dtos.Error;
 using SystemTests.TestInfrastructure.Base.V2;
 using Shouldly;
 using Xunit;

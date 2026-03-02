@@ -1,9 +1,9 @@
 using Dsl.Core.Scenario;
 using Dsl.Core.Scenario.When;
-using Dsl.Api.When.Steps;
+using Dsl.Port.When.Steps;
 using Dsl.Common;
 using Common;
-using Driver.Core;
+using Driver.Adapter;
 
 namespace Dsl.Core.Scenario.When;
 

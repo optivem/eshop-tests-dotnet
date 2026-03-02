@@ -1,8 +1,8 @@
 using Dsl.Core.Scenario.When;
-using Dsl.Api.Given;
-using Dsl.Api.Given.Steps;
-using Dsl.Api.When;
-using Driver.Core;
+using Dsl.Port.Given;
+using Dsl.Port.Given.Steps;
+using Dsl.Port.When;
+using Driver.Adapter;
 using Dsl.Core.Gherkin.Given;
 using Optivem.Testing;
 

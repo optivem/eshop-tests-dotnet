@@ -1,10 +1,10 @@
 using Microsoft.Playwright;
-using Driver.Core.Shop.Ui.Client.Pages;
+using Driver.Adapter.Shop.Ui.Client.Pages;
 using Driver.Common.Playwright;
 using System.Net;
 using PlaywrightGateway = Driver.Common.Playwright.PageClient;
 
-namespace Driver.Core.Shop.Ui.Client;
+namespace Driver.Adapter.Shop.Ui.Client;
 
 public class ShopUiClient : IAsyncDisposable
 {

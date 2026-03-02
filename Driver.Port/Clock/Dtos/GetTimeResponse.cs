@@ -1,4 +1,4 @@
-namespace Driver.Api.Clock.Dtos;
+namespace Driver.Port.Clock.Dtos;
 
 public class GetTimeResponse
 {

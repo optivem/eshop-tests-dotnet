@@ -1,13 +1,13 @@
 using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
-using Driver.Api.Erp;
-using Driver.Core.Shop.Api;
-using Driver.Core.Shop.Ui;
+using Driver.Port.Erp;
+using Driver.Adapter.Shop.Api;
+using Driver.Adapter.Shop.Ui;
 using Dsl.Core.Shop;
-using Driver.Api.Shop;
-using Driver.Api.Tax;
-using Driver.Core.Erp;
-using Driver.Core.Tax;
+using Driver.Port.Shop;
+using Driver.Port.Tax;
+using Driver.Adapter.Erp;
+using Driver.Adapter.Tax;
 using Optivem.Testing;
 using Xunit;
 

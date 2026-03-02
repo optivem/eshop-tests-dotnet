@@ -1,4 +1,4 @@
-using Dsl.Api.Then.Steps;
+using Dsl.Port.Then.Steps;
 using Dsl.Common;
 using Dsl.Core.Scenario;
 using Dsl.Core.Shop.Dsl.UseCases.Base;

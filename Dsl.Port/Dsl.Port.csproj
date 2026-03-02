@@ -4,12 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>Dsl.Api</AssemblyName>
-    <RootNamespace>Dsl.Api</RootNamespace>
+    <AssemblyName>Dsl.Port</AssemblyName>
+    <RootNamespace>Dsl.Port</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Driver.Api\Driver.Api.csproj" />
+    <ProjectReference Include="..\Driver.Port\Driver.Port.csproj" />
     <Compile Remove="**\bin\**\*.cs" />
     <Compile Remove="**\obj\**\*.cs" />
   </ItemGroup>

@@ -1,8 +1,8 @@
 using Common;
-using Driver.Api.Shop.Dtos;
-using Driver.Api.Shop.Dtos.Error;
+using Driver.Port.Shop.Dtos;
+using Driver.Port.Shop.Dtos.Error;
 
-namespace Driver.Api.Shop;
+namespace Driver.Port.Shop;
 
 public interface IShopDriver : IAsyncDisposable
 {

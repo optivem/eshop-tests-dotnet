@@ -1,4 +1,4 @@
-namespace Driver.Api.Tax.Dtos.Error;
+namespace Driver.Port.Tax.Dtos.Error;
 
 public class TaxErrorResponse
 {

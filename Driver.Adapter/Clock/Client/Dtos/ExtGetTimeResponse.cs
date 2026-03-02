@@ -1,4 +1,4 @@
-namespace Driver.Core.Clock.Client.Dtos;
+namespace Driver.Adapter.Clock.Client.Dtos;
 
 public class ExtGetTimeResponse
 {

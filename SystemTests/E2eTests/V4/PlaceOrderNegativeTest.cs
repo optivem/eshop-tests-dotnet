@@ -1,7 +1,7 @@
 using Common;
-using Driver.Api.Erp.Dtos;
+using Driver.Port.Erp.Dtos;
 using Dsl.Core.Shop;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 using SystemTests.E2eTests.Commons.Constants;
 using SystemTests.E2eTests.V4.Base;
 using SystemTests.E2eTests.V4.Helpers;

@@ -44,7 +44,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clock", "Dsl.Core\System\Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsl.Core", "Dsl.Core\Dsl.Core.csproj", "{8E9B6817-8649-4F06-88F9-0E9F03185C1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Core", "Driver.Core\Driver.Core.csproj", "{B1C2D3E4-5F6A-7B8C-9D0E-1F2A3B4C5D6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Adapter", "Driver.Adapter\Driver.Adapter.csproj", "{B1C2D3E4-5F6A-7B8C-9D0E-1F2A3B4C5D6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestInfrastructure", "SystemTests\TestInfrastructure\TestInfrastructure.csproj", "{9A1B2C3D-4E5F-6A7B-8C9D-0E1F2A3B4C5D}"
 EndProject
@@ -56,11 +56,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExternalSystemContractTests
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{30258541-D0D8-F3FD-D559-E63D6BF074C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Api", "Driver.Api\Driver.Api.csproj", "{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Port", "Driver.Port\Driver.Port.csproj", "{130E0F63-8C41-4A9F-8807-FAA34AE8BC8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Driver.Common", "Driver.Common\Driver.Common.csproj", "{E4F35CF7-D803-46F6-A19C-AF37ED5D1593}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsl.Api", "Dsl.Api\Dsl.Api.csproj", "{84D339E5-F008-49CF-83DB-C3DF83AABDA7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsl.Port", "Dsl.Port\Dsl.Port.csproj", "{84D339E5-F008-49CF-83DB-C3DF83AABDA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsl.Common", "Dsl.Common\Dsl.Common.csproj", "{25DB3EC2-CD47-49CA-AFD8-021BD5A58F94}"
 EndProject

@@ -1,7 +1,7 @@
-using Driver.Api.Clock.Dtos;
+using Driver.Port.Clock.Dtos;
 using Common;
 
-namespace Driver.Api.Clock;
+namespace Driver.Port.Clock;
 
 public interface IClockDriver : IDisposable
 {

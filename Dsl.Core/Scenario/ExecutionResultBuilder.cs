@@ -1,7 +1,7 @@
 using Dsl.Common;
 using Common;
 using Dsl.Core.Shop.Dsl.UseCases.Base;
-using Driver.Api.Shop.Dtos.Error;
+using Driver.Port.Shop.Dtos.Error;
 using System;
 using System.Collections.Generic;
 using System.Linq;

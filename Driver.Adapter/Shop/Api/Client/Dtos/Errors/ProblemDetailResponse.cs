@@ -1,4 +1,4 @@
-namespace Driver.Core.Shop.Api.Client.Dtos.Errors;
+namespace Driver.Adapter.Shop.Api.Client.Dtos.Errors;
 
 public class ProblemDetailResponse
 {

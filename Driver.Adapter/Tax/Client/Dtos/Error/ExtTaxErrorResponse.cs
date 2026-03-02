@@ -1,4 +1,4 @@
-namespace Driver.Core.Tax.Client.Dtos.Error;
+namespace Driver.Adapter.Tax.Client.Dtos.Error;
 
 public class ExtTaxErrorResponse
 {

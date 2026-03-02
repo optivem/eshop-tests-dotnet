@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Dsl.Api.Then.Steps;
+namespace Dsl.Port.Then.Steps;
 
 public interface IThenFailure
 {

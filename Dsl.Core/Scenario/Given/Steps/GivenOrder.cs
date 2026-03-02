@@ -1,7 +1,7 @@
 using Common;
-using Dsl.Api.Given.Steps;
+using Dsl.Port.Given.Steps;
 using Dsl.Core.Scenario.Given;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 
 namespace Dsl.Core.Gherkin.Given;

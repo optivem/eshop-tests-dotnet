@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 using Driver.Common.Http;
 using Driver.Common.Playwright;
 
-namespace Driver.Core.Shop.Ui.Client.Pages;
+namespace Driver.Adapter.Shop.Ui.Client.Pages;
 
 public class NewOrderPage : BasePage
 {

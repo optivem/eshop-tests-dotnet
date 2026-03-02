@@ -1,5 +1,5 @@
 using Dsl.Core.Scenario;
-using Dsl.Api;
+using Dsl.Port;
 using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
 using Dsl.Core.Gherkin;

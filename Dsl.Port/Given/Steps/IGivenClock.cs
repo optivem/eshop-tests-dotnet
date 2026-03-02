@@ -1,6 +1,6 @@
-using Dsl.Api.Given.Steps.Base;
+using Dsl.Port.Given.Steps.Base;
 
-namespace Dsl.Api.Given.Steps;
+namespace Dsl.Port.Given.Steps;
 
 public interface IGivenClock : IGivenStep
 {

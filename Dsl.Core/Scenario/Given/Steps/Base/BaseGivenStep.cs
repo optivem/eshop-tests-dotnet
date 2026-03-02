@@ -1,8 +1,8 @@
 using Dsl.Core.Scenario.When;
-using Dsl.Api.Given;
-using Dsl.Api.Given.Steps.Base;
-using Dsl.Api.When;
-using Driver.Core;
+using Dsl.Port.Given;
+using Dsl.Port.Given.Steps.Base;
+using Dsl.Port.When;
+using Driver.Adapter;
 using Optivem.Testing;
 
 namespace Dsl.Core.Scenario.Given;

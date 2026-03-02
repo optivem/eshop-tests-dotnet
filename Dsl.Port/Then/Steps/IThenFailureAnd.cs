@@ -1,4 +1,4 @@
-namespace Dsl.Api.Then.Steps;
+namespace Dsl.Port.Then.Steps;
 
 public interface IThenFailureAnd
 {

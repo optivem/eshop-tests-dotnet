@@ -1,7 +1,7 @@
-using Dsl.Api.Given;
-using Dsl.Api.When;
+using Dsl.Port.Given;
+using Dsl.Port.When;
 
-namespace Dsl.Api.Given.Steps.Base;
+namespace Dsl.Port.Given.Steps.Base;
 
 public interface IGivenStep
 {

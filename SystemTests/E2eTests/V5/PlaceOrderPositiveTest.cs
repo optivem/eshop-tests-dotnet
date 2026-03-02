@@ -1,6 +1,6 @@
 using Common;
 using Dsl.Core.Shop;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 using SystemTests.E2eTests.Commons.Constants;
 using SystemTests.E2eTests.V5.Base;
 using Optivem.Testing;

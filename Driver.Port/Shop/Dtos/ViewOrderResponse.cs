@@ -1,4 +1,4 @@
-namespace Driver.Api.Shop.Dtos;
+namespace Driver.Port.Shop.Dtos;
 
 public class ViewOrderResponse
 {

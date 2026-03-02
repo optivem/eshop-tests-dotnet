@@ -1,9 +1,9 @@
 using Common;
 using Driver.Common.Http;
-using Driver.Core.Shop.Api.Client.Dtos.Errors;
-using Driver.Api.Shop.Dtos;
+using Driver.Adapter.Shop.Api.Client.Dtos.Errors;
+using Driver.Port.Shop.Dtos;
 
-namespace Driver.Core.Shop.Api.Client.Controllers;
+namespace Driver.Adapter.Shop.Api.Client.Controllers;
 
 public class OrderController
 {

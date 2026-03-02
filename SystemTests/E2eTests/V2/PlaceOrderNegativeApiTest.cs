@@ -1,13 +1,13 @@
 using Common;
-using Driver.Core.Erp.Client.Dtos;
-using Driver.Api.Shop.Dtos.Error;
-using Driver.Api.Shop.Dtos;
+using Driver.Adapter.Erp.Client.Dtos;
+using Driver.Port.Shop.Dtos.Error;
+using Driver.Port.Shop.Dtos;
 using SystemTests.E2eTests.Commons.Constants;
 using SystemTests.E2eTests.V2.Base;
 using SystemTests.E2eTests.V4.Helpers;
 using E2eTests.Providers;
 using SystemTests.TestInfrastructure.Base.V2;
-using Driver.Core.Shop.Api.Client.Dtos.Errors;
+using Driver.Adapter.Shop.Api.Client.Dtos.Errors;
 using Shouldly;
 using Xunit;
 

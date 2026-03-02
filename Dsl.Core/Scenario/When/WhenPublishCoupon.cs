@@ -1,9 +1,9 @@
 using Dsl.Core.Scenario;
 using Dsl.Core.Scenario.When;
-using Dsl.Api.When.Steps;
+using Dsl.Port.When.Steps;
 using Dsl.Common;
 using Common;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 using Dsl.Core.Shop.Dsl.UseCases;
 using Optivem.Testing;
 using static Dsl.Core.Gherkin.GherkinDefaults;

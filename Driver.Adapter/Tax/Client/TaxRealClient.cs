@@ -1,4 +1,4 @@
-namespace Driver.Core.Tax.Client;
+namespace Driver.Adapter.Tax.Client;
 
 public class TaxRealClient : BaseTaxClient
 {

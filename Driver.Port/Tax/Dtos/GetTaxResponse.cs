@@ -1,4 +1,4 @@
-namespace Driver.Api.Tax.Dtos;
+namespace Driver.Port.Tax.Dtos;
 
 public class GetTaxResponse
 {

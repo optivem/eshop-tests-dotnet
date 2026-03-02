@@ -1,9 +1,9 @@
 using Common;
-using Driver.Core.Tax.Client;
-using Driver.Api.Tax.Dtos;
-using Driver.Api.Tax.Dtos.Error;
+using Driver.Adapter.Tax.Client;
+using Driver.Port.Tax.Dtos;
+using Driver.Port.Tax.Dtos.Error;
 
-namespace Driver.Core.Tax;
+namespace Driver.Adapter.Tax;
 
 public class TaxRealDriver : BaseTaxDriver<TaxRealClient>
 {

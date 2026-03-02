@@ -1,6 +1,6 @@
 using Dsl.Common;
 using Shouldly;
-using Driver.Api.Shop.Dtos;
+using Driver.Port.Shop.Dtos;
 using Common;
 
 namespace Dsl.Core.Shop.Dsl.UseCases;

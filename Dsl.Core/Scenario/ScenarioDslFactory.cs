@@ -1,4 +1,4 @@
-using Driver.Core;
+using Driver.Adapter;
 using Optivem.Testing;
 
 namespace Dsl.Core.Scenario

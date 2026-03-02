@@ -1,4 +1,4 @@
-using Driver.Api.Shop;
+using Driver.Port.Shop;
 using Dsl.Core.Shop.Dsl.UseCases;
 using Dsl.Common;
 

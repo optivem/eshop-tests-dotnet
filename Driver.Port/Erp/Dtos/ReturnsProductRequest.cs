@@ -1,4 +1,4 @@
-namespace Driver.Api.Erp.Dtos;
+namespace Driver.Port.Erp.Dtos;
 
 public class ReturnsProductRequest
 {

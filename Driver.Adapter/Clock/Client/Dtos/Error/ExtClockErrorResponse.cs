@@ -1,4 +1,4 @@
-namespace Driver.Core.Clock.Client.Dtos.Error;
+namespace Driver.Adapter.Clock.Client.Dtos.Error;
 
 public class ExtClockErrorResponse
 {

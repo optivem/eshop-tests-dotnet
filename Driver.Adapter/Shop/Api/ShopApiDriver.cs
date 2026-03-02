@@ -1,12 +1,12 @@
 using Common;
 using Driver.Common.Http;
-using Driver.Core.Shop.Api.Client.Dtos.Errors;
-using Driver.Core.Shop.Api.Client;
-using Driver.Api.Shop.Dtos;
-using Driver.Api.Shop.Dtos.Error;
-using Driver.Api.Shop;
+using Driver.Adapter.Shop.Api.Client.Dtos.Errors;
+using Driver.Adapter.Shop.Api.Client;
+using Driver.Port.Shop.Dtos;
+using Driver.Port.Shop.Dtos.Error;
+using Driver.Port.Shop;
 
-namespace Driver.Core.Shop.Api;
+namespace Driver.Adapter.Shop.Api;
 
 public class ShopApiDriver : IShopDriver
 {

@@ -1,8 +1,8 @@
 using Common;
-using Driver.Core.Clock.Client.Dtos;
-using Driver.Core.Clock.Client.Dtos.Error;
+using Driver.Adapter.Clock.Client.Dtos;
+using Driver.Adapter.Clock.Client.Dtos.Error;
 
-namespace Driver.Core.Clock.Client;
+namespace Driver.Adapter.Clock.Client;
 
 public class ClockRealClient
 {

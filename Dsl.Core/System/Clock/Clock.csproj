@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Driver.Core\Driver.Core.csproj" />
-    <ProjectReference Include="..\..\..\Driver.Api\Driver.Api.csproj" />
+    <ProjectReference Include="..\..\..\Driver.Adapter\Driver.Adapter.csproj" />
+    <ProjectReference Include="..\..\..\Driver.Port\Driver.Port.csproj" />
     <ProjectReference Include="..\..\..\Common\Common.csproj" />
   </ItemGroup>
 

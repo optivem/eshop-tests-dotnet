@@ -1,4 +1,4 @@
-namespace Driver.Core.Tax.Client.Dtos;
+namespace Driver.Adapter.Tax.Client.Dtos;
 
 public class ExtCountryDetailsResponse
 {

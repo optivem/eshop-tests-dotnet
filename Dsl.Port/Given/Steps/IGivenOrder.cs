@@ -1,7 +1,7 @@
-using Dsl.Api.Given.Steps.Base;
-using Driver.Api.Shop.Dtos;
+using Dsl.Port.Given.Steps.Base;
+using Driver.Port.Shop.Dtos;
 
-namespace Dsl.Api.Given.Steps;
+namespace Dsl.Port.Given.Steps;
 
 public interface IGivenOrder : IGivenStep
 {

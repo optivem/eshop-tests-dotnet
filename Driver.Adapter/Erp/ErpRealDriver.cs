@@ -1,11 +1,11 @@
 using Common;
-using Driver.Api.Erp.Dtos;
-using Driver.Api.Erp.Dtos.Error;
-using Driver.Core.Erp.Client;
-using Driver.Core.Erp.Client.Dtos;
-using Driver.Core.Erp.Client.Dtos.Error;
+using Driver.Port.Erp.Dtos;
+using Driver.Port.Erp.Dtos.Error;
+using Driver.Adapter.Erp.Client;
+using Driver.Adapter.Erp.Client.Dtos;
+using Driver.Adapter.Erp.Client.Dtos.Error;
 
-namespace Driver.Core.Erp;
+namespace Driver.Adapter.Erp;
 
 public class ErpRealDriver : BaseErpDriver<ErpRealClient>
 {
