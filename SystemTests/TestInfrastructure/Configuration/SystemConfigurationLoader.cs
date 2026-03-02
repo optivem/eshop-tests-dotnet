@@ -6,7 +6,7 @@ namespace SystemTests.TestInfrastructure.Configuration;
 
 public static class SystemConfigurationLoader
 {
-    public static SystemConfiguration Load(Environment environment, ExternalSystemMode externalSystemMode)
+    public static AppConfiguration Load(Environment environment, ExternalSystemMode externalSystemMode)
     {
         var configFile = GetConfigFileName(environment, externalSystemMode);
         var configuration = LoadJsonFile(configFile);
@@ -17,7 +17,7 @@ public static class SystemConfigurationLoader
         var taxBaseUrl = GetValue(configuration, "Tax:ApiBaseUrl");
         var clockBaseUrl = GetValue(configuration, "Clock:ApiBaseUrl");
 
-        return new SystemConfiguration(shopUiBaseUrl, shopApiBaseUrl, erpBaseUrl, taxBaseUrl, clockBaseUrl, externalSystemMode);
+        return new AppConfiguration(shopUiBaseUrl, shopApiBaseUrl, erpBaseUrl, taxBaseUrl, clockBaseUrl, externalSystemMode);
     }
 
     private static string GetConfigFileName(Environment environment, ExternalSystemMode externalSystemMode)

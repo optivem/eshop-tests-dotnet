@@ -10,7 +10,7 @@ namespace SystemTests.TestInfrastructure.Base.V2;
 
 public abstract class BaseClientTest : BaseConfigurableTest, IAsyncLifetime
 {
-    protected readonly SystemConfiguration _configuration;
+    protected readonly AppConfiguration _configuration;
 
     protected ShopUiClient? _shopUiClient;
     protected ShopApiClient? _shopApiClient;

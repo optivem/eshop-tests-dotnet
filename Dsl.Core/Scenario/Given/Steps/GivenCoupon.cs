@@ -78,7 +78,7 @@ public class GivenCoupon : BaseGiven, IGivenCoupon
 
     IGivenCoupon IGivenCoupon.WithUsageLimit(int? usageLimit) => WithUsageLimit(usageLimit);
 
-    internal override async Task Execute(SystemDsl app)
+    internal override async Task Execute(AppDsl app)
     {
         var shop = await app.Shop(Channel);
         (await shop.PublishCoupon()

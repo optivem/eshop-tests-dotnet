@@ -80,7 +80,7 @@ public class GivenOrder : BaseGiven, IGivenOrder
 
     IGivenOrder IGivenOrder.WithStatus(OrderStatus status) => WithStatus(status);
 
-    internal override async Task Execute(SystemDsl app)
+    internal override async Task Execute(AppDsl app)
     {
         var shop = await app.Shop(Channel);
 

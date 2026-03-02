@@ -11,11 +11,11 @@ public abstract class BaseWhen<TSuccessResponse, TSuccessVerification>
     : IWhenStep
     where TSuccessVerification : ResponseVerification<TSuccessResponse>
 {
-    private readonly SystemDsl _app;
+    private readonly AppDsl _app;
     private readonly ScenarioDsl _scenario;
     private readonly Func<Task> _ensureGiven;
 
-    protected BaseWhen(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven)
+    protected BaseWhen(AppDsl app, ScenarioDsl scenario, Func<Task> ensureGiven)
     {
         _app = app;
         _scenario = scenario;
@@ -33,7 +33,7 @@ public abstract class BaseWhen<TSuccessResponse, TSuccessVerification>
 
     IThen IWhenStep.Then() => Then();
 
-    protected abstract Task<ExecutionResult<TSuccessResponse, TSuccessVerification>> Execute(SystemDsl app);
+    protected abstract Task<ExecutionResult<TSuccessResponse, TSuccessVerification>> Execute(AppDsl app);
 
     protected Channel Channel => _scenario.Channel;
 }

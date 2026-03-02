@@ -10,13 +10,13 @@ namespace SystemTests.TestInfrastructure.Base.V7;
 
 public abstract class BaseScenarioDslTest : BaseConfigurableTest, IAsyncLifetime
 {
-    private SystemDsl _app = null!;
+    private AppDsl _app = null!;
     private ScenarioDslFactory _scenarioFactory = null!;
 
     public virtual async Task InitializeAsync()
     {
         var configuration = LoadConfiguration();
-        _app = new SystemDsl(configuration);
+        _app = new AppDsl(configuration);
         _scenarioFactory = new ScenarioDslFactory(_app);
         await Task.CompletedTask;
     }

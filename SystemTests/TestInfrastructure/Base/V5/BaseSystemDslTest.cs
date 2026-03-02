@@ -6,12 +6,12 @@ namespace SystemTests.TestInfrastructure.Base.V5;
 
 public abstract class BaseSystemDslTest : BaseConfigurableTest, IAsyncLifetime
 {
-    protected SystemDsl _app = null!;
+    protected AppDsl _app = null!;
 
     public virtual async Task InitializeAsync()
     {
         var configuration = LoadConfiguration();
-        _app = new SystemDsl(configuration);
+        _app = new AppDsl(configuration);
         await Task.CompletedTask;
     }
 

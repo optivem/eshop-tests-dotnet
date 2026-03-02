@@ -9,12 +9,12 @@ namespace Dsl.Core.Scenario.Then
     public class ThenStage<TSuccessResponse, TSuccessVerification> : BaseClause, IThen
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
-        private readonly SystemDsl _app;
+        private readonly AppDsl _app;
         private readonly Func<Task<ExecutionResult<TSuccessResponse, TSuccessVerification>>> _lazyExecute;
         private ExecutionResult<TSuccessResponse, TSuccessVerification>? _executionResult;
         private bool _executionCompleted = false;
 
-        public ThenStage(Channel channel, SystemDsl app, Func<Task<ExecutionResult<TSuccessResponse, TSuccessVerification>>> lazyExecute)
+        public ThenStage(Channel channel, AppDsl app, Func<Task<ExecutionResult<TSuccessResponse, TSuccessVerification>>> lazyExecute)
             : base(channel)
         {
             _app = app;
@@ -35,7 +35,7 @@ namespace Dsl.Core.Scenario.Then
 
         IThenFailure IThen.ShouldFail() => ShouldFail();
 
-        internal SystemDsl App => _app;
+        internal AppDsl App => _app;
 
         internal async Task<ExecutionResult<TSuccessResponse, TSuccessVerification>> GetExecutionResult()
         {

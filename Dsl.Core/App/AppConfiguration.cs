@@ -3,7 +3,7 @@ using Dsl.Common;
 
 namespace Dsl.Core;
 
-public class SystemConfiguration
+public class AppConfiguration
 {
     private readonly string shopUiBaseUrl;
     private readonly string shopApiBaseUrl;
@@ -12,7 +12,7 @@ public class SystemConfiguration
     private readonly string clockBaseUrl;
     private readonly ExternalSystemMode externalSystemMode;
 
-    public SystemConfiguration(string shopUiBaseUrl, string shopApiBaseUrl, string erpBaseUrl, string taxBaseUrl, string clockBaseUrl, ExternalSystemMode externalSystemMode)
+    public AppConfiguration(string shopUiBaseUrl, string shopApiBaseUrl, string erpBaseUrl, string taxBaseUrl, string clockBaseUrl, ExternalSystemMode externalSystemMode)
     {
         this.shopUiBaseUrl = shopUiBaseUrl;
         this.shopApiBaseUrl = shopApiBaseUrl;

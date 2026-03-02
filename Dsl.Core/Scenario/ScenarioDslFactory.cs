@@ -5,9 +5,9 @@ namespace Dsl.Core.Scenario
 {
     public class ScenarioDslFactory
     {
-        private readonly SystemDsl _app;
+        private readonly AppDsl _app;
 
-        public ScenarioDslFactory(SystemDsl app)
+        public ScenarioDslFactory(AppDsl app)
         {
             _app = app;
         }

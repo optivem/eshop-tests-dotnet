@@ -18,7 +18,7 @@ public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoup
     private string? _validTo;
     private string? _usageLimit;
 
-    public PublishCoupon(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public PublishCoupon(AppDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
         WithCouponCode(DefaultCouponCode);
         WithDiscountRate(DefaultDiscountRate);
@@ -80,7 +80,7 @@ public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoup
 
     IPublishCoupon IPublishCoupon.WithUsageLimit(int usageLimit) => WithUsageLimit(usageLimit);
 
-    protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(SystemDsl app)
+    protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(AppDsl app)
     {
         var shop = await app.Shop(Channel);
         var result = await shop.PublishCoupon()

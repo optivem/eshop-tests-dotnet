@@ -6,7 +6,7 @@ namespace SystemTests.ExternalSystemContractTests.V7.Base;
 
 public abstract class BaseExternalSystemContractTest : BaseSystemDslTest
 {
-    protected SystemDsl App => _app;
+    protected AppDsl App => _app;
 
     protected abstract ExternalSystemMode? FixedExternalSystemMode { get; }
 

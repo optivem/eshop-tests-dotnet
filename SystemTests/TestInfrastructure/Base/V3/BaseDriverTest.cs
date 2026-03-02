@@ -13,7 +13,7 @@ namespace SystemTests.TestInfrastructure.Base.V3;
 
 public abstract class BaseDriverTest : BaseConfigurableTest, IAsyncLifetime
 {
-    protected readonly SystemConfiguration _configuration;
+    protected readonly AppConfiguration _configuration;
     protected IShopDriver? _shopDriver;
     protected ErpRealDriver? _erpDriver;
     protected TaxRealDriver? _taxDriver;

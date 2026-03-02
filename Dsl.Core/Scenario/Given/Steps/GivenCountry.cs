@@ -39,7 +39,7 @@ public class GivenCountry : BaseGiven, IGivenCountry
 
     IGivenCountry IGivenCountry.WithTaxRate(decimal taxRate) => WithTaxRate(taxRate);
 
-    internal override async Task Execute(SystemDsl app)
+    internal override async Task Execute(AppDsl app)
     {
         (await app.Tax().ReturnsTaxRate()
             .Country(_country)

@@ -22,7 +22,7 @@ public class GivenClock : BaseGiven, IGivenClock
 
     IGivenClock IGivenClock.WithTime(string? time) => WithTime(time);
 
-    internal override async Task Execute(SystemDsl app)
+    internal override async Task Execute(AppDsl app)
     {
         (await app.Clock().ReturnsTime()
             .Time(_time)

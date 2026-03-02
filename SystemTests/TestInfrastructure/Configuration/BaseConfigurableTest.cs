@@ -15,7 +15,7 @@ public abstract class BaseConfigurableTest
         return null;
     }
 
-    protected SystemConfiguration LoadConfiguration()
+    protected AppConfiguration LoadConfiguration()
     {
         var fixedEnvironment = GetFixedEnvironment();
         var fixedExternalSystemMode = GetFixedExternalSystemMode();

@@ -11,7 +11,7 @@ public class ViewOrder : BaseWhen<ViewOrderResponse, ViewOrderVerification>, IVi
 {
     private string? _orderNumber;
 
-    public ViewOrder(SystemDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public ViewOrder(AppDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
         WithOrderNumber(DefaultOrderNumber);
     }
@@ -24,7 +24,7 @@ public class ViewOrder : BaseWhen<ViewOrderResponse, ViewOrderVerification>, IVi
 
     IViewOrder IViewOrder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
 
-    protected override async Task<ExecutionResult<ViewOrderResponse, ViewOrderVerification>> Execute(SystemDsl app)
+    protected override async Task<ExecutionResult<ViewOrderResponse, ViewOrderVerification>> Execute(AppDsl app)
     {
         var shop = await app.Shop(Channel);
         var result = await shop.ViewOrder()

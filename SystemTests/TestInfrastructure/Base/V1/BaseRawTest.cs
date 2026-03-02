@@ -8,7 +8,7 @@ namespace SystemTests.TestInfrastructure.Base.V1;
 
 public abstract class BaseRawTest : BaseConfigurableTest, IAsyncLifetime
 {
-    protected readonly SystemConfiguration _configuration;
+    protected readonly AppConfiguration _configuration;
 
     protected IPlaywright? shopUiPlaywright;
     protected IBrowser? shopUiBrowser;

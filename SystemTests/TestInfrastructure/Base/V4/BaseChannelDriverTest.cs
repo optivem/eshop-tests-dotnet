@@ -54,7 +54,7 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
         await InitializeAsync();
     }
 
-    private static async Task<IShopDriver?> CreateShopDriverAsync(SystemConfiguration configuration)
+    private static async Task<IShopDriver?> CreateShopDriverAsync(AppConfiguration configuration)
     {
         var channelType = ChannelContext.Get();
 
