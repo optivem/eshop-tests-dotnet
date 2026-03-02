@@ -1,4 +1,4 @@
-# Modern Acceptance Testing in Legacy Code (.NET)
+# eShop Tests (.NET)
 
 [![acceptance-stage](https://github.com/optivem/eshop-tests-dotnet/actions/workflows/acceptance-stage.yml/badge.svg)](https://github.com/optivem/eshop-tests-dotnet/actions/workflows/acceptance-stage.yml)
 

@@ -28,7 +28,7 @@ if (-not $Token) {
 }
 
 $projectKey = "optivem_eshop-tests-dotnet"
-$projectName = "Modern Acceptance Testing in Legacy Code (.NET)"
+$projectName = "eShop Tests (.NET)"
 
 Write-Host "Running SonarScanner for .NET..." -ForegroundColor Cyan
 
