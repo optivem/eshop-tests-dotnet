@@ -31,7 +31,7 @@ public abstract class BaseWhen<TSuccessResponse, TSuccessVerification>
         });
     }
 
-    IThen IWhenStep.Then() => Then();
+    IThenResult IWhenStep.Then() => Then();
 
     protected abstract Task<ExecutionResult<TSuccessResponse, TSuccessVerification>> Execute(AppDsl app);
 

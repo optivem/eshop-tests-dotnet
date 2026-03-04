@@ -6,7 +6,7 @@ using Optivem.Testing;
 
 namespace Dsl.Core.Scenario.Then
 {
-    public class ThenStage<TSuccessResponse, TSuccessVerification> : BaseClause, IThen
+    public class ThenStage<TSuccessResponse, TSuccessVerification> : BaseClause, IThenResult
         where TSuccessVerification : ResponseVerification<TSuccessResponse>
     {
         private readonly AppDsl _app;
@@ -26,14 +26,14 @@ namespace Dsl.Core.Scenario.Then
             return new ThenSuccess<TSuccessResponse, TSuccessVerification>(this);
         }
 
-        IThenSuccess IThen.ShouldSucceed() => ShouldSucceed();
+        IThenSuccess IThenResult.ShouldSucceed() => ShouldSucceed();
 
         public ThenFailure<TSuccessResponse, TSuccessVerification> ShouldFail()
         {
             return new ThenFailure<TSuccessResponse, TSuccessVerification>(this);
         }
 
-        IThenFailure IThen.ShouldFail() => ShouldFail();
+        IThenFailure IThenResult.ShouldFail() => ShouldFail();
 
         internal AppDsl App => _app;
 
