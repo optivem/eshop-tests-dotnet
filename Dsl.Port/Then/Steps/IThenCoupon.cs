@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Dsl.Port.Then.Steps;
 
 public interface IThenCoupon
@@ -11,4 +13,6 @@ public interface IThenCoupon
     IThenCoupon HasUsageLimit(int usageLimit);
 
     IThenCoupon HasUsedCount(int expectedUsedCount);
+
+    TaskAwaiter GetAwaiter();
 }
