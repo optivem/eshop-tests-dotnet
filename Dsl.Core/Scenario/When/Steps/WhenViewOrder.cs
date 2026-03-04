@@ -1,11 +1,12 @@
 using Driver.Adapter;
+using Dsl.Core.Scenario.When.Steps.Base;
 using Dsl.Port.When.Steps;
 using Driver.Port.Shop.Dtos;
 using Dsl.Core.Shop.UseCases;
 using Optivem.Testing;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace Dsl.Core.Scenario.When;
+namespace Dsl.Core.Scenario.When.Steps;
 
 public class ViewOrder : BaseWhen<ViewOrderResponse, ViewOrderVerification>, IViewOrder
 {

@@ -1,4 +1,4 @@
-using Dsl.Core.Scenario.When;
+using Dsl.Core.Scenario.When.Steps.Base;
 using Dsl.Port.When.Steps;
 using Dsl.Common;
 using Common;
@@ -8,7 +8,7 @@ using Dsl.Core.Shop.UseCases;
 using Optivem.Testing;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace Dsl.Core.Scenario.Builders.When.PlaceOrder;
+namespace Dsl.Core.Scenario.When.Steps;
 
 public class PlaceOrder : BaseWhen<PlaceOrderResponse, PlaceOrderVerification>, IPlaceOrder
 {

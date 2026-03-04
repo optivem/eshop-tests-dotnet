@@ -1,5 +1,5 @@
 using Dsl.Core.Scenario;
-using Dsl.Core.Scenario.When;
+using Dsl.Core.Scenario.When.Steps.Base;
 using Dsl.Port.When.Steps;
 using Dsl.Common;
 using Common;
@@ -8,7 +8,7 @@ using Dsl.Core.Shop.UseCases;
 using Optivem.Testing;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace Dsl.Core.Gherkin.When;
+namespace Dsl.Core.Scenario.When.Steps;
 
 public class PublishCoupon : BaseWhen<VoidValue, VoidVerification>, IPublishCoupon
 {

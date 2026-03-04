@@ -5,7 +5,7 @@ using Dsl.Common;
 using Driver.Adapter;
 using Optivem.Testing;
 
-namespace Dsl.Core.Scenario.When;
+namespace Dsl.Core.Scenario.When.Steps.Base;
 
 public abstract class BaseWhen<TSuccessResponse, TSuccessVerification>
     : IWhenStep

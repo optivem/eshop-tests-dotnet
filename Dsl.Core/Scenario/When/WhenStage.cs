@@ -1,13 +1,9 @@
-using Dsl.Core.Scenario.Builders.When.PlaceOrder;
-using Dsl.Core.Scenario.Builders.When.CancelOrder;
-using Dsl.Core.Scenario.When;
+using Dsl.Core.Scenario.When.Steps;
 using Dsl.Core.Scenario.Then;
 using Dsl.Port.When;
 using Dsl.Port.When.Steps;
 using Optivem.Testing;
 using Driver.Adapter;
-using Dsl.Core.Gherkin;
-using Dsl.Core.Gherkin.When;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 
 namespace Dsl.Core.Scenario.When

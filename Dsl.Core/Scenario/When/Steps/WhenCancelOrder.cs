@@ -1,16 +1,14 @@
-using DevLab.JmesPath.Functions;
-using Dsl.Core.Scenario.When;
+using Dsl.Core.Scenario.When.Steps.Base;
 using Dsl.Port.When.Steps;
 using Dsl.Common;
 using Common;
 using Driver.Adapter;
-using Dsl.Core.Gherkin;
 using Driver.Port.Shop.Dtos;
 using Dsl.Core.Shop.UseCases;
 using Optivem.Testing;
 using static Dsl.Core.Gherkin.GherkinDefaults;
 
-namespace Dsl.Core.Scenario.Builders.When.CancelOrder;
+namespace Dsl.Core.Scenario.When.Steps;
 
 public class CancelOrder : BaseWhen<VoidValue, VoidVerification>, ICancelOrder
 {
