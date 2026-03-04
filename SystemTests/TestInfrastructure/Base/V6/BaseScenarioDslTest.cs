@@ -19,12 +19,22 @@ public abstract class BaseScenarioDslTest : BaseConfigurableTest, IAsyncLifetime
 
     protected IFeatureDsl Feature(Channel channel)
     {
-        return new FeatureDsl(channel, _app);
+        return new FeatureDsl(_app, channel);
+    }
+
+    protected IFeatureDsl Feature()
+    {
+        return new FeatureDsl(_app);
     }
 
     protected IBackgroundDsl Background(Channel channel)
     {
         return Feature(channel).Background();
+    }
+
+    protected IBackgroundDsl Background()
+    {
+        return Feature().Background();
     }
 
     protected IScenarioDsl Scenario(Channel channel)

@@ -7,9 +7,9 @@ namespace Dsl.Core;
 public class BackgroundDsl : IBackgroundDsl
 {
     private readonly AppDsl _app;
-    private readonly Channel _channel;
+    private readonly Channel? _channel;
 
-    public BackgroundDsl(AppDsl app, Channel channel)
+    public BackgroundDsl(AppDsl app, Channel? channel = null)
     {
         _app = app;
         _channel = channel;

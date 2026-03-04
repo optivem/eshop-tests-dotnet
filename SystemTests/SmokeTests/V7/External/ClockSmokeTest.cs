@@ -1,18 +1,14 @@
-using Common;
-using SystemTests.TestInfrastructure.Base.V5;
-using Shouldly;
+using SystemTests.TestInfrastructure.Base.V7;
 using Xunit;
 
 namespace SystemTests.SmokeTests.V7.External;
 
-public class ClockSmokeTest : BaseSystemDslTest
+public class ClockSmokeTest : BaseScenarioDslTest
 {
     [Fact]
     public async Task ShouldBeAbleToGoToClock()
     {
-        (await _app.Clock().GoToClock()
-            .Execute())
-            .ShouldSucceed();
+        await Background().Clock().ShouldBeRunning();
     }
 }
 

@@ -7,9 +7,9 @@ namespace Dsl.Core;
 public class FeatureDsl : IFeatureDsl
 {
     private readonly AppDsl _app;
-    private readonly Channel _channel;
+    private readonly Channel? _channel;
 
-    public FeatureDsl(Channel channel, AppDsl app)
+    public FeatureDsl(AppDsl app, Channel? channel = null)
     {
         _app = app;
         _channel = channel;
@@ -22,6 +22,6 @@ public class FeatureDsl : IFeatureDsl
 
     public IScenarioDsl Scenario()
     {
-        return new Scenario.ScenarioDsl(_channel, _app);
+        return new Scenario.ScenarioDsl(_channel!, _app);
     }
 }

@@ -1,18 +1,14 @@
-using Common;
-using SystemTests.TestInfrastructure.Base.V5;
-using Shouldly;
+using SystemTests.TestInfrastructure.Base.V7;
 using Xunit;
 
 namespace SystemTests.SmokeTests.V7.External;
 
-public class TaxSmokeTest : BaseSystemDslTest
+public class TaxSmokeTest : BaseScenarioDslTest
 {
     [Fact]
     public async Task ShouldBeAbleToGoToTax()
     {
-        (await _app.Tax().GoToTax()
-            .Execute())
-            .ShouldSucceed();
+        await Background().Tax().ShouldBeRunning();
     }
 }
 
