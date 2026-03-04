@@ -14,7 +14,7 @@ namespace Dsl.Core.Scenario.Given
         private readonly ScenarioDsl _scenario;
         private readonly List<GivenProduct> _products;
         private readonly List<GivenOrder> _orders;
-        private GivenClock _clock;
+        private GivenClock? _clock;
         private readonly List<GivenCountry> _countries;
         private readonly List<GivenCoupon> _coupons;
 
@@ -25,7 +25,7 @@ namespace Dsl.Core.Scenario.Given
             _scenario = scenario;
             _products = new List<GivenProduct>();
             _orders = new List<GivenOrder>();
-            _clock = new GivenClock(this);
+            _clock = null;
             _countries = new List<GivenCountry>();
             _coupons = new List<GivenCoupon>();
         }
@@ -91,7 +91,10 @@ namespace Dsl.Core.Scenario.Given
 
         private async Task SetupClock()
         {
-            await _clock.Execute(_app);
+            if (_clock != null)
+            {
+                await _clock.Execute(_app);
+            }
         }
 
         private async Task SetupErp()
