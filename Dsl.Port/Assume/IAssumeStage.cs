@@ -1,5 +1,7 @@
 namespace Dsl.Port.Assume;
 
+using Dsl.Port.Assume.Steps;
+
 public interface IAssumeStage
 {
     IShould Shop();

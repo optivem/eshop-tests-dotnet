@@ -1,4 +1,6 @@
-namespace Dsl.Port.Assume;
+using Dsl.Port.Assume;
+
+namespace Dsl.Port.Assume.Steps;
 
 public interface IShould
 {

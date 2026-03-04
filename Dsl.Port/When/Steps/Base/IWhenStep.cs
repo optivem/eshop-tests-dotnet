@@ -4,5 +4,5 @@ namespace Dsl.Port.When.Steps.Base;
 
 public interface IWhenStep
 {
-    IThenResult Then();
+    IThenResultStage Then();
 }
