@@ -7,18 +7,11 @@ public abstract class BaseErpContractTest : BaseExternalSystemContractTest
     [Fact]
     public async Task ShouldBeAbleToGetProduct()
     {
-        (await App.Erp().ReturnsProduct()
-            .Sku("SKU-123")
-            .UnitPrice(12.0m)
-            .Execute())
-            .ShouldSucceed();
-
-        (await App.Erp().GetProduct()
-            .Sku("SKU-123")
-            .Execute())
-            .ShouldSucceed()
-            .Sku("SKU-123")
-            .Price(12.0m);
+        (await Scenario()
+            .Given().Product().WithSku("SKU-123").WithUnitPrice(12.0m)
+            .Then().Product("SKU-123"))
+            .HasSku("SKU-123")
+            .HasPrice(12.0m);
     }
 }
 

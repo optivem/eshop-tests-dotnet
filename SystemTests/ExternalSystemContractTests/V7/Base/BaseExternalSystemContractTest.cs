@@ -1,12 +1,12 @@
 using Dsl.Common;
-using SystemTests.TestInfrastructure.Base.V5;
-using Dsl.Core;
+using Dsl.Port;
+using SystemTests.TestInfrastructure.Base.V7;
 
 namespace SystemTests.ExternalSystemContractTests.V7.Base;
 
-public abstract class BaseExternalSystemContractTest : BaseSystemDslTest
+public abstract class BaseExternalSystemContractTest : BaseScenarioDslTest
 {
-    protected AppDsl App => _app;
+    protected IScenarioDsl Scenario() => Feature().Scenario();
 
     protected abstract ExternalSystemMode? FixedExternalSystemMode { get; }
 

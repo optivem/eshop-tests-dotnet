@@ -7,18 +7,11 @@ public class TaxStubContractTest : BaseTaxContractTest
     [Fact]
     public async Task ShouldBeAbleToGetConfiguredTaxRate()
     {
-        (await App.Tax().ReturnsTaxRate()
-            .Country("LALA")
-            .TaxRate(0.23m)
-            .Execute())
-            .ShouldSucceed();
-
-        (await App.Tax().GetTaxRate()
-            .Country("LALA")
-            .Execute())
-            .ShouldSucceed()
-            .Country("LALA")
-            .TaxRate(0.23m);
+        (await Scenario()
+            .Given().Country().WithCode("LALA").WithTaxRate(0.23m)
+            .Then().Country("LALA"))
+            .HasCountry("LALA")
+            .HasTaxRate(0.23m);
     }
 }
 

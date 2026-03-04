@@ -1,6 +1,8 @@
+using Dsl.Core.Scenario.Then;
 using Dsl.Core.Scenario.When;
 using Dsl.Port.Given;
 using Dsl.Port.Given.Steps.Base;
+using Dsl.Port.Then;
 using Dsl.Port.When;
 using Driver.Adapter;
 using Optivem.Testing;
@@ -30,9 +32,16 @@ public abstract class BaseGiven : IGivenStep
 
     IWhen IGivenStep.When() => When();
 
+    public ThenStageBase Then()
+    {
+        return _givenClause.Then();
+    }
+
+    IThen IGivenStep.Then() => Then();
+
     internal abstract Task Execute(AppDsl app);
 
-    protected Channel Channel => _givenClause.Channel;
+    protected Channel? Channel => _givenClause.Channel;
 }
 
 
