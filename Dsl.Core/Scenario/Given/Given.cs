@@ -1,6 +1,8 @@
 using Dsl.Core.Scenario.When;
+using Dsl.Core.Scenario.Then;
 using Dsl.Port.Given;
 using Dsl.Port.Given.Steps;
+using Dsl.Port.Then;
 using Dsl.Port.When;
 using Driver.Adapter;
 using Dsl.Core.Gherkin.Given;
@@ -80,6 +82,13 @@ namespace Dsl.Core.Scenario.Given
         }
 
         IWhen IGiven.When() => When();
+
+        public ThenStageBase Then()
+        {
+            return new ThenStageBase(_app, SetupGiven);
+        }
+
+        IThen IGiven.Then() => Then();
 
         private async Task SetupGiven()
         {
