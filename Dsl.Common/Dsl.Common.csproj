@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\Dsl.Port\Dsl.Port.csproj" />
   </ItemGroup>
 
   <ItemGroup>

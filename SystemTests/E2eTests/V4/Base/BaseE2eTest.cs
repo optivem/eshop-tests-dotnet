@@ -1,3 +1,4 @@
+using Dsl.Port;
 using Dsl.Common;
 using SystemTests.TestInfrastructure.Base.V4;
 using Dsl.Core.Shop;
@@ -17,6 +18,7 @@ public abstract class BaseE2eTest : BaseChannelDriverTest
         return $"{baseSku}-{suffix}";
     }
 }
+
 
 
 

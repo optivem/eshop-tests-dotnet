@@ -1,3 +1,4 @@
+using Dsl.Port;
 using Dsl.Common;
 using SystemTests.TestInfrastructure.Base.V7;
 
@@ -10,5 +11,6 @@ public abstract class BaseAcceptanceTest : BaseScenarioDslTest
         return ExternalSystemMode.Stub;
     }
 }
+
 
 

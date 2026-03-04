@@ -1,5 +1,5 @@
-using Dsl.Common;
 using Dsl.Port;
+using Dsl.Common;
 using SystemTests.TestInfrastructure.Base.V7;
 
 namespace SystemTests.ExternalSystemContractTests.V7.Base;
@@ -10,6 +10,7 @@ public abstract class BaseExternalSystemContractTest : BaseScenarioDslTest
 
     protected sealed override ExternalSystemMode? GetFixedExternalSystemMode() => FixedExternalSystemMode;
 }
+
 
 
 

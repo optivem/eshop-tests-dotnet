@@ -1,7 +1,11 @@
+using Dsl.Port;
+
 namespace SystemTests.ExternalSystemContractTests.V7.Erp;
 
 public class ErpRealContractTest : BaseErpContractTest
 {
     protected override ExternalSystemMode? FixedExternalSystemMode => ExternalSystemMode.Real;
 }
+
+
 
