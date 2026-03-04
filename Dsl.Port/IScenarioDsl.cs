@@ -1,3 +1,4 @@
+using Dsl.Port.Assume;
 using Dsl.Port.Given;
 using Dsl.Port.When;
 
@@ -5,7 +6,9 @@ namespace Dsl.Port;
 
 public interface IScenarioDsl
 {
-    IGiven Given();
+    IAssumeStage Assume();
 
-    IWhen When();
+    IGivenStage Given();
+
+    IWhenStage When();
 }

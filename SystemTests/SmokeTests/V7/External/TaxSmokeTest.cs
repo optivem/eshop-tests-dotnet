@@ -8,7 +8,7 @@ public class TaxSmokeTest : BaseScenarioDslTest
     [Fact]
     public async Task ShouldBeAbleToGoToTax()
     {
-        await Background().Tax().ShouldBeRunning();
+        await Scenario().Assume().Tax().ShouldBeRunning();
     }
 }
 

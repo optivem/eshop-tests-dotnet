@@ -3,6 +3,7 @@ using SystemTests.TestInfrastructure.Configuration;
 using Dsl.Core;
 using Optivem.Testing;
 using Xunit;
+using Dsl.Core.Scenario;
 
 namespace SystemTests.TestInfrastructure.Base.V6;
 
@@ -17,29 +18,14 @@ public abstract class BaseScenarioDslTest : BaseConfigurableTest, IAsyncLifetime
         await Task.CompletedTask;
     }
 
-    protected IFeatureDsl Feature(Channel channel)
-    {
-        return new FeatureDsl(_app, channel);
-    }
-
-    protected IFeatureDsl Feature()
-    {
-        return new FeatureDsl(_app);
-    }
-
-    protected IBackgroundDsl Background(Channel channel)
-    {
-        return Feature(channel).Background();
-    }
-
-    protected IBackgroundDsl Background()
-    {
-        return Feature().Background();
-    }
-
     protected IScenarioDsl Scenario(Channel channel)
     {
-        return Feature(channel).Scenario();
+        return new ScenarioDsl(channel, _app);
+    }
+
+    protected IScenarioDsl Scenario()
+    {
+        return new ScenarioDsl(null, _app);
     }
 
     public virtual async Task DisposeAsync()

@@ -8,7 +8,7 @@ public class ClockSmokeTest : BaseScenarioDslTest
     [Fact]
     public async Task ShouldBeAbleToGoToClock()
     {
-        await Background().Clock().ShouldBeRunning();
+        await Scenario().Assume().Clock().ShouldBeRunning();
     }
 }
 

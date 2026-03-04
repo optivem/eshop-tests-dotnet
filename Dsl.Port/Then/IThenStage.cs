@@ -2,7 +2,7 @@ using Dsl.Port.Then.Steps;
 
 namespace Dsl.Port.Then;
 
-public interface IThen
+public interface IThenStage
 {
     Task<IThenClock> Clock();
 

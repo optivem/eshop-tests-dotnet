@@ -5,7 +5,7 @@ using Optivem.Testing;
 
 namespace Dsl.Core.Scenario.Then;
 
-public class ThenStageBase : IThen
+public class ThenStageBase : IThenStage
 {
     protected readonly AppDsl _app;
     private readonly Func<Task>? _setup;

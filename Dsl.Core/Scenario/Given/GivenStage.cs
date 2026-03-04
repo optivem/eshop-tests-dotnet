@@ -10,7 +10,7 @@ using Optivem.Testing;
 
 namespace Dsl.Core.Scenario.Given
 {
-    public class GivenStage : BaseClause, IGiven
+    public class GivenStage : BaseClause, IGivenStage
     {
         private readonly AppDsl _app;
         private readonly ScenarioDsl _scenario;
@@ -39,7 +39,7 @@ namespace Dsl.Core.Scenario.Given
             return productBuilder;
         }
 
-        IGivenProduct IGiven.Product() => Product();
+        IGivenProduct IGivenStage.Product() => Product();
 
         public GivenOrder Order()
         {
@@ -48,7 +48,7 @@ namespace Dsl.Core.Scenario.Given
             return orderBuilder;
         }
 
-        IGivenOrder IGiven.Order() => Order();
+        IGivenOrder IGivenStage.Order() => Order();
 
         public GivenClock Clock()
         {
@@ -56,7 +56,7 @@ namespace Dsl.Core.Scenario.Given
             return _clock;
         }
 
-        IGivenClock IGiven.Clock() => Clock();
+        IGivenClock IGivenStage.Clock() => Clock();
 
         public GivenCountry Country()
         {
@@ -65,7 +65,7 @@ namespace Dsl.Core.Scenario.Given
             return taxRateBuilder;
         }
 
-        IGivenCountry IGiven.Country() => Country();
+        IGivenCountry IGivenStage.Country() => Country();
 
         public GivenCoupon Coupon()
         {
@@ -74,21 +74,21 @@ namespace Dsl.Core.Scenario.Given
             return couponBuilder;
         }
 
-        IGivenCoupon IGiven.Coupon() => Coupon();
+        IGivenCoupon IGivenStage.Coupon() => Coupon();
 
         public WhenStage When()
         {
             return new WhenStage(Channel, _app, _scenario, _products.Any(), _countries.Any(), SetupGiven);
         }
 
-        IWhen IGiven.When() => When();
+        IWhenStage IGivenStage.When() => When();
 
         public ThenStageBase Then()
         {
             return new ThenStageBase(_app, SetupGiven);
         }
 
-        IThen IGiven.Then() => Then();
+        IThenStage IGivenStage.Then() => Then();
 
         private async Task SetupGiven()
         {

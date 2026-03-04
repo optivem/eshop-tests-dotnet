@@ -10,7 +10,7 @@ public class ShopSmokeTest : BaseScenarioDslTest
     [ChannelData(ChannelType.UI, ChannelType.API)]
     public async Task ShouldBeAbleToGoToShop(Channel channel)
     {
-        await Background(channel).Shop().ShouldBeRunning();
+        await Scenario(channel).Assume().Shop().ShouldBeRunning();
     }
 }
 

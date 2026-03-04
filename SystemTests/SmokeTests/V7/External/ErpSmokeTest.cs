@@ -8,7 +8,7 @@ public class ErpSmokeTest : BaseScenarioDslTest
     [Fact]
     public async Task ShouldBeAbleToGoToErp()
     {
-        await Background().Erp().ShouldBeRunning();
+        await Scenario().Assume().Erp().ShouldBeRunning();
     }
 }
 

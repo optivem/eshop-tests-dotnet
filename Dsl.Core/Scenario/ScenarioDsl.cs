@@ -1,6 +1,8 @@
+using Dsl.Core.Scenario.Assume;
 using Dsl.Core.Scenario.Given;
 using Dsl.Core.Scenario.When;
 using Dsl.Port;
+using Dsl.Port.Assume;
 using Dsl.Port.Given;
 using Dsl.Port.When;
 using Driver.Adapter;
@@ -24,13 +26,20 @@ public class ScenarioDsl : IScenarioDsl
 
     internal Channel? Channel => _channel;
 
+    public AssumeStage Assume()
+    {
+        return new AssumeStage(_app, _channel);
+    }
+
+    IAssumeStage IScenarioDsl.Assume() => Assume();
+
     public GivenStage Given()
     {
         EnsureNotExecuted();
         return new GivenStage(_channel, _app, this);
     }
 
-    IGiven IScenarioDsl.Given() => Given();
+    IGivenStage IScenarioDsl.Given() => Given();
 
     public WhenStage When()
     {
@@ -38,7 +47,7 @@ public class ScenarioDsl : IScenarioDsl
         return new WhenStage(_channel, _app, this);
     }
 
-    IWhen IScenarioDsl.When() => When();
+    IWhenStage IScenarioDsl.When() => When();
 
     public void MarkAsExecuted()
     {

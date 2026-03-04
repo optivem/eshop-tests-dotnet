@@ -2,7 +2,7 @@ using Dsl.Port.When.Steps;
 
 namespace Dsl.Port.When;
 
-public interface IWhen
+public interface IWhenStage
 {
     IGoToShop GoToShop();
 

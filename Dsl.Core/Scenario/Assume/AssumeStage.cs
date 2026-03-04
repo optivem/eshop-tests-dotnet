@@ -1,15 +1,14 @@
-using Dsl.Port;
-using Dsl.Port.Background;
+using Dsl.Port.Assume;
 using Optivem.Testing;
 
-namespace Dsl.Core;
+namespace Dsl.Core.Scenario.Assume;
 
-public class BackgroundDsl : IBackgroundDsl
+public class AssumeStage : IAssumeStage
 {
     private readonly AppDsl _app;
     private readonly Channel? _channel;
 
-    public BackgroundDsl(AppDsl app, Channel? channel = null)
+    public AssumeStage(AppDsl app, Channel? channel = null)
     {
         _app = app;
         _channel = channel;
@@ -50,18 +49,18 @@ public class BackgroundDsl : IBackgroundDsl
     private class ShouldAction : IShould
     {
         private readonly Func<Task> _action;
-        private readonly IBackgroundDsl _backgroundDsl;
+        private readonly IAssumeStage _assumeStage;
 
-        public ShouldAction(Func<Task> action, IBackgroundDsl backgroundDsl)
+        public ShouldAction(Func<Task> action, IAssumeStage assumeStage)
         {
             _action = action;
-            _backgroundDsl = backgroundDsl;
+            _assumeStage = assumeStage;
         }
 
-        public async Task<IBackgroundDsl> ShouldBeRunning()
+        public async Task<IAssumeStage> ShouldBeRunning()
         {
             await _action();
-            return _backgroundDsl;
+            return _assumeStage;
         }
     }
 }

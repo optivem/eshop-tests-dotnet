@@ -4,7 +4,7 @@ using Dsl.Port.When;
 
 namespace Dsl.Port.Given;
 
-public interface IGiven
+public interface IGivenStage
 {
     IGivenProduct Product();
 
@@ -16,7 +16,7 @@ public interface IGiven
 
     IGivenCoupon Coupon();
 
-    IWhen When();
+    IWhenStage When();
 
-    IThen Then();
+    IThenStage Then();
 }

@@ -1,8 +1,6 @@
-using Dsl.Port.Background;
+namespace Dsl.Port.Assume;
 
-namespace Dsl.Port;
-
-public interface IBackgroundDsl
+public interface IAssumeStage
 {
     IShould Shop();
 

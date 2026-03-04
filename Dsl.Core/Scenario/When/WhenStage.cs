@@ -12,7 +12,7 @@ using static Dsl.Core.Gherkin.GherkinDefaults;
 
 namespace Dsl.Core.Scenario.When
 {
-    public class WhenStage : BaseClause, IWhen
+    public class WhenStage : BaseClause, IWhenStage
     {
         private readonly AppDsl _app;
         private readonly ScenarioDsl _scenario;
@@ -68,42 +68,42 @@ namespace Dsl.Core.Scenario.When
             return new GoToShop(_app, _scenario, () => EnsureGiven());
         }
 
-        IGoToShop IWhen.GoToShop() => GoToShop();
+        IGoToShop IWhenStage.GoToShop() => GoToShop();
 
         public PlaceOrder PlaceOrder()
         {
             return new PlaceOrder(_app, _scenario, () => EnsureGiven());
         }
 
-        IPlaceOrder IWhen.PlaceOrder() => PlaceOrder();
+        IPlaceOrder IWhenStage.PlaceOrder() => PlaceOrder();
 
         public CancelOrder CancelOrder()
         {
             return new CancelOrder(_app, _scenario, () => EnsureGiven());
         }
 
-        ICancelOrder IWhen.CancelOrder() => CancelOrder();
+        ICancelOrder IWhenStage.CancelOrder() => CancelOrder();
 
         public ViewOrder ViewOrder()
         {
             return new ViewOrder(_app, _scenario, () => EnsureGiven());
         }
 
-        IViewOrder IWhen.ViewOrder() => ViewOrder();
+        IViewOrder IWhenStage.ViewOrder() => ViewOrder();
 
         public PublishCoupon PublishCoupon()
         {
             return new PublishCoupon(_app, _scenario, () => EnsureGiven());
         }
 
-        IPublishCoupon IWhen.PublishCoupon() => PublishCoupon();
+        IPublishCoupon IWhenStage.PublishCoupon() => PublishCoupon();
 
         public BrowseCoupons BrowseCoupons()
         {
             return new BrowseCoupons(_app, _scenario, () => EnsureGiven());
         }
 
-        IBrowseCoupons IWhen.BrowseCoupons() => BrowseCoupons();
+        IBrowseCoupons IWhenStage.BrowseCoupons() => BrowseCoupons();
     }
 }
 

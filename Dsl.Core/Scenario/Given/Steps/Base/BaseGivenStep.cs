@@ -23,21 +23,21 @@ public abstract class BaseGiven : IGivenStep
         return _givenClause;
     }
 
-    IGiven IGivenStep.And() => And();
+    IGivenStage IGivenStep.And() => And();
 
     public WhenStage When()
     {
         return _givenClause.When();
     }
 
-    IWhen IGivenStep.When() => When();
+    IWhenStage IGivenStep.When() => When();
 
     public ThenStageBase Then()
     {
         return _givenClause.Then();
     }
 
-    IThen IGivenStep.Then() => Then();
+    IThenStage IGivenStep.Then() => Then();
 
     internal abstract Task Execute(AppDsl app);
 

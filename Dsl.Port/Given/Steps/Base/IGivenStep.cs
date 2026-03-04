@@ -6,9 +6,9 @@ namespace Dsl.Port.Given.Steps.Base;
 
 public interface IGivenStep
 {
-    IGiven And();
+    IGivenStage And();
 
-    IWhen When();
+    IWhenStage When();
 
-    IThen Then();
+    IThenStage Then();
 }
