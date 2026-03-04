@@ -1,4 +1,6 @@
+using Dsl.Core.Scenario.Then.Steps;
 using Dsl.Port.Then;
+using Dsl.Port.Then.Steps;
 using Optivem.Testing;
 
 namespace Dsl.Core.Scenario.Then;
@@ -14,6 +16,27 @@ public class ThenStageBase : IThen
         _app = app;
         _setup = setup;
         _setupCompleted = false;
+    }
+
+    public async Task<IThenClock> Clock()
+    {
+        await EnsureSetup();
+        var verification = (await _app.Clock().GetTime().Execute()).ShouldSucceed();
+        return new Steps.ThenClock(verification);
+    }
+
+    public async Task<IThenProduct> Product(string skuAlias)
+    {
+        await EnsureSetup();
+        var verification = (await _app.Erp().GetProduct().Sku(skuAlias).Execute()).ShouldSucceed();
+        return new Steps.ThenProduct(verification);
+    }
+
+    public async Task<IThenCountry> Country(string countryAlias)
+    {
+        await EnsureSetup();
+        var verification = (await _app.Tax().GetTaxRate().Country(countryAlias).Execute()).ShouldSucceed();
+        return new Steps.ThenCountry(verification);
     }
 
     protected async Task EnsureSetup()
