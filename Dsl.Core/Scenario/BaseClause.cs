@@ -4,9 +4,9 @@ namespace Dsl.Core.Scenario
 {
     public class BaseClause
     {
-        internal Channel Channel { get; }
+        internal Channel? Channel { get; }
 
-        public BaseClause(Channel channel)
+        public BaseClause(Channel? channel)
         {
             Channel = channel;
         }
