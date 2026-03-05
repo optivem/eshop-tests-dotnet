@@ -1,5 +1,5 @@
 using Dsl.Port;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using SystemTests.TestInfrastructure.Base.V4;
 using Dsl.Core.Shop;
 

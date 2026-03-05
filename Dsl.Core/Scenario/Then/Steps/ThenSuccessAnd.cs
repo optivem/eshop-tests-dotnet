@@ -1,5 +1,5 @@
 using Dsl.Port.Then.Steps;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Scenario.Then;
 

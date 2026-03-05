@@ -2,7 +2,7 @@ using Driver.Port.Shop;
 using Dsl.Core.Shop.UseCases.Base;
 using Driver.Port.Shop.Dtos;
 using Driver.Port.Shop.Dtos.Error;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Common;
 
 namespace Dsl.Core.Shop.UseCases;

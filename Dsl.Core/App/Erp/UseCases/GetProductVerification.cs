@@ -1,5 +1,5 @@
 using Driver.Port.Erp.Dtos;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Shouldly;
 
 namespace Dsl.Core.Erp.UseCases;

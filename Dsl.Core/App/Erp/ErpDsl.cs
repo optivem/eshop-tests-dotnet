@@ -1,6 +1,6 @@
 using Driver.Port.Erp;
 using Dsl.Core.Erp.UseCases;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Erp;
 

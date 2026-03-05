@@ -1,6 +1,6 @@
 using Common;
 
-namespace Dsl.Common;
+namespace Dsl.Core.Shared;
 
 public class VoidVerification : ResponseVerification<VoidValue>
 {

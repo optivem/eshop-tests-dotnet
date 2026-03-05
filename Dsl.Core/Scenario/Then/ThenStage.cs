@@ -1,4 +1,4 @@
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Dsl.Port.Then;
 using Dsl.Port.Then.Steps;
 using Driver.Adapter;

@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 using Dsl.Port.Then.Steps;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Dsl.Core.Scenario;
 using Driver.Adapter;
 using Dsl.Core.Gherkin;

@@ -12,7 +12,7 @@ using Driver.Port.Tax;
 using Dsl.Core.Tax;
 using Driver.Adapter.Erp;
 using Optivem.Testing;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Driver.Adapter.Clock;
 using Driver.Adapter.Tax;
 

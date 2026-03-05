@@ -1,6 +1,6 @@
 using Dsl.Core.Scenario.When.Steps.Base;
 using Dsl.Port.When.Steps;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Common;
 using Driver.Adapter;
 using Driver.Port.Shop.Dtos;

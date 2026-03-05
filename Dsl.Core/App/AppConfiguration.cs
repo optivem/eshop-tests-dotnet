@@ -1,6 +1,6 @@
 using Dsl.Port;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core;
 

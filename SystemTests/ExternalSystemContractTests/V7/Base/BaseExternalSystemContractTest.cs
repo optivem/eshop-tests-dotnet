@@ -1,5 +1,5 @@
 using Dsl.Port;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using SystemTests.TestInfrastructure.Base.V7;
 
 namespace SystemTests.ExternalSystemContractTests.V7.Base;

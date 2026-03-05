@@ -1,5 +1,5 @@
 using Driver.Port.Tax.Dtos;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Common;
 using Shouldly;
 

@@ -2,7 +2,7 @@ using Dsl.Core.Clock.UseCases.Base;
 using Driver.Port.Clock;
 using Driver.Port.Clock.Dtos;
 using Common;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Clock.UseCases;
 

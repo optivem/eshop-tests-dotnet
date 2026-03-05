@@ -1,6 +1,6 @@
 using Dsl.Core.Clock.UseCases;
 using Driver.Port.Clock;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Clock;
 

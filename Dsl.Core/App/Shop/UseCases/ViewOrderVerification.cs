@@ -1,4 +1,4 @@
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Driver.Port.Shop.Dtos;
 using Shouldly;
 using System.Globalization;

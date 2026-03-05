@@ -1,6 +1,6 @@
 using Dsl.Port;
 using Microsoft.Extensions.Configuration;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Dsl.Core;
 
 namespace SystemTests.TestInfrastructure.Configuration;

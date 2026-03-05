@@ -1,5 +1,5 @@
 using Dsl.Port;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using SystemTests.TestInfrastructure.Base.V3;
 using ConfigEnvironment = SystemTests.TestInfrastructure.Configuration.Environment;
 using SystemTests.TestInfrastructure.Configuration;

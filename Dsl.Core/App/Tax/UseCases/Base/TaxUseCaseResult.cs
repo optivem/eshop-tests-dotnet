@@ -1,6 +1,6 @@
 using Driver.Port.Tax.Dtos.Error;
 using Common;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Tax.UseCases.Base;
 

@@ -1,4 +1,4 @@
-namespace Dsl.Common;
+namespace Dsl.Core.Shared;
 
 public interface IUseCase<T>
 {

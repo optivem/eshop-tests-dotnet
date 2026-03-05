@@ -2,7 +2,7 @@ using Driver.Port.Erp;
 using Driver.Port.Erp.Dtos;
 using Driver.Port.Erp.Dtos.Error;
 using Dsl.Core.Erp.UseCases.Base;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Erp.UseCases;
 

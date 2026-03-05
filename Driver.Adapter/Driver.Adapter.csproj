@@ -18,7 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\Driver.Port\Driver.Port.csproj" />
-    <ProjectReference Include="..\Dsl.Common\Dsl.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>

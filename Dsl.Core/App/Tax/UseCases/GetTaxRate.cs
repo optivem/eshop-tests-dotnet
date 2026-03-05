@@ -2,7 +2,7 @@ using Driver.Port.Tax;
 using Driver.Port.Tax.Dtos;
 using Driver.Port.Tax.Dtos.Error;
 using Dsl.Core.Tax.UseCases.Base;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Tax.UseCases;
 

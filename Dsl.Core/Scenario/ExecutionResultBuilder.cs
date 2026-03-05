@@ -1,4 +1,4 @@
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Common;
 using Dsl.Core.Shop.UseCases.Base;
 using Driver.Port.Shop.Dtos.Error;

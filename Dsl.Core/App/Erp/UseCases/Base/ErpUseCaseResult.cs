@@ -1,6 +1,6 @@
 using Driver.Port.Erp.Dtos.Error;
 using Common;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Erp.UseCases.Base;
 

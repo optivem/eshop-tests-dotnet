@@ -2,7 +2,7 @@ using Dsl.Port;
 using System.Collections.Generic;
 
 
-namespace Dsl.Common;
+namespace Dsl.Core.Shared;
 
 public class UseCaseContext
 {
@@ -122,5 +122,3 @@ public class UseCaseContext
         }
     }
 }
-
-

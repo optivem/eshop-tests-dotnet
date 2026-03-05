@@ -1,6 +1,6 @@
 using Driver.Port.Tax;
 using Dsl.Core.Tax.UseCases;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Tax;
 

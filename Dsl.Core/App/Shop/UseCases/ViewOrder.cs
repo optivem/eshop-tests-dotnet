@@ -1,6 +1,6 @@
 using Driver.Port.Shop;
 using Dsl.Core.Shop.UseCases.Base;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Driver.Port.Shop.Dtos;
 using Driver.Port.Shop.Dtos.Error;
 

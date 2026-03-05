@@ -1,6 +1,6 @@
 using Driver.Port.Shop;
 using Dsl.Core.Shop.UseCases;
-using Dsl.Common;
+using Dsl.Core.Shared;
 
 namespace Dsl.Core.Shop;
 

@@ -1,5 +1,5 @@
 using Driver.Port.Shop;
-using Dsl.Common;
+using Dsl.Core.Shared;
 using Driver.Port.Shop.Dtos.Error;
 
 namespace Dsl.Core.Shop.UseCases.Base;
