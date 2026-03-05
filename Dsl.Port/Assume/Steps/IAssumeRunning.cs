@@ -2,7 +2,7 @@ using Dsl.Port.Assume;
 
 namespace Dsl.Port.Assume.Steps;
 
-public interface IShould
+public interface IAssumeRunning
 {
     Task<IAssumeStage> ShouldBeRunning();
 }

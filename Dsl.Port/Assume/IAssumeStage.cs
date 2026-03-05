@@ -4,11 +4,11 @@ using Dsl.Port.Assume.Steps;
 
 public interface IAssumeStage
 {
-    IShould Shop();
+    IAssumeRunning Shop();
 
-    IShould Erp();
+    IAssumeRunning Erp();
 
-    IShould Tax();
+    IAssumeRunning Tax();
 
-    IShould Clock();
+    IAssumeRunning Clock();
 }

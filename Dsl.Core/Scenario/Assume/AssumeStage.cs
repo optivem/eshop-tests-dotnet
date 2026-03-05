@@ -15,44 +15,44 @@ public class AssumeStage : IAssumeStage
         _channel = channel;
     }
 
-    public IShould Shop()
+    public IAssumeRunning Shop()
     {
-        return new ShouldAction(async () =>
+        return new AssumeRunningAction(async () =>
         {
             (await (await _app.Shop(_channel)).GoToShop().Execute()).ShouldSucceed();
         }, this);
     }
 
-    public IShould Erp()
+    public IAssumeRunning Erp()
     {
-        return new ShouldAction(async () =>
+        return new AssumeRunningAction(async () =>
         {
             (await _app.Erp().GoToErp().Execute()).ShouldSucceed();
         }, this);
     }
 
-    public IShould Tax()
+    public IAssumeRunning Tax()
     {
-        return new ShouldAction(async () =>
+        return new AssumeRunningAction(async () =>
         {
             (await _app.Tax().GoToTax().Execute()).ShouldSucceed();
         }, this);
     }
 
-    public IShould Clock()
+    public IAssumeRunning Clock()
     {
-        return new ShouldAction(async () =>
+        return new AssumeRunningAction(async () =>
         {
             (await _app.Clock().GoToClock().Execute()).ShouldSucceed();
         }, this);
     }
 
-    private class ShouldAction : IShould
+    private class AssumeRunningAction : IAssumeRunning
     {
         private readonly Func<Task> _action;
         private readonly IAssumeStage _assumeStage;
 
-        public ShouldAction(Func<Task> action, IAssumeStage assumeStage)
+        public AssumeRunningAction(Func<Task> action, IAssumeStage assumeStage)
         {
             _action = action;
             _assumeStage = assumeStage;
