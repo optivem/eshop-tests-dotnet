@@ -1,14 +1,17 @@
 using Dsl.Core.Clock.UseCases;
 using Dsl.Port.Then.Steps;
+using Driver.Adapter;
 
 namespace Dsl.Core.Scenario.Then.Steps;
 
 public class ThenClock : IThenClock
 {
+    private readonly AppDsl _app;
     private readonly GetTimeVerification _verification;
 
-    public ThenClock(GetTimeVerification verification)
+    public ThenClock(AppDsl app, GetTimeVerification verification)
     {
+        _app = app;
         _verification = verification;
     }
 
@@ -22,5 +25,23 @@ public class ThenClock : IThenClock
     {
         _verification.TimeIsNotNull();
         return this;
+    }
+
+    public async Task<IThenClock> Clock()
+    {
+        var verification = (await _app.Clock().GetTime().Execute()).ShouldSucceed();
+        return new ThenClock(_app, verification);
+    }
+
+    public async Task<IThenProduct> Product(string skuAlias)
+    {
+        var verification = (await _app.Erp().GetProduct().Sku(skuAlias).Execute()).ShouldSucceed();
+        return new ThenProduct(_app, verification);
+    }
+
+    public async Task<IThenCountry> Country(string countryAlias)
+    {
+        var verification = (await _app.Tax().GetTaxRate().Country(countryAlias).Execute()).ShouldSucceed();
+        return new ThenCountry(_app, verification);
     }
 }

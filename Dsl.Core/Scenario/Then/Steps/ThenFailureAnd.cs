@@ -57,7 +57,7 @@ public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
     public async Task<IThenClock> Clock()
     {
         var verification = (await _thenClause.App.Clock().GetTime().Execute()).ShouldSucceed();
-        return new Steps.ThenClock(verification);
+        return new Steps.ThenClock(_thenClause.App, verification);
     }
 
     async Task<IThenClock> IThenFailureAnd.Clock() => await Clock();
@@ -65,7 +65,7 @@ public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
     public async Task<IThenProduct> Product(string skuAlias)
     {
         var verification = (await _thenClause.App.Erp().GetProduct().Sku(skuAlias).Execute()).ShouldSucceed();
-        return new Steps.ThenProduct(verification);
+        return new Steps.ThenProduct(_thenClause.App, verification);
     }
 
     async Task<IThenProduct> IThenFailureAnd.Product(string skuAlias) => await Product(skuAlias);
@@ -73,7 +73,7 @@ public class ThenFailureAnd<TSuccessResponse, TSuccessVerification>
     public async Task<IThenCountry> Country(string countryAlias)
     {
         var verification = (await _thenClause.App.Tax().GetTaxRate().Country(countryAlias).Execute()).ShouldSucceed();
-        return new Steps.ThenCountry(verification);
+        return new Steps.ThenCountry(_thenClause.App, verification);
     }
 
     async Task<IThenCountry> IThenFailureAnd.Country(string countryAlias) => await Country(countryAlias);
