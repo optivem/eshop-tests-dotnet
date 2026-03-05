@@ -106,70 +106,68 @@ jobs:
         run: |
           dotnet build
           pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
-        working-directory: ./SystemTests/AcceptanceTests
+        working-directory: ./SystemTests
 
       - name: Run Acceptance Tests - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "Category!=isolated"
-        working-directory: ./SystemTests/AcceptanceTests
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~AcceptanceTests&Category!=isolated"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: API
 
       - name: Run Acceptance Tests - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "Category!=isolated"
-        working-directory: ./SystemTests/AcceptanceTests
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~AcceptanceTests&Category!=isolated"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: UI
 
       - name: Run Acceptance Tests (Isolated) - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "Category=isolated"
-        working-directory: ./SystemTests/AcceptanceTests
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~AcceptanceTests&Category=isolated"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: API
 
       - name: Run Acceptance Tests (Isolated) - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "Category=isolated"
-        working-directory: ./SystemTests/AcceptanceTests
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~AcceptanceTests&Category=isolated"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: UI
 
-      - name: Run External System Contract Tests (Stubbed External Systems)
-        run: dotnet test --no-build --configuration Release --verbosity normal
-        working-directory: ./SystemTests/ExternalSystemContractTests
+      - name: Run Contract Tests - Stubbed External Systems
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~ExternalSystemContractTests&FullyQualifiedName~Stub"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: stub
 
-      - name: Run External System Contract Tests (Real External Systems)
-        run: dotnet test --no-build --configuration Release --verbosity normal
-        working-directory: ./SystemTests/ExternalSystemContractTests
+      - name: Run Contract Tests - Real External Systems
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~ExternalSystemContractTests&FullyQualifiedName~Real"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
 
       - name: Run E2E Tests - No Channel (v1, v2, v3)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~E2eTests.V1|FullyQualifiedName~E2eTests.V2|FullyQualifiedName~E2eTests.V3"
-        working-directory: ./SystemTests/E2eTests
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~E2eTests&(FullyQualifiedName~.V1.|FullyQualifiedName~.V2.|FullyQualifiedName~.V3.)"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
 
       - name: Run E2E Tests - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal
-        working-directory: ./SystemTests/E2eTests
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~E2eTests"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           CHANNEL: API
 
       - name: Run E2E Tests - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal
-        working-directory: ./SystemTests/E2eTests
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~E2eTests"
+        working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           CHANNEL: UI
