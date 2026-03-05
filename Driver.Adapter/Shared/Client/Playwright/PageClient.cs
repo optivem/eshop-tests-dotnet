@@ -1,6 +1,6 @@
 using Microsoft.Playwright;
 
-namespace Driver.Common.Client.Playwright;
+namespace Driver.Adapter.Shared.Client.Playwright;
 
 public class PageClient
 {
@@ -127,4 +127,3 @@ public class PageClient
         };
     }
 }
-

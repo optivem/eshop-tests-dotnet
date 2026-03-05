@@ -2,7 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Common;
 
-namespace Driver.Common.Client.WireMock;
+namespace Driver.Adapter.Shared.Client.WireMock;
 
 public class JsonWireMockClient : IDisposable
 {
@@ -140,4 +140,3 @@ public class JsonWireMockClient : IDisposable
         }
     }
 }
-

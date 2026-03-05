@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Common;
 
-namespace Driver.Common.Client.Http;
+namespace Driver.Adapter.Shared.Client.Http;
 
 public class JsonHttpClient<E> : IDisposable
 {
@@ -159,4 +159,3 @@ public class JsonHttpClient<E> : IDisposable
 
     #endregion
 }
-
