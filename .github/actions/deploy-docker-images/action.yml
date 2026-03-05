@@ -119,24 +119,24 @@ runs:
     - name: Restore system test dependencies
       run: dotnet restore
       shell: bash
-      working-directory: SystemTests/SmokeTests
+      working-directory: SystemTests
 
     - name: Build system tests
       run: dotnet build --no-restore --configuration Release
       shell: bash
-      working-directory: SystemTests/SmokeTests
+      working-directory: SystemTests
 
     - name: Install Playwright browsers
       run: |
         dotnet build
         pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
       shell: bash
-      working-directory: SystemTests/SmokeTests
+      working-directory: SystemTests
 
     - name: Run Smoke Tests
-      run: dotnet test --no-build --configuration Release --verbosity normal
+      run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~SmokeTests"
       shell: bash
-      working-directory: SystemTests/SmokeTests
+      working-directory: SystemTests
       env:
         ENVIRONMENT: ${{ inputs.environment }}
         EXTERNAL_SYSTEM_MODE: ${{ inputs.external-system-mode }}
