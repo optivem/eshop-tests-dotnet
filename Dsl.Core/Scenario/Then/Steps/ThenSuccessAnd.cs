@@ -42,5 +42,29 @@ public class ThenSuccessAnd<TSuccessResponse, TSuccessVerification>
     IThenOrder IThenSuccessAnd.Order(string orderNumber) => Order(orderNumber);
 
     IThenOrder IThenSuccessAnd.Order() => Order();
+
+    public async Task<IThenClock> Clock()
+    {
+        var verification = (await _thenClause.App.Clock().GetTime().Execute()).ShouldSucceed();
+        return new Steps.ThenClock(verification);
+    }
+
+    async Task<IThenClock> IThenSuccessAnd.Clock() => await Clock();
+
+    public async Task<IThenProduct> Product(string skuAlias)
+    {
+        var verification = (await _thenClause.App.Erp().GetProduct().Sku(skuAlias).Execute()).ShouldSucceed();
+        return new Steps.ThenProduct(verification);
+    }
+
+    async Task<IThenProduct> IThenSuccessAnd.Product(string skuAlias) => await Product(skuAlias);
+
+    public async Task<IThenCountry> Country(string countryAlias)
+    {
+        var verification = (await _thenClause.App.Tax().GetTaxRate().Country(countryAlias).Execute()).ShouldSucceed();
+        return new Steps.ThenCountry(verification);
+    }
+
+    async Task<IThenCountry> IThenSuccessAnd.Country(string countryAlias) => await Country(countryAlias);
 }
 
