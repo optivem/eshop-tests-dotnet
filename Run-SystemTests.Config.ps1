@@ -3,6 +3,8 @@
 
 $Config = @{
 
+    TestFilter = "--filter 'DisplayName~<test>'"
+
     BuildCommands = @(
         @{  Name = "Clean Build";
             Command = "dotnet clean; dotnet build"
