@@ -1,20 +1,20 @@
 using Dsl.Port;
-using Dsl.Core.Clock;
-using Driver.Port.Clock;
-using Dsl.Core.Erp;
-using Driver.Port.Erp;
+using Dsl.Core.External.Clock;
+using Driver.Port.External.Clock;
+using Dsl.Core.External.Erp;
+using Driver.Port.External.Erp;
 using Driver.Adapter.Shop.Api;
 using Driver.Adapter.Shop.Ui;
 using Dsl.Core.Shop;
 using Driver.Port.Shop;
 using Dsl.Core.Shop;
-using Driver.Port.Tax;
-using Dsl.Core.Tax;
-using Driver.Adapter.Erp;
+using Driver.Port.External.Tax;
+using Dsl.Core.External.Tax;
+using Driver.Adapter.External.Erp;
 using Optivem.Testing;
 using Dsl.Core.Shared;
-using Driver.Adapter.Clock;
-using Driver.Adapter.Tax;
+using Driver.Adapter.External.Clock;
+using Driver.Adapter.External.Tax;
 
 namespace Dsl.Core;
 

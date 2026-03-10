@@ -1,4 +1,4 @@
-using Dsl.Core.Clock.UseCases;
+using Dsl.Core.External.Clock.UseCases;
 using Dsl.Port.Then.Steps;
 using Driver.Adapter;
 

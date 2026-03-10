@@ -1,4 +1,4 @@
-using Dsl.Core.Tax.UseCases;
+using Dsl.Core.External.Tax.UseCases;
 using Dsl.Port.Then.Steps;
 using Driver.Adapter;
 

@@ -1,4 +1,4 @@
-using Dsl.Core.Erp.UseCases;
+using Dsl.Core.External.Erp.UseCases;
 using Dsl.Port.Then.Steps;
 using Driver.Adapter;
 

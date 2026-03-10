@@ -1,5 +1,5 @@
 using Common;
-using Driver.Port.Erp.Dtos;
+using Driver.Port.External.Erp.Dtos;
 using Driver.Port.Shop.Dtos;
 using SystemTests.Commons.Constants;
 using SystemTests.V3.E2eTests.Base;

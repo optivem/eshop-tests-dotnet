@@ -2,7 +2,7 @@ using Common;
 using Dsl.Core.Shop;
 using Driver.Port.Shop.Dtos;
 using Driver.Port.Shop;
-using Driver.Port.Erp.Dtos;
+using Driver.Port.External.Erp.Dtos;
 using SystemTests.Commons.Constants;
 using SystemTests.V4.E2eTests.Base;
 using Optivem.Testing;

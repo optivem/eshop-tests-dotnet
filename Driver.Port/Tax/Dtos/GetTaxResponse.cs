@@ -1,8 +1,0 @@
-namespace Driver.Port.Tax.Dtos;
-
-public class GetTaxResponse
-{
-    public required string Country { get; set; }
-    public decimal TaxRate { get; set; }
-}
-

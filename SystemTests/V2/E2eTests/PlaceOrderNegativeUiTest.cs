@@ -1,5 +1,5 @@
 using Common;
-using Driver.Adapter.Erp.Client.Dtos;
+using Driver.Adapter.External.Erp.Client.Dtos;
 using Driver.Adapter.Shop.Ui.Client.Pages;
 using SystemTests.Commons.Constants;
 using SystemTests.V2.E2eTests.Base;

@@ -1,5 +1,5 @@
 using Common;
-using Driver.Port.Erp.Dtos;
+using Driver.Port.External.Erp.Dtos;
 using Dsl.Core.Shop;
 using Driver.Port.Shop.Dtos;
 using SystemTests.Commons.Constants;
