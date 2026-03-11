@@ -67,7 +67,7 @@ Uses pre-built Docker images from registry:
 - `-Rebuild` - Force rebuild before running
 - `-Restart` - Restart Docker containers
 - `-Suite <id>` - Run a specific test suite (e.g. `smoke-stub`, `acceptance-api`, `e2e-ui`)
-- `-Test <method>` - Run a single test method within the suite (e.g. `CanSubmitReviewOnDeliveredOrder`)
+- `-Test <method>` - Run a single test method within the suite (e.g. `CanPlaceOrder`)
 
 ## Pre-commit Checks
 
