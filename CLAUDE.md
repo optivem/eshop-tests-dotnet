@@ -13,15 +13,15 @@ _Shared instructions (ATDD rules, architecture, git safety) are in the `eshop-te
 Acceptance tests use the ScenarioDSL pattern — **not** raw driver calls.
 
 ```csharp
-public class SubmitReviewPositiveTest : BaseAcceptanceTest
+public class PlaceOrderPositiveTest : BaseAcceptanceTest
 {
     [Theory]
     [ChannelData(ChannelType.UI, ChannelType.API)]
-    public async Task CanSubmitReviewOnDeliveredOrder(Channel channel)
+    public async Task CanPlaceOrder(Channel channel)
     {
         await Scenario(channel)
-            .Given().Order().WithStatus(OrderStatus.Delivered)
-            .When().SubmitReview().WithRating("5")
+            .Given().Product().WithSku("SKU-001").WithUnitPrice("10.00")
+            .When().PlaceOrder().WithSku("SKU-001").WithQuantity("2")
             .Then().ShouldSucceed();
     }
 }
