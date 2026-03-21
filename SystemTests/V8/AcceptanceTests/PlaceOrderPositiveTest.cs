@@ -1,10 +1,10 @@
-using SystemTests.V7.AcceptanceTests.Base;
+using SystemTests.V8.AcceptanceTests.Base;
 using Dsl.Core.Shop;
 using Driver.Port.Shop.Dtos;
 using Dsl.Port.Then.Steps;
 using Optivem.Testing;
 
-namespace SystemTests.V7.AcceptanceTests;
+namespace SystemTests.V8.AcceptanceTests;
 
 public class PlaceOrderPositiveTest : BaseAcceptanceTest
 {

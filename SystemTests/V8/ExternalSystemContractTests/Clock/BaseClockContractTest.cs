@@ -1,6 +1,6 @@
-using SystemTests.V7.ExternalSystemContractTests.Base;
+using SystemTests.V8.ExternalSystemContractTests.Base;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Clock;
+namespace SystemTests.V8.ExternalSystemContractTests.Clock;
 
 public abstract class BaseClockContractTest : BaseExternalSystemContractTest
 {

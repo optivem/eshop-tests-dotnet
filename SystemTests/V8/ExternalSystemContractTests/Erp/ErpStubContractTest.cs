@@ -1,6 +1,6 @@
 using Dsl.Port;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Erp;
+namespace SystemTests.V8.ExternalSystemContractTests.Erp;
 
 public class ErpStubContractTest : BaseErpContractTest
 {

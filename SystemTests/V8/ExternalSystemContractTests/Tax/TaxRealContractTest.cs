@@ -1,8 +1,8 @@
 using Dsl.Port;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Erp;
+namespace SystemTests.V8.ExternalSystemContractTests.Tax;
 
-public class ErpRealContractTest : BaseErpContractTest
+public class TaxRealContractTest : BaseTaxContractTest
 {
     protected override ExternalSystemMode? FixedExternalSystemMode => ExternalSystemMode.Real;
 }

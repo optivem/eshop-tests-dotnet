@@ -1,6 +1,6 @@
 using Dsl.Port;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Clock;
+namespace SystemTests.V8.ExternalSystemContractTests.Clock;
 
 public class ClockStubContractTest : BaseClockContractTest
 {

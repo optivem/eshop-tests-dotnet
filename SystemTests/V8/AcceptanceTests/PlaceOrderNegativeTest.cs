@@ -1,9 +1,9 @@
 using SystemTests.Commons.Providers;
-using SystemTests.V7.AcceptanceTests.Base;
+using SystemTests.V8.AcceptanceTests.Base;
 using Dsl.Core.Shop;
 using Optivem.Testing;
 
-namespace SystemTests.V7.AcceptanceTests;
+namespace SystemTests.V8.AcceptanceTests;
 
 public class PlaceOrderNegativeTest : BaseAcceptanceTest
 {

@@ -1,8 +1,8 @@
 using Dsl.Port;
 using Dsl.Core.Shared;
-using SystemTests.TestInfrastructure.Base.V7;
+using SystemTests.TestInfrastructure.Base.V8;
 
-namespace SystemTests.V7.AcceptanceTests.Base;
+namespace SystemTests.V8.AcceptanceTests.Base;
 
 public abstract class BaseAcceptanceTest : BaseScenarioDslTest
 {

@@ -1,8 +1,8 @@
 using Dsl.Port;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Clock;
+namespace SystemTests.V8.ExternalSystemContractTests.Erp;
 
-public class ClockRealContractTest : BaseClockContractTest
+public class ErpRealContractTest : BaseErpContractTest
 {
     protected override ExternalSystemMode? FixedExternalSystemMode => ExternalSystemMode.Real;
 }

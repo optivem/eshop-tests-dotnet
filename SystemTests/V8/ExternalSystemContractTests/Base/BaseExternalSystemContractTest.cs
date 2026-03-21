@@ -1,8 +1,8 @@
 using Dsl.Port;
 using Dsl.Core.Shared;
-using SystemTests.TestInfrastructure.Base.V7;
+using SystemTests.TestInfrastructure.Base.V8;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Base;
+namespace SystemTests.V8.ExternalSystemContractTests.Base;
 
 public abstract class BaseExternalSystemContractTest : BaseScenarioDslTest
 {

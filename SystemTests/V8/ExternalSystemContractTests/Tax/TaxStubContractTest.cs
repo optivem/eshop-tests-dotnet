@@ -1,6 +1,6 @@
 using Dsl.Port;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Tax;
+namespace SystemTests.V8.ExternalSystemContractTests.Tax;
 
 public class TaxStubContractTest : BaseTaxContractTest
 {

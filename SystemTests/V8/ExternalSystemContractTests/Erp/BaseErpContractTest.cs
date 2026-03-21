@@ -1,6 +1,6 @@
-using SystemTests.V7.ExternalSystemContractTests.Base;
+using SystemTests.V8.ExternalSystemContractTests.Base;
 
-namespace SystemTests.V7.ExternalSystemContractTests.Erp;
+namespace SystemTests.V8.ExternalSystemContractTests.Erp;
 
 public abstract class BaseErpContractTest : BaseExternalSystemContractTest
 {

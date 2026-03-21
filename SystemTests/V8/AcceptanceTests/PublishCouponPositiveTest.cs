@@ -1,10 +1,10 @@
-using SystemTests.V7.AcceptanceTests.Base;
+using SystemTests.V8.AcceptanceTests.Base;
 using Dsl.Core.Shop;
 using Dsl.Port.Then.Steps;
 using Optivem.Testing;
 using Xunit;
 
-namespace SystemTests.V7.AcceptanceTests;
+namespace SystemTests.V8.AcceptanceTests;
 
 public class PublishCouponPositiveTest : BaseAcceptanceTest
 {
