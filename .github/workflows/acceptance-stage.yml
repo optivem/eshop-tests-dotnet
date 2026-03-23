@@ -108,6 +108,20 @@ jobs:
           pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
         working-directory: ./SystemTests
 
+      - name: Smoke (Stub)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.SmokeTests"
+        working-directory: ./SystemTests
+        env:
+          ENVIRONMENT: acceptance
+          EXTERNAL_SYSTEM_MODE: stub
+
+      - name: Smoke (Real)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.SmokeTests"
+        working-directory: ./SystemTests
+        env:
+          ENVIRONMENT: acceptance
+          EXTERNAL_SYSTEM_MODE: real
+
       - name: Acceptance - API Channel
         run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.AcceptanceTests&Category!=isolated"
         working-directory: ./SystemTests

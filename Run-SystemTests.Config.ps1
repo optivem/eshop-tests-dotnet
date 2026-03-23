@@ -205,6 +205,20 @@ $Config = @{
             TestReportPath = "SystemTests\TestResults\testResults.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
 
+        # === Latest: Smoke ===
+        @{  Id = "smoke-stub";
+            Name = "Smoke (stub)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.Latest.SmokeTests' -e EXTERNAL_SYSTEM_MODE=stub --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+            Path = "SystemTests";
+            TestReportPath = "SystemTests\TestResults\testResults.html";
+            TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install" },
+        @{  Id = "smoke-real";
+            Name = "Smoke (real)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.Latest.SmokeTests' -e EXTERNAL_SYSTEM_MODE=real --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+            Path = "SystemTests";
+            TestReportPath = "SystemTests\TestResults\testResults.html";
+            TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install" },
+
         # === Latest: Contract ===
         @{  Id = "contract-stub";
             Name = "Contract (stub)";
