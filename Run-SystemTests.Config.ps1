@@ -158,7 +158,17 @@ $Config = @{
             TestReportPath = "SystemTests\TestResults\testResults.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
 
-        # === mod11: E2E + Contract ===
+        # === mod11: Contract + E2E ===
+        @{  Id = "mod11-contract-stub";
+            Name = "mod11 - Contract (stub)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Stub' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+            Path = "SystemTests";
+            TestReportPath = "SystemTests\TestResults\testResults.html" },
+        @{  Id = "mod11-contract-real";
+            Name = "mod11 - Contract (real)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Real' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+            Path = "SystemTests";
+            TestReportPath = "SystemTests\TestResults\testResults.html" },
         @{  Id = "mod11-e2e-api";
             Name = "mod11 - E2E - API";
             Command = "dotnet test --filter 'FullyQualifiedName~.Legacy.Mod11.E2eTests' -e CHANNEL=API --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
@@ -170,16 +180,20 @@ $Config = @{
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
-        @{  Id = "mod11-contract-stub";
-            Name = "mod11 - Contract (stub)";
-            Command = "dotnet test --filter 'FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Stub' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+
+        # === Latest: Smoke ===
+        @{  Id = "smoke-stub";
+            Name = "Smoke (stub)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.Latest.SmokeTests' -e EXTERNAL_SYSTEM_MODE=stub --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
-            TestReportPath = "SystemTests\TestResults\testResults.html" },
-        @{  Id = "mod11-contract-real";
-            Name = "mod11 - Contract (real)";
-            Command = "dotnet test --filter 'FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Real' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+            TestReportPath = "SystemTests\TestResults\testResults.html";
+            TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install" },
+        @{  Id = "smoke-real";
+            Name = "Smoke (real)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.Latest.SmokeTests' -e EXTERNAL_SYSTEM_MODE=real --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
-            TestReportPath = "SystemTests\TestResults\testResults.html" },
+            TestReportPath = "SystemTests\TestResults\testResults.html";
+            TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install" },
 
         # === Latest: Acceptance ===
         @{  Id = "acceptance-api";
@@ -205,20 +219,6 @@ $Config = @{
             TestReportPath = "SystemTests\TestResults\testResults.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
 
-        # === Latest: Smoke ===
-        @{  Id = "smoke-stub";
-            Name = "Smoke (stub)";
-            Command = "dotnet test --filter 'FullyQualifiedName~.Latest.SmokeTests' -e EXTERNAL_SYSTEM_MODE=stub --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
-            Path = "SystemTests";
-            TestReportPath = "SystemTests\TestResults\testResults.html";
-            TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install" },
-        @{  Id = "smoke-real";
-            Name = "Smoke (real)";
-            Command = "dotnet test --filter 'FullyQualifiedName~.Latest.SmokeTests' -e EXTERNAL_SYSTEM_MODE=real --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
-            Path = "SystemTests";
-            TestReportPath = "SystemTests\TestResults\testResults.html";
-            TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install" },
-
         # === Latest: Contract ===
         @{  Id = "contract-stub";
             Name = "Contract (stub)";
@@ -230,6 +230,8 @@ $Config = @{
             Command = "dotnet test --filter 'FullyQualifiedName~.Latest.ExternalSystemContractTests&FullyQualifiedName~Real' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html" },
+
+        # === Latest: E2E ===
         @{  Id = "e2e-api";
             Name = "E2E (real) - API";
             Command = "dotnet test --filter 'FullyQualifiedName~.Latest.E2eTests' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";

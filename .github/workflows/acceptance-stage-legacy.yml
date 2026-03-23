@@ -272,7 +272,19 @@ jobs:
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: UI
 
-      # === mod11: E2E + Contract ===
+      # === mod11: Contract + E2E ===
+      - name: mod11 - Contract (Stub)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Stub"
+        working-directory: ./SystemTests
+        env:
+          ENVIRONMENT: acceptance
+
+      - name: mod11 - Contract (Real)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Real"
+        working-directory: ./SystemTests
+        env:
+          ENVIRONMENT: acceptance
+
       - name: mod11 - E2E - API Channel
         run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Legacy.Mod11.E2eTests"
         working-directory: ./SystemTests
@@ -286,15 +298,3 @@ jobs:
         env:
           ENVIRONMENT: acceptance
           CHANNEL: UI
-
-      - name: mod11 - Contract (Stub)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Stub"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-
-      - name: mod11 - Contract (Real)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Legacy.Mod11.ExternalSystemContractTests&FullyQualifiedName~Real"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
