@@ -151,3 +151,17 @@ jobs:
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
+
+      - name: E2E - API Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.E2eTests"
+        working-directory: ./SystemTests
+        env:
+          ENVIRONMENT: acceptance
+          CHANNEL: API
+
+      - name: E2E - UI Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.E2eTests"
+        working-directory: ./SystemTests
+        env:
+          ENVIRONMENT: acceptance
+          CHANNEL: UI
