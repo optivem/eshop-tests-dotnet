@@ -15,19 +15,19 @@ inputs:
     required: false
     default: 'stub'
   frontend-url:
-    description: 'Frontend URL for health check'
+    description: 'Frontend URL for ping'
     required: false
     default: 'http://localhost:3001/'
   backend-url:
-    description: 'Backend API URL for health check'
+    description: 'Backend API URL for ping'
     required: false
     default: 'http://localhost:8081/health'
   erp-url:
-    description: 'ERP API URL for health check'
+    description: 'ERP API URL for ping'
     required: false
     default: 'http://localhost:9002/erp/health'
   tax-url:
-    description: 'Tax API URL for health check'
+    description: 'Tax API URL for ping'
     required: false
     default: 'http://localhost:9002/tax/health'
 
@@ -83,28 +83,28 @@ runs:
 
       shell: bash
 
-    - name: Wait for System - Frontend
-      uses: optivem/wait-for-docker-compose-action@v1
-      with:
-        url: ${{ inputs.frontend-url }}
-        max-attempts: '30'
-        wait-seconds: '10'
-
-    - name: Wait for System - Backend
+    - name: Ping Shop API
       uses: optivem/wait-for-docker-compose-action@v1
       with:
         url: ${{ inputs.backend-url }}
         max-attempts: '30'
         wait-seconds: '10'
 
-    - name: Wait for System - ERP
+    - name: Ping Shop UI
+      uses: optivem/wait-for-docker-compose-action@v1
+      with:
+        url: ${{ inputs.frontend-url }}
+        max-attempts: '30'
+        wait-seconds: '10'
+
+    - name: Ping ERP
       uses: optivem/wait-for-docker-compose-action@v1
       with:
         url: ${{ inputs.erp-url }}
         max-attempts: '30'
         wait-seconds: '10'
 
-    - name: Wait for System - Tax
+    - name: Ping Tax
       uses: optivem/wait-for-docker-compose-action@v1
       with:
         url: ${{ inputs.tax-url }}
