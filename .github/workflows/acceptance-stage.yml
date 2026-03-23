@@ -231,46 +231,47 @@ jobs:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: real
 
-      - name: v7 - Acceptance - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.AcceptanceTests&Category!=isolated"
+      # === v8 ===
+      - name: v8 - Acceptance - API Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category!=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: API
 
-      - name: v7 - Acceptance - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.AcceptanceTests&Category!=isolated"
+      - name: v8 - Acceptance - UI Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category!=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: UI
 
-      - name: v7 - Acceptance (Isolated) - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.AcceptanceTests&Category=isolated"
+      - name: v8 - Acceptance (Isolated) - API Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: API
 
-      - name: v7 - Acceptance (Isolated) - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.AcceptanceTests&Category=isolated"
+      - name: v8 - Acceptance (Isolated) - UI Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: UI
 
-      - name: v7 - Contract (Stub)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.ExternalSystemContractTests&FullyQualifiedName~Stub"
+      - name: v8 - Contract (Stub)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.ExternalSystemContractTests&FullyQualifiedName~Stub"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
 
-      - name: v7 - Contract (Real)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.ExternalSystemContractTests&FullyQualifiedName~Real"
+      - name: v8 - Contract (Real)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.ExternalSystemContractTests&FullyQualifiedName~Real"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance

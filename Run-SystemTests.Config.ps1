@@ -125,36 +125,37 @@ $Config = @{
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
-        @{  Id = "v7-acceptance-api";
-            Name = "v7 (scenario dsl) - Acceptance (stub) - API";
-            Command = "dotnet test --filter 'FullyQualifiedName~.V7.AcceptanceTests&Category!=isolated' -e CHANNEL=API --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+        # === v8: ATDD ===
+        @{  Id = "v8-acceptance-api";
+            Name = "v8 (atdd) - Acceptance (stub) - API";
+            Command = "dotnet test --filter 'FullyQualifiedName~.V8.AcceptanceTests&Category!=isolated' -e CHANNEL=API --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html" },
-        @{  Id = "v7-acceptance-ui";
-            Name = "v7 (scenario dsl) - Acceptance (stub) - UI";
-            Command = "dotnet test --filter 'FullyQualifiedName~.V7.AcceptanceTests&Category!=isolated' -e CHANNEL=UI --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+        @{  Id = "v8-acceptance-ui";
+            Name = "v8 (atdd) - Acceptance (stub) - UI";
+            Command = "dotnet test --filter 'FullyQualifiedName~.V8.AcceptanceTests&Category!=isolated' -e CHANNEL=UI --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
-        @{  Id = "v7-acceptance-isolated-api";
-            Name = "v7 (scenario dsl) - Acceptance Isolated (stub) - API";
-            Command = "dotnet test --filter 'FullyQualifiedName~.V7.AcceptanceTests&Category=isolated' -e CHANNEL=API --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+        @{  Id = "v8-acceptance-isolated-api";
+            Name = "v8 (atdd) - Acceptance Isolated (stub) - API";
+            Command = "dotnet test --filter 'FullyQualifiedName~.V8.AcceptanceTests&Category=isolated' -e CHANNEL=API --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html" },
-        @{  Id = "v7-acceptance-isolated-ui";
-            Name = "v7 (scenario dsl) - Acceptance Isolated (stub) - UI";
-            Command = "dotnet test --filter 'FullyQualifiedName~.V7.AcceptanceTests&Category=isolated' -e CHANNEL=UI --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+        @{  Id = "v8-acceptance-isolated-ui";
+            Name = "v8 (atdd) - Acceptance Isolated (stub) - UI";
+            Command = "dotnet test --filter 'FullyQualifiedName~.V8.AcceptanceTests&Category=isolated' -e CHANNEL=UI --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html";
             TestInstallCommands = "pwsh bin/Debug/net8.0/playwright.ps1 install"; },
-        @{  Id = "v7-contract-stub";
-            Name = "v7 (scenario dsl) - Contract (stub)";
-            Command = "dotnet test --filter 'FullyQualifiedName~.V7.ExternalSystemContractTests&FullyQualifiedName~Stub' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+        @{  Id = "v8-contract-stub";
+            Name = "v8 (atdd) - Contract (stub)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.V8.ExternalSystemContractTests&FullyQualifiedName~Stub' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html" },
-        @{  Id = "v7-contract-real";
-            Name = "v7 (scenario dsl) - Contract (real)";
-            Command = "dotnet test --filter 'FullyQualifiedName~.V7.ExternalSystemContractTests&FullyQualifiedName~Real' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
+        @{  Id = "v8-contract-real";
+            Name = "v8 (atdd) - Contract (real)";
+            Command = "dotnet test --filter 'FullyQualifiedName~.V8.ExternalSystemContractTests&FullyQualifiedName~Real' --logger 'trx;LogFileName=testResults.trx' --logger 'html;LogFileName=testResults.html' --logger 'console;verbosity=detailed' -e ENVIRONMENT=local";
             Path = "SystemTests";
             TestReportPath = "SystemTests\TestResults\testResults.html" },
         @{  Id = "v7-e2e-api";
