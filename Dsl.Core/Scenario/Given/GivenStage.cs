@@ -12,7 +12,7 @@ namespace Dsl.Core.Scenario.Given
 {
     public class GivenStage : BaseClause, IGivenStage
     {
-        private readonly AppDsl _app;
+        private readonly UseCaseDsl _app;
         private readonly ScenarioDsl _scenario;
         private readonly List<GivenProduct> _products;
         private readonly List<GivenOrder> _orders;
@@ -20,7 +20,7 @@ namespace Dsl.Core.Scenario.Given
         private readonly List<GivenCountry> _countries;
         private readonly List<GivenCoupon> _coupons;
 
-        public GivenStage(Channel? channel, AppDsl app, ScenarioDsl scenario)
+        public GivenStage(Channel? channel, UseCaseDsl app, ScenarioDsl scenario)
             : base(channel)
         {
             _app = app;

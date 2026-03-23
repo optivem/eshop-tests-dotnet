@@ -13,7 +13,7 @@ namespace SystemTests.Legacy.Mod05.Base;
 
 public abstract class BaseDriverTest : BaseConfigurableTest, IAsyncLifetime
 {
-    protected readonly AppConfiguration _configuration;
+    protected readonly Dsl.Core.Configuration _configuration;
     protected IShopDriver? _shopDriver;
     protected ErpRealDriver? _erpDriver;
     protected TaxRealDriver? _taxDriver;

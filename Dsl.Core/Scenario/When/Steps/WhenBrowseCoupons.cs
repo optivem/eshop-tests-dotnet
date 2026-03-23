@@ -11,11 +11,11 @@ namespace Dsl.Core.Scenario.When.Steps;
 
 public class BrowseCoupons : BaseWhen<BrowseCouponsResponse, BrowseCouponsVerification>, IBrowseCoupons
 {
-    public BrowseCoupons(AppDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public BrowseCoupons(UseCaseDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
     }
 
-    protected override async Task<ExecutionResult<BrowseCouponsResponse, BrowseCouponsVerification>> Execute(AppDsl app)
+    protected override async Task<ExecutionResult<BrowseCouponsResponse, BrowseCouponsVerification>> Execute(UseCaseDsl app)
     {
         var shop = await app.Shop(Channel);
         var result = await shop.BrowseCoupons()

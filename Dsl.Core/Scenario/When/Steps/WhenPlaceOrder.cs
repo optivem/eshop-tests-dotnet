@@ -18,7 +18,7 @@ public class PlaceOrder : BaseWhen<PlaceOrderResponse, PlaceOrderVerification>, 
     private string? _country;
     private string? _couponCode;
 
-    public PlaceOrder(AppDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public PlaceOrder(UseCaseDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
         WithOrderNumber(DefaultOrderNumber);
         WithSku(DefaultSku);
@@ -81,7 +81,7 @@ public class PlaceOrder : BaseWhen<PlaceOrderResponse, PlaceOrderVerification>, 
 
     IPlaceOrder IPlaceOrder.WithCouponCode() => WithCouponCode();
 
-    protected override async Task<ExecutionResult<PlaceOrderResponse, PlaceOrderVerification>> Execute(AppDsl app)
+    protected override async Task<ExecutionResult<PlaceOrderResponse, PlaceOrderVerification>> Execute(UseCaseDsl app)
     {
         var shop = await app.Shop(Channel);
         var result = await shop.PlaceOrder()

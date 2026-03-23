@@ -10,7 +10,7 @@ namespace SystemTests.Legacy.Mod04.Base;
 
 public abstract class BaseClientTest : BaseConfigurableTest, IAsyncLifetime
 {
-    protected readonly AppConfiguration _configuration;
+    protected readonly Dsl.Core.Configuration _configuration;
 
     protected ShopUiClient? _shopUiClient;
     protected ShopApiClient? _shopApiClient;

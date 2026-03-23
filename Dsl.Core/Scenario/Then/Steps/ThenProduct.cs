@@ -6,10 +6,10 @@ namespace Dsl.Core.Scenario.Then.Steps;
 
 public class ThenProduct : IThenProduct
 {
-    private readonly AppDsl _app;
+    private readonly UseCaseDsl _app;
     private readonly GetProductVerification _verification;
 
-    public ThenProduct(AppDsl app, GetProductVerification verification)
+    public ThenProduct(UseCaseDsl app, GetProductVerification verification)
     {
         _app = app;
         _verification = verification;

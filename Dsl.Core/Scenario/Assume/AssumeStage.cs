@@ -6,10 +6,10 @@ namespace Dsl.Core.Scenario.Assume;
 
 public class AssumeStage : IAssumeStage
 {
-    private readonly AppDsl _app;
+    private readonly UseCaseDsl _app;
     private readonly Channel? _channel;
 
-    public AssumeStage(AppDsl app, Channel? channel = null)
+    public AssumeStage(UseCaseDsl app, Channel? channel = null)
     {
         _app = app;
         _channel = channel;

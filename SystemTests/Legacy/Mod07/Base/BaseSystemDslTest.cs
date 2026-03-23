@@ -6,12 +6,12 @@ namespace SystemTests.Legacy.Mod07.Base;
 
 public abstract class BaseSystemDslTest : BaseConfigurableTest, IAsyncLifetime
 {
-    protected AppDsl _app = null!;
+    protected UseCaseDsl _app = null!;
 
     public virtual async Task InitializeAsync()
     {
         var configuration = LoadConfiguration();
-        _app = new AppDsl(configuration);
+        _app = new UseCaseDsl(configuration);
         await Task.CompletedTask;
     }
 

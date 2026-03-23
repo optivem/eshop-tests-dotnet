@@ -54,7 +54,7 @@ public abstract class BaseChannelDriverTest : BaseConfigurableTest, IAsyncLifeti
         await InitializeAsync();
     }
 
-    private static async Task<IShopDriver?> CreateShopDriverAsync(AppConfiguration configuration)
+    private static async Task<IShopDriver?> CreateShopDriverAsync(Dsl.Core.Configuration configuration)
     {
         var channelType = ChannelContext.Get();
 

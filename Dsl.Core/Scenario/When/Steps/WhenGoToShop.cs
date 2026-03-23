@@ -9,11 +9,11 @@ namespace Dsl.Core.Scenario.When.Steps;
 
 public class GoToShop : BaseWhen<VoidValue, VoidVerification>, IGoToShop
 {
-    public GoToShop(AppDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public GoToShop(UseCaseDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
     }
 
-    protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(AppDsl app)
+    protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(UseCaseDsl app)
     {
         var shop = await app.Shop(Channel);
         var result = await shop.GoToShop()

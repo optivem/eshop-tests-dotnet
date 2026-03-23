@@ -7,11 +7,11 @@ namespace Dsl.Core.Scenario.Then;
 
 public class ThenStageBase : IThenStage
 {
-    protected readonly AppDsl _app;
+    protected readonly UseCaseDsl _app;
     private readonly Func<Task>? _setup;
     private bool _setupCompleted;
 
-    public ThenStageBase(AppDsl app, Func<Task>? setup = null)
+    public ThenStageBase(UseCaseDsl app, Func<Task>? setup = null)
     {
         _app = app;
         _setup = setup;

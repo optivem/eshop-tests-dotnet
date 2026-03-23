@@ -40,7 +40,7 @@ public class GivenProduct : BaseGiven, IGivenProduct
 
     IGivenProduct IGivenProduct.WithUnitPrice(decimal? unitPrice) => WithUnitPrice(unitPrice);
 
-    internal override async Task Execute(AppDsl app)
+    internal override async Task Execute(UseCaseDsl app)
     {
         (await app.Erp().ReturnsProduct()
             .Sku(_sku)

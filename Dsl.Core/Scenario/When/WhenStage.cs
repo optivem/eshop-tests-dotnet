@@ -10,13 +10,13 @@ namespace Dsl.Core.Scenario.When
 {
     public class WhenStage : BaseClause, IWhenStage
     {
-        private readonly AppDsl _app;
+        private readonly UseCaseDsl _app;
         private readonly ScenarioDsl _scenario;
         private bool _hasProduct;
         private bool _hasTaxRate;
         private readonly Func<Task>? _givenSetup;
 
-        public WhenStage(Channel? channel, AppDsl app, ScenarioDsl scenario, bool hasProduct, bool hasTaxRate, Func<Task>? givenSetup = null)
+        public WhenStage(Channel? channel, UseCaseDsl app, ScenarioDsl scenario, bool hasProduct, bool hasTaxRate, Func<Task>? givenSetup = null)
             : base(channel)
         {
             _app = app;
@@ -26,7 +26,7 @@ namespace Dsl.Core.Scenario.When
             _givenSetup = givenSetup;
         }
 
-        public WhenStage(Channel? channel, AppDsl app, ScenarioDsl scenario)
+        public WhenStage(Channel? channel, UseCaseDsl app, ScenarioDsl scenario)
             : this(channel, app, scenario, false, false, null)
         {
         }

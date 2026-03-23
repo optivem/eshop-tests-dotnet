@@ -18,22 +18,22 @@ using Driver.Adapter.External.Tax;
 
 namespace Dsl.Core;
 
-public class AppDsl : IAsyncDisposable
+public class UseCaseDsl : IAsyncDisposable
 {
     private readonly UseCaseContext _context;
-    private readonly AppConfiguration _configuration;
+    private readonly Configuration _configuration;
     private ShopDsl? _shop;
     private ErpDsl? _erp;
     private TaxDsl? _tax;
     private ClockDsl? _clock;
 
-    public AppDsl(UseCaseContext context, AppConfiguration configuration)
+    public UseCaseDsl(UseCaseContext context, Configuration configuration)
     {
         _context = context;
         _configuration = configuration;
     }
 
-    public AppDsl(AppConfiguration configuration)
+    public UseCaseDsl(Configuration configuration)
         : this(new UseCaseContext(configuration.ExternalSystemMode), configuration) { }
 
     public async Task<ShopDsl> Shop(Channel channel)

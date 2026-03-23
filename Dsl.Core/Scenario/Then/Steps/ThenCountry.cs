@@ -6,10 +6,10 @@ namespace Dsl.Core.Scenario.Then.Steps;
 
 public class ThenCountry : IThenCountry
 {
-    private readonly AppDsl _app;
+    private readonly UseCaseDsl _app;
     private readonly GetTaxVerification _verification;
 
-    public ThenCountry(AppDsl app, GetTaxVerification verification)
+    public ThenCountry(UseCaseDsl app, GetTaxVerification verification)
     {
         _app = app;
         _verification = verification;

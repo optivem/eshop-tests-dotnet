@@ -14,11 +14,11 @@ namespace Dsl.Core.Scenario;
 public class ScenarioDsl : IScenarioDsl
 {
     private readonly Channel? _channel;
-    private readonly AppDsl _app;
+    private readonly UseCaseDsl _app;
 
     private bool _executed = false;
 
-    public ScenarioDsl(Channel? channel, AppDsl app)
+    public ScenarioDsl(Channel? channel, UseCaseDsl app)
     {
         _channel = channel;
         _app = app;

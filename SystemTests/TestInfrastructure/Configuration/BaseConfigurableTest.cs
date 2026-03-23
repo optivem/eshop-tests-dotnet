@@ -16,7 +16,7 @@ public abstract class BaseConfigurableTest
         return null;
     }
 
-    protected AppConfiguration LoadConfiguration()
+    protected Dsl.Core.Configuration LoadConfiguration()
     {
         var fixedEnvironment = GetFixedEnvironment();
         var fixedExternalSystemMode = GetFixedExternalSystemMode();

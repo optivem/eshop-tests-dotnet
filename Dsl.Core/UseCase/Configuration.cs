@@ -4,7 +4,7 @@ using Dsl.Core.Shared;
 
 namespace Dsl.Core;
 
-public class AppConfiguration
+public class Configuration
 {
     private readonly string shopUiBaseUrl;
     private readonly string shopApiBaseUrl;
@@ -13,7 +13,7 @@ public class AppConfiguration
     private readonly string clockBaseUrl;
     private readonly ExternalSystemMode externalSystemMode;
 
-    public AppConfiguration(string shopUiBaseUrl, string shopApiBaseUrl, string erpBaseUrl, string taxBaseUrl, string clockBaseUrl, ExternalSystemMode externalSystemMode)
+    public Configuration(string shopUiBaseUrl, string shopApiBaseUrl, string erpBaseUrl, string taxBaseUrl, string clockBaseUrl, ExternalSystemMode externalSystemMode)
     {
         this.shopUiBaseUrl = shopUiBaseUrl;
         this.shopApiBaseUrl = shopApiBaseUrl;

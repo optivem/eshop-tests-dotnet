@@ -26,11 +26,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy-docker-images", "dep
 		.github\actions\deploy-docker-images\action.yml = .github\actions\deploy-docker-images\action.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop", "Dsl.Core\App\Shop\Shop.csproj", "{8F5F23B7-0DA0-41EF-B994-71294FD6AFBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop", "Dsl.Core\UseCase\Shop\Shop.csproj", "{8F5F23B7-0DA0-41EF-B994-71294FD6AFBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tax", "Dsl.Core\App\External\Tax\Tax.csproj", "{4FBEAD90-697E-4620-94CB-49ED8FC153C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tax", "Dsl.Core\UseCase\External\Tax\Tax.csproj", "{4FBEAD90-697E-4620-94CB-49ED8FC153C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erp", "Dsl.Core\App\External\Erp\Erp.csproj", "{2CCE53DA-8189-4B87-A601-121261686691}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erp", "Dsl.Core\UseCase\External\Erp\Erp.csproj", "{2CCE53DA-8189-4B87-A601-121261686691}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{56E2B456-6FAB-410A-B43B-A41342689283}"
 EndProject
@@ -38,7 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SystemTests", "SystemTests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemTests", "SystemTests\SystemTests.csproj", "{F1E2D3C4-B5A6-7890-ABCD-EF0123456789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clock", "Dsl.Core\App\External\Clock\Clock.csproj", "{3DBF5395-115C-4013-AFFD-BB314714735A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clock", "Dsl.Core\UseCase\External\Clock\Clock.csproj", "{3DBF5395-115C-4013-AFFD-BB314714735A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsl.Core", "Dsl.Core\Dsl.Core.csproj", "{8E9B6817-8649-4F06-88F9-0E9F03185C1D}"
 EndProject

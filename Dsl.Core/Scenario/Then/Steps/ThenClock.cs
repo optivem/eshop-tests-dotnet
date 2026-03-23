@@ -6,10 +6,10 @@ namespace Dsl.Core.Scenario.Then.Steps;
 
 public class ThenClock : IThenClock
 {
-    private readonly AppDsl _app;
+    private readonly UseCaseDsl _app;
     private readonly GetTimeVerification _verification;
 
-    public ThenClock(AppDsl app, GetTimeVerification verification)
+    public ThenClock(UseCaseDsl app, GetTimeVerification verification)
     {
         _app = app;
         _verification = verification;

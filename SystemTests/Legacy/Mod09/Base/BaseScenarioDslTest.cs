@@ -9,12 +9,12 @@ namespace SystemTests.Legacy.Mod09.Base;
 
 public abstract class BaseScenarioDslTest : BaseConfigurableTest, IAsyncLifetime
 {
-    private AppDsl _app = null!;
+    private UseCaseDsl _app = null!;
 
     public virtual async Task InitializeAsync()
     {
         var configuration = LoadConfiguration();
-        _app = new AppDsl(configuration);
+        _app = new UseCaseDsl(configuration);
         await Task.CompletedTask;
     }
 

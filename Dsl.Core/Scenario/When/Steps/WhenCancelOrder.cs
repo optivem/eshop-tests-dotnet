@@ -14,7 +14,7 @@ public class CancelOrder : BaseWhen<VoidValue, VoidVerification>, ICancelOrder
 {
     private string? _orderNumber;
 
-    public CancelOrder(AppDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
+    public CancelOrder(UseCaseDsl app, ScenarioDsl scenario, Func<Task> ensureGiven) : base(app, scenario, ensureGiven)
     {
         WithOrderNumber(DefaultOrderNumber);
     }
@@ -27,7 +27,7 @@ public class CancelOrder : BaseWhen<VoidValue, VoidVerification>, ICancelOrder
 
     ICancelOrder ICancelOrder.WithOrderNumber(string? orderNumber) => WithOrderNumber(orderNumber);
 
-    protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(AppDsl app)
+    protected override async Task<ExecutionResult<VoidValue, VoidVerification>> Execute(UseCaseDsl app)
     {
         var shop = await app.Shop(Channel);
         var result = await shop.CancelOrder()

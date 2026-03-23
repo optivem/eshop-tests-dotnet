@@ -39,7 +39,7 @@ public abstract class BaseGiven : IGivenStep
 
     IThenStage IGivenStep.Then() => Then();
 
-    internal abstract Task Execute(AppDsl app);
+    internal abstract Task Execute(UseCaseDsl app);
 
     protected Channel? Channel => _givenClause.Channel;
 }
