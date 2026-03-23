@@ -108,184 +108,46 @@ jobs:
           pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
         working-directory: ./SystemTests
 
-      # === v1 ===
-      - name: v1 - Smoke
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V1.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
-
-      - name: v1 - E2E
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V1.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-
-      # === v2 ===
-      - name: v2 - Smoke
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V2.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
-
-      - name: v2 - E2E
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V2.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-
-      # === v3 ===
-      - name: v3 - Smoke
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V3.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
-
-      - name: v3 - E2E
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V3.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-
-      # === v4 ===
-      - name: v4 - Smoke
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V4.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
-
-      - name: v4 - E2E - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V4.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: API
-
-      - name: v4 - E2E - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V4.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: UI
-
-      # === v5 ===
-      - name: v5 - Smoke
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V5.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
-
-      - name: v5 - E2E - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V5.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: API
-
-      - name: v5 - E2E - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V5.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: UI
-
-      # === v6 ===
-      - name: v6 - Smoke
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V6.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
-
-      - name: v6 - E2E - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V6.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: API
-
-      - name: v6 - E2E - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V6.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: UI
-
-      # === v7 ===
-      - name: v7 - Smoke (Stub)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: stub
-
-      - name: v7 - Smoke (Real)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.SmokeTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          EXTERNAL_SYSTEM_MODE: real
-
-      # === v8 ===
-      - name: v8 - Acceptance - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category!=isolated"
+      - name: Acceptance - API Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.AcceptanceTests&Category!=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: API
 
-      - name: v8 - Acceptance - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category!=isolated"
+      - name: Acceptance - UI Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.AcceptanceTests&Category!=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: UI
 
-      - name: v8 - Acceptance (Isolated) - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category=isolated"
+      - name: Acceptance (Isolated) - API Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.AcceptanceTests&Category=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: API
 
-      - name: v8 - Acceptance (Isolated) - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.AcceptanceTests&Category=isolated"
+      - name: Acceptance (Isolated) - UI Channel
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.AcceptanceTests&Category=isolated"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
           EXTERNAL_SYSTEM_MODE: stub
           CHANNEL: UI
 
-      - name: v8 - Contract (Stub)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.ExternalSystemContractTests&FullyQualifiedName~Stub"
+      - name: Contract (Stub)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.ExternalSystemContractTests&FullyQualifiedName~Stub"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
 
-      - name: v8 - Contract (Real)
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V8.ExternalSystemContractTests&FullyQualifiedName~Real"
+      - name: Contract (Real)
+        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.Latest.ExternalSystemContractTests&FullyQualifiedName~Real"
         working-directory: ./SystemTests
         env:
           ENVIRONMENT: acceptance
-
-      - name: v7 - E2E - API Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: API
-
-      - name: v7 - E2E - UI Channel
-        run: dotnet test --no-build --configuration Release --verbosity normal --filter "FullyQualifiedName~.V7.E2eTests"
-        working-directory: ./SystemTests
-        env:
-          ENVIRONMENT: acceptance
-          CHANNEL: UI

@@ -4,9 +4,9 @@ _Shared instructions (ATDD rules, architecture, git safety) are in the `eshop-te
 
 ## Test Location
 
-- **Acceptance tests** go in `SystemTests/V8/AcceptanceTests/`
-- **Contract tests** go in `SystemTests/V8/ExternalSystemContractTests/<System>/` (e.g. `Erp/`, `Tax/`, `Clock/`)
-- Do **NOT** use V1–V7 directories for new acceptance/contract tests. All new tests go in V8.
+- **Acceptance tests** go in `SystemTests/Latest/AcceptanceTests/`
+- **Contract tests** go in `SystemTests/Latest/ExternalSystemContractTests/<System>/` (e.g. `Erp/`, `Tax/`, `Clock/`)
+- Do **NOT** add new tests to `Legacy/` — that folder is read-only course reference material.
 
 ## Test Pattern
 
@@ -28,8 +28,8 @@ public class PlaceOrderPositiveTest : BaseAcceptanceTest
 ```
 
 Key rules:
-- Extend `BaseAcceptanceTest` (in `V8/AcceptanceTests/Base/`)
+- Extend `BaseAcceptanceTest` (in `Latest/AcceptanceTests/Base/`)
 - Use `[Theory]` + `[ChannelData(ChannelType.UI, ChannelType.API)]` with a `Channel channel` parameter — **no separate API/UI subclasses**
 - Use `await Scenario(channel).Given()...When()...Then()` DSL — not raw drivers
 - File names: `<UseCase>PositiveTest.cs` and `<UseCase>NegativeTest.cs` (one file each)
-- Contract tests extend `BaseExternalSystemContractTest` (in `V8/ExternalSystemContractTests/Base/`)
+- Contract tests extend `BaseExternalSystemContractTest` (in `Latest/ExternalSystemContractTests/Base/`)
